@@ -21,9 +21,51 @@ export interface ProductDetail {
   raw_fields: Record<string, string>;
 }
 
+export interface FeedbackUnit {
+  feedback_unit_id: string;
+  review_index: number;
+  dimension: string;
+  audience: string | Unknown;
+  scenario: string | Unknown;
+  user_task: string | Unknown;
+  purchase_reason: string | Unknown;
+  user_expectation: string | Unknown;
+  expectation_source: string | Unknown;
+  actual_experience: string | Unknown;
+  satisfied_points: string | Unknown;
+  unsatisfied_points: string | Unknown;
+  consequence: string | Unknown;
+  evidence: string;
+  open_tags: string[];
+  confidence: "high" | "medium" | "low";
+}
+
+export interface OpenTag {
+  tag_id: string;
+  tag_name: string;
+  dimension: string;
+  count: number;
+  sample_size: number;
+  percentage: number;
+  representative_evidence: string[];
+  theme_ids: string[];
+}
+
+export interface KeyInsightDistributionItem {
+  label: string;
+  review_count: number;
+  sample_size: number;
+  percentage: number;
+  role: "primary" | "secondary" | "emerging" | "long_tail" | "unknown";
+  reason: string;
+  evidence: string[];
+  theme_ids: string[];
+}
+
 export interface KeyInsight {
   dimension: string;
   insight: string;
+  summary?: string;
   count: number;
   sample_size: number;
   percentage: number;
@@ -31,6 +73,8 @@ export interface KeyInsight {
   evidence: string[];
   theme_ids: string[];
   implication: string;
+  business_implication?: string;
+  distribution?: KeyInsightDistributionItem[];
 }
 
 export interface ThemeDetailReview {
@@ -95,6 +139,9 @@ export interface AnalysisReport {
     product_rating?: number;
   };
   health?: ReturnType<typeof computeReviewHealth>;
+  normalized_reviews?: NormalizedReview[];
+  feedback_units?: FeedbackUnit[];
+  open_tags?: OpenTag[];
   key_insights: KeyInsight[];
   voc_themes: VocTheme[];
   business_actions: BusinessAction[];

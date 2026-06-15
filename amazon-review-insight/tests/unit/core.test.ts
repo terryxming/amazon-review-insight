@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import reviewsFixture from "../fixtures/sorftime_single_asin_reviews.json" assert { type: "json" };
-import detailFixture from "../fixtures/sorftime_product_detail.json" assert { type: "json" };
+import reviewsFixture from "../fixtures/sorftime_single_asin_reviews.json" with { type: "json" };
+import detailFixture from "../fixtures/sorftime_product_detail.json" with { type: "json" };
 import {
   computeReviewHealth,
   isValidAsin,

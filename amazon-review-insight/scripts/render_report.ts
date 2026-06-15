@@ -97,19 +97,49 @@ function renderKeyInsights(analysis: AnalysisReport): string {
     if (!item) {
       return `<div class="card"><h3>${dimension}</h3><p>评论未明确表达，当前样本中记为 unknown。</p></div>`;
     }
+    const summary = item.summary ?? item.insight;
+    const implication = item.business_implication ?? item.implication;
     return `<div class="card">
       <h3>${escapeHtml(item.dimension)}</h3>
-      <p>${escapeHtml(item.insight)}</p>
+      <p>${escapeHtml(summary)}</p>
       <div class="theme-meta">
         <span class="badge">${item.count}/${item.sample_size} (${item.percentage}%)</span>
         <span class="badge">confidence: ${escapeHtml(item.confidence)}</span>
       </div>
-      <p class="subtle">${escapeHtml(item.implication)}</p>
+      ${renderInsightDistribution(item)}
+      <p class="subtle">${escapeHtml(implication)}</p>
       ${item.evidence.slice(0, 3).map((e) => `<p class="quote">${escapeHtml(e)}</p>`).join("")}
       <p class="subtle">关联主题：${item.theme_ids.map(escapeHtml).join(", ") || "unknown"}</p>
     </div>`;
   }).join("");
-  return `<section id="key-insights" class="section"><h2 class="section-title">关键结论</h2><div class="grid">${cards}</div></section>`;
+  return `<section id="key-insights" class="section"><h2 class="section-title">关键结论</h2><div class="grid insight-grid">${cards}</div></section>`;
+}
+
+function renderInsightDistribution(item: AnalysisReport["key_insights"][number]): string {
+  if (!item.distribution?.length) return "";
+  const rows = item.distribution.map((row) => `<tr>
+    <td>${escapeHtml(row.label)}</td>
+    <td><span class="mini-bar" style="--bar:${Math.max(0, Math.min(100, row.percentage))}%"></span><span>${row.review_count}/${row.sample_size} (${row.percentage}%)</span></td>
+    <td><span class="role role-${escapeHtml(row.role)}">${escapeHtml(roleLabel(row.role))}</span></td>
+    <td>${escapeHtml(row.reason)}</td>
+  </tr>`).join("");
+  return `<div class="insight-distribution table-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>提及占比</th><th>角色</th><th>判断依据</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
+}
+
+function roleLabel(role: string): string {
+  const labels: Record<string, string> = {
+    primary: "主要",
+    secondary: "次要",
+    emerging: "新兴",
+    long_tail: "长尾",
+    unknown: "未明确"
+  };
+  return labels[role] ?? role;
 }
 
 function renderThemeMap(analysis: AnalysisReport): string {

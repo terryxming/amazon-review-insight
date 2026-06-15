@@ -43,7 +43,71 @@
       "theme_ids": [
         "theme_family_party_gifting"
       ],
-      "implication": "Listing 图片和视频应同时覆盖家庭、孩子、伴侣礼物和朋友聚会，而不是只展示单人唱歌。"
+      "implication": "Listing 图片和视频应同时覆盖家庭、孩子、伴侣礼物和朋友聚会，而不是只展示单人唱歌。",
+      "summary": "当前样本中，人群信号主要来自家庭购买者、儿童/青少年使用者、伴侣礼物购买者和经常办聚会的人。",
+      "business_implication": "Listing 图片和视频应同时覆盖家庭、孩子、伴侣礼物和朋友聚会，而不是只展示单人唱歌。",
+      "distribution": [
+        {
+          "label": "家庭购买者/家庭共同使用者",
+          "review_count": 18,
+          "sample_size": 76,
+          "percentage": 23.7,
+          "role": "primary",
+          "reason": "多条评论明确提到 family、kids、children、grandchildren 或家人一起使用。",
+          "evidence": [
+            "Ages 3-20+ are my grandchildren, nieces and nephews",
+            "karaoke with the family for a party and it was a hit"
+          ],
+          "theme_ids": [
+            "theme_family_party_gifting"
+          ]
+        },
+        {
+          "label": "儿童/青少年使用者",
+          "review_count": 10,
+          "sample_size": 76,
+          "percentage": 13.2,
+          "role": "secondary",
+          "reason": "使用者经常是孩子、青少年、drama/choir kids，说明产品适合年轻用户练唱和娱乐。",
+          "evidence": [
+            "My 17 year old daughter loves this machine",
+            "Best gift for drama or choir kids"
+          ],
+          "theme_ids": [
+            "theme_family_party_gifting"
+          ]
+        },
+        {
+          "label": "伴侣礼物购买者",
+          "review_count": 6,
+          "sample_size": 76,
+          "percentage": 7.9,
+          "role": "emerging",
+          "reason": "评论中出现为 wife、son 等亲密关系购买并作为礼物使用。",
+          "evidence": [
+            "Got this for my wife as she loves Karaoke",
+            "We bought this for our son"
+          ],
+          "theme_ids": [
+            "theme_family_party_gifting"
+          ]
+        },
+        {
+          "label": "经常办聚会的人",
+          "review_count": 5,
+          "sample_size": 76,
+          "percentage": 6.6,
+          "role": "long_tail",
+          "reason": "部分用户自述 frequent entertainers 或多次聚会使用，代表高价值场景用户。",
+          "evidence": [
+            "must have item for anyone who entertains at home frequently",
+            "used this for multiple parties and gatherings"
+          ],
+          "theme_ids": [
+            "theme_family_party_gifting"
+          ]
+        }
+      ]
     },
     {
       "dimension": "场景",
@@ -61,7 +125,71 @@
         "theme_family_party_gifting",
         "theme_sound_portable_all_in_one"
       ],
-      "implication": "主图后的场景图应优先表达 home party、family game night、camping 和 backyard gathering。"
+      "implication": "主图后的场景图应优先表达 home party、family game night、camping 和 backyard gathering。",
+      "summary": "高频价值场景集中在家庭聚会、生日/节日、朋友聚会、露营和户外轻量场景。",
+      "business_implication": "主图后的场景图应优先表达 home party、family game night、camping 和 backyard gathering。",
+      "distribution": [
+        {
+          "label": "家庭聚会/朋友聚会",
+          "review_count": 31,
+          "sample_size": 76,
+          "percentage": 40.8,
+          "role": "primary",
+          "reason": "party、gatherings、family and friend gatherings 是最集中的使用语境。",
+          "evidence": [
+            "karaoke with the family for a party and it was a hit",
+            "family and friend gatherings"
+          ],
+          "theme_ids": [
+            "theme_family_party_gifting"
+          ]
+        },
+        {
+          "label": "家庭日常娱乐/孩子练唱",
+          "review_count": 18,
+          "sample_size": 76,
+          "percentage": 23.7,
+          "role": "secondary",
+          "reason": "评论提到在家里、房间里、孩子长时间唱歌或练习。",
+          "evidence": [
+            "spends hours practicing in his room singing",
+            "singing their hearts out for hours"
+          ],
+          "theme_ids": [
+            "theme_family_party_gifting"
+          ]
+        },
+        {
+          "label": "户外/露营/便携外带",
+          "review_count": 7,
+          "sample_size": 76,
+          "percentage": 9.2,
+          "role": "emerging",
+          "reason": "露营、户外、backpack 等表达说明便携场景有一定需求。",
+          "evidence": [
+            "Have used at home, brought camping, etc.",
+            "easy to carry in a small bag or backpack"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "生日/节日/礼物场景",
+          "review_count": 6,
+          "sample_size": 76,
+          "percentage": 7.9,
+          "role": "long_tail",
+          "reason": "Thanksgiving、birthday、gift 等词说明节庆礼物场景可被 Listing 捕捉。",
+          "evidence": [
+            "had a blast on Thanksgiving",
+            "Best gift for drama or choir kids"
+          ],
+          "theme_ids": [
+            "theme_family_party_gifting"
+          ]
+        }
+      ]
     },
     {
       "dimension": "用户任务",
@@ -79,7 +207,71 @@
         "theme_sound_portable_all_in_one",
         "theme_ui_app_screen_instruction_friction"
       ],
-      "implication": "文案要把 all-in-one、TV hookup、YouTube/KaraFun、Bluetooth speaker 四个任务路径讲清楚。"
+      "implication": "文案要把 all-in-one、TV hookup、YouTube/KaraFun、Bluetooth speaker 四个任务路径讲清楚。",
+      "summary": "用户主要任务不是单纯播放音乐，而是快速搭建一套可移动、可多人轮流唱、可连接 TV/YouTube/KaraFun 的娱乐系统。",
+      "business_implication": "文案要把 all-in-one、TV hookup、YouTube/KaraFun、Bluetooth speaker 四个任务路径讲清楚。",
+      "distribution": [
+        {
+          "label": "多人轮流卡拉 OK",
+          "review_count": 36,
+          "sample_size": 76,
+          "percentage": 47.4,
+          "role": "primary",
+          "reason": "核心任务是快速开唱、多人轮流唱、让聚会参与者持续互动。",
+          "evidence": [
+            "singing their hearts out for hours",
+            "two microphones"
+          ],
+          "theme_ids": [
+            "theme_family_party_gifting",
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "连接 TV/YouTube/KaraFun 找歌词",
+          "review_count": 14,
+          "sample_size": 76,
+          "percentage": 18.4,
+          "role": "secondary",
+          "reason": "用户强调 TV、YouTube、lyrics、KaraFun 等连接和歌词任务。",
+          "evidence": [
+            "We hooked it up to our TV and sounds great",
+            "play music videos from YouTube with lyrics"
+          ],
+          "theme_ids": [
+            "theme_ui_app_screen_instruction_friction"
+          ]
+        },
+        {
+          "label": "当蓝牙音箱/boombox 播放音乐",
+          "review_count": 12,
+          "sample_size": 76,
+          "percentage": 15.8,
+          "role": "secondary",
+          "reason": "一部分用户把它当作音箱或 boombox 使用，不只用于唱歌。",
+          "evidence": [
+            "used it this past week just as boombox to listen to music from spotify"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "便携搭建完整娱乐系统",
+          "review_count": 10,
+          "sample_size": 76,
+          "percentage": 13.2,
+          "role": "emerging",
+          "reason": "用户需要小体积、带麦克风、带屏幕、可外带的一体化系统。",
+          "evidence": [
+            "compact size... easy to carry",
+            "built-in lyrics display and screen"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        }
+      ]
     },
     {
       "dimension": "购买理由",
@@ -96,7 +288,87 @@
       "theme_ids": [
         "theme_sound_portable_all_in_one"
       ],
-      "implication": "广告钩子可优先使用 portable all-in-one karaoke system，而不是泛化成 speaker。"
+      "implication": "广告钩子可优先使用 portable all-in-one karaoke system，而不是泛化成 speaker。",
+      "summary": "购买理由集中在便携一体化、音质、内置屏幕、双无线麦克风、自带娱乐应用和礼物属性。",
+      "business_implication": "广告钩子可优先使用 portable all-in-one karaoke system，而不是泛化成 speaker。",
+      "distribution": [
+        {
+          "label": "便携一体化",
+          "review_count": 29,
+          "sample_size": 76,
+          "percentage": 38.2,
+          "role": "primary",
+          "reason": "小体积、屏幕、麦克风、音箱的一体化组合反复出现。",
+          "evidence": [
+            "compact size... easy to carry in a small bag or backpack",
+            "Small, compact, with lots of power"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "音质/音量超出体积预期",
+          "review_count": 27,
+          "sample_size": 76,
+          "percentage": 35.5,
+          "role": "secondary",
+          "reason": "声音大、bass、punch above weight class 是购买正当性的核心证据。",
+          "evidence": [
+            "sounds amazing with great bass",
+            "it really does audibly punch above its weight class"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "内置屏幕/歌词能力",
+          "review_count": 14,
+          "sample_size": 76,
+          "percentage": 18.4,
+          "role": "emerging",
+          "reason": "屏幕和歌词让用户少依赖外接设备，是差异化购买理由。",
+          "evidence": [
+            "built-in lyrics display and screen",
+            "words pop up on the screen"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "双无线麦克风/收纳充电",
+          "review_count": 16,
+          "sample_size": 76,
+          "percentage": 21.1,
+          "role": "secondary",
+          "reason": "两只麦克风和机身收纳充电被视为完整套装的关键组成。",
+          "evidence": [
+            "comes with 2 powerful microphones",
+            "the way they store and charge in the machine is the best"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one",
+            "theme_charging_adapter_mic_battery_gap"
+          ]
+        },
+        {
+          "label": "礼物属性",
+          "review_count": 6,
+          "sample_size": 76,
+          "percentage": 7.9,
+          "role": "long_tail",
+          "reason": "用户明确为伴侣、孩子购买或称其为 best gift。",
+          "evidence": [
+            "Got this for my wife as she loves Karaoke",
+            "Best gift for drama or choir kids"
+          ],
+          "theme_ids": [
+            "theme_family_party_gifting"
+          ]
+        }
+      ]
     },
     {
       "dimension": "用户期望",
@@ -114,7 +386,71 @@
         "theme_sound_portable_all_in_one",
         "theme_ui_app_screen_instruction_friction"
       ],
-      "implication": "Listing 承诺要同时管理硬件体验和软件/找歌体验，避免用户把小屏和 Web 版 YouTube 误解成完整平板体验。"
+      "implication": "Listing 承诺要同时管理硬件体验和软件/找歌体验，避免用户把小屏和 Web 版 YouTube 误解成完整平板体验。",
+      "summary": "用户买前期待产品能做到好声音、便携、易用、无线麦克风稳定、屏幕/应用可顺畅找歌。",
+      "business_implication": "Listing 承诺要同时管理硬件体验和软件/找歌体验，避免用户把小屏和 Web 版 YouTube 误解成完整平板体验。",
+      "distribution": [
+        {
+          "label": "好声音/足够音量",
+          "review_count": 30,
+          "sample_size": 76,
+          "percentage": 39.5,
+          "role": "primary",
+          "reason": "用户预期小机器仍要有好声音和足够聚会音量。",
+          "evidence": [
+            "I wanted something I could use for years to come that was of good quality and sound",
+            "sounds great"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "便携且易用",
+          "review_count": 25,
+          "sample_size": 76,
+          "percentage": 32.9,
+          "role": "secondary",
+          "reason": "plug-and-play、compact、easy to use 指向低学习成本和便携性。",
+          "evidence": [
+            "plug-and-play karaoke machine: minimal setup",
+            "Easy to use"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "屏幕/应用/找歌顺畅",
+          "review_count": 12,
+          "sample_size": 76,
+          "percentage": 15.8,
+          "role": "emerging",
+          "reason": "用户期待应用、屏幕、找歌和手机控制更顺畅，但负向摩擦明显。",
+          "evidence": [
+            "would be cool if theres an app for the device so you can use smartphone to control it",
+            "hard to select songs"
+          ],
+          "theme_ids": [
+            "theme_ui_app_screen_instruction_friction"
+          ]
+        },
+        {
+          "label": "充电/续航/配件完整",
+          "review_count": 8,
+          "sample_size": 76,
+          "percentage": 10.5,
+          "role": "long_tail",
+          "reason": "用户默认完整便携套装应包含清晰充电方案和足够续航。",
+          "evidence": [
+            "battery does not last all day",
+            "not just a cable"
+          ],
+          "theme_ids": [
+            "theme_charging_adapter_mic_battery_gap"
+          ]
+        }
+      ]
     },
     {
       "dimension": "实际体验",
@@ -133,7 +469,71 @@
         "theme_ui_app_screen_instruction_friction",
         "theme_reliability_connection_hardware_risk"
       ],
-      "implication": "产品页应把强体验前置，同时把设置、充电和连接边界讲清楚以降低落差。"
+      "implication": "产品页应把强体验前置，同时把设置、充电和连接边界讲清楚以降低落差。",
+      "summary": "实际体验呈现强正负分化：多数用户认为声音、便携和聚会效果超预期，但负向样本集中抱怨 UI、说明书、充电和连接可靠性。",
+      "business_implication": "产品页应把强体验前置，同时把设置、充电和连接边界讲清楚以降低落差。",
+      "distribution": [
+        {
+          "label": "聚会效果成功",
+          "review_count": 34,
+          "sample_size": 76,
+          "percentage": 44.7,
+          "role": "primary",
+          "reason": "大量正向评论说明实际能带动家庭和朋友聚会参与。",
+          "evidence": [
+            "it was a hit",
+            "star of our family and friend gatherings"
+          ],
+          "theme_ids": [
+            "theme_family_party_gifting"
+          ]
+        },
+        {
+          "label": "声音和便携超预期",
+          "review_count": 30,
+          "sample_size": 76,
+          "percentage": 39.5,
+          "role": "secondary",
+          "reason": "音质、低音、音量和小体积表现超过用户预期。",
+          "evidence": [
+            "sounds amazing with great bass",
+            "punch above its weight class"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "UI/找歌/说明造成摩擦",
+          "review_count": 14,
+          "sample_size": 76,
+          "percentage": 18.4,
+          "role": "emerging",
+          "reason": "软件和说明问题让部分用户在实际使用中卡住。",
+          "evidence": [
+            "user interface is very hard to navigate",
+            "no clear instructions"
+          ],
+          "theme_ids": [
+            "theme_ui_app_screen_instruction_friction"
+          ]
+        },
+        {
+          "label": "连接/硬件可靠性失败",
+          "review_count": 6,
+          "sample_size": 76,
+          "percentage": 7.9,
+          "role": "long_tail",
+          "reason": "少数差评集中在连接、屏幕和重启，虽然低频但风险高。",
+          "evidence": [
+            "Super glitchy with connection issues",
+            "Screen was DOA"
+          ],
+          "theme_ids": [
+            "theme_reliability_connection_hardware_risk"
+          ]
+        }
+      ]
     },
     {
       "dimension": "满意点",
@@ -151,7 +551,85 @@
         "theme_sound_portable_all_in_one",
         "theme_family_party_gifting"
       ],
-      "implication": "Listing 首屏卖点应优先强化 sound for size、portable party system、self-charging microphones。"
+      "implication": "Listing 首屏卖点应优先强化 sound for size、portable party system、self-charging microphones。",
+      "summary": "最稳定的满意点是声音大且清晰、体积小但有力量、便携、麦克风收纳充电、一体化屏幕和多人聚会效果。",
+      "business_implication": "Listing 首屏卖点应优先强化 sound for size、portable party system、self-charging microphones。",
+      "distribution": [
+        {
+          "label": "声音大且清晰",
+          "review_count": 49,
+          "sample_size": 76,
+          "percentage": 64.5,
+          "role": "primary",
+          "reason": "几乎所有正向价值都围绕声音质量、音量和低音展开。",
+          "evidence": [
+            "sounds amazing with great bass",
+            "Small, compact, with lots of power"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "便携紧凑",
+          "review_count": 32,
+          "sample_size": 76,
+          "percentage": 42.1,
+          "role": "secondary",
+          "reason": "小体积、可背包携带、居家和外带切换，是高频满意点。",
+          "evidence": [
+            "compact size... easy to carry in a small bag or backpack",
+            "Very portable and compact"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "麦克风收纳充电",
+          "review_count": 16,
+          "sample_size": 76,
+          "percentage": 21.1,
+          "role": "emerging",
+          "reason": "双麦克风和收纳充电设计被视为体验亮点。",
+          "evidence": [
+            "The mics are great and the way they store and charge in the machine is the best"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "内置屏幕/歌词",
+          "review_count": 13,
+          "sample_size": 76,
+          "percentage": 17.1,
+          "role": "emerging",
+          "reason": "屏幕和歌词提升独立使用便利性。",
+          "evidence": [
+            "built-in lyrics display and screen",
+            "words pop up on the screen"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        },
+        {
+          "label": "性价比/值得买",
+          "review_count": 14,
+          "sample_size": 76,
+          "percentage": 18.4,
+          "role": "long_tail",
+          "reason": "当用户把功能组合和价格放在一起时，会明确表达 worth/value。",
+          "evidence": [
+            "Totally worth the value",
+            "totally worth the price"
+          ],
+          "theme_ids": [
+            "theme_sound_portable_all_in_one"
+          ]
+        }
+      ]
     },
     {
       "dimension": "不满意点",
@@ -170,7 +648,72 @@
         "theme_charging_adapter_mic_battery_gap",
         "theme_reliability_connection_hardware_risk"
       ],
-      "implication": "产品改进和 FAQ 应优先处理使用门槛、充电配件/规格说明、连接稳定性和异常售后路径。"
+      "implication": "产品改进和 FAQ 应优先处理使用门槛、充电配件/规格说明、连接稳定性和异常售后路径。",
+      "summary": "不满意点不是单一质量问题，而是 UI/触屏/找歌慢、说明不足、充电器缺失或充电不明、连接/硬件稳定性四类。",
+      "business_implication": "产品改进和 FAQ 应优先处理使用门槛、充电配件/规格说明、连接稳定性和异常售后路径。",
+      "distribution": [
+        {
+          "label": "UI/触屏/找歌慢",
+          "review_count": 10,
+          "sample_size": 76,
+          "percentage": 13.2,
+          "role": "primary",
+          "reason": "负向体验中最集中的问题是导航、触屏、找歌和系统慢。",
+          "evidence": [
+            "touchscreen is awful",
+            "user interface is very hard to navigate"
+          ],
+          "theme_ids": [
+            "theme_ui_app_screen_instruction_friction",
+            "theme_reliability_connection_hardware_risk"
+          ]
+        },
+        {
+          "label": "说明不足/订阅激活不清楚",
+          "review_count": 7,
+          "sample_size": 76,
+          "percentage": 9.2,
+          "role": "secondary",
+          "reason": "用户不知道如何使用机器、视频或激活订阅，说明书边界不清。",
+          "evidence": [
+            "no clear instructions",
+            "couldn‘t figure out how to activate the 6-month subscription"
+          ],
+          "theme_ids": [
+            "theme_ui_app_screen_instruction_friction"
+          ]
+        },
+        {
+          "label": "充电器/充电指示/续航问题",
+          "review_count": 4,
+          "sample_size": 76,
+          "percentage": 5.3,
+          "role": "emerging",
+          "reason": "不满集中在充电器缺失、麦克风不充电和续航不足。",
+          "evidence": [
+            "one of the microphones will not charge",
+            "battery does not last all day"
+          ],
+          "theme_ids": [
+            "theme_charging_adapter_mic_battery_gap"
+          ]
+        },
+        {
+          "label": "连接/屏幕/硬件稳定性",
+          "review_count": 4,
+          "sample_size": 76,
+          "percentage": 5.3,
+          "role": "emerging",
+          "reason": "低星差评集中在连接不稳、反复重置和屏幕 DOA。",
+          "evidence": [
+            "keeps resetting over and over",
+            "Screen was DOA"
+          ],
+          "theme_ids": [
+            "theme_reliability_connection_hardware_risk"
+          ]
+        }
+      ]
     }
   ],
   "voc_themes": [
@@ -944,5 +1487,910 @@
     "VOC、关键结论和业务动作的百分比分母固定为 product_reviews 本次实际返回的 76 条 Review。",
     "Sorftime 当前不提供 reviewer name、verified purchase、helpful vote、review URL、Vine 字段，这些字段不得推断。",
     "本样例为 v0.1.0 release sample，用于展示报告结构、主题详情全文和证据高亮；正式分析应逐条阅读当次 Sorftime 返回的完整样本并重新编码。"
+  ],
+  "normalized_reviews": [
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2026-05-10",
+      "rating": 5,
+      "title": "Great Karaoke Machine!",
+      "text": "This Karaoke machine, sounds amazing with great bass. The mics are great and the way they store and charge in the machine is the best.",
+      "raw": {
+        "review_index": 1
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2026-03-01",
+      "rating": 4,
+      "title": "A little package packed with big fun!",
+      "text": "I love how this karaoke machine is a top-quality device with excellent sound clarity and rich audio fidelity. Its compact size, measuring just 12 inches in length and 8 inches in height, makes it easy to carry in a small bag or backpack wherever you go, which is such a big plus! The microphone, which connects seamlessly via Bluetooth, works perfectly and provides clear, echo-rich vocals. It’s great fun for family entertainment, easily accommodating multiple users with its adjustable volume and multiple input options. It‘s a huge hit at gatherings, making every get-together even more lively and memorable.",
+      "raw": {
+        "review_index": 2
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2026-02-25",
+      "rating": 5,
+      "title": "Compact and Easy",
+      "text": "Great little set. Small, compact, with lots of power. The only negative is the battery does not last all day. It is easy to use and sounds good.",
+      "raw": {
+        "review_index": 3
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2026-01-01",
+      "rating": 5,
+      "title": "Instant Fan",
+      "text": "Even the power-on sound is rich and reverberating. Got it just in time to karaoke with the family for a party and it was a hit. Immediately intuitive, especially with the Karafun app. Also, very helpful to access the user guide pdf on the product page for familiarizing myself with the microphone functions.\nThe weight is light and size is compact, yet it really does audibly punch above its weight class.\n\nAlready came charged, so we put it too immediate use and even the parents marveled at how far karaoke equipment has come.\n\nIt is great value for the money, and my sibling is already considering purchasing one for himself.",
+      "raw": {
+        "review_index": 6
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-12-17",
+      "rating": 3,
+      "title": "Microphone won‘t charge and no clear instructions.",
+      "text": "Unit is nice, but one of the microphones will not charge. In addition, and as others have said, there are no clear instructions on using the karaoke machine so you‘re on your own to figure things out. I may or may not return it and get a replacement. What good is one microphone if you’re with friends?UPDATE: The company did reach out, but in the meantime, it appears that both microphones are charging but the lights indicating such do not light up. I can deal with that because I am enjoying the machine itself.",
+      "raw": {
+        "review_index": 7
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-12-17",
+      "rating": 5,
+      "title": "Great choice in every way!",
+      "text": "This Karaoke machine is excellent in every aspect of what you‘d hope for in quality. Very great quality, durable, wireless, connecting via bluetooth/wifi, portable, versatile, compact, good sound, color video screen, and is really good looking! It can connects to the smart TV, or watch shows or karaoke on its color compact video screen! It can be used like a boom box too. It serves as fun and easy karaoke, with microphone stored in a top compartment, and speakers that produce good sound. The video screen opens and closes on the top of it. It shows videos with the words of songs, and is used with apps for music and movies, etc. It’s really useful for all ages. Ages 3-20+ are my grandchildren, nieces and nephews, and they completely had a blast on Thanksgiving... actually every time I see them since my granddaughter received it a few months ago! They were preoccupied and singing their hearts out for hours... lots of giggles, smiles and taking turns! I think for the size, and all reasons above, it is totally worth the price. Enjoy 😊",
+      "raw": {
+        "review_index": 8
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-10-18",
+      "rating": 5,
+      "title": "Lot of power in a small box",
+      "text": "We finally started using it and it is great!! Easy to use. We hooked it up to our TV and sounds great. Very portable and compact, but with great sound and volume. Highly recommend!",
+      "raw": {
+        "review_index": 12
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-10-11",
+      "rating": 1,
+      "title": "Buy a cheap speaker and a tablet",
+      "text": "Super glitchy with connection issues, touchscreen is awful. The whole concept is great but the execution lacks",
+      "raw": {
+        "review_index": 18
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-10-07",
+      "rating": 5,
+      "title": "Packs a party punch",
+      "text": "This is really cool to have an open house or party like that where some youngsters are fearlessly ready to get after it.  The sound is amazing.  You‘d think that since the speakers are facing you, no one would hear.  Nope. It is loud and clear... meaning it‘s ‘closing time‘ if you are doing it at midnight on the porch.  Ha ha.  Seriously though: I think the ap is ok. There are missing songs. I can‘t say as I have tried all the methods yet.  I find it hard to get the screen to go full size. But if you are persistent, no problem.  The screen is bright and most controls make sense. The volume knob is cool.  I wonder if the light is telling me: you‘re off key.... I like the buttons on the mic‘s.  Not a fan of the special effects, but ... don‘t use them, problem solved.  I had this at a party and about 4 people swore they were going to buy it the next day. It was a hit.",
+      "raw": {
+        "review_index": 21
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-10-06",
+      "rating": 3,
+      "title": "Excelente calidad",
+      "text": "The sound is spectacular, and the design and quality are very good. My only observation is this: YouTube runs from YouTube Web, not from the app, which makes it run slower. You can‘t download Spotify, which would be a huge plus.",
+      "raw": {
+        "review_index": 23
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-09-15",
+      "rating": 5,
+      "title": "Great concept, hard to navigate, needs improvement",
+      "text": "Great concept, hard to navigate, 3 stars go to the design, volume, and ergonomics, however, the user interface is very hard to navigate, especially when you‘re trying to use the search feature on Youtube to look for songs, it is very tiny and hard to see, also when you connect your smart phone or tablet, you can not control YouTube fully, when you pick a sing from the external device, the screen will ONLY SHOW the video title but it wont show the full video, aside from that the company is very helpful when it comes to any troubleshooting.",
+      "raw": {
+        "review_index": 29
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-09-11",
+      "rating": 5,
+      "title": "Can‘t understand the instructions just illustrations I need words with the illustrations",
+      "text": "My karoke machine is great 2 microphones come with it and the sound is wonderful I still haven‘t learn how to do videos with it yet because the instructions just show illustrations i need words with the illustrations thts wht you need to correct please and when you change tht please send me a new paper instructions it would be greatly appreciated and I will let all customers who purchase this item know tht you went out your way for a customer because thts how Amazon‘s company is they go the extra mile but I guess yall can‘t really do tht I guess I have to call the company for tht but you can at least let them know",
+      "raw": {
+        "review_index": 31
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-09-11",
+      "rating": 1,
+      "title": "CHARGING IS AN ISSUE",
+      "text": "Inconvenient to have to come purchase/procure your own charger/adapter and that none of it is built-in.  That would really make this a complete, portable unit.  At the very least, give us a charger/adapter and not just a cable.  Now we‘re left trying to figure out what‘s too much wattage for the adapter or what‘s too little.  Instructions are clear in that.",
+      "raw": {
+        "review_index": 32
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-09-09",
+      "rating": 5,
+      "title": "Must have for parties",
+      "text": "This is a must have item for anyone who entertains at home frequently. Our family has used this for multiple parties and gatherings and everyone loves it. The sound is loud and perfect, reminds me of a boom box. Must have for sure!!!",
+      "raw": {
+        "review_index": 34
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-09-06",
+      "rating": 5,
+      "title": "So Fun—I Bought Two (and Friends Did Too!)🥳❤️",
+      "text": "Such a blast! This karaoke machine has been the star of our family and friend gatherings. Everyone loves it—already bought two and friends bought theirs after trying mine..",
+      "raw": {
+        "review_index": 37
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-09-02",
+      "rating": 5,
+      "title": "Awesome Device",
+      "text": "Got this for my wife as she loves Karaoke, but had a cheap mic and app that she used. This product is AWESOME! The mics sound great, the speakers sound great, and the primary karaoke app that comes with a 6 month subscription was great. I threw her a Karaoke party and everyone really enjoyed themselves and had a great time.The battery life is also great. We sang for 4 or 5 hours off of one charge and got it to about 20% battery life which I think is awesome considering the sound it can produce.If you‘re on the fence about it because of the cost, give it a shot.Also worth noting, I will be using this for Halloween as it comes with microphone effects, one of which is monster, which sounds like it would be perfect to use on trick or treaters, so a bonus use for me.",
+      "raw": {
+        "review_index": 39
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-09-01",
+      "rating": 5,
+      "title": "Best gift for drama or choir kids!",
+      "text": "We bought this for our son and it has been his favorite thing ever since. He spends hours practicing in his room singing with the Ikarao. It is also a hit at every party, kids or otherwise. The battery life is great and the dual microphones let our kids sing duets without feedback or interference. Great product!!!",
+      "raw": {
+        "review_index": 40
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-08-25",
+      "rating": 1,
+      "title": "Doesn’t stay connected - returning",
+      "text": "I really wanted this to work, but it’s impossible to keep the Shell 1 connected for more than a single song. It keeps resetting over and over. I tested both 5GHz and 2.4GHz networks with no luck. After several attempts, I’m giving up and returning it. Very disappointing experience.",
+      "raw": {
+        "review_index": 45
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-08-03",
+      "rating": 3,
+      "title": "sounds good but hard to use",
+      "text": "sounds good. However is hard to select songs. would be cool if theres an app for the device so you can use smartphone to control it. but no; that doesnt exist.  It is easy to understand how to use it but the selection of songs is hard.",
+      "raw": {
+        "review_index": 56
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-07-20",
+      "rating": 1,
+      "title": "Screen DOA",
+      "text": "Bought it for a party we were having, but the Screen was DOA. All the lights turn on, but the screen stays dark. Returning for something more reliable.",
+      "raw": {
+        "review_index": 59
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-07-13",
+      "rating": 1,
+      "title": "Poor Wi-Fi radio",
+      "text": "The wi-fi radio included in the device is very poor and will not hold a wi-fi connection when moved even a short distance away from our router. We have 1GB fiber internet and no devices in the home have any issue except this device.",
+      "raw": {
+        "review_index": 64
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-06-29",
+      "rating": 4,
+      "title": "Minimal instructions, unable to get 6-month subscription started",
+      "text": "Seems like good quality but couldn‘t figure out how to activate the 6-month subscription.  Contacted the company through the machine to the website, but no answer after a couple of days.  Minimal instructions on setup, so trying to figure out exactly how it operates.UPDATE:  Company contacted us on the trial. Thank you!A very nice machine and it was a hit.Can‘t give it a 5 as there are little to no instructions.  A QR code to an instruction manual would be a big plus!",
+      "raw": {
+        "review_index": 70
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-06-26",
+      "rating": 4,
+      "title": "Good sound, but falls short in packaging an adapter",
+      "text": "Why did you pick this product vs others?:Product is good for the size, but while it‘s sold as a whole package with mics included and easy to store in the unit, they fall short in carrying this concept over to the charging of the unit.  Inconvenient to have to come purchase/procure your own charger/adapter and that none of it is built-in.  That would really make this a complete, portable unit.  At the very least, give us a charger/adapter and not just a cable.  Now we‘re left trying to figure out what‘s too much wattage for the adapter or what‘s too little.  Instructions are clear in that.Update:  customer service is a plus, reached out, helped me with resolution",
+      "raw": {
+        "review_index": 73
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-06-21",
+      "rating": 5,
+      "title": "Worth it",
+      "text": "The sound is amazing for a small karaoke machine. It’s fun, two microphones and words pop up on the screen. Totally worth the value",
+      "raw": {
+        "review_index": 75
+      }
+    }
+  ],
+  "feedback_units": [
+    {
+      "feedback_unit_id": "fu_theme_sound_portable_all_in_one_1",
+      "review_index": 1,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/户外便携娱乐",
+      "user_task": "唱歌或播放音乐",
+      "purchase_reason": "便携一体化和音质",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。",
+      "satisfied_points": "小体积但声音有力量/便携一体化",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是最应该在 Listing、图片、视频和广告中被放大的主卖点。",
+      "evidence": "sounds amazing with great bass",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_sound_portable_all_in_one_2",
+      "review_index": 2,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/户外便携娱乐",
+      "user_task": "唱歌或播放音乐",
+      "purchase_reason": "便携一体化和音质",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。",
+      "satisfied_points": "小体积但声音有力量/便携一体化",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是最应该在 Listing、图片、视频和广告中被放大的主卖点。",
+      "evidence": "excellent sound clarity",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_sound_portable_all_in_one_8",
+      "review_index": 8,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/户外便携娱乐",
+      "user_task": "唱歌或播放音乐",
+      "purchase_reason": "便携一体化和音质",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。",
+      "satisfied_points": "小体积但声音有力量/便携一体化",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是最应该在 Listing、图片、视频和广告中被放大的主卖点。",
+      "evidence": "portable, versatile, compact, good sound",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_sound_portable_all_in_one_12",
+      "review_index": 12,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/户外便携娱乐",
+      "user_task": "唱歌或播放音乐",
+      "purchase_reason": "便携一体化和音质",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。",
+      "satisfied_points": "小体积但声音有力量/便携一体化",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是最应该在 Listing、图片、视频和广告中被放大的主卖点。",
+      "evidence": "Easy to use",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_sound_portable_all_in_one_75",
+      "review_index": 75,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/户外便携娱乐",
+      "user_task": "唱歌或播放音乐",
+      "purchase_reason": "便携一体化和音质",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。",
+      "satisfied_points": "小体积但声音有力量/便携一体化",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是最应该在 Listing、图片、视频和广告中被放大的主卖点。",
+      "evidence": "sound is amazing",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_family_party_gifting_6",
+      "review_index": 6,
+      "dimension": "场景",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭聚会/礼物",
+      "user_task": "多人轮流唱歌",
+      "purchase_reason": "家庭娱乐和礼物属性",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "评论反复表达产品能把家庭成员、孩子、朋友带入长时间互动，并触发他人询问购买链接。",
+      "satisfied_points": "家庭和朋友聚会效果好",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是图片、视频、A+ 和广告创意中最有转化潜力的场景资产。",
+      "evidence": "karaoke with the family for a party and it was a hit",
+      "open_tags": [
+        "tag_family_party_hit"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_family_party_gifting_8",
+      "review_index": 8,
+      "dimension": "场景",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭聚会/礼物",
+      "user_task": "多人轮流唱歌",
+      "purchase_reason": "家庭娱乐和礼物属性",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "评论反复表达产品能把家庭成员、孩子、朋友带入长时间互动，并触发他人询问购买链接。",
+      "satisfied_points": "家庭和朋友聚会效果好",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是图片、视频、A+ 和广告创意中最有转化潜力的场景资产。",
+      "evidence": "grandchildren, nieces and nephews",
+      "open_tags": [
+        "tag_family_party_hit"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_family_party_gifting_34",
+      "review_index": 34,
+      "dimension": "场景",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭聚会/礼物",
+      "user_task": "多人轮流唱歌",
+      "purchase_reason": "家庭娱乐和礼物属性",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "评论反复表达产品能把家庭成员、孩子、朋友带入长时间互动，并触发他人询问购买链接。",
+      "satisfied_points": "家庭和朋友聚会效果好",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是图片、视频、A+ 和广告创意中最有转化潜力的场景资产。",
+      "evidence": "used this for multiple parties and gatherings",
+      "open_tags": [
+        "tag_family_party_hit"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_family_party_gifting_37",
+      "review_index": 37,
+      "dimension": "场景",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭聚会/礼物",
+      "user_task": "多人轮流唱歌",
+      "purchase_reason": "家庭娱乐和礼物属性",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "评论反复表达产品能把家庭成员、孩子、朋友带入长时间互动，并触发他人询问购买链接。",
+      "satisfied_points": "家庭和朋友聚会效果好",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是图片、视频、A+ 和广告创意中最有转化潜力的场景资产。",
+      "evidence": "friends bought theirs after trying mine",
+      "open_tags": [
+        "tag_family_party_hit"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_family_party_gifting_39",
+      "review_index": 39,
+      "dimension": "场景",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭聚会/礼物",
+      "user_task": "多人轮流唱歌",
+      "purchase_reason": "家庭娱乐和礼物属性",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "评论反复表达产品能把家庭成员、孩子、朋友带入长时间互动，并触发他人询问购买链接。",
+      "satisfied_points": "家庭和朋友聚会效果好",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是图片、视频、A+ 和广告创意中最有转化潜力的场景资产。",
+      "evidence": "Got this for my wife",
+      "open_tags": [
+        "tag_family_party_hit"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_family_party_gifting_40",
+      "review_index": 40,
+      "dimension": "场景",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭聚会/礼物",
+      "user_task": "多人轮流唱歌",
+      "purchase_reason": "家庭娱乐和礼物属性",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "评论反复表达产品能把家庭成员、孩子、朋友带入长时间互动，并触发他人询问购买链接。",
+      "satisfied_points": "家庭和朋友聚会效果好",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是图片、视频、A+ 和广告创意中最有转化潜力的场景资产。",
+      "evidence": "for our son",
+      "open_tags": [
+        "tag_family_party_hit"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_7",
+      "review_index": 7,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "no clear instructions",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_21",
+      "review_index": 21,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "missing songs",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_23",
+      "review_index": 23,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "YouTube Web",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_29",
+      "review_index": 29,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "user interface is very hard to navigate",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_31",
+      "review_index": 31,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "instructions just show illustrations",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_56",
+      "review_index": 56,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "hard to select songs",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_70",
+      "review_index": 70,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "Minimal instructions",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_3",
+      "review_index": 3,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "便携使用和聚会",
+      "user_task": "连续使用并给设备充电",
+      "purchase_reason": "完整便携套装",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "充电器/麦克风充电/续航落差",
+      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
+      "evidence": "battery does not last all day",
+      "open_tags": [
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_7",
+      "review_index": 7,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "便携使用和聚会",
+      "user_task": "连续使用并给设备充电",
+      "purchase_reason": "完整便携套装",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "充电器/麦克风充电/续航落差",
+      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
+      "evidence": "one of the microphones will not charge",
+      "open_tags": [
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_32",
+      "review_index": 32,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "便携使用和聚会",
+      "user_task": "连续使用并给设备充电",
+      "purchase_reason": "完整便携套装",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "充电器/麦克风充电/续航落差",
+      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
+      "evidence": "not just a cable",
+      "open_tags": [
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_73",
+      "review_index": 73,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "便携使用和聚会",
+      "user_task": "连续使用并给设备充电",
+      "purchase_reason": "完整便携套装",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "充电器/麦克风充电/续航落差",
+      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
+      "evidence": "not just a cable",
+      "open_tags": [
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_reliability_connection_hardware_risk_18",
+      "review_index": 18,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "联网点歌或开机使用",
+      "user_task": "稳定连接并持续播放",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "少数 1 星评论直接指向连接不稳定、触屏差、Wi-Fi 无法保持、屏幕 DOA 等硬故障或稳定性问题。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "连接/屏幕/硬件稳定性失败",
+      "consequence": "虽然样本占比不高，但会直接造成退货、低星和信任损伤，应进入 P1 质量复盘。",
+      "evidence": "Super glitchy with connection issues",
+      "open_tags": [
+        "tag_connection_hardware_risk"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_reliability_connection_hardware_risk_45",
+      "review_index": 45,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "联网点歌或开机使用",
+      "user_task": "稳定连接并持续播放",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "少数 1 星评论直接指向连接不稳定、触屏差、Wi-Fi 无法保持、屏幕 DOA 等硬故障或稳定性问题。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "连接/屏幕/硬件稳定性失败",
+      "consequence": "虽然样本占比不高，但会直接造成退货、低星和信任损伤，应进入 P1 质量复盘。",
+      "evidence": "keeps resetting over and over",
+      "open_tags": [
+        "tag_connection_hardware_risk"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_reliability_connection_hardware_risk_59",
+      "review_index": 59,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "联网点歌或开机使用",
+      "user_task": "稳定连接并持续播放",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "少数 1 星评论直接指向连接不稳定、触屏差、Wi-Fi 无法保持、屏幕 DOA 等硬故障或稳定性问题。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "连接/屏幕/硬件稳定性失败",
+      "consequence": "虽然样本占比不高，但会直接造成退货、低星和信任损伤，应进入 P1 质量复盘。",
+      "evidence": "Screen was DOA",
+      "open_tags": [
+        "tag_connection_hardware_risk"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_reliability_connection_hardware_risk_64",
+      "review_index": 64,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "联网点歌或开机使用",
+      "user_task": "稳定连接并持续播放",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "少数 1 星评论直接指向连接不稳定、触屏差、Wi-Fi 无法保持、屏幕 DOA 等硬故障或稳定性问题。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "连接/屏幕/硬件稳定性失败",
+      "consequence": "虽然样本占比不高，但会直接造成退货、低星和信任损伤，应进入 P1 质量复盘。",
+      "evidence": "wi-fi radio",
+      "open_tags": [
+        "tag_connection_hardware_risk"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "open_tags": [
+    {
+      "tag_id": "tag_sound_powerful_for_size",
+      "tag_name": "小体积但声音有力量",
+      "dimension": "满意点",
+      "count": 49,
+      "sample_size": 76,
+      "percentage": 64.5,
+      "representative_evidence": [
+        "sounds amazing with great bass",
+        "Small, compact, with lots of power"
+      ],
+      "theme_ids": [
+        "theme_sound_portable_all_in_one"
+      ]
+    },
+    {
+      "tag_id": "tag_family_party_hit",
+      "tag_name": "家庭/朋友聚会效果好",
+      "dimension": "场景",
+      "count": 31,
+      "sample_size": 76,
+      "percentage": 40.8,
+      "representative_evidence": [
+        "karaoke with the family for a party and it was a hit",
+        "family and friend gatherings"
+      ],
+      "theme_ids": [
+        "theme_family_party_gifting"
+      ]
+    },
+    {
+      "tag_id": "tag_portable_all_in_one",
+      "tag_name": "便携一体化",
+      "dimension": "购买理由",
+      "count": 29,
+      "sample_size": 76,
+      "percentage": 38.2,
+      "representative_evidence": [
+        "compact size... easy to carry in a small bag or backpack"
+      ],
+      "theme_ids": [
+        "theme_sound_portable_all_in_one"
+      ]
+    },
+    {
+      "tag_id": "tag_ui_song_selection_friction",
+      "tag_name": "UI/找歌/触屏摩擦",
+      "dimension": "不满意点",
+      "count": 10,
+      "sample_size": 76,
+      "percentage": 13.2,
+      "representative_evidence": [
+        "user interface is very hard to navigate",
+        "hard to select songs"
+      ],
+      "theme_ids": [
+        "theme_ui_app_screen_instruction_friction"
+      ]
+    },
+    {
+      "tag_id": "tag_instruction_gap",
+      "tag_name": "说明不足",
+      "dimension": "不满意点",
+      "count": 7,
+      "sample_size": 76,
+      "percentage": 9.2,
+      "representative_evidence": [
+        "no clear instructions"
+      ],
+      "theme_ids": [
+        "theme_ui_app_screen_instruction_friction"
+      ]
+    },
+    {
+      "tag_id": "tag_charging_adapter_gap",
+      "tag_name": "充电器/充电指示缺口",
+      "dimension": "不满意点",
+      "count": 4,
+      "sample_size": 76,
+      "percentage": 5.3,
+      "representative_evidence": [
+        "one of the microphones will not charge",
+        "not just a cable"
+      ],
+      "theme_ids": [
+        "theme_charging_adapter_mic_battery_gap"
+      ]
+    },
+    {
+      "tag_id": "tag_connection_hardware_risk",
+      "tag_name": "连接/屏幕/硬件稳定性风险",
+      "dimension": "不满意点",
+      "count": 4,
+      "sample_size": 76,
+      "percentage": 5.3,
+      "representative_evidence": [
+        "Super glitchy with connection issues",
+        "Screen was DOA"
+      ],
+      "theme_ids": [
+        "theme_reliability_connection_hardware_risk"
+      ]
+    }
   ]
 }

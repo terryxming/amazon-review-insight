@@ -5,9 +5,10 @@ Product Design brief: light, professional, evidence-first, action-oriented analy
 ## Views
 
 1. Main report page with sticky table of contents on desktop.
-2. VOC theme cards grouped by theme category.
-3. In-document VOC theme detail sections.
-4. Mobile single-column layout.
+2. Key insight cards with compact distribution tables.
+3. VOC theme cards grouped by theme category.
+4. In-document VOC theme detail sections.
+5. Mobile single-column layout.
 
 ## Interaction
 
@@ -19,3 +20,4 @@ Product Design brief: light, professional, evidence-first, action-oriented analy
 
 Cards use 8px radius, compact spacing, scan-friendly tables, and no hero or decorative background.
 
+Key insight distribution tables use compact rows, role badges, and small inline bars to make primary, secondary, emerging, and long-tail signals scannable without turning the section into a separate dashboard.

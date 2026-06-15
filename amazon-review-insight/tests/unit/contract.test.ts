@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import analysis from "../fixtures/golden_analysis_single_asin.json" assert { type: "json" };
+import analysis from "../fixtures/golden_analysis_single_asin.json" with { type: "json" };
 import { checkAnalysis } from "../../scripts/agent_contract_check.js";
 
 describe("agent contract check", () => {

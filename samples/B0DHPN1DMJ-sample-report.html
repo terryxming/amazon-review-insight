@@ -36,16 +36,27 @@ a { color: var(--accent); text-decoration: none; }
 .section-title { margin: 0 0 12px; font-size: 22px; line-height: 1.3; }
 .subtle { color: var(--muted); }
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 16px; }
+.grid > * { min-width: 0; }
+.insight-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.card { min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 16px; }
 .metric { font-size: 24px; font-weight: 700; }
 .badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; background: var(--surface-muted); color: var(--muted); font-size: 12px; }
 .theme-card { display: block; color: inherit; }
 .theme-card:hover { border-color: var(--accent); }
 .theme-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
-.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-card); background: var(--surface); }
+.table-wrap { max-width: 100%; overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-card); background: var(--surface); }
 table { width: 100%; border-collapse: collapse; min-width: 760px; }
 th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
 th { background: var(--surface-muted); text-align: left; font-weight: 700; }
+.insight-distribution { margin: 10px 0 12px; }
+.insight-distribution table { min-width: 620px; font-size: 12px; }
+.insight-distribution td:nth-child(2) { min-width: 136px; white-space: nowrap; }
+.mini-bar { display: inline-block; width: 44px; height: 7px; margin-right: 6px; border-radius: 999px; background: linear-gradient(90deg, var(--accent) var(--bar), var(--surface-muted) var(--bar)); vertical-align: middle; }
+.role { display: inline-flex; align-items: center; padding: 1px 7px; border-radius: 999px; background: var(--surface-muted); color: var(--muted); white-space: nowrap; }
+.role-primary { background: #dbeafe; color: #1d4ed8; }
+.role-secondary { background: #dcfce7; color: #166534; }
+.role-emerging { background: #fef3c7; color: #92400e; }
+.role-long_tail { background: #f3e8ff; color: #6b21a8; }
 .quote { border-left: 3px solid var(--accent); padding-left: 10px; color: var(--text); }
 .detail-review { margin: 14px 0; }
 mark { background: var(--highlight); padding: 0 2px; border-radius: 2px; }
@@ -58,7 +69,6 @@ mark { background: var(--highlight); padding: 0 2px; border-radius: 2px; }
   .main { padding: 18px; }
   .grid { grid-template-columns: 1fr; }
 }
-
 </style>
 </head>
 <body>
@@ -98,13 +108,39 @@ mark { background: var(--highlight); padding: 0 2px; border-radius: 2px; }
     </div>
     <div class="table-wrap"><table><thead><tr><th>星级</th><th>数量</th><th>占比</th></tr></thead><tbody><tr><td>1 星</td><td>8</td><td>10.5%</td></tr><tr><td>2 星</td><td>1</td><td>1.3%</td></tr><tr><td>3 星</td><td>3</td><td>3.9%</td></tr><tr><td>4 星</td><td>6</td><td>7.9%</td></tr><tr><td>5 星</td><td>58</td><td>76.3%</td></tr></tbody></table></div>
   </section>
-      <section id="key-insights" class="section"><h2 class="section-title">关键结论</h2><div class="grid"><div class="card">
+      <section id="key-insights" class="section"><h2 class="section-title">关键结论</h2><div class="grid insight-grid"><div class="card">
       <h3>人群</h3>
       <p>当前样本中，人群信号主要来自家庭购买者、儿童/青少年使用者、伴侣礼物购买者和经常办聚会的人。</p>
       <div class="theme-meta">
         <span class="badge">25/76 (32.9%)</span>
         <span class="badge">confidence: high</span>
       </div>
+      <div class="insight-distribution table-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>提及占比</th><th>角色</th><th>判断依据</th></tr></thead>
+      <tbody><tr>
+    <td>家庭购买者/家庭共同使用者</td>
+    <td><span class="mini-bar" style="--bar:23.7%"></span><span>18/76 (23.7%)</span></td>
+    <td><span class="role role-primary">主要</span></td>
+    <td>多条评论明确提到 family、kids、children、grandchildren 或家人一起使用。</td>
+  </tr><tr>
+    <td>儿童/青少年使用者</td>
+    <td><span class="mini-bar" style="--bar:13.2%"></span><span>10/76 (13.2%)</span></td>
+    <td><span class="role role-secondary">次要</span></td>
+    <td>使用者经常是孩子、青少年、drama/choir kids，说明产品适合年轻用户练唱和娱乐。</td>
+  </tr><tr>
+    <td>伴侣礼物购买者</td>
+    <td><span class="mini-bar" style="--bar:7.9%"></span><span>6/76 (7.9%)</span></td>
+    <td><span class="role role-emerging">新兴</span></td>
+    <td>评论中出现为 wife、son 等亲密关系购买并作为礼物使用。</td>
+  </tr><tr>
+    <td>经常办聚会的人</td>
+    <td><span class="mini-bar" style="--bar:6.6%"></span><span>5/76 (6.6%)</span></td>
+    <td><span class="role role-long_tail">长尾</span></td>
+    <td>部分用户自述 frequent entertainers 或多次聚会使用，代表高价值场景用户。</td>
+  </tr></tbody>
+    </table>
+  </div>
       <p class="subtle">Listing 图片和视频应同时覆盖家庭、孩子、伴侣礼物和朋友聚会，而不是只展示单人唱歌。</p>
       <p class="quote">Ages 3-20+ are my grandchildren, nieces and nephews</p><p class="quote">Got this for my wife as she loves Karaoke</p><p class="quote">My 17 year old daughter loves this machine</p>
       <p class="subtle">关联主题：theme_family_party_gifting</p>
@@ -115,6 +151,32 @@ mark { background: var(--highlight); padding: 0 2px; border-radius: 2px; }
         <span class="badge">31/76 (40.8%)</span>
         <span class="badge">confidence: high</span>
       </div>
+      <div class="insight-distribution table-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>提及占比</th><th>角色</th><th>判断依据</th></tr></thead>
+      <tbody><tr>
+    <td>家庭聚会/朋友聚会</td>
+    <td><span class="mini-bar" style="--bar:40.8%"></span><span>31/76 (40.8%)</span></td>
+    <td><span class="role role-primary">主要</span></td>
+    <td>party、gatherings、family and friend gatherings 是最集中的使用语境。</td>
+  </tr><tr>
+    <td>家庭日常娱乐/孩子练唱</td>
+    <td><span class="mini-bar" style="--bar:23.7%"></span><span>18/76 (23.7%)</span></td>
+    <td><span class="role role-secondary">次要</span></td>
+    <td>评论提到在家里、房间里、孩子长时间唱歌或练习。</td>
+  </tr><tr>
+    <td>户外/露营/便携外带</td>
+    <td><span class="mini-bar" style="--bar:9.2%"></span><span>7/76 (9.2%)</span></td>
+    <td><span class="role role-emerging">新兴</span></td>
+    <td>露营、户外、backpack 等表达说明便携场景有一定需求。</td>
+  </tr><tr>
+    <td>生日/节日/礼物场景</td>
+    <td><span class="mini-bar" style="--bar:7.9%"></span><span>6/76 (7.9%)</span></td>
+    <td><span class="role role-long_tail">长尾</span></td>
+    <td>Thanksgiving、birthday、gift 等词说明节庆礼物场景可被 Listing 捕捉。</td>
+  </tr></tbody>
+    </table>
+  </div>
       <p class="subtle">主图后的场景图应优先表达 home party、family game night、camping 和 backyard gathering。</p>
       <p class="quote">karaoke with the family for a party and it was a hit</p><p class="quote">Our family has used this for multiple parties and gatherings</p><p class="quote">Have used at home, brought camping, etc.</p>
       <p class="subtle">关联主题：theme_family_party_gifting, theme_sound_portable_all_in_one</p>
@@ -125,6 +187,32 @@ mark { background: var(--highlight); padding: 0 2px; border-radius: 2px; }
         <span class="badge">36/76 (47.4%)</span>
         <span class="badge">confidence: high</span>
       </div>
+      <div class="insight-distribution table-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>提及占比</th><th>角色</th><th>判断依据</th></tr></thead>
+      <tbody><tr>
+    <td>多人轮流卡拉 OK</td>
+    <td><span class="mini-bar" style="--bar:47.4%"></span><span>36/76 (47.4%)</span></td>
+    <td><span class="role role-primary">主要</span></td>
+    <td>核心任务是快速开唱、多人轮流唱、让聚会参与者持续互动。</td>
+  </tr><tr>
+    <td>连接 TV/YouTube/KaraFun 找歌词</td>
+    <td><span class="mini-bar" style="--bar:18.4%"></span><span>14/76 (18.4%)</span></td>
+    <td><span class="role role-secondary">次要</span></td>
+    <td>用户强调 TV、YouTube、lyrics、KaraFun 等连接和歌词任务。</td>
+  </tr><tr>
+    <td>当蓝牙音箱/boombox 播放音乐</td>
+    <td><span class="mini-bar" style="--bar:15.8%"></span><span>12/76 (15.8%)</span></td>
+    <td><span class="role role-secondary">次要</span></td>
+    <td>一部分用户把它当作音箱或 boombox 使用，不只用于唱歌。</td>
+  </tr><tr>
+    <td>便携搭建完整娱乐系统</td>
+    <td><span class="mini-bar" style="--bar:13.2%"></span><span>10/76 (13.2%)</span></td>
+    <td><span class="role role-emerging">新兴</span></td>
+    <td>用户需要小体积、带麦克风、带屏幕、可外带的一体化系统。</td>
+  </tr></tbody>
+    </table>
+  </div>
       <p class="subtle">文案要把 all-in-one、TV hookup、YouTube/KaraFun、Bluetooth speaker 四个任务路径讲清楚。</p>
       <p class="quote">We hooked it up to our TV and sounds great</p><p class="quote">We just play music videos from YouTube with lyrics</p><p class="quote">used it this past week just as boombox to listen to music from spotify</p>
       <p class="subtle">关联主题：theme_sound_portable_all_in_one, theme_ui_app_screen_instruction_friction</p>
@@ -135,6 +223,37 @@ mark { background: var(--highlight); padding: 0 2px; border-radius: 2px; }
         <span class="badge">29/76 (38.2%)</span>
         <span class="badge">confidence: high</span>
       </div>
+      <div class="insight-distribution table-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>提及占比</th><th>角色</th><th>判断依据</th></tr></thead>
+      <tbody><tr>
+    <td>便携一体化</td>
+    <td><span class="mini-bar" style="--bar:38.2%"></span><span>29/76 (38.2%)</span></td>
+    <td><span class="role role-primary">主要</span></td>
+    <td>小体积、屏幕、麦克风、音箱的一体化组合反复出现。</td>
+  </tr><tr>
+    <td>音质/音量超出体积预期</td>
+    <td><span class="mini-bar" style="--bar:35.5%"></span><span>27/76 (35.5%)</span></td>
+    <td><span class="role role-secondary">次要</span></td>
+    <td>声音大、bass、punch above weight class 是购买正当性的核心证据。</td>
+  </tr><tr>
+    <td>内置屏幕/歌词能力</td>
+    <td><span class="mini-bar" style="--bar:18.4%"></span><span>14/76 (18.4%)</span></td>
+    <td><span class="role role-emerging">新兴</span></td>
+    <td>屏幕和歌词让用户少依赖外接设备，是差异化购买理由。</td>
+  </tr><tr>
+    <td>双无线麦克风/收纳充电</td>
+    <td><span class="mini-bar" style="--bar:21.1%"></span><span>16/76 (21.1%)</span></td>
+    <td><span class="role role-secondary">次要</span></td>
+    <td>两只麦克风和机身收纳充电被视为完整套装的关键组成。</td>
+  </tr><tr>
+    <td>礼物属性</td>
+    <td><span class="mini-bar" style="--bar:7.9%"></span><span>6/76 (7.9%)</span></td>
+    <td><span class="role role-long_tail">长尾</span></td>
+    <td>用户明确为伴侣、孩子购买或称其为 best gift。</td>
+  </tr></tbody>
+    </table>
+  </div>
       <p class="subtle">广告钩子可优先使用 portable all-in-one karaoke system，而不是泛化成 speaker。</p>
       <p class="quote">compact size... easy to carry in a small bag or backpack</p><p class="quote">built-in lyrics display and screen</p><p class="quote">comes with 2 powerful microphones</p>
       <p class="subtle">关联主题：theme_sound_portable_all_in_one</p>
@@ -145,6 +264,32 @@ mark { background: var(--highlight); padding: 0 2px; border-radius: 2px; }
         <span class="badge">37/76 (48.7%)</span>
         <span class="badge">confidence: medium</span>
       </div>
+      <div class="insight-distribution table-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>提及占比</th><th>角色</th><th>判断依据</th></tr></thead>
+      <tbody><tr>
+    <td>好声音/足够音量</td>
+    <td><span class="mini-bar" style="--bar:39.5%"></span><span>30/76 (39.5%)</span></td>
+    <td><span class="role role-primary">主要</span></td>
+    <td>用户预期小机器仍要有好声音和足够聚会音量。</td>
+  </tr><tr>
+    <td>便携且易用</td>
+    <td><span class="mini-bar" style="--bar:32.9%"></span><span>25/76 (32.9%)</span></td>
+    <td><span class="role role-secondary">次要</span></td>
+    <td>plug-and-play、compact、easy to use 指向低学习成本和便携性。</td>
+  </tr><tr>
+    <td>屏幕/应用/找歌顺畅</td>
+    <td><span class="mini-bar" style="--bar:15.8%"></span><span>12/76 (15.8%)</span></td>
+    <td><span class="role role-emerging">新兴</span></td>
+    <td>用户期待应用、屏幕、找歌和手机控制更顺畅，但负向摩擦明显。</td>
+  </tr><tr>
+    <td>充电/续航/配件完整</td>
+    <td><span class="mini-bar" style="--bar:10.5%"></span><span>8/76 (10.5%)</span></td>
+    <td><span class="role role-long_tail">长尾</span></td>
+    <td>用户默认完整便携套装应包含清晰充电方案和足够续航。</td>
+  </tr></tbody>
+    </table>
+  </div>
       <p class="subtle">Listing 承诺要同时管理硬件体验和软件/找歌体验，避免用户把小屏和 Web 版 YouTube 误解成完整平板体验。</p>
       <p class="quote">I wanted something I could use for years to come that was of good quality and sound</p><p class="quote">plug-and-play karaoke machine: minimal setup</p><p class="quote">would be cool if theres an app for the device so you can use smartphone to control it</p>
       <p class="subtle">关联主题：theme_sound_portable_all_in_one, theme_ui_app_screen_instruction_friction</p>
@@ -155,6 +300,32 @@ mark { background: var(--highlight); padding: 0 2px; border-radius: 2px; }
         <span class="badge">34/76 (44.7%)</span>
         <span class="badge">confidence: high</span>
       </div>
+      <div class="insight-distribution table-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>提及占比</th><th>角色</th><th>判断依据</th></tr></thead>
+      <tbody><tr>
+    <td>聚会效果成功</td>
+    <td><span class="mini-bar" style="--bar:44.7%"></span><span>34/76 (44.7%)</span></td>
+    <td><span class="role role-primary">主要</span></td>
+    <td>大量正向评论说明实际能带动家庭和朋友聚会参与。</td>
+  </tr><tr>
+    <td>声音和便携超预期</td>
+    <td><span class="mini-bar" style="--bar:39.5%"></span><span>30/76 (39.5%)</span></td>
+    <td><span class="role role-secondary">次要</span></td>
+    <td>音质、低音、音量和小体积表现超过用户预期。</td>
+  </tr><tr>
+    <td>UI/找歌/说明造成摩擦</td>
+    <td><span class="mini-bar" style="--bar:18.4%"></span><span>14/76 (18.4%)</span></td>
+    <td><span class="role role-emerging">新兴</span></td>
+    <td>软件和说明问题让部分用户在实际使用中卡住。</td>
+  </tr><tr>
+    <td>连接/硬件可靠性失败</td>
+    <td><span class="mini-bar" style="--bar:7.9%"></span><span>6/76 (7.9%)</span></td>
+    <td><span class="role role-long_tail">长尾</span></td>
+    <td>少数差评集中在连接、屏幕和重启，虽然低频但风险高。</td>
+  </tr></tbody>
+    </table>
+  </div>
       <p class="subtle">产品页应把强体验前置，同时把设置、充电和连接边界讲清楚以降低落差。</p>
       <p class="quote">it really does audibly punch above its weight class</p><p class="quote">The user interface and operating system are very very slow</p><p class="quote">it’s impossible to keep the Shell 1 connected for more than a single song</p>
       <p class="subtle">关联主题：theme_sound_portable_all_in_one, theme_ui_app_screen_instruction_friction, theme_reliability_connection_hardware_risk</p>
@@ -165,6 +336,37 @@ mark { background: var(--highlight); padding: 0 2px; border-radius: 2px; }
         <span class="badge">49/76 (64.5%)</span>
         <span class="badge">confidence: high</span>
       </div>
+      <div class="insight-distribution table-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>提及占比</th><th>角色</th><th>判断依据</th></tr></thead>
+      <tbody><tr>
+    <td>声音大且清晰</td>
+    <td><span class="mini-bar" style="--bar:64.5%"></span><span>49/76 (64.5%)</span></td>
+    <td><span class="role role-primary">主要</span></td>
+    <td>几乎所有正向价值都围绕声音质量、音量和低音展开。</td>
+  </tr><tr>
+    <td>便携紧凑</td>
+    <td><span class="mini-bar" style="--bar:42.1%"></span><span>32/76 (42.1%)</span></td>
+    <td><span class="role role-secondary">次要</span></td>
+    <td>小体积、可背包携带、居家和外带切换，是高频满意点。</td>
+  </tr><tr>
+    <td>麦克风收纳充电</td>
+    <td><span class="mini-bar" style="--bar:21.1%"></span><span>16/76 (21.1%)</span></td>
+    <td><span class="role role-emerging">新兴</span></td>
+    <td>双麦克风和收纳充电设计被视为体验亮点。</td>
+  </tr><tr>
+    <td>内置屏幕/歌词</td>
+    <td><span class="mini-bar" style="--bar:17.1%"></span><span>13/76 (17.1%)</span></td>
+    <td><span class="role role-emerging">新兴</span></td>
+    <td>屏幕和歌词提升独立使用便利性。</td>
+  </tr><tr>
+    <td>性价比/值得买</td>
+    <td><span class="mini-bar" style="--bar:18.4%"></span><span>14/76 (18.4%)</span></td>
+    <td><span class="role role-long_tail">长尾</span></td>
+    <td>当用户把功能组合和价格放在一起时，会明确表达 worth/value。</td>
+  </tr></tbody>
+    </table>
+  </div>
       <p class="subtle">Listing 首屏卖点应优先强化 sound for size、portable party system、self-charging microphones。</p>
       <p class="quote">sounds amazing with great bass</p><p class="quote">Small, compact, with lots of power</p><p class="quote">The mics are great and the way they store and charge in the machine is the best</p>
       <p class="subtle">关联主题：theme_sound_portable_all_in_one, theme_family_party_gifting</p>
@@ -175,6 +377,32 @@ mark { background: var(--highlight); padding: 0 2px; border-radius: 2px; }
         <span class="badge">18/76 (23.7%)</span>
         <span class="badge">confidence: high</span>
       </div>
+      <div class="insight-distribution table-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>提及占比</th><th>角色</th><th>判断依据</th></tr></thead>
+      <tbody><tr>
+    <td>UI/触屏/找歌慢</td>
+    <td><span class="mini-bar" style="--bar:13.2%"></span><span>10/76 (13.2%)</span></td>
+    <td><span class="role role-primary">主要</span></td>
+    <td>负向体验中最集中的问题是导航、触屏、找歌和系统慢。</td>
+  </tr><tr>
+    <td>说明不足/订阅激活不清楚</td>
+    <td><span class="mini-bar" style="--bar:9.2%"></span><span>7/76 (9.2%)</span></td>
+    <td><span class="role role-secondary">次要</span></td>
+    <td>用户不知道如何使用机器、视频或激活订阅，说明书边界不清。</td>
+  </tr><tr>
+    <td>充电器/充电指示/续航问题</td>
+    <td><span class="mini-bar" style="--bar:5.3%"></span><span>4/76 (5.3%)</span></td>
+    <td><span class="role role-emerging">新兴</span></td>
+    <td>不满集中在充电器缺失、麦克风不充电和续航不足。</td>
+  </tr><tr>
+    <td>连接/屏幕/硬件稳定性</td>
+    <td><span class="mini-bar" style="--bar:5.3%"></span><span>4/76 (5.3%)</span></td>
+    <td><span class="role role-emerging">新兴</span></td>
+    <td>低星差评集中在连接不稳、反复重置和屏幕 DOA。</td>
+  </tr></tbody>
+    </table>
+  </div>
       <p class="subtle">产品改进和 FAQ 应优先处理使用门槛、充电配件/规格说明、连接稳定性和异常售后路径。</p>
       <p class="quote">Super glitchy with connection issues, touchscreen is awful</p><p class="quote">there are no clear instructions on using the karaoke machine</p><p class="quote">it does it come with a charger</p>
       <p class="subtle">关联主题：theme_ui_app_screen_instruction_friction, theme_charging_adapter_mic_battery_gap, theme_reliability_connection_hardware_risk</p>

@@ -8,10 +8,12 @@ Feature: 单 ASIN Review 分析报告
     And 报告展示 Review 样本数
     And 报告展示 ASIN 总评论数量
     And 关键结论覆盖人群、场景、用户任务、购买理由、用户期望、实际体验、满意点、不满意点
+    And 每个关键结论展示类型分布、提及数量、占比和判断依据
     And 报告展示 VOC 主题地图
     And VOC 主题地图中的主题卡片可以跳转到 VOC 主题详情页
     And VOC 主题详情页展示该主题相关完整 Review 原文、完整中文翻译和黄色高亮
     And 报告展示机会矩阵与业务动作清单
+    And 系统生成 Review 编码层 Excel
 
   Scenario: VOC 主题详情页高亮证据
     Given 报告中存在一个 VOC 主题卡片
@@ -24,3 +26,10 @@ Feature: 单 ASIN Review 分析报告
     And 完整中文翻译中对应词、词组或短句使用黄色背景高亮
     And 详情页提供返回主报告页的入口
 
+  Scenario: Review 编码层 Excel 可复核
+    Given agent 已生成 normalized_reviews、feedback_units、open_tags 和关键结论 distribution
+    When 系统导出 Review 编码层 Excel
+    Then Excel 包含 metadata、normalized_reviews、feedback_units、open_tags、key_insight_distribution、voc_themes、business_actions、checkpoints
+    And key_insight_distribution sheet 展示每个关键结论类型的提及数量、占比、角色、判断依据和 evidence
+    And feedback_units sheet 展示每个反馈单元对应的原文 evidence 和开放标签
+    And Excel 中不得包含 Sorftime key、运行时 token 或环境变量值
