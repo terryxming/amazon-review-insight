@@ -12,7 +12,13 @@
     "asin_total_review_count": 708,
     "review_sample_size": 3,
     "average_sample_rating": 4,
-    "star_distribution": { "1": 0, "2": 0, "3": 1, "4": 1, "5": 1 },
+    "star_distribution": {
+      "1": 0,
+      "2": 0,
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
     "positive_count": 2,
     "positive_percentage": 66.7,
     "negative_count": 1,
@@ -28,9 +34,31 @@
       "sample_size": 3,
       "percentage": 33.3,
       "confidence": "medium",
-      "evidence": ["My grandchildren, nieces and nephews had a blast"],
-      "theme_ids": ["theme_family_party"],
-      "implication": "图片和视频可强化多年龄家庭成员共同使用。"
+      "evidence": [
+        "My grandchildren, nieces and nephews had a blast"
+      ],
+      "theme_ids": [
+        "theme_family_party"
+      ],
+      "implication": "图片和视频可强化多年龄家庭成员共同使用。",
+      "summary": "当前样本明确出现儿童和家庭成员使用。",
+      "business_implication": "图片和视频可强化多年龄家庭成员共同使用。",
+      "distribution": [
+        {
+          "label": "儿童和家庭成员",
+          "review_count": 1,
+          "sample_size": 3,
+          "percentage": 33.3,
+          "role": "primary",
+          "reason": "评论明确提到孙辈、侄女和侄子一起使用。",
+          "evidence": [
+            "My grandchildren, nieces and nephews had a blast"
+          ],
+          "theme_ids": [
+            "theme_family_party"
+          ]
+        }
+      ]
     },
     {
       "dimension": "场景",
@@ -39,9 +67,31 @@
       "sample_size": 3,
       "percentage": 33.3,
       "confidence": "medium",
-      "evidence": ["had a blast on Thanksgiving"],
-      "theme_ids": ["theme_family_party"],
-      "implication": "A+ 和视频可加入节日客厅聚会场景。"
+      "evidence": [
+        "had a blast on Thanksgiving"
+      ],
+      "theme_ids": [
+        "theme_family_party"
+      ],
+      "implication": "A+ 和视频可加入节日客厅聚会场景。",
+      "summary": "家庭节日聚会是明确正向场景。",
+      "business_implication": "A+ 和视频可加入节日客厅聚会场景。",
+      "distribution": [
+        {
+          "label": "家庭节日聚会",
+          "review_count": 1,
+          "sample_size": 3,
+          "percentage": 33.3,
+          "role": "primary",
+          "reason": "Thanksgiving 聚会是明确使用场景。",
+          "evidence": [
+            "had a blast on Thanksgiving"
+          ],
+          "theme_ids": [
+            "theme_family_party"
+          ]
+        }
+      ]
     },
     {
       "dimension": "用户任务",
@@ -50,9 +100,35 @@
       "sample_size": 3,
       "percentage": 66.7,
       "confidence": "high",
-      "evidence": ["singing for hours", "lyrics easy to follow"],
-      "theme_ids": ["theme_family_party", "theme_screen_lyrics"],
-      "implication": "Listing 需要解释屏幕歌词和多人娱乐任务。"
+      "evidence": [
+        "singing for hours",
+        "lyrics easy to follow"
+      ],
+      "theme_ids": [
+        "theme_family_party",
+        "theme_screen_lyrics"
+      ],
+      "implication": "Listing 需要解释屏幕歌词和多人娱乐任务。",
+      "summary": "用户希望完成家庭 karaoke 娱乐和歌词跟唱。",
+      "business_implication": "Listing 需要解释屏幕歌词和多人娱乐任务。",
+      "distribution": [
+        {
+          "label": "家庭 karaoke 娱乐",
+          "review_count": 2,
+          "sample_size": 3,
+          "percentage": 66.7,
+          "role": "primary",
+          "reason": "用户要完成长时间唱歌和歌词跟唱。",
+          "evidence": [
+            "singing for hours",
+            "lyrics easy to follow"
+          ],
+          "theme_ids": [
+            "theme_family_party",
+            "theme_screen_lyrics"
+          ]
+        }
+      ]
     },
     {
       "dimension": "购买理由",
@@ -61,9 +137,31 @@
       "sample_size": 3,
       "percentage": 33.3,
       "confidence": "medium",
-      "evidence": ["totally worth the price"],
-      "theme_ids": ["theme_value"],
-      "implication": "五点描述可把功能组合和价值感连起来。"
+      "evidence": [
+        "totally worth the price"
+      ],
+      "theme_ids": [
+        "theme_value"
+      ],
+      "implication": "五点描述可把功能组合和价值感连起来。",
+      "summary": "价格价值感来自尺寸、功能和连接体验组合。",
+      "business_implication": "五点描述可把功能组合和价值感连起来。",
+      "distribution": [
+        {
+          "label": "功能组合带来的价值感",
+          "review_count": 1,
+          "sample_size": 3,
+          "percentage": 33.3,
+          "role": "primary",
+          "reason": "用户明确表达 worth the price。",
+          "evidence": [
+            "totally worth the price"
+          ],
+          "theme_ids": [
+            "theme_value"
+          ]
+        }
+      ]
     },
     {
       "dimension": "用户期望",
@@ -72,9 +170,31 @@
       "sample_size": 3,
       "percentage": 33.3,
       "confidence": "medium",
-      "evidence": ["durable, wireless, portable, compact, has good sound and a color video screen"],
-      "theme_ids": ["theme_feature_bundle"],
-      "implication": "主图副文案可集中表达这些核心承诺。"
+      "evidence": [
+        "durable, wireless, portable, compact, has good sound and a color video screen"
+      ],
+      "theme_ids": [
+        "theme_feature_bundle"
+      ],
+      "implication": "主图副文案可集中表达这些核心承诺。",
+      "summary": "用户期待耐用、无线、便携、好声音和屏幕。",
+      "business_implication": "主图副文案可集中表达这些核心承诺。",
+      "distribution": [
+        {
+          "label": "耐用无线便携好声音和屏幕",
+          "review_count": 1,
+          "sample_size": 3,
+          "percentage": 33.3,
+          "role": "primary",
+          "reason": "评论集中列出质量、无线、便携、声音和屏幕。",
+          "evidence": [
+            "durable, wireless, portable, compact, has good sound and a color video screen"
+          ],
+          "theme_ids": [
+            "theme_feature_bundle"
+          ]
+        }
+      ]
     },
     {
       "dimension": "实际体验",
@@ -83,9 +203,33 @@
       "sample_size": 3,
       "percentage": 66.7,
       "confidence": "high",
-      "evidence": ["singing for hours", "bluetooth connection worked well"],
-      "theme_ids": ["theme_family_party", "theme_screen_lyrics"],
-      "implication": "视频可以展示从连接到跟唱的完整体验。"
+      "evidence": [
+        "singing for hours",
+        "bluetooth connection worked well"
+      ],
+      "theme_ids": [
+        "theme_family_party",
+        "theme_screen_lyrics"
+      ],
+      "implication": "视频可以展示从连接到跟唱的完整体验。",
+      "summary": "实际体验中家庭成员长时间参与，蓝牙和屏幕也被正向评价。",
+      "business_implication": "视频可以展示从连接到跟唱的完整体验。",
+      "distribution": [
+        {
+          "label": "家庭成员长时间参与",
+          "review_count": 1,
+          "sample_size": 3,
+          "percentage": 33.3,
+          "role": "primary",
+          "reason": "实际体验中儿童持续唱歌数小时。",
+          "evidence": [
+            "singing for hours"
+          ],
+          "theme_ids": [
+            "theme_family_party"
+          ]
+        }
+      ]
     },
     {
       "dimension": "满意点",
@@ -94,9 +238,37 @@
       "sample_size": 3,
       "percentage": 100,
       "confidence": "high",
-      "evidence": ["good sound", "bluetooth connection worked well", "totally worth the price"],
-      "theme_ids": ["theme_feature_bundle", "theme_value"],
-      "implication": "Listing 和图片可聚焦功能组合卖点。"
+      "evidence": [
+        "good sound",
+        "bluetooth connection worked well",
+        "totally worth the price"
+      ],
+      "theme_ids": [
+        "theme_feature_bundle",
+        "theme_value"
+      ],
+      "implication": "Listing 和图片可聚焦功能组合卖点。",
+      "summary": "满意点集中在声音、无线连接、便携、屏幕和价值感。",
+      "business_implication": "Listing 和图片可聚焦功能组合卖点。",
+      "distribution": [
+        {
+          "label": "声音、连接和价值感",
+          "review_count": 3,
+          "sample_size": 3,
+          "percentage": 100,
+          "role": "primary",
+          "reason": "三条样本均含正向满意点。",
+          "evidence": [
+            "good sound",
+            "bluetooth connection worked well",
+            "totally worth the price"
+          ],
+          "theme_ids": [
+            "theme_feature_bundle",
+            "theme_value"
+          ]
+        }
+      ]
     },
     {
       "dimension": "不满意点",
@@ -105,9 +277,31 @@
       "sample_size": 3,
       "percentage": 33.3,
       "confidence": "medium",
-      "evidence": ["battery did not last through the whole party"],
-      "theme_ids": ["theme_battery_party"],
-      "implication": "产品和 QA 需要解释续航边界或优化电池。"
+      "evidence": [
+        "battery did not last through the whole party"
+      ],
+      "theme_ids": [
+        "theme_battery_party"
+      ],
+      "implication": "产品和 QA 需要解释续航边界或优化电池。",
+      "summary": "低样本中出现电池续航不足的体验问题。",
+      "business_implication": "产品和 QA 需要解释续航边界或优化电池。",
+      "distribution": [
+        {
+          "label": "电池续航不足",
+          "review_count": 1,
+          "sample_size": 3,
+          "percentage": 33.3,
+          "role": "primary",
+          "reason": "低星样本明确提到电池无法覆盖整场聚会。",
+          "evidence": [
+            "battery did not last through the whole party"
+          ],
+          "theme_ids": [
+            "theme_battery_party"
+          ]
+        }
+      ]
     }
   ],
   "voc_themes": [
@@ -123,9 +317,59 @@
       "root_cause_hypothesis": "可能是一体化便携设计、内置屏幕和易上手体验降低了家庭娱乐场景的使用门槛。",
       "severity": "low",
       "business_meaning": "适合强化家庭聚会和多年龄互动场景表达。",
-      "related_action_areas": ["listing", "image_video"],
-      "theme_evidence": ["had a blast on Thanksgiving", "singing for hours"],
+      "related_action_areas": [
+        "listing",
+        "image_video"
+      ],
+      "theme_evidence": [
+        "had a blast on Thanksgiving",
+        "singing for hours"
+      ],
       "confidence": "medium",
+      "viewpoints": [
+        {
+          "viewpoint_id": "vp_family_children_party",
+          "viewpoint_name": "儿童亲友在家庭聚会中持续参与",
+          "viewpoint_polarity": "positive",
+          "review_count": 1,
+          "sample_size": 3,
+          "percentage": 33.3,
+          "role": "primary",
+          "reason": "评论明确提到孙辈、侄女侄子在感恩节玩得开心并持续唱歌。",
+          "tag_ids": [
+            "tag_family_children_party"
+          ],
+          "review_indexes": [
+            1
+          ],
+          "evidence": [
+            "had a blast on Thanksgiving",
+            "singing for hours"
+          ],
+          "business_meaning": "适合强化家庭聚会、多年龄参与和儿童持续娱乐的图片视频表达。",
+          "confidence": "medium",
+          "detail_reviews": [
+            {
+              "review_index": 1,
+              "rating": 5,
+              "review_date": "2025-01-31",
+              "title": "Great family karaoke",
+              "text": "This Karaoke machine is durable, wireless, portable, compact, has good sound and a color video screen. My grandchildren, nieces and nephews had a blast on Thanksgiving and were singing for hours.",
+              "translation": "这台卡拉 OK 机器耐用、无线、便携、紧凑，声音好，还有彩色视频屏幕。我的孙辈、侄女和侄子在感恩节玩得很开心，唱了好几个小时。",
+              "highlight_terms": [
+                "grandchildren, nieces and nephews",
+                "Thanksgiving",
+                "singing for hours"
+              ],
+              "translation_highlight_terms": [
+                "孙辈、侄女和侄子",
+                "感恩节",
+                "唱了好几个小时"
+              ]
+            }
+          ]
+        }
+      ],
       "detail_reviews": [
         {
           "review_index": 1,
@@ -134,8 +378,16 @@
           "title": "Great family karaoke",
           "text": "This Karaoke machine is durable, wireless, portable, compact, has good sound and a color video screen. My grandchildren, nieces and nephews had a blast on Thanksgiving and were singing for hours.",
           "translation": "这台卡拉 OK 机器耐用、无线、便携、紧凑，声音好，还有彩色视频屏幕。我的孙辈、侄女和侄子在感恩节玩得很开心，唱了好几个小时。",
-          "highlight_terms": ["grandchildren, nieces and nephews", "Thanksgiving", "singing for hours"],
-          "translation_highlight_terms": ["孙辈、侄女和侄子", "感恩节", "唱了好几个小时"]
+          "highlight_terms": [
+            "grandchildren, nieces and nephews",
+            "Thanksgiving",
+            "singing for hours"
+          ],
+          "translation_highlight_terms": [
+            "孙辈、侄女和侄子",
+            "感恩节",
+            "唱了好几个小时"
+          ]
         }
       ]
     },
@@ -151,9 +403,53 @@
       "root_cause_hypothesis": "可能是聚会连续使用时长高于用户对便携 karaoke 的续航预期。",
       "severity": "high",
       "business_meaning": "可能影响差评、退货和 QA 咨询，需要在产品与页面中处理。",
-      "related_action_areas": ["product", "listing"],
-      "theme_evidence": ["battery did not last through the whole party"],
+      "related_action_areas": [
+        "product",
+        "listing"
+      ],
+      "theme_evidence": [
+        "battery did not last through the whole party"
+      ],
       "confidence": "medium",
+      "viewpoints": [
+        {
+          "viewpoint_id": "vp_battery_not_full_party",
+          "viewpoint_name": "电池无法支撑完整聚会",
+          "viewpoint_polarity": "negative",
+          "review_count": 1,
+          "sample_size": 3,
+          "percentage": 33.3,
+          "role": "risk_signal",
+          "reason": "评论明确表示电池没有撑完整场聚会，直接影响聚会连续使用。",
+          "tag_ids": [
+            "tag_battery_party"
+          ],
+          "review_indexes": [
+            3
+          ],
+          "evidence": [
+            "battery did not last through the whole party"
+          ],
+          "business_meaning": "需要在页面续航口径、QA 和产品续航验证中优先处理。",
+          "confidence": "medium",
+          "detail_reviews": [
+            {
+              "review_index": 3,
+              "rating": 3,
+              "review_date": "2025-02-02",
+              "title": "Good but battery could be better",
+              "text": "The sound is good and kids loved it, but the battery did not last through the whole party.",
+              "translation": "声音很好，孩子们也喜欢，但电池没有支撑完整个聚会。",
+              "highlight_terms": [
+                "battery did not last through the whole party"
+              ],
+              "translation_highlight_terms": [
+                "电池没有支撑完整个聚会"
+              ]
+            }
+          ]
+        }
+      ],
       "detail_reviews": [
         {
           "review_index": 3,
@@ -162,8 +458,12 @@
           "title": "Good but battery could be better",
           "text": "The sound is good and kids loved it, but the battery did not last through the whole party.",
           "translation": "声音很好，孩子们也喜欢，但电池没有支撑完整个聚会。",
-          "highlight_terms": ["battery did not last through the whole party"],
-          "translation_highlight_terms": ["电池没有支撑完整个聚会"]
+          "highlight_terms": [
+            "battery did not last through the whole party"
+          ],
+          "translation_highlight_terms": [
+            "电池没有支撑完整个聚会"
+          ]
         }
       ]
     }
@@ -176,22 +476,188 @@
       "business_finding": "家庭聚会和儿童互动是明确正向场景。",
       "recommendation": {
         "summary": "增加家庭聚会场景图和短视频。",
-        "image_suggestions": ["展示孩子轮流拿麦、家人观看屏幕歌词。"],
-        "video_suggestions": ["展示连接、开唱、屏幕歌词和多人互动。"]
+        "image_suggestions": [
+          "展示孩子轮流拿麦、家人观看屏幕歌词。"
+        ],
+        "video_suggestions": [
+          "展示连接、开唱、屏幕歌词和多人互动。"
+        ]
       },
       "priority": "P1",
       "priority_score": 6,
       "priority_reason": "场景证据明确，但样本数仍低。",
-      "impact_metrics": ["图片点击理解效率", "广告点击后转化"],
-      "validation_method": ["主图点击率对比", "新批次 Review 复盘"],
-      "evidence": ["had a blast on Thanksgiving"],
+      "impact_metrics": [
+        "图片点击理解效率",
+        "广告点击后转化"
+      ],
+      "validation_method": [
+        "主图点击率对比",
+        "新批次 Review 复盘"
+      ],
+      "evidence": [
+        "had a blast on Thanksgiving"
+      ],
       "confidence": "medium"
     }
   ],
   "checkpoints": [
-    { "id": "input_validation", "name": "输入校验", "status": "pass", "message": "ASIN 合法。" },
-    { "id": "data_quality", "name": "数据质量", "status": "warn", "message": "样本少于 20，结论需谨慎。" }
+    {
+      "id": "input_validation",
+      "name": "输入校验",
+      "status": "pass",
+      "message": "ASIN 合法。"
+    },
+    {
+      "id": "data_quality",
+      "name": "数据质量",
+      "status": "warn",
+      "message": "样本少于 20，结论需谨慎。"
+    }
   ],
-  "limitations": ["样本数据用于测试；真实报告需由 Sorftime MCP 抓取后生成。"]
+  "limitations": [
+    "样本数据用于测试；真实报告需由 Sorftime MCP 抓取后生成。"
+  ],
+  "normalized_reviews": [
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-01-31",
+      "rating": 5,
+      "title": "Great family karaoke",
+      "text": "This Karaoke machine is durable, wireless, portable, compact, has good sound and a color video screen. My grandchildren, nieces and nephews had a blast on Thanksgiving and were singing for hours.",
+      "raw": {
+        "review_index": 1
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-02-01",
+      "rating": 4,
+      "title": "Fun and easy",
+      "text": "The bluetooth connection worked well and the lyrics were easy to follow. It was totally worth the price.",
+      "raw": {
+        "review_index": 2
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "unknown",
+      "review_date": "2025-02-02",
+      "rating": 3,
+      "title": "Good but battery could be better",
+      "text": "The sound is good and kids loved it, but the battery did not last through the whole party.",
+      "raw": {
+        "review_index": 3
+      }
+    }
+  ],
+  "feedback_units": [
+    {
+      "feedback_unit_id": "fu_golden_001",
+      "review_index": 1,
+      "dimension": "场景",
+      "audience": "儿童和家庭成员",
+      "scenario": "Thanksgiving 家庭聚会",
+      "user_task": "多人 karaoke",
+      "purchase_reason": "unknown",
+      "user_expectation": "便携、声音好、有屏幕",
+      "expectation_source": "review_text",
+      "actual_experience": "家庭成员唱了好几个小时",
+      "satisfied_points": "家庭聚会参与度高",
+      "unsatisfied_points": "unknown",
+      "consequence": "适合强化家庭聚会场景",
+      "evidence": "My grandchildren, nieces and nephews had a blast on Thanksgiving",
+      "open_tags": [
+        "tag_family_party"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "feedback_unit_id": "fu_golden_002",
+      "review_index": 2,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭娱乐",
+      "user_task": "歌词跟唱",
+      "purchase_reason": "功能组合",
+      "user_expectation": "蓝牙连接和歌词易跟",
+      "expectation_source": "review_text",
+      "actual_experience": "蓝牙连接正常且歌词容易跟唱",
+      "satisfied_points": "连接和歌词体验好",
+      "unsatisfied_points": "unknown",
+      "consequence": "Listing 可解释屏幕歌词和连接流程",
+      "evidence": "bluetooth connection worked well",
+      "open_tags": [
+        "tag_feature_bundle"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_golden_003",
+      "review_index": 3,
+      "dimension": "不满意点",
+      "audience": "孩子",
+      "scenario": "聚会连续使用",
+      "user_task": "整场聚会持续唱歌",
+      "purchase_reason": "unknown",
+      "user_expectation": "电池支撑完整聚会",
+      "expectation_source": "review_text",
+      "actual_experience": "电池未能支撑整场聚会",
+      "satisfied_points": "声音好，孩子喜欢",
+      "unsatisfied_points": "电池续航不足",
+      "consequence": "可能影响退货和 QA 咨询",
+      "evidence": "battery did not last through the whole party",
+      "open_tags": [
+        "tag_battery_party_gap"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "open_tags": [
+    {
+      "tag_id": "tag_family_party",
+      "tag_name": "家庭聚会儿童参与",
+      "dimension": "场景",
+      "count": 1,
+      "sample_size": 3,
+      "percentage": 33.3,
+      "representative_evidence": [
+        "had a blast on Thanksgiving"
+      ],
+      "theme_ids": [
+        "theme_family_party"
+      ]
+    },
+    {
+      "tag_id": "tag_feature_bundle",
+      "tag_name": "声音/无线/便携/屏幕功能组合",
+      "dimension": "满意点",
+      "count": 2,
+      "sample_size": 3,
+      "percentage": 66.7,
+      "representative_evidence": [
+        "good sound",
+        "bluetooth connection worked well"
+      ],
+      "theme_ids": [
+        "theme_feature_bundle",
+        "theme_value"
+      ]
+    },
+    {
+      "tag_id": "tag_battery_party_gap",
+      "tag_name": "聚会续航不足",
+      "dimension": "不满意点",
+      "count": 1,
+      "sample_size": 3,
+      "percentage": 33.3,
+      "representative_evidence": [
+        "battery did not last through the whole party"
+      ],
+      "theme_ids": [
+        "theme_battery_party"
+      ]
+    }
+  ]
 }
-

@@ -4,6 +4,7 @@ import { checkFiles } from "./agent_contract_check.js";
 import { scanPath } from "./secret_scan.js";
 import { clearCache } from "./clear_cache.js";
 import { runLiveSmokePreflight } from "./live_smoke.js";
+import { exportReviewCodingExcelFile } from "./export_review_coding_excel.js";
 
 const [, , command, ...args] = process.argv;
 
@@ -13,10 +14,14 @@ async function main(): Promise<void> {
     return;
   }
   if (command === "contract-check") {
-    const result = await checkFiles(required(args[0], "analysis.json"), required(args[1], "report.html"));
+    const result = await checkFiles(required(args[0], "analysis.json"), required(args[1], "report.html"), args[2]);
     for (const warning of result.warnings) console.warn(`[warn] ${warning}`);
     for (const error of result.errors) console.error(`[fail] ${error}`);
     process.exit(result.ok ? 0 : 1);
+  }
+  if (command === "export-excel") {
+    await exportReviewCodingExcelFile(required(args[0], "analysis.json"), required(args[1], "review-coding.xlsx"));
+    return;
   }
   if (command === "secret-scan") {
     const result = await scanPath(args[0] ?? ".");
@@ -35,7 +40,7 @@ async function main(): Promise<void> {
     writer(`${prefix} ${result.message}`);
     process.exit(result.ok ? 0 : 1);
   }
-  console.log("Usage: amazon-review-insight <render|contract-check|secret-scan|cache-clear|live-smoke> ...args");
+  console.log("Usage: amazon-review-insight <render|export-excel|contract-check|secret-scan|cache-clear|live-smoke> ...args");
   process.exit(1);
 }
 

@@ -1,16 +1,21 @@
 {
-  "version": "v0.1.0",
+  "version": "v0.3.0",
   "statuses": ["pass", "warn", "fail"],
   "checkpoints": [
     { "id": "input_validation", "name": "输入校验", "fail": ["非法 ASIN", "ASIN 为空", "多 ASIN 输入"] },
     { "id": "sorftime_fetch", "name": "Sorftime MCP 抓取", "fail": ["Sorftime MCP 连接失败", "所有 Review 样本数为 0"], "warn": ["Review 样本数低于 20"] },
     { "id": "data_quality", "name": "数据质量", "fail": ["review text 存在率低于 60%", "rating 存在率低于 60%"], "warn": ["review date 存在率低于 70%", "重复 Review 占比达到 5%"] },
-    { "id": "review_coding", "name": "Review 编码检查", "fail": ["非 unknown 字段缺少 evidence", "evidence 在原 Review text 中找不到"] },
+    { "id": "review_coding", "name": "Review 编码检查", "fail": ["缺少 normalized_reviews", "normalized_reviews 数量不等于 Review 样本数", "Review 缺少 feedback_units 编码记录", "缺少 feedback_units", "缺少 open_tags", "非 unknown 字段缺少 evidence", "evidence 在原 Review text 中找不到"] },
     { "id": "voc_theme", "name": "VOC 主题检查", "fail": ["theme 缺少 evidence", "percentage 与 count/sample_size 不一致", "只展示 Top N"] },
+    { "id": "voc_viewpoint_distribution", "name": "VOC 主题观点分布检查", "fail": ["theme 缺少 viewpoints", "viewpoint 缺少提及数量或占比", "viewpoint percentage 与 review_count/sample_size 不一致", "viewpoint 缺少 reason 或 evidence"] },
+    { "id": "voc_viewpoint_detail_reviews", "name": "VOC 观点详情评论检查", "fail": ["viewpoint 缺少 detail_reviews", "detail_reviews 数量不等于 viewpoint review_count", "detail review 缺少完整原文或完整中文翻译"] },
+    { "id": "voc_viewpoint_highlights", "name": "VOC 观点高亮检查", "fail": ["原文高亮词无法定位", "译文高亮词无法定位"] },
+    { "id": "voc_viewpoint_sticky_card", "name": "VOC 观点 sticky 主题卡检查", "fail": ["观点详情页缺少 sticky VOC 主题卡片", "sticky 卡片移动端遮挡正文"] },
+    { "id": "key_insight_distribution", "name": "关键结论分布检查", "fail": ["八类关键结论缺少 distribution", "distribution 缺少提及数量或占比", "distribution 非 unknown 类型缺少 evidence"] },
     { "id": "business_actions", "name": "业务动作检查", "fail": ["动作没有绑定 theme_id", "动作没有 evidence", "动作无法执行"] },
-    { "id": "html_report", "name": "HTML 报告检查", "fail": ["核心章节缺失", "关键结论未覆盖八类洞察", "VOC 主题详情页缺少证据列表"] },
+    { "id": "html_report", "name": "HTML 报告检查", "fail": ["核心章节缺失", "关键结论未覆盖八类洞察", "关键结论缺少类型分布表", "VOC 主题详情页缺少证据列表"] },
+    { "id": "excel_export", "name": "Excel 编码层检查", "fail": ["缺少必需 sheet", "必需 sheet 缺少表头", "Excel 中发现 Sorftime key 或 token"] },
     { "id": "product_design_qa", "name": "Product Design 视觉 QA", "fail": ["未使用 report assets", "移动端文字重叠", "高亮不可见"] },
     { "id": "secret_scan", "name": "密钥扫描", "fail": ["报告或缓存中发现 Sorftime key"] }
   ]
 }
-

@@ -47,6 +47,7 @@ export async function renderReport(analysis: AnalysisReport): Promise<string> {
       ${renderKeyInsights(analysis)}
       ${renderThemeMap(analysis)}
       ${renderThemeDetails(analysis)}
+      ${renderViewpointDetails(analysis)}
       ${renderActions(analysis)}
       ${renderLimits(analysis)}
     </main>
@@ -97,23 +98,54 @@ function renderKeyInsights(analysis: AnalysisReport): string {
     if (!item) {
       return `<div class="card"><h3>${dimension}</h3><p>评论未明确表达，当前样本中记为 unknown。</p></div>`;
     }
+    const summary = item.summary ?? item.insight;
+    const implication = item.business_implication ?? item.implication;
     return `<div class="card">
       <h3>${escapeHtml(item.dimension)}</h3>
-      <p>${escapeHtml(item.insight)}</p>
+      <p>${escapeHtml(summary)}</p>
       <div class="theme-meta">
         <span class="badge">${item.count}/${item.sample_size} (${item.percentage}%)</span>
         <span class="badge">confidence: ${escapeHtml(item.confidence)}</span>
       </div>
-      <p class="subtle">${escapeHtml(item.implication)}</p>
+      ${renderInsightDistribution(item)}
+      <p class="subtle">${escapeHtml(implication)}</p>
       ${item.evidence.slice(0, 3).map((e) => `<p class="quote">${escapeHtml(e)}</p>`).join("")}
       <p class="subtle">关联主题：${item.theme_ids.map(escapeHtml).join(", ") || "unknown"}</p>
     </div>`;
   }).join("");
-  return `<section id="key-insights" class="section"><h2 class="section-title">关键结论</h2><div class="grid">${cards}</div></section>`;
+  return `<section id="key-insights" class="section"><h2 class="section-title">关键结论</h2><div class="grid insight-grid">${cards}</div></section>`;
+}
+
+function renderInsightDistribution(item: AnalysisReport["key_insights"][number]): string {
+  if (!item.distribution?.length) return "";
+  const rows = item.distribution.map((row) => `<tr>
+    <td>${escapeHtml(row.label)}</td>
+    <td><span class="mini-bar" style="--bar:${Math.max(0, Math.min(100, row.percentage))}%"></span><span>${row.review_count}/${row.sample_size} (${row.percentage}%)</span></td>
+    <td><span class="role role-${escapeHtml(row.role)}">${escapeHtml(roleLabel(row.role))}</span></td>
+    <td>${escapeHtml(row.reason)}</td>
+  </tr>`).join("");
+  return `<div class="insight-distribution table-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>提及占比</th><th>角色</th><th>判断依据</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
+}
+
+function roleLabel(role: string): string {
+  const labels: Record<string, string> = {
+    primary: "主要",
+    secondary: "次要",
+    emerging: "新兴",
+    long_tail: "长尾",
+    risk_signal: "风险",
+    unknown: "未明确"
+  };
+  return labels[role] ?? role;
 }
 
 function renderThemeMap(analysis: AnalysisReport): string {
-  const cards = analysis.voc_themes.map((theme) => `<a class="card theme-card" href="#theme-detail-${escapeHtml(theme.theme_id)}">
+  const cards = analysis.voc_themes.map((theme) => `<div class="card theme-card">
     <h3>${escapeHtml(theme.theme_name)}</h3>
     <div class="theme-meta">
       <span class="badge">${escapeHtml(theme.theme_category)}</span>
@@ -123,9 +155,32 @@ function renderThemeMap(analysis: AnalysisReport): string {
     </div>
     <p>${escapeHtml(theme.core_issue)}</p>
     <p class="subtle">${escapeHtml(theme.business_meaning)}</p>
+    ${renderThemeViewpointDistribution(theme)}
     ${theme.theme_evidence.slice(0, 2).map((e) => `<p class="quote">${escapeHtml(e)}</p>`).join("")}
-  </a>`).join("");
-  return `<section id="voc-theme-map" class="section"><h2 class="section-title">VOC 主题地图</h2><div class="grid">${cards}</div></section>`;
+    <p><a href="#theme-detail-${escapeHtml(theme.theme_id)}">查看主题级详情</a></p>
+  </div>`).join("");
+  return `<section id="voc-theme-map" class="section">
+    <h2 class="section-title">VOC 主题地图</h2>
+    <p class="subtle">VOC 主题下的观点为多标签提及率；同一条 Review 可以同时支撑同一主题下的多个观点，因此观点占比允许合计超过 100%。点击观点会在新标签页打开该观点相关的全量评论。</p>
+    <div class="grid">${cards}</div>
+  </section>`;
+}
+
+function renderThemeViewpointDistribution(theme: AnalysisReport["voc_themes"][number]): string {
+  if (!theme.viewpoints?.length) return `<p class="subtle">该主题暂未生成观点分布。</p>`;
+  const rows = theme.viewpoints.map((viewpoint) => `<tr>
+    <td><a class="viewpoint-link" data-open-mode="new-tab" href="#${viewpointAnchor(theme.theme_id, viewpoint.viewpoint_id)}" target="_blank" rel="noopener">${escapeHtml(viewpoint.viewpoint_name)}</a></td>
+    <td><span class="mini-bar" style="--bar:${Math.max(0, Math.min(100, viewpoint.percentage))}%"></span><span>${viewpoint.review_count}/${viewpoint.sample_size} (${viewpoint.percentage}%)</span></td>
+    <td><span class="role role-${escapeHtml(viewpoint.role)}">${escapeHtml(roleLabel(viewpoint.role))}</span></td>
+    <td><span class="polarity polarity-${escapeHtml(viewpoint.viewpoint_polarity)}">${escapeHtml(polarityLabel(viewpoint.viewpoint_polarity))}</span></td>
+    <td>${escapeHtml(viewpoint.reason)}</td>
+  </tr>`).join("");
+  return `<div class="viewpoint-distribution table-wrap">
+    <table>
+      <thead><tr><th>观点</th><th>提及占比</th><th>角色</th><th>极性</th><th>判断依据</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
 }
 
 function renderThemeDetails(analysis: AnalysisReport): string {
@@ -154,6 +209,72 @@ function renderThemeDetails(analysis: AnalysisReport): string {
     </section>`;
   }).join("");
   return sections;
+}
+
+function renderViewpointDetails(analysis: AnalysisReport): string {
+  const sections = analysis.voc_themes.flatMap((theme) =>
+    (theme.viewpoints ?? []).map((viewpoint) => {
+      const reviews = viewpoint.detail_reviews.map((review) => `<div class="card detail-review">
+        <div class="theme-meta">
+          <span class="badge">Review #${review.review_index}</span>
+          <span class="badge">rating: ${escapeHtml(review.rating)}</span>
+          <span class="badge">date: ${escapeHtml(review.review_date)}</span>
+        </div>
+        <h4>${escapeHtml(review.title)}</h4>
+        <p><strong>原文</strong></p>
+        <p>${highlightTerms(review.text, review.highlight_terms)}</p>
+        <p><strong>中文翻译</strong></p>
+        <p>${highlightTerms(review.translation, review.translation_highlight_terms)}</p>
+      </div>`).join("");
+      return `<section id="${viewpointAnchor(theme.theme_id, viewpoint.viewpoint_id)}" class="section viewpoint-detail">
+        ${renderStickyThemeCard(theme)}
+        <div class="card viewpoint-summary">
+          <p><a href="#voc-theme-map">返回 VOC 主题地图</a></p>
+          <h2 class="section-title">${escapeHtml(viewpoint.viewpoint_name)}</h2>
+          <div class="theme-meta">
+            <span class="badge">${viewpoint.review_count}/${viewpoint.sample_size} (${viewpoint.percentage}%)</span>
+            <span class="badge">${escapeHtml(roleLabel(viewpoint.role))}</span>
+            <span class="badge">${escapeHtml(polarityLabel(viewpoint.viewpoint_polarity))}</span>
+            <span class="badge">confidence: ${escapeHtml(viewpoint.confidence)}</span>
+          </div>
+          <p><strong>判断依据：</strong>${escapeHtml(viewpoint.reason)}</p>
+          <p><strong>业务含义：</strong>${escapeHtml(viewpoint.business_meaning)}</p>
+          <p class="subtle">本页展示该观点相关的全量 Review 原文和中文翻译。</p>
+        </div>
+        ${reviews}
+      </section>`;
+    })
+  ).join("");
+  return sections;
+}
+
+function renderStickyThemeCard(theme: AnalysisReport["voc_themes"][number]): string {
+  return `<div class="card sticky-theme-card">
+    <div class="subtle">所属 VOC 主题</div>
+    <h3>${escapeHtml(theme.theme_name)}</h3>
+    <div class="theme-meta">
+      <span class="badge">${escapeHtml(theme.theme_category)}</span>
+      <span class="badge">${theme.count}/${theme.sample_size} (${theme.percentage}%)</span>
+      <span class="badge">severity: ${escapeHtml(theme.severity)}</span>
+      <span class="badge">${escapeHtml(theme.priority)}</span>
+    </div>
+    <p>${escapeHtml(theme.core_issue)}</p>
+    <p class="subtle">${escapeHtml(theme.business_meaning)}</p>
+  </div>`;
+}
+
+function viewpointAnchor(themeId: string, viewpointId: string): string {
+  return `voc-viewpoint-detail-${themeId}-${viewpointId}`;
+}
+
+function polarityLabel(polarity: string): string {
+  const labels: Record<string, string> = {
+    positive: "正向",
+    negative: "负向",
+    mixed: "混合",
+    neutral: "中性"
+  };
+  return labels[polarity] ?? polarity;
 }
 
 function renderActions(analysis: AnalysisReport): string {

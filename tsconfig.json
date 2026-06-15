@@ -12,7 +12,7 @@
   },
   "include": [
     "amazon-review-insight/scripts/**/*.ts",
+    "amazon-review-insight/tests/**/*.ts",
     "tests/**/*.ts"
   ]
 }
-

@@ -1,0 +1,26 @@
+# Release Checklist
+
+- [x] `SKILL.md` frontmatter contains only `name` and `description`.
+- [x] `SKILL.md` body contains `skill_version: v0.2.0`.
+- [x] SDD specs exist under `references/specs/` and document v0.2.0 fields.
+- [x] BDD features exist under `references/features/` and cover Excel export.
+- [x] checkpoints exist under `checkpoints/`.
+- [x] tests exist under `tests/`.
+- [x] eval tasks and rubric exist under `evals/`.
+- [x] Product Design report assets exist under `assets/report/`.
+- [x] Auxiliary CLI scripts cover render, Excel export, contract check, secret scan, cache clear and live smoke preflight.
+- [x] Sample report uses real Sorftime data summary for `B0DHPN1DMJ`.
+- [x] Sample Review coding Excel is generated for `B0DHPN1DMJ`.
+- [x] Sample Review coding Excel contains all 76 normalized Review rows.
+- [x] Sample Review coding Excel uses Chinese sheet names and Chinese visible headers.
+- [x] Unit and integration tests pass.
+- [x] Typecheck passes.
+- [x] Contract check passes for HTML and Excel.
+- [x] Secret scan passes for text files and `.xlsx` cells.
+- [x] npm audit reports no vulnerabilities.
+- [x] Browser QA passes for desktop and mobile report layouts.
+- [ ] Create release zip.
+- [ ] Generate `SHA256SUMS.txt` for release assets.
+- [ ] Create Git tag.
+- [ ] Create GitHub Release.
+- [ ] Reinstall from release package and rerun smoke test.

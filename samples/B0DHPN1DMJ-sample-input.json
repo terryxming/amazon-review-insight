@@ -1,5 +1,5 @@
 {
-  "sample_version": "v0.1.0",
+  "sample_version": "v0.2.0",
   "asin": "B0DHPN1DMJ",
   "site": "Amazon US",
   "source": "Sorftime MCP",
@@ -20,5 +20,5 @@
       "latest": "2026-05-10"
     }
   },
-  "note": "This release sample is generated from real Sorftime MCP data for B0DHPN1DMJ. Full raw MCP responses are intentionally not committed; the sample analysis JSON contains the review evidence used by the sample report."
+  "note": "This release sample is generated from real Sorftime MCP data for B0DHPN1DMJ. Full raw MCP responses are intentionally not committed; the sample analysis JSON contains the review evidence used by the sample report and review-coding Excel."
 }
