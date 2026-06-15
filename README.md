@@ -9,7 +9,7 @@
 - 只支持 Amazon US。
 - 只支持单个 ASIN。
 - 输出中文自包含 `.html` 报告。
-- 输出 Review 编码层 `.xlsx`，用于人工复核和二次分析。
+- 输出全量 Review 编码层 `.xlsx`，用于人工复核和二次分析。
 - 不做本地 Web 工作台。
 - 不接外部 LLM provider。
 - 不做多 ASIN、竞品对比、CSV 或 PDF。
@@ -39,6 +39,7 @@ npm run live:smoke -- B0DHPN1DMJ
 - Review 样本数 = `product_reviews` 实际返回条数。
 - VOC 百分比、关键结论百分比、业务动作百分比分母只能使用 Review 样本数。
 - 关键结论必须同时给一句话总结和类型分布表；类型之间允许重叠。
+- Review 编码层必须覆盖全部 Review 样本，`normalized_reviews` 行数应等于 Review 样本数。
 
 ## 样例报告
 

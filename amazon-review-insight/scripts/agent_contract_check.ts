@@ -21,11 +21,23 @@ export function checkAnalysis(analysis: AnalysisReport): ContractCheckResult {
   if (!analysis.normalized_reviews?.length) errors.push("分析结果缺少 normalized_reviews，无法交付 Review 编码层 Excel。");
   if (!analysis.feedback_units?.length) errors.push("分析结果缺少 feedback_units，无法交付 Review 编码层 Excel。");
   if (!analysis.open_tags?.length) errors.push("分析结果缺少 open_tags，无法交付 Review 编码层 Excel。");
+  if (analysis.normalized_reviews?.length && analysis.normalized_reviews.length !== sampleSize) {
+    errors.push(`normalized_reviews 必须覆盖全部 Review 样本：期望 ${sampleSize} 条，实际 ${analysis.normalized_reviews.length} 条。`);
+  }
+
+  const normalizedReviewIndexes = new Set((analysis.normalized_reviews ?? []).map((review, index) => reviewIndex(review.raw, index)));
+  const feedbackReviewIndexes = new Set((analysis.feedback_units ?? []).map((unit) => unit.review_index));
+  for (const index of normalizedReviewIndexes) {
+    if (!feedbackReviewIndexes.has(index)) errors.push(`Review #${index} 缺少 feedback_units 编码记录。`);
+  }
 
   for (const unit of analysis.feedback_units ?? []) {
     if (!unit.feedback_unit_id) errors.push("feedback_unit 缺少 feedback_unit_id");
     if (!unit.evidence) errors.push(`feedback_unit ${unit.feedback_unit_id || "unknown"} 缺少 evidence`);
     if (!Array.isArray(unit.open_tags)) errors.push(`feedback_unit ${unit.feedback_unit_id || "unknown"} open_tags 不是数组`);
+    if (analysis.normalized_reviews?.length && !normalizedReviewIndexes.has(unit.review_index)) {
+      errors.push(`feedback_unit ${unit.feedback_unit_id || "unknown"} 绑定了不存在的 review_index：${unit.review_index}`);
+    }
   }
 
   for (const tag of analysis.open_tags ?? []) {
@@ -133,7 +145,7 @@ const REQUIRED_EXCEL_SHEETS: Record<string, string[]> = {
   checkpoints: ["id", "name", "status", "message"]
 };
 
-export async function checkExcelFile(excelPath: string): Promise<ContractCheckResult> {
+export async function checkExcelFile(excelPath: string, analysis?: AnalysisReport): Promise<ContractCheckResult> {
   const errors: string[] = [];
   const workbook = new ExcelJS.Workbook();
   await workbook.xlsx.readFile(excelPath);
@@ -148,6 +160,11 @@ export async function checkExcelFile(excelPath: string): Promise<ContractCheckRe
       if (!actual.has(header)) errors.push(`Excel sheet ${sheetName} 缺少列：${header}`);
     }
   }
+  if (analysis) {
+    checkExcelRowCount(workbook, "normalized_reviews", analysis.metadata.review_sample_size, errors);
+    checkExcelRowCount(workbook, "feedback_units", analysis.feedback_units?.length ?? 0, errors);
+    checkExcelRowCount(workbook, "open_tags", analysis.open_tags?.length ?? 0, errors);
+  }
   return { ok: errors.length === 0, errors, warnings: [] };
 }
 
@@ -156,8 +173,19 @@ export async function checkFiles(analysisPath: string, htmlPath: string, excelPa
   const html = await readFile(htmlPath, "utf8");
   const a = checkAnalysis(analysis);
   const h = checkHtml(html);
-  const x = excelPath ? await checkExcelFile(excelPath) : { ok: true, errors: [], warnings: [] };
+  const x = excelPath ? await checkExcelFile(excelPath, analysis) : { ok: true, errors: [], warnings: [] };
   return { ok: a.ok && h.ok && x.ok, errors: [...a.errors, ...h.errors, ...x.errors], warnings: [...a.warnings, ...h.warnings, ...x.warnings] };
+}
+
+function reviewIndex(raw: Record<string, unknown>, fallbackIndex: number): number {
+  return typeof raw?.review_index === "number" ? raw.review_index : fallbackIndex + 1;
+}
+
+function checkExcelRowCount(workbook: ExcelJS.Workbook, sheetName: string, expectedRows: number, errors: string[]): void {
+  const sheet = workbook.getWorksheet(sheetName);
+  if (!sheet) return;
+  const actualRows = Math.max(0, sheet.rowCount - 1);
+  if (actualRows !== expectedRows) errors.push(`Excel sheet ${sheetName} 行数应为 ${expectedRows}，实际为 ${actualRows}。`);
 }
 
 if (process.argv[1] && resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1])) {

@@ -26,6 +26,7 @@ analysis_rules_version: v0.2.0
 3. evidence 必须能在原 Review text 中找到。
 4. 不得根据标题、价格、品牌、类目、Listing 文案或星级推断。
 5. 同一 Review 中多个独立反馈逻辑必须拆成多个 feedback unit。
+6. Review 编码层必须覆盖 Sorftime MCP 返回的全部 Review；不得只编码 VOC 主题详情页要展示的代表性 Review。
 
 ## 开放标签
 

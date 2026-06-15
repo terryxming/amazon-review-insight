@@ -1491,266 +1491,1218 @@
   "normalized_reviews": [
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S1;Color=Black",
       "review_date": "2026-05-10",
       "rating": 5,
       "title": "Great Karaoke Machine!",
       "text": "This Karaoke machine, sounds amazing with great bass. The mics are great and the way they store and charge in the machine is the best.",
       "raw": {
+        "评论产品的属性": "Size=Shell S1;Color=Black",
+        "评论日期": "20260510",
+        "评星": 5,
+        "标题": "Great Karaoke Machine!",
+        "评论": "This Karaoke machine, sounds amazing with great bass. The mics are great and the way they store and charge in the machine is the best.",
         "review_index": 1
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2026-03-01",
       "rating": 4,
       "title": "A little package packed with big fun!",
       "text": "I love how this karaoke machine is a top-quality device with excellent sound clarity and rich audio fidelity. Its compact size, measuring just 12 inches in length and 8 inches in height, makes it easy to carry in a small bag or backpack wherever you go, which is such a big plus! The microphone, which connects seamlessly via Bluetooth, works perfectly and provides clear, echo-rich vocals. It’s great fun for family entertainment, easily accommodating multiple users with its adjustable volume and multiple input options. It‘s a huge hit at gatherings, making every get-together even more lively and memorable.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20260301",
+        "评星": 4,
+        "标题": "A little package packed with big fun!",
+        "评论": "I love how this karaoke machine is a top-quality device with excellent sound clarity and rich audio fidelity. Its compact size, measuring just 12 inches in length and 8 inches in height, makes it easy to carry in a small bag or backpack wherever you go, which is such a big plus! The microphone, which connects seamlessly via Bluetooth, works perfectly and provides clear, echo-rich vocals. It’s great fun for family entertainment, easily accommodating multiple users with its adjustable volume and multiple input options. It‘s a huge hit at gatherings, making every get-together even more lively and memorable.",
         "review_index": 2
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2026-02-25",
       "rating": 5,
       "title": "Compact and Easy",
       "text": "Great little set. Small, compact, with lots of power. The only negative is the battery does not last all day. It is easy to use and sounds good.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20260225",
+        "评星": 5,
+        "标题": "Compact and Easy",
+        "评论": "Great little set. Small, compact, with lots of power. The only negative is the battery does not last all day. It is easy to use and sounds good.",
         "review_index": 3
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2026-02-06",
+      "rating": 5,
+      "title": "Great purchase!",
+      "text": "This is a great portable Karaoke Machine - the sound is good - nice quality. Due to it‘s small size sometimes it is hard to read some of the options but other than that we have had a great time with this little unit. I definitely recommend if you want to have fun with Karaoke any where you go!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20260206",
+        "评星": 5,
+        "标题": "Great purchase!",
+        "评论": "This is a great portable Karaoke Machine - the sound is good - nice quality. Due to it‘s small size sometimes it is hard to read some of the options but other than that we have had a great time with this little unit. I definitely recommend if you want to have fun with Karaoke any where you go!",
+        "review_index": 4
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Gloden",
+      "review_date": "2026-01-31",
+      "rating": 5,
+      "title": "Great quality no Echo and very easy to transport",
+      "text": "This is an awesome gift it is portable it is easy to work it is user friendly! And charges up in just a few minutes and there is no Echo the quality is great! Bluetooth and Wi-Fi setup is Carefree!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Gloden",
+        "评论日期": "20260131",
+        "评星": 5,
+        "标题": "Great quality no Echo and very easy to transport",
+        "评论": "This is an awesome gift it is portable it is easy to work it is user friendly! And charges up in just a few minutes and there is no Echo the quality is great! Bluetooth and Wi-Fi setup is Carefree!",
+        "review_index": 5
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2026-01-01",
       "rating": 5,
       "title": "Instant Fan",
       "text": "Even the power-on sound is rich and reverberating. Got it just in time to karaoke with the family for a party and it was a hit. Immediately intuitive, especially with the Karafun app. Also, very helpful to access the user guide pdf on the product page for familiarizing myself with the microphone functions.\nThe weight is light and size is compact, yet it really does audibly punch above its weight class.\n\nAlready came charged, so we put it too immediate use and even the parents marveled at how far karaoke equipment has come.\n\nIt is great value for the money, and my sibling is already considering purchasing one for himself.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20260101",
+        "评星": 5,
+        "标题": "Instant Fan",
+        "评论": "Even the power-on sound is rich and reverberating. Got it just in time to karaoke with the family for a party and it was a hit. Immediately intuitive, especially with the Karafun app. Also, very helpful to access the user guide pdf on the product page for familiarizing myself with the microphone functions.\nThe weight is light and size is compact, yet it really does audibly punch above its weight class.\n\nAlready came charged, so we put it too immediate use and even the parents marveled at how far karaoke equipment has come.\n\nIt is great value for the money, and my sibling is already considering purchasing one for himself.",
         "review_index": 6
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-12-17",
       "rating": 3,
       "title": "Microphone won‘t charge and no clear instructions.",
       "text": "Unit is nice, but one of the microphones will not charge. In addition, and as others have said, there are no clear instructions on using the karaoke machine so you‘re on your own to figure things out. I may or may not return it and get a replacement. What good is one microphone if you’re with friends?UPDATE: The company did reach out, but in the meantime, it appears that both microphones are charging but the lights indicating such do not light up. I can deal with that because I am enjoying the machine itself.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251217",
+        "评星": 3,
+        "标题": "Microphone won‘t charge and no clear instructions.",
+        "评论": "Unit is nice, but one of the microphones will not charge. In addition, and as others have said, there are no clear instructions on using the karaoke machine so you‘re on your own to figure things out. I may or may not return it and get a replacement. What good is one microphone if you’re with friends?UPDATE: The company did reach out, but in the meantime, it appears that both microphones are charging but the lights indicating such do not light up. I can deal with that because I am enjoying the machine itself.",
         "review_index": 7
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Gloden",
       "review_date": "2025-12-17",
       "rating": 5,
       "title": "Great choice in every way!",
       "text": "This Karaoke machine is excellent in every aspect of what you‘d hope for in quality. Very great quality, durable, wireless, connecting via bluetooth/wifi, portable, versatile, compact, good sound, color video screen, and is really good looking! It can connects to the smart TV, or watch shows or karaoke on its color compact video screen! It can be used like a boom box too. It serves as fun and easy karaoke, with microphone stored in a top compartment, and speakers that produce good sound. The video screen opens and closes on the top of it. It shows videos with the words of songs, and is used with apps for music and movies, etc. It’s really useful for all ages. Ages 3-20+ are my grandchildren, nieces and nephews, and they completely had a blast on Thanksgiving... actually every time I see them since my granddaughter received it a few months ago! They were preoccupied and singing their hearts out for hours... lots of giggles, smiles and taking turns! I think for the size, and all reasons above, it is totally worth the price. Enjoy 😊",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Gloden",
+        "评论日期": "20251217",
+        "评星": 5,
+        "标题": "Great choice in every way!",
+        "评论": "This Karaoke machine is excellent in every aspect of what you‘d hope for in quality. Very great quality, durable, wireless, connecting via bluetooth/wifi, portable, versatile, compact, good sound, color video screen, and is really good looking! It can connects to the smart TV, or watch shows or karaoke on its color compact video screen! It can be used like a boom box too. It serves as fun and easy karaoke, with microphone stored in a top compartment, and speakers that produce good sound. The video screen opens and closes on the top of it. It shows videos with the words of songs, and is used with apps for music and movies, etc. It’s really useful for all ages. Ages 3-20+ are my grandchildren, nieces and nephews, and they completely had a blast on Thanksgiving... actually every time I see them since my granddaughter received it a few months ago! They were preoccupied and singing their hearts out for hours... lots of giggles, smiles and taking turns! I think for the size, and all reasons above, it is totally worth the price. Enjoy 😊",
         "review_index": 8
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-11-07",
+      "rating": 5,
+      "title": "Powerful. Portable. So much fun!",
+      "text": "Great machine! Sound can get loud and sounds great! I wish the touch screen and software was a little easier to navigate (but it might be a user error). I read that I can control it by an app, but I haven‘t set that up yet. Mics stay charged really well. I have brought the machine to several gatherings and almost every time someone asks me for a link so they can purchase their own. Powerful and portable... looks almost like a lunchbox until it is set up. I don’t charge between gatherings, but I grab the charger and head out. Mics are still charged from the previous time and I plug in the machine if it hasn’t been used it a while. Works like a charm.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251107",
+        "评星": 5,
+        "标题": "Powerful. Portable. So much fun!",
+        "评论": "Great machine! Sound can get loud and sounds great! I wish the touch screen and software was a little easier to navigate (but it might be a user error). I read that I can control it by an app, but I haven‘t set that up yet. Mics stay charged really well. I have brought the machine to several gatherings and almost every time someone asks me for a link so they can purchase their own. Powerful and portable... looks almost like a lunchbox until it is set up. I don’t charge between gatherings, but I grab the charger and head out. Mics are still charged from the previous time and I plug in the machine if it hasn’t been used it a while. Works like a charm.",
+        "review_index": 9
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-10-19",
+      "rating": 5,
+      "title": "Great sound quality and fun to use",
+      "text": "✅ What this machine does wellSound & portabilityIt’s specified at 140 W peak power via dual 2.7″ full-range drivers, which promises a reasonably loud, clear sound for home/party use.Reviewers for similar models (e.g., the Shell S1) noted “the speaker is powerful for its size … the bass boost is strong, and the quality of the music does not falter at high volumes.”Many users like that this is a more compact all-in-one machine rather than having to assemble a speaker + separate mics + screen.Built-in screen & micsThe “built-in lyrics display and screen” means you don’t necessarily need to hook up a separate tablet/laptop for lyrics. That simplifies setup.The inclusion of 2 wireless microphones (self-charging) is a strong convenience feature: no mic cables, and the mics charge via the built-in unit.Ability to connect to a TV (via HDMI or other means) makes it versatile for larger viewing (for lyrics) or using the TV as the display for bigger groups.User sentimentOn the company’s Trustpilot page many users praise the sound and features. For example:> “This machine is spectacular … The sound and mix delivers.”Many mention that it covers a lot of karaoke machine needs “out of the box”.---⚠️ Areas for improvement / what to watchScreen size & readabilityIf the built-in screen is small (specs say 8″ for some models) it might be harder to read lyrics from across a large room or at an outdoor setting. For large groups or outdoor parties you may prefer a bigger display or TV hookup.Software / app limitationsOne review of the Shell S1 model (a predecessor) pointed out that while the system included a built-in “YouTube” link, it was just a browser link rather than a native YouTube app, making lyric search/navigation clunky.The karaoke library/app is good, but if you’re heavily reliant on browsing large karaoke catalogs or using YouTube frequently, you might hit some quirks.Battery / outdoor useIf you’re planning outdoor camping use (as your description suggests), you’ll want to verify the battery life (if this model supports battery/portability) and how well its performance holds under outdoor conditions (wind/ambient noise, outdoor acoustics). The basic model info doesn’t always highlight outdoor-specific durability (weather, very loud open-space sound, etc).Price & value trade-offAll-in-one machines with built-in screen + mics + speaker + TV-connect cost more than simpler setups. If you will only use it occasionally in a small room, the premium might be less justified. One review said “for around $300-350, this is a top-notch portable karaoke machine.”But if you’ll regularly host or use it for fun, the convenience is a big plus.---🎯 My verdict: Is this a good buy?Yes — I believe it is a very good option, especially if your usage fits the following scenario:You want a true “plug-and-play” karaoke machine: minimal setup, built-in features, wireless mics included.You’ll use it for home use, birthday parties, maybe patio/outdoor use (but maybe not massive open-field heavy-duty).You value portability and convenience (moving from living room → patio → maybe camping).You don’t mind paying a bit more for the convenience and quality.However, if you fall into these categories, you might want to evaluate carefully:Your group size is very large (10+ people) and you’ll be outdoors in a very open space — you might need more power, bigger screen/display, separate speakers.You have a tight budget and would be fine using a simpler Bluetooth speaker + separate mics + laptop/tablet for lyrics.You expect “perfect” software/integration or are very particular about YouTube catalog usability (there may be some UI quirks).---📝 Summary tableFeature My takeawaySound quality & loudness Strong for its size; good for home/small party usePortability Good: built-in screen + mics + speaker; simpler setupBuilt-in screen & mics Big plus for convenienceSetup complexity Low: likely plug & playBattery / outdoor use Works but check runtime/conditions if outdoors oftenScreen size & group visibility Good for small/medium groups; large groups may want TV hookupSoftware/app integration Good but not flawless; YouTube browsing may have limitationsPrice/value Higher than budget setups, but justified given featuresIdeal use case Home parties, living room karaoke, moderate outdoor useLess ideal for Very large gatherings, open-field outdoor, ultra-tight budget",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251019",
+        "评星": 5,
+        "标题": "Great sound quality and fun to use",
+        "评论": "✅ What this machine does wellSound & portabilityIt’s specified at 140 W peak power via dual 2.7″ full-range drivers, which promises a reasonably loud, clear sound for home/party use.Reviewers for similar models (e.g., the Shell S1) noted “the speaker is powerful for its size … the bass boost is strong, and the quality of the music does not falter at high volumes.”Many users like that this is a more compact all-in-one machine rather than having to assemble a speaker + separate mics + screen.Built-in screen & micsThe “built-in lyrics display and screen” means you don’t necessarily need to hook up a separate tablet/laptop for lyrics. That simplifies setup.The inclusion of 2 wireless microphones (self-charging) is a strong convenience feature: no mic cables, and the mics charge via the built-in unit.Ability to connect to a TV (via HDMI or other means) makes it versatile for larger viewing (for lyrics) or using the TV as the display for bigger groups.User sentimentOn the company’s Trustpilot page many users praise the sound and features. For example:> “This machine is spectacular … The sound and mix delivers.”Many mention that it covers a lot of karaoke machine needs “out of the box”.---⚠️ Areas for improvement / what to watchScreen size & readabilityIf the built-in screen is small (specs say 8″ for some models) it might be harder to read lyrics from across a large room or at an outdoor setting. For large groups or outdoor parties you may prefer a bigger display or TV hookup.Software / app limitationsOne review of the Shell S1 model (a predecessor) pointed out that while the system included a built-in “YouTube” link, it was just a browser link rather than a native YouTube app, making lyric search/navigation clunky.The karaoke library/app is good, but if you’re heavily reliant on browsing large karaoke catalogs or using YouTube frequently, you might hit some quirks.Battery / outdoor useIf you’re planning outdoor camping use (as your description suggests), you’ll want to verify the battery life (if this model supports battery/portability) and how well its performance holds under outdoor conditions (wind/ambient noise, outdoor acoustics). The basic model info doesn’t always highlight outdoor-specific durability (weather, very loud open-space sound, etc).Price & value trade-offAll-in-one machines with built-in screen + mics + speaker + TV-connect cost more than simpler setups. If you will only use it occasionally in a small room, the premium might be less justified. One review said “for around $300-350, this is a top-notch portable karaoke machine.”But if you’ll regularly host or use it for fun, the convenience is a big plus.---🎯 My verdict: Is this a good buy?Yes — I believe it is a very good option, especially if your usage fits the following scenario:You want a true “plug-and-play” karaoke machine: minimal setup, built-in features, wireless mics included.You’ll use it for home use, birthday parties, maybe patio/outdoor use (but maybe not massive open-field heavy-duty).You value portability and convenience (moving from living room → patio → maybe camping).You don’t mind paying a bit more for the convenience and quality.However, if you fall into these categories, you might want to evaluate carefully:Your group size is very large (10+ people) and you’ll be outdoors in a very open space — you might need more power, bigger screen/display, separate speakers.You have a tight budget and would be fine using a simpler Bluetooth speaker + separate mics + laptop/tablet for lyrics.You expect “perfect” software/integration or are very particular about YouTube catalog usability (there may be some UI quirks).---📝 Summary tableFeature My takeawaySound quality & loudness Strong for its size; good for home/small party usePortability Good: built-in screen + mics + speaker; simpler setupBuilt-in screen & mics Big plus for convenienceSetup complexity Low: likely plug & playBattery / outdoor use Works but check runtime/conditions if outdoors oftenScreen size & group visibility Good for small/medium groups; large groups may want TV hookupSoftware/app integration Good but not flawless; YouTube browsing may have limitationsPrice/value Higher than budget setups, but justified given featuresIdeal use case Home parties, living room karaoke, moderate outdoor useLess ideal for Very large gatherings, open-field outdoor, ultra-tight budget",
+        "review_index": 10
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-10-19",
+      "rating": 5,
+      "title": "Great one!!",
+      "text": "Absolutely love it",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251019",
+        "评星": 5,
+        "标题": "Great one!!",
+        "评论": "Absolutely love it",
+        "review_index": 11
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-10-18",
       "rating": 5,
       "title": "Lot of power in a small box",
       "text": "We finally started using it and it is great!! Easy to use. We hooked it up to our TV and sounds great. Very portable and compact, but with great sound and volume. Highly recommend!",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251018",
+        "评星": 5,
+        "标题": "Lot of power in a small box",
+        "评论": "We finally started using it and it is great!! Easy to use. We hooked it up to our TV and sounds great. Very portable and compact, but with great sound and volume. Highly recommend!",
         "review_index": 12
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-10-17",
+      "rating": 5,
+      "title": "Ikarao portable karaoke",
+      "text": "Just Fabulous, didn’t know that it as so many features and am way overwhelmed with my purchase",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251017",
+        "评星": 5,
+        "标题": "Ikarao portable karaoke",
+        "评论": "Just Fabulous, didn’t know that it as so many features and am way overwhelmed with my purchase",
+        "review_index": 13
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Golden",
+      "review_date": "2025-10-17",
+      "rating": 5,
+      "title": "Must buy ❤️",
+      "text": "Love it so much!!! The looks and the sound so great it never changed even at maximum volume. Very light that you can bring it wherever go. We have so much fun. It looks durable and easy to connect to bluetooth. Overall, I love this product so much!!! Well recommended. Worth the price!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Golden",
+        "评论日期": "20251017",
+        "评星": 5,
+        "标题": "Must buy ❤️",
+        "评论": "Love it so much!!! The looks and the sound so great it never changed even at maximum volume. Very light that you can bring it wherever go. We have so much fun. It looks durable and easy to connect to bluetooth. Overall, I love this product so much!!! Well recommended. Worth the price!",
+        "review_index": 14
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-10-15",
+      "rating": 5,
+      "title": "Best portable Karaoke",
+      "text": "Worth the buy! Our family enjoy our new Karaoke portable. Glad I found it! Yay.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251015",
+        "评星": 5,
+        "标题": "Best portable Karaoke",
+        "评论": "Worth the buy! Our family enjoy our new Karaoke portable. Glad I found it! Yay.",
+        "review_index": 15
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-10-15",
+      "rating": 5,
+      "title": "Easy to operate and travel with",
+      "text": "It so great karaoke machine love it",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251015",
+        "评星": 5,
+        "标题": "Easy to operate and travel with",
+        "评论": "It so great karaoke machine love it",
+        "review_index": 16
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-10-12",
+      "rating": 5,
+      "title": "Amazing",
+      "text": "Amazing sound and the quality and variety you can hear is really great!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251012",
+        "评星": 5,
+        "标题": "Amazing",
+        "评论": "Amazing sound and the quality and variety you can hear is really great!",
+        "review_index": 17
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-10-11",
       "rating": 1,
       "title": "Buy a cheap speaker and a tablet",
       "text": "Super glitchy with connection issues, touchscreen is awful. The whole concept is great but the execution lacks",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251011",
+        "评星": 1,
+        "标题": "Buy a cheap speaker and a tablet",
+        "评论": "Super glitchy with connection issues, touchscreen is awful. The whole concept is great but the execution lacks",
         "review_index": 18
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-10-10",
+      "rating": 5,
+      "title": "Good",
+      "text": "So far so good. It’s got good bass, good sound, the mic doesn’t pick up immediately but it’s decent. It’s small so it’s easy to carry around. You can use YouTube.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251010",
+        "评星": 5,
+        "标题": "Good",
+        "评论": "So far so good. It’s got good bass, good sound, the mic doesn’t pick up immediately but it’s decent. It’s small so it’s easy to carry around. You can use YouTube.",
+        "review_index": 19
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-10-08",
+      "rating": 2,
+      "title": "Karaoke machine issues",
+      "text": "The email chain Customer service from China was terrible.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251008",
+        "评星": 2,
+        "标题": "Karaoke machine issues",
+        "评论": "The email chain Customer service from China was terrible.",
+        "review_index": 20
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-10-07",
       "rating": 5,
       "title": "Packs a party punch",
       "text": "This is really cool to have an open house or party like that where some youngsters are fearlessly ready to get after it.  The sound is amazing.  You‘d think that since the speakers are facing you, no one would hear.  Nope. It is loud and clear... meaning it‘s ‘closing time‘ if you are doing it at midnight on the porch.  Ha ha.  Seriously though: I think the ap is ok. There are missing songs. I can‘t say as I have tried all the methods yet.  I find it hard to get the screen to go full size. But if you are persistent, no problem.  The screen is bright and most controls make sense. The volume knob is cool.  I wonder if the light is telling me: you‘re off key.... I like the buttons on the mic‘s.  Not a fan of the special effects, but ... don‘t use them, problem solved.  I had this at a party and about 4 people swore they were going to buy it the next day. It was a hit.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251007",
+        "评星": 5,
+        "标题": "Packs a party punch",
+        "评论": "This is really cool to have an open house or party like that where some youngsters are fearlessly ready to get after it.  The sound is amazing.  You‘d think that since the speakers are facing you, no one would hear.  Nope. It is loud and clear... meaning it‘s ‘closing time‘ if you are doing it at midnight on the porch.  Ha ha.  Seriously though: I think the ap is ok. There are missing songs. I can‘t say as I have tried all the methods yet.  I find it hard to get the screen to go full size. But if you are persistent, no problem.  The screen is bright and most controls make sense. The volume knob is cool.  I wonder if the light is telling me: you‘re off key.... I like the buttons on the mic‘s.  Not a fan of the special effects, but ... don‘t use them, problem solved.  I had this at a party and about 4 people swore they were going to buy it the next day. It was a hit.",
         "review_index": 21
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-10-07",
+      "rating": 5,
+      "title": "Love it",
+      "text": "Just love it great sound easy to use.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251007",
+        "评星": 5,
+        "标题": "Love it",
+        "评论": "Just love it great sound easy to use.",
+        "review_index": 22
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-10-06",
       "rating": 3,
       "title": "Excelente calidad",
       "text": "The sound is spectacular, and the design and quality are very good. My only observation is this: YouTube runs from YouTube Web, not from the app, which makes it run slower. You can‘t download Spotify, which would be a huge plus.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251006",
+        "评星": 3,
+        "标题": "Excelente calidad",
+        "评论": "The sound is spectacular, and the design and quality are very good. My only observation is this: YouTube runs from YouTube Web, not from the app, which makes it run slower. You can‘t download Spotify, which would be a huge plus.",
         "review_index": 23
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-10-04",
+      "rating": 5,
+      "title": "The speaker sound is amazing!",
+      "text": "Great karaoke system especially for the price. Very happy with the purchase.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20251004",
+        "评星": 5,
+        "标题": "The speaker sound is amazing!",
+        "评论": "Great karaoke system especially for the price. Very happy with the purchase.",
+        "review_index": 24
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-09-28",
+      "rating": 5,
+      "title": "Great purchase",
+      "text": "So worth the money, user friendly and sounds a fantastic, too!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250928",
+        "评星": 5,
+        "标题": "Great purchase",
+        "评论": "So worth the money, user friendly and sounds a fantastic, too!",
+        "review_index": 25
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S1;Color=Black",
+      "review_date": "2025-09-27",
+      "rating": 4,
+      "title": "Good product for the price.",
+      "text": "I got this for my wife, she loves it. It seems to be good quality and sounds good. For the price point I’m not disappointed. I do wish the user interface was better, it’s very sluggish, but if you are just using it as a PA system, it’s fine. I also wish it was easier to change vocal effects.The great things about it, the size and integral mic charges, it looks sharp, feels like good quality, and have had no issues with the wireless mics connecting. The volume control on the mics is also helpful.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S1;Color=Black",
+        "评论日期": "20250927",
+        "评星": 4,
+        "标题": "Good product for the price.",
+        "评论": "I got this for my wife, she loves it. It seems to be good quality and sounds good. For the price point I’m not disappointed. I do wish the user interface was better, it’s very sluggish, but if you are just using it as a PA system, it’s fine. I also wish it was easier to change vocal effects.The great things about it, the size and integral mic charges, it looks sharp, feels like good quality, and have had no issues with the wireless mics connecting. The volume control on the mics is also helpful.",
+        "review_index": 26
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-09-25",
+      "rating": 5,
+      "title": "I couldn’t believe the quality for the price.",
+      "text": "This machine is awesome. If you are an Apple Music subscriber it absolutely beats the Apple TV “Sing” feature. The mics are incredibly solid and the six months of KaraFun gave me a sense for what I’m in for if I want the pure karaoke experience. Highly recommended at an incredible price point.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250925",
+        "评星": 5,
+        "标题": "I couldn’t believe the quality for the price.",
+        "评论": "This machine is awesome. If you are an Apple Music subscriber it absolutely beats the Apple TV “Sing” feature. The mics are incredibly solid and the six months of KaraFun gave me a sense for what I’m in for if I want the pure karaoke experience. Highly recommended at an incredible price point.",
+        "review_index": 27
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-09-21",
+      "rating": 5,
+      "title": "Excellent sound!",
+      "text": "I love this karaoke machine. I use karafun as an app.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250921",
+        "评星": 5,
+        "标题": "Excellent sound!",
+        "评论": "I love this karaoke machine. I use karafun as an app.",
+        "review_index": 28
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-09-15",
       "rating": 5,
       "title": "Great concept, hard to navigate, needs improvement",
       "text": "Great concept, hard to navigate, 3 stars go to the design, volume, and ergonomics, however, the user interface is very hard to navigate, especially when you‘re trying to use the search feature on Youtube to look for songs, it is very tiny and hard to see, also when you connect your smart phone or tablet, you can not control YouTube fully, when you pick a sing from the external device, the screen will ONLY SHOW the video title but it wont show the full video, aside from that the company is very helpful when it comes to any troubleshooting.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250915",
+        "评星": 5,
+        "标题": "Great concept, hard to navigate, needs improvement",
+        "评论": "Great concept, hard to navigate, 3 stars go to the design, volume, and ergonomics, however, the user interface is very hard to navigate, especially when you‘re trying to use the search feature on Youtube to look for songs, it is very tiny and hard to see, also when you connect your smart phone or tablet, you can not control YouTube fully, when you pick a sing from the external device, the screen will ONLY SHOW the video title but it wont show the full video, aside from that the company is very helpful when it comes to any troubleshooting.",
         "review_index": 29
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-09-14",
+      "rating": 5,
+      "title": "Love it!",
+      "text": "love it!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250914",
+        "评星": 5,
+        "标题": "Love it!",
+        "评论": "love it!",
+        "review_index": 30
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-09-11",
       "rating": 5,
       "title": "Can‘t understand the instructions just illustrations I need words with the illustrations",
       "text": "My karoke machine is great 2 microphones come with it and the sound is wonderful I still haven‘t learn how to do videos with it yet because the instructions just show illustrations i need words with the illustrations thts wht you need to correct please and when you change tht please send me a new paper instructions it would be greatly appreciated and I will let all customers who purchase this item know tht you went out your way for a customer because thts how Amazon‘s company is they go the extra mile but I guess yall can‘t really do tht I guess I have to call the company for tht but you can at least let them know",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250911",
+        "评星": 5,
+        "标题": "Can‘t understand the instructions just illustrations I need words with the illustrations",
+        "评论": "My karoke machine is great 2 microphones come with it and the sound is wonderful I still haven‘t learn how to do videos with it yet because the instructions just show illustrations i need words with the illustrations thts wht you need to correct please and when you change tht please send me a new paper instructions it would be greatly appreciated and I will let all customers who purchase this item know tht you went out your way for a customer because thts how Amazon‘s company is they go the extra mile but I guess yall can‘t really do tht I guess I have to call the company for tht but you can at least let them know",
         "review_index": 31
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-09-11",
       "rating": 1,
       "title": "CHARGING IS AN ISSUE",
       "text": "Inconvenient to have to come purchase/procure your own charger/adapter and that none of it is built-in.  That would really make this a complete, portable unit.  At the very least, give us a charger/adapter and not just a cable.  Now we‘re left trying to figure out what‘s too much wattage for the adapter or what‘s too little.  Instructions are clear in that.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250911",
+        "评星": 1,
+        "标题": "CHARGING IS AN ISSUE",
+        "评论": "Inconvenient to have to come purchase/procure your own charger/adapter and that none of it is built-in.  That would really make this a complete, portable unit.  At the very least, give us a charger/adapter and not just a cable.  Now we‘re left trying to figure out what‘s too much wattage for the adapter or what‘s too little.  Instructions are clear in that.",
         "review_index": 32
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-09-09",
+      "rating": 5,
+      "title": "Todo ok",
+      "text": "Todo perfecto",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250909",
+        "评星": 5,
+        "标题": "Todo ok",
+        "评论": "Todo perfecto",
+        "review_index": 33
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-09-09",
       "rating": 5,
       "title": "Must have for parties",
       "text": "This is a must have item for anyone who entertains at home frequently. Our family has used this for multiple parties and gatherings and everyone loves it. The sound is loud and perfect, reminds me of a boom box. Must have for sure!!!",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250909",
+        "评星": 5,
+        "标题": "Must have for parties",
+        "评论": "This is a must have item for anyone who entertains at home frequently. Our family has used this for multiple parties and gatherings and everyone loves it. The sound is loud and perfect, reminds me of a boom box. Must have for sure!!!",
         "review_index": 34
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-09-07",
+      "rating": 5,
+      "title": "Not one complaint. It is perfect.",
+      "text": "If you are even considering purchasing this karaoke machine, do it. I did a lot a research before making this purchase. You won’t  regret it for a second. The sound is great. We use it as a Bluetooth speaker also. I can’t begin to express the amount of fun and laughs we had with it. I’ve never used the karaoke app. We just play music videos from YouTube with lyrics. People also sound better singing along to the original songs, so they’re not as shy! At least 5 people I know have purchased one since trying out mine.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250907",
+        "评星": 5,
+        "标题": "Not one complaint. It is perfect.",
+        "评论": "If you are even considering purchasing this karaoke machine, do it. I did a lot a research before making this purchase. You won’t  regret it for a second. The sound is great. We use it as a Bluetooth speaker also. I can’t begin to express the amount of fun and laughs we had with it. I’ve never used the karaoke app. We just play music videos from YouTube with lyrics. People also sound better singing along to the original songs, so they’re not as shy! At least 5 people I know have purchased one since trying out mine.",
+        "review_index": 35
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-09-06",
+      "rating": 5,
+      "title": "OMG! This is by far the best karaoke machine",
+      "text": "OMG! This is by far the best karaoke machine I‘ve ever came across🥰🥰🥰The sound, the features and the access to other music and songs you know IS AMAZING!!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250906",
+        "评星": 5,
+        "标题": "OMG! This is by far the best karaoke machine",
+        "评论": "OMG! This is by far the best karaoke machine I‘ve ever came across🥰🥰🥰The sound, the features and the access to other music and songs you know IS AMAZING!!",
+        "review_index": 36
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-09-06",
       "rating": 5,
       "title": "So Fun—I Bought Two (and Friends Did Too!)🥳❤️",
       "text": "Such a blast! This karaoke machine has been the star of our family and friend gatherings. Everyone loves it—already bought two and friends bought theirs after trying mine..",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250906",
+        "评星": 5,
+        "标题": "So Fun—I Bought Two (and Friends Did Too!)🥳❤️",
+        "评论": "Such a blast! This karaoke machine has been the star of our family and friend gatherings. Everyone loves it—already bought two and friends bought theirs after trying mine..",
         "review_index": 37
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-09-03",
+      "rating": 5,
+      "title": "Bring the party with you!",
+      "text": "I bought this for my husband for his birthday.  We have used it at parties, connecting it to any system wherever we go is easy with the Bluetooth. The microphones are solid, but could be a bit easier to turn on and could pick-up voices it bit more easily.  However, for the price the entire unit is excellent.  It works really well and has substantial battery life.  It is lightweight and easy to take anywhere.  Fun and easy to use, this has been an excellent purchase.  It packs a big punch and lots of people have asked us where we bought it because they want to get one.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250903",
+        "评星": 5,
+        "标题": "Bring the party with you!",
+        "评论": "I bought this for my husband for his birthday.  We have used it at parties, connecting it to any system wherever we go is easy with the Bluetooth. The microphones are solid, but could be a bit easier to turn on and could pick-up voices it bit more easily.  However, for the price the entire unit is excellent.  It works really well and has substantial battery life.  It is lightweight and easy to take anywhere.  Fun and easy to use, this has been an excellent purchase.  It packs a big punch and lots of people have asked us where we bought it because they want to get one.",
+        "review_index": 38
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-09-02",
       "rating": 5,
       "title": "Awesome Device",
       "text": "Got this for my wife as she loves Karaoke, but had a cheap mic and app that she used. This product is AWESOME! The mics sound great, the speakers sound great, and the primary karaoke app that comes with a 6 month subscription was great. I threw her a Karaoke party and everyone really enjoyed themselves and had a great time.The battery life is also great. We sang for 4 or 5 hours off of one charge and got it to about 20% battery life which I think is awesome considering the sound it can produce.If you‘re on the fence about it because of the cost, give it a shot.Also worth noting, I will be using this for Halloween as it comes with microphone effects, one of which is monster, which sounds like it would be perfect to use on trick or treaters, so a bonus use for me.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250902",
+        "评星": 5,
+        "标题": "Awesome Device",
+        "评论": "Got this for my wife as she loves Karaoke, but had a cheap mic and app that she used. This product is AWESOME! The mics sound great, the speakers sound great, and the primary karaoke app that comes with a 6 month subscription was great. I threw her a Karaoke party and everyone really enjoyed themselves and had a great time.The battery life is also great. We sang for 4 or 5 hours off of one charge and got it to about 20% battery life which I think is awesome considering the sound it can produce.If you‘re on the fence about it because of the cost, give it a shot.Also worth noting, I will be using this for Halloween as it comes with microphone effects, one of which is monster, which sounds like it would be perfect to use on trick or treaters, so a bonus use for me.",
         "review_index": 39
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
       "review_date": "2025-09-01",
       "rating": 5,
       "title": "Best gift for drama or choir kids!",
       "text": "We bought this for our son and it has been his favorite thing ever since. He spends hours practicing in his room singing with the Ikarao. It is also a hit at every party, kids or otherwise. The battery life is great and the dual microphones let our kids sing duets without feedback or interference. Great product!!!",
       "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250901",
+        "评星": 5,
+        "标题": "Best gift for drama or choir kids!",
+        "评论": "We bought this for our son and it has been his favorite thing ever since. He spends hours practicing in his room singing with the Ikarao. It is also a hit at every party, kids or otherwise. The battery life is great and the dual microphones let our kids sing duets without feedback or interference. Great product!!!",
         "review_index": 40
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-08-28",
+      "rating": 1,
+      "title": "Don‘t buy",
+      "text": "I doesn‘t work all that well it holds a echo in the mic when trying to hookup to TV  sounds good in and out  not a good product",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250828",
+        "评星": 1,
+        "标题": "Don‘t buy",
+        "评论": "I doesn‘t work all that well it holds a echo in the mic when trying to hookup to TV  sounds good in and out  not a good product",
+        "review_index": 41
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-08-27",
+      "rating": 5,
+      "title": "Should buy!",
+      "text": "Very fun! Have used at home, brought camping, etc. very portable and a great thing to have.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250827",
+        "评星": 5,
+        "标题": "Should buy!",
+        "评论": "Very fun! Have used at home, brought camping, etc. very portable and a great thing to have.",
+        "review_index": 42
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-08-27",
+      "rating": 5,
+      "title": "Karaoke machine",
+      "text": "Love this little machine.Great sound for the size.Love the microphones charge right in machine",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250827",
+        "评星": 5,
+        "标题": "Karaoke machine",
+        "评论": "Love this little machine.Great sound for the size.Love the microphones charge right in machine",
+        "review_index": 43
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-08-25",
+      "rating": 5,
+      "title": "Our new Kareoke",
+      "text": "We love it and have so much fun with it",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250825",
+        "评星": 5,
+        "标题": "Our new Kareoke",
+        "评论": "We love it and have so much fun with it",
+        "review_index": 44
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S1;Color=Black",
       "review_date": "2025-08-25",
       "rating": 1,
       "title": "Doesn’t stay connected - returning",
       "text": "I really wanted this to work, but it’s impossible to keep the Shell 1 connected for more than a single song. It keeps resetting over and over. I tested both 5GHz and 2.4GHz networks with no luck. After several attempts, I’m giving up and returning it. Very disappointing experience.",
       "raw": {
+        "评论产品的属性": "Size=Shell S1;Color=Black",
+        "评论日期": "20250825",
+        "评星": 1,
+        "标题": "Doesn’t stay connected - returning",
+        "评论": "I really wanted this to work, but it’s impossible to keep the Shell 1 connected for more than a single song. It keeps resetting over and over. I tested both 5GHz and 2.4GHz networks with no luck. After several attempts, I’m giving up and returning it. Very disappointing experience.",
         "review_index": 45
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S1;Color=Black",
+      "review_date": "2025-08-21",
+      "rating": 4,
+      "title": "Would Not Recommend",
+      "text": "The user interface and operating system are very very slow.Microphone quality is good as long as you are not too close to the speaker. If you are too close, your voice will cut in and out.My system did not come with an operator manual booklet, the previous purchaser must have forgotten to put it back…In the process of testing YouTube, Karafun, and Smule, there wasn’t a way to adjust the music volume to be louder. You can only make the mic volume lower. This makes it difficult to use YouTube or Smule since your voice drowns out the music or the music drowns out your voice…Karafun is definitely the most compatible of these apps.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S1;Color=Black",
+        "评论日期": "20250821",
+        "评星": 4,
+        "标题": "Would Not Recommend",
+        "评论": "The user interface and operating system are very very slow.Microphone quality is good as long as you are not too close to the speaker. If you are too close, your voice will cut in and out.My system did not come with an operator manual booklet, the previous purchaser must have forgotten to put it back…In the process of testing YouTube, Karafun, and Smule, there wasn’t a way to adjust the music volume to be louder. You can only make the mic volume lower. This makes it difficult to use YouTube or Smule since your voice drowns out the music or the music drowns out your voice…Karafun is definitely the most compatible of these apps.",
+        "review_index": 46
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-08-20",
+      "rating": 5,
+      "title": "Value for the money",
+      "text": "I have very little expectations on small karaoke machines, but Ikarao proved me wrong! Great sound, user friendly, convenient to carry around every where. Not to mention, it comes with 2 powerful microphones!! Fun for all ages!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250820",
+        "评星": 5,
+        "标题": "Value for the money",
+        "评论": "I have very little expectations on small karaoke machines, but Ikarao proved me wrong! Great sound, user friendly, convenient to carry around every where. Not to mention, it comes with 2 powerful microphones!! Fun for all ages!",
+        "review_index": 47
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-08-19",
+      "rating": 5,
+      "title": "Karaoke and more at its best!!",
+      "text": "This Karoke machine works amazing!!!!!!, the sound wuality is fantastic, i used it this past week just as boombox to listen to music from spotify. Works amazing with karaoke also, truly awesome!!!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250819",
+        "评星": 5,
+        "标题": "Karaoke and more at its best!!",
+        "评论": "This Karoke machine works amazing!!!!!!, the sound wuality is fantastic, i used it this past week just as boombox to listen to music from spotify. Works amazing with karaoke also, truly awesome!!!",
+        "review_index": 48
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-08-19",
+      "rating": 5,
+      "title": "Great Machine Don’t pass it up!!!!",
+      "text": "It is fantastic. We use it for anything potable. We had the whole campground having fun. We have sold 5 of them so far. Everyone that sees our set up ask where to get it and I send the link. We karaoke a lot and this is great sound quality. It has Karafun which has so many songs it worth the 11 dollars a month. The QR code is the best no more having people ask you for songs they can do it from their phone. Love it can not say enough great stuff about this machine.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250819",
+        "评星": 5,
+        "标题": "Great Machine Don’t pass it up!!!!",
+        "评论": "It is fantastic. We use it for anything potable. We had the whole campground having fun. We have sold 5 of them so far. Everyone that sees our set up ask where to get it and I send the link. We karaoke a lot and this is great sound quality. It has Karafun which has so many songs it worth the 11 dollars a month. The QR code is the best no more having people ask you for songs they can do it from their phone. Love it can not say enough great stuff about this machine.",
+        "review_index": 49
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-08-17",
+      "rating": 5,
+      "title": "So far it’s great",
+      "text": "Nicely designed and great as portable speaker",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250817",
+        "评星": 5,
+        "标题": "So far it’s great",
+        "评论": "Nicely designed and great as portable speaker",
+        "review_index": 50
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-08-13",
+      "rating": 5,
+      "title": "FAVORITE ALL TIME AMAZON FIND,!",
+      "text": "OMG…. This is such a fantastic gift for a friend who loves to sing or yourself.  I keep finding more things that are over the top with this product. The added apps you get for a few months really are fabulous too. My all time favorite find on Amazon ever!  I had to tell others who promptly bought it. Have fun being silly too with friends and family!!!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250813",
+        "评星": 5,
+        "标题": "FAVORITE ALL TIME AMAZON FIND,!",
+        "评论": "OMG…. This is such a fantastic gift for a friend who loves to sing or yourself.  I keep finding more things that are over the top with this product. The added apps you get for a few months really are fabulous too. My all time favorite find on Amazon ever!  I had to tell others who promptly bought it. Have fun being silly too with friends and family!!!",
+        "review_index": 51
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S1;Color=Black",
+      "review_date": "2025-08-13",
+      "rating": 5,
+      "title": "Great Karaoke Machine",
+      "text": "Really great quality and everyone couldn’t believe the sound and clarity and easiness",
+      "raw": {
+        "评论产品的属性": "Size=Shell S1;Color=Black",
+        "评论日期": "20250813",
+        "评星": 5,
+        "标题": "Great Karaoke Machine",
+        "评论": "Really great quality and everyone couldn’t believe the sound and clarity and easiness",
+        "review_index": 52
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2;Color=Black",
+      "review_date": "2025-08-12",
+      "rating": 5,
+      "title": "I’m happy and loving it..",
+      "text": "This is the best everrrr, very good sound quality of both machine and mics. Bluetooth connectivity is good too! The tablet was a little bit slow but I guess we are just used to how fast Iphones are. It feels like a decent android device.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2;Color=Black",
+        "评论日期": "20250812",
+        "评星": 5,
+        "标题": "I’m happy and loving it..",
+        "评论": "This is the best everrrr, very good sound quality of both machine and mics. Bluetooth connectivity is good too! The tablet was a little bit slow but I guess we are just used to how fast Iphones are. It feels like a decent android device.",
+        "review_index": 53
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-08-07",
+      "rating": 5,
+      "title": "need to be on line",
+      "text": "Bought this as a gift for my wife she LOVES it",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250807",
+        "评星": 5,
+        "标题": "need to be on line",
+        "评论": "Bought this as a gift for my wife she LOVES it",
+        "review_index": 54
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-08-05",
+      "rating": 5,
+      "title": "Great sound",
+      "text": "Easy to use",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250805",
+        "评星": 5,
+        "标题": "Great sound",
+        "评论": "Easy to use",
+        "review_index": 55
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
       "review_date": "2025-08-03",
       "rating": 3,
       "title": "sounds good but hard to use",
       "text": "sounds good. However is hard to select songs. would be cool if theres an app for the device so you can use smartphone to control it. but no; that doesnt exist.  It is easy to understand how to use it but the selection of songs is hard.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250803",
+        "评星": 3,
+        "标题": "sounds good but hard to use",
+        "评论": "sounds good. However is hard to select songs. would be cool if theres an app for the device so you can use smartphone to control it. but no; that doesnt exist.  It is easy to understand how to use it but the selection of songs is hard.",
         "review_index": 56
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-08-01",
+      "rating": 4,
+      "title": "Hard to read",
+      "text": "Words kinda hard for me to read( small) so I feel I‘m standing too close to machine. Great mics has a little echo maybe because I‘m having to stand so close.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250801",
+        "评星": 4,
+        "标题": "Hard to read",
+        "评论": "Words kinda hard for me to read( small) so I feel I‘m standing too close to machine. Great mics has a little echo maybe because I‘m having to stand so close.",
+        "review_index": 57
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-07-29",
+      "rating": 5,
+      "title": "Great sound and quality. Multifunctional",
+      "text": "Great sound and lots of fun for my adult Karoke party.  I wanted something I could use for years to come that was of good quality and sound. This was it!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250729",
+        "评星": 5,
+        "标题": "Great sound and quality. Multifunctional",
+        "评论": "Great sound and lots of fun for my adult Karoke party.  I wanted something I could use for years to come that was of good quality and sound. This was it!",
+        "review_index": 58
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
       "review_date": "2025-07-20",
       "rating": 1,
       "title": "Screen DOA",
       "text": "Bought it for a party we were having, but the Screen was DOA. All the lights turn on, but the screen stays dark. Returning for something more reliable.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250720",
+        "评星": 1,
+        "标题": "Screen DOA",
+        "评论": "Bought it for a party we were having, but the Screen was DOA. All the lights turn on, but the screen stays dark. Returning for something more reliable.",
         "review_index": 59
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S1",
+      "review_date": "2025-07-17",
+      "rating": 1,
+      "title": "Music good but microphone not good",
+      "text": "The microphone not good so light look like a kid microphone",
+      "raw": {
+        "评论产品的属性": "Size=Shell S1",
+        "评论日期": "20250717",
+        "评星": 1,
+        "标题": "Music good but microphone not good",
+        "评论": "The microphone not good so light look like a kid microphone",
+        "review_index": 60
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-07-16",
+      "rating": 5,
+      "title": "Definitely recommend!",
+      "text": "Love it! The sound is amazing and love the portability.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250716",
+        "评星": 5,
+        "标题": "Definitely recommend!",
+        "评论": "Love it! The sound is amazing and love the portability.",
+        "review_index": 61
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-07-14",
+      "rating": 1,
+      "title": "No charger",
+      "text": "Concept is nice but it does  it come with a charger and the supposed to be compatible charger does not work with it so there is no way to charge the product.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250714",
+        "评星": 1,
+        "标题": "No charger",
+        "评论": "Concept is nice but it does  it come with a charger and the supposed to be compatible charger does not work with it so there is no way to charge the product.",
+        "review_index": 62
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S1",
+      "review_date": "2025-07-14",
+      "rating": 5,
+      "title": "The screen is not sensitive. Everything takes at least 3 seconds to load",
+      "text": "The screen is not sensitive. Very hard to scroll or type. Lots of delays when searching/loading music. Karafun is also hard to use. Not many music choices.Seller contacted me and they have a really good attitude and truly listen to feedback. So I decided to add two stars back. Their customer service seems great.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S1",
+        "评论日期": "20250714",
+        "评星": 5,
+        "标题": "The screen is not sensitive. Everything takes at least 3 seconds to load",
+        "评论": "The screen is not sensitive. Very hard to scroll or type. Lots of delays when searching/loading music. Karafun is also hard to use. Not many music choices.Seller contacted me and they have a really good attitude and truly listen to feedback. So I decided to add two stars back. Their customer service seems great.",
+        "review_index": 63
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
       "review_date": "2025-07-13",
       "rating": 1,
       "title": "Poor Wi-Fi radio",
       "text": "The wi-fi radio included in the device is very poor and will not hold a wi-fi connection when moved even a short distance away from our router. We have 1GB fiber internet and no devices in the home have any issue except this device.",
       "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250713",
+        "评星": 1,
+        "标题": "Poor Wi-Fi radio",
+        "评论": "The wi-fi radio included in the device is very poor and will not hold a wi-fi connection when moved even a short distance away from our router. We have 1GB fiber internet and no devices in the home have any issue except this device.",
         "review_index": 64
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-07-13",
+      "rating": 5,
+      "title": "Fun and compact with great sound",
+      "text": "We are having a blast this summer with our new karaoke machine. It works great for music at the pool or karaoke parties with the neighbors",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250713",
+        "评星": 5,
+        "标题": "Fun and compact with great sound",
+        "评论": "We are having a blast this summer with our new karaoke machine. It works great for music at the pool or karaoke parties with the neighbors",
+        "review_index": 65
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S1",
+      "review_date": "2025-07-12",
+      "rating": 5,
+      "title": "hand carry.",
+      "text": "Very handy size, good sound system, comfortable to sing.",
+      "raw": {
+        "评论产品的属性": "Size=Shell S1",
+        "评论日期": "20250712",
+        "评星": 5,
+        "标题": "hand carry.",
+        "评论": "Very handy size, good sound system, comfortable to sing.",
+        "review_index": 66
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-07-08",
+      "rating": 5,
+      "title": "The sound is clearly the best abceey",
+      "text": "Quality is awesome, songs and sounds are beautiful!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250708",
+        "评星": 5,
+        "标题": "The sound is clearly the best abceey",
+        "评论": "Quality is awesome, songs and sounds are beautiful!",
+        "review_index": 67
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-07-07",
+      "rating": 5,
+      "title": "Best gift!",
+      "text": "My 17 year old daughter loves this machine. She said it was the best gift we’ve given her so far!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250707",
+        "评星": 5,
+        "标题": "Best gift!",
+        "评论": "My 17 year old daughter loves this machine. She said it was the best gift we’ve given her so far!",
+        "review_index": 68
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-07-05",
+      "rating": 5,
+      "title": "Great Sound! Family fun!",
+      "text": "Great sound👍🏼 different microphone/voice settings, which makes it fun for kids! Can link to Spotify app if you have one. Use it to be the announcer at family game night and just added another dimension to the fun:)",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250705",
+        "评星": 5,
+        "标题": "Great Sound! Family fun!",
+        "评论": "Great sound👍🏼 different microphone/voice settings, which makes it fun for kids! Can link to Spotify app if you have one. Use it to be the announcer at family game night and just added another dimension to the fun:)",
+        "review_index": 69
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
       "review_date": "2025-06-29",
       "rating": 4,
       "title": "Minimal instructions, unable to get 6-month subscription started",
       "text": "Seems like good quality but couldn‘t figure out how to activate the 6-month subscription.  Contacted the company through the machine to the website, but no answer after a couple of days.  Minimal instructions on setup, so trying to figure out exactly how it operates.UPDATE:  Company contacted us on the trial. Thank you!A very nice machine and it was a hit.Can‘t give it a 5 as there are little to no instructions.  A QR code to an instruction manual would be a big plus!",
       "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250629",
+        "评星": 4,
+        "标题": "Minimal instructions, unable to get 6-month subscription started",
+        "评论": "Seems like good quality but couldn‘t figure out how to activate the 6-month subscription.  Contacted the company through the machine to the website, but no answer after a couple of days.  Minimal instructions on setup, so trying to figure out exactly how it operates.UPDATE:  Company contacted us on the trial. Thank you!A very nice machine and it was a hit.Can‘t give it a 5 as there are little to no instructions.  A QR code to an instruction manual would be a big plus!",
         "review_index": 70
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-06-27",
+      "rating": 5,
+      "title": "A must have fur the singer in your home",
+      "text": "Kids love it!!!! Sound is impressive!!!!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250627",
+        "评星": 5,
+        "标题": "A must have fur the singer in your home",
+        "评论": "Kids love it!!!! Sound is impressive!!!!",
+        "review_index": 71
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S1",
+      "review_date": "2025-06-27",
+      "rating": 5,
+      "title": "Ikaroo was a good quality",
+      "text": "Well this kareoke is good",
+      "raw": {
+        "评论产品的属性": "Size=Shell S1",
+        "评论日期": "20250627",
+        "评星": 5,
+        "标题": "Ikaroo was a good quality",
+        "评论": "Well this kareoke is good",
+        "review_index": 72
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
       "review_date": "2025-06-26",
       "rating": 4,
       "title": "Good sound, but falls short in packaging an adapter",
       "text": "Why did you pick this product vs others?:Product is good for the size, but while it‘s sold as a whole package with mics included and easy to store in the unit, they fall short in carrying this concept over to the charging of the unit.  Inconvenient to have to come purchase/procure your own charger/adapter and that none of it is built-in.  That would really make this a complete, portable unit.  At the very least, give us a charger/adapter and not just a cable.  Now we‘re left trying to figure out what‘s too much wattage for the adapter or what‘s too little.  Instructions are clear in that.Update:  customer service is a plus, reached out, helped me with resolution",
       "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250626",
+        "评星": 4,
+        "标题": "Good sound, but falls short in packaging an adapter",
+        "评论": "Why did you pick this product vs others?:Product is good for the size, but while it‘s sold as a whole package with mics included and easy to store in the unit, they fall short in carrying this concept over to the charging of the unit.  Inconvenient to have to come purchase/procure your own charger/adapter and that none of it is built-in.  That would really make this a complete, portable unit.  At the very least, give us a charger/adapter and not just a cable.  Now we‘re left trying to figure out what‘s too much wattage for the adapter or what‘s too little.  Instructions are clear in that.Update:  customer service is a plus, reached out, helped me with resolution",
         "review_index": 73
       }
     },
     {
       "asin": "B0DHPN1DMJ",
-      "variant": "unknown",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-06-25",
+      "rating": 5,
+      "title": "Works Great!",
+      "text": "Why did you pick this product vs others?:This was a great value for the price!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250625",
+        "评星": 5,
+        "标题": "Works Great!",
+        "评论": "Why did you pick this product vs others?:This was a great value for the price!",
+        "review_index": 74
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
       "review_date": "2025-06-21",
       "rating": 5,
       "title": "Worth it",
       "text": "The sound is amazing for a small karaoke machine. It’s fun, two microphones and words pop up on the screen. Totally worth the value",
       "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250621",
+        "评星": 5,
+        "标题": "Worth it",
+        "评论": "The sound is amazing for a small karaoke machine. It’s fun, two microphones and words pop up on the screen. Totally worth the value",
         "review_index": 75
+      }
+    },
+    {
+      "asin": "B0DHPN1DMJ",
+      "variant": "Size=Shell S2",
+      "review_date": "2025-06-16",
+      "rating": 5,
+      "title": "Small but mighty",
+      "text": "We’ve had karaoke over the years and I wanted to update to this kind to utilize YouTube for karaoke songs. I was skeptical at first about the sound quality but this exceeded my expectations. The sound and product quality are topnotch. We typically have it plugged during use so I’m not sure about battery life (maybe not a good idea). We love this karaoke and my aunts are getting one, too!",
+      "raw": {
+        "评论产品的属性": "Size=Shell S2",
+        "评论日期": "20250616",
+        "评星": 5,
+        "标题": "Small but mighty",
+        "评论": "We’ve had karaoke over the years and I wanted to update to this kind to utilize YouTube for karaoke songs. I was skeptical at first about the sound quality but this exceeded my expectations. The sound and product quality are topnotch. We typically have it plugged during use so I’m not sure about battery life (maybe not a good idea). We love this karaoke and my aunts are getting one, too!",
+        "review_index": 76
       }
     }
   ],
@@ -1798,67 +2750,71 @@
       "confidence": "high"
     },
     {
-      "feedback_unit_id": "fu_theme_sound_portable_all_in_one_8",
-      "review_index": 8,
-      "dimension": "满意点",
+      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_3",
+      "review_index": 3,
+      "dimension": "不满意点",
       "audience": "unknown",
-      "scenario": "家庭/户外便携娱乐",
-      "user_task": "唱歌或播放音乐",
-      "purchase_reason": "便携一体化和音质",
+      "scenario": "便携使用和聚会",
+      "user_task": "连续使用并给设备充电",
+      "purchase_reason": "完整便携套装",
       "user_expectation": "顺畅、完整、稳定",
       "expectation_source": "review_text",
-      "actual_experience": "用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。",
-      "satisfied_points": "小体积但声音有力量/便携一体化",
-      "unsatisfied_points": "unknown",
-      "consequence": "这是最应该在 Listing、图片、视频和广告中被放大的主卖点。",
-      "evidence": "portable, versatile, compact, good sound",
+      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "充电器/麦克风充电/续航落差",
+      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
+      "evidence": "battery does not last all day",
       "open_tags": [
-        "tag_sound_powerful_for_size",
-        "tag_portable_all_in_one"
+        "tag_charging_adapter_gap"
       ],
       "confidence": "high"
     },
     {
-      "feedback_unit_id": "fu_theme_sound_portable_all_in_one_12",
-      "review_index": 12,
+      "feedback_unit_id": "fu_auto_004",
+      "review_index": 4,
       "dimension": "满意点",
       "audience": "unknown",
-      "scenario": "家庭/户外便携娱乐",
-      "user_task": "唱歌或播放音乐",
-      "purchase_reason": "便携一体化和音质",
-      "user_expectation": "顺畅、完整、稳定",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
       "expectation_source": "review_text",
-      "actual_experience": "用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。",
-      "satisfied_points": "小体积但声音有力量/便携一体化",
+      "actual_experience": "Great purchase!",
+      "satisfied_points": "声音/音量表现好",
       "unsatisfied_points": "unknown",
-      "consequence": "这是最应该在 Listing、图片、视频和广告中被放大的主卖点。",
-      "evidence": "Easy to use",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "This is a great portable Karaoke Machine - the sound is good - nice quality. Due to it‘s small size sometimes it is hard to read some of the options but other than that we have had a great time with this little unit. I d",
       "open_tags": [
         "tag_sound_powerful_for_size",
-        "tag_portable_all_in_one"
+        "tag_family_party_hit",
+        "tag_portable_all_in_one",
+        "tag_ui_song_selection_friction"
       ],
-      "confidence": "high"
+      "confidence": "low"
     },
     {
-      "feedback_unit_id": "fu_theme_sound_portable_all_in_one_75",
-      "review_index": 75,
+      "feedback_unit_id": "fu_auto_005",
+      "review_index": 5,
       "dimension": "满意点",
-      "audience": "unknown",
-      "scenario": "家庭/户外便携娱乐",
-      "user_task": "唱歌或播放音乐",
-      "purchase_reason": "便携一体化和音质",
-      "user_expectation": "顺畅、完整、稳定",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
       "expectation_source": "review_text",
-      "actual_experience": "用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。",
-      "satisfied_points": "小体积但声音有力量/便携一体化",
+      "actual_experience": "Great quality no Echo and very easy to transport",
+      "satisfied_points": "便携体验好",
       "unsatisfied_points": "unknown",
-      "consequence": "这是最应该在 Listing、图片、视频和广告中被放大的主卖点。",
-      "evidence": "sound is amazing",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "This is an awesome gift it is portable it is easy to work it is user friendly! And charges up in just a few minutes and there is no Echo the quality is great! Bluetooth and Wi-Fi setup is Carefree!",
       "open_tags": [
-        "tag_sound_powerful_for_size",
-        "tag_portable_all_in_one"
+        "tag_family_party_hit",
+        "tag_portable_all_in_one",
+        "tag_instruction_gap",
+        "tag_charging_adapter_gap",
+        "tag_connection_hardware_risk"
       ],
-      "confidence": "high"
+      "confidence": "low"
     },
     {
       "feedback_unit_id": "fu_theme_family_party_gifting_6",
@@ -1877,6 +2833,47 @@
       "evidence": "karaoke with the family for a party and it was a hit",
       "open_tags": [
         "tag_family_party_hit"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_7",
+      "review_index": 7,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "便携使用和聚会",
+      "user_task": "连续使用并给设备充电",
+      "purchase_reason": "完整便携套装",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "充电器/麦克风充电/续航落差",
+      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
+      "evidence": "one of the microphones will not charge",
+      "open_tags": [
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_7",
+      "review_index": 7,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "no clear instructions",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
       ],
       "confidence": "high"
     },
@@ -1901,6 +2898,553 @@
       "confidence": "high"
     },
     {
+      "feedback_unit_id": "fu_theme_sound_portable_all_in_one_8",
+      "review_index": 8,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/户外便携娱乐",
+      "user_task": "唱歌或播放音乐",
+      "purchase_reason": "便携一体化和音质",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。",
+      "satisfied_points": "小体积但声音有力量/便携一体化",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是最应该在 Listing、图片、视频和广告中被放大的主卖点。",
+      "evidence": "portable, versatile, compact, good sound",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_009",
+      "review_index": 9,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "unknown",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Powerful. Portable. So much fun!",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Great machine! Sound can get loud and sounds great! I wish the touch screen and software was a little easier to navigate (but it might be a user error). I read that I can control it by an app, but I haven‘t set that up y",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit",
+        "tag_portable_all_in_one",
+        "tag_ui_song_selection_friction",
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_010",
+      "review_index": 10,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Great sound quality and fun to use",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "✅ What this machine does wellSound & portabilityIt’s specified at 140 W peak power via dual 2.7″ full-range drivers, which promises a reasonably loud, clear sound for home/party use.Reviewers for similar models (e.g., th",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit",
+        "tag_portable_all_in_one",
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap",
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_011",
+      "review_index": 11,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "unknown",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Great one!!",
+      "satisfied_points": "正向整体体验",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Absolutely love it",
+      "open_tags": [
+        "tag_positive_general_praise"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_theme_sound_portable_all_in_one_12",
+      "review_index": 12,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/户外便携娱乐",
+      "user_task": "唱歌或播放音乐",
+      "purchase_reason": "便携一体化和音质",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。",
+      "satisfied_points": "小体积但声音有力量/便携一体化",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是最应该在 Listing、图片、视频和广告中被放大的主卖点。",
+      "evidence": "Easy to use",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_013",
+      "review_index": 13,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Ikarao portable karaoke",
+      "satisfied_points": "便携体验好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Just Fabulous, didn’t know that it as so many features and am way overwhelmed with my purchase",
+      "open_tags": [
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_014",
+      "review_index": 14,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Must buy ❤️",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Love it so much!!! The looks and the sound so great it never changed even at maximum volume. Very light that you can bring it wherever go. We have so much fun. It looks durable and easy to connect to bluetooth. Overall, ",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_015",
+      "review_index": 15,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Best portable Karaoke",
+      "satisfied_points": "便携体验好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Worth the buy! Our family enjoy our new Karaoke portable. Glad I found it! Yay.",
+      "open_tags": [
+        "tag_family_party_hit",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_016",
+      "review_index": 16,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Easy to operate and travel with",
+      "satisfied_points": "便携体验好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "It so great karaoke machine love it",
+      "open_tags": [
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_017",
+      "review_index": 17,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Amazing",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Amazing sound and the quality and variety you can hear is really great!",
+      "open_tags": [
+        "tag_sound_powerful_for_size"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_theme_reliability_connection_hardware_risk_18",
+      "review_index": 18,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "联网点歌或开机使用",
+      "user_task": "稳定连接并持续播放",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "少数 1 星评论直接指向连接不稳定、触屏差、Wi-Fi 无法保持、屏幕 DOA 等硬故障或稳定性问题。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "连接/屏幕/硬件稳定性失败",
+      "consequence": "虽然样本占比不高，但会直接造成退货、低星和信任损伤，应进入 P1 质量复盘。",
+      "evidence": "Super glitchy with connection issues",
+      "open_tags": [
+        "tag_connection_hardware_risk"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_019",
+      "review_index": 19,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Good",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "So far so good. It’s got good bass, good sound, the mic doesn’t pick up immediately but it’s decent. It’s small so it’s easy to carry around. You can use YouTube.",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_portable_all_in_one",
+        "tag_ui_song_selection_friction"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_020",
+      "review_index": 20,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "unknown",
+      "user_expectation": "设备应稳定、易用、配件和说明完整",
+      "expectation_source": "review_text",
+      "actual_experience": "Karaoke machine issues",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "其他负向体验",
+      "consequence": "需要进入产品、说明书或客服风险复盘。",
+      "evidence": "The email chain Customer service from China was terrible.",
+      "open_tags": [
+        "tag_negative_other_issue"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_21",
+      "review_index": 21,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "missing songs",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_022",
+      "review_index": 22,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Love it",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Just love it great sound easy to use.",
+      "open_tags": [
+        "tag_sound_powerful_for_size"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_23",
+      "review_index": 23,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "YouTube Web",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_024",
+      "review_index": 24,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "The speaker sound is amazing!",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Great karaoke system especially for the price. Very happy with the purchase.",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_ui_song_selection_friction"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_025",
+      "review_index": 25,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "unknown",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Great purchase",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "So worth the money, user friendly and sounds a fantastic, too!",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_026",
+      "review_index": 26,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Good product for the price.",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "I got this for my wife, she loves it. It seems to be good quality and sounds good. For the price point I’m not disappointed. I do wish the user interface was better, it’s very sluggish, but if you are just using it as a ",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit",
+        "tag_ui_song_selection_friction",
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_027",
+      "review_index": 27,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "unknown",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "I couldn’t believe the quality for the price.",
+      "satisfied_points": "正向整体体验",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "This machine is awesome. If you are an Apple Music subscriber it absolutely beats the Apple TV “Sing” feature. The mics are incredibly solid and the six months of KaraFun gave me a sense for what I’m in for if I want the",
+      "open_tags": [
+        "tag_family_party_hit",
+        "tag_ui_song_selection_friction"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_028",
+      "review_index": 28,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Excellent sound!",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "I love this karaoke machine. I use karafun as an app.",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit",
+        "tag_ui_song_selection_friction"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_29",
+      "review_index": 29,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "user interface is very hard to navigate",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_030",
+      "review_index": 30,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "unknown",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Love it!",
+      "satisfied_points": "正向整体体验",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "love it!",
+      "open_tags": [
+        "tag_positive_general_praise"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_31",
+      "review_index": 31,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "instructions just show illustrations",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_32",
+      "review_index": 32,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "便携使用和聚会",
+      "user_task": "连续使用并给设备充电",
+      "purchase_reason": "完整便携套装",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "充电器/麦克风充电/续航落差",
+      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
+      "evidence": "not just a cable",
+      "open_tags": [
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_033",
+      "review_index": 33,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "unknown",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Todo ok",
+      "satisfied_points": "正向整体体验",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Todo perfecto",
+      "open_tags": [
+        "tag_positive_general_praise"
+      ],
+      "confidence": "low"
+    },
+    {
       "feedback_unit_id": "fu_theme_family_party_gifting_34",
       "review_index": 34,
       "dimension": "场景",
@@ -1921,6 +3465,49 @@
       "confidence": "high"
     },
     {
+      "feedback_unit_id": "fu_auto_035",
+      "review_index": 35,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Not one complaint. It is perfect.",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "If you are even considering purchasing this karaoke machine, do it. I did a lot a research before making this purchase. You won’t  regret it for a second. The sound is great. We use it as a Bluetooth speaker also. I can’",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit",
+        "tag_ui_song_selection_friction"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_036",
+      "review_index": 36,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "OMG! This is by far the best karaoke machine",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "OMG! This is by far the best karaoke machine I‘ve ever came across🥰🥰🥰The sound, the features and the access to other music and songs you know IS AMAZING!!",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit"
+      ],
+      "confidence": "low"
+    },
+    {
       "feedback_unit_id": "fu_theme_family_party_gifting_37",
       "review_index": 37,
       "dimension": "场景",
@@ -1939,6 +3526,28 @@
         "tag_family_party_hit"
       ],
       "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_038",
+      "review_index": 38,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Bring the party with you!",
+      "satisfied_points": "便携体验好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "I bought this for my husband for his birthday.  We have used it at parties, connecting it to any system wherever we go is easy with the Bluetooth. The microphones are solid, but could be a bit easier to turn on and could",
+      "open_tags": [
+        "tag_family_party_hit",
+        "tag_portable_all_in_one",
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "low"
     },
     {
       "feedback_unit_id": "fu_theme_family_party_gifting_39",
@@ -1981,109 +3590,317 @@
       "confidence": "high"
     },
     {
-      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_7",
-      "review_index": 7,
+      "feedback_unit_id": "fu_auto_041",
+      "review_index": 41,
       "dimension": "不满意点",
       "audience": "unknown",
-      "scenario": "开机找歌和订阅激活",
-      "user_task": "找歌/看歌词/激活订阅",
+      "scenario": "unknown",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "设备应稳定、易用、配件和说明完整",
+      "expectation_source": "review_text",
+      "actual_experience": "Don‘t buy",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "连接/硬件稳定性问题",
+      "consequence": "需要进入产品、说明书或客服风险复盘。",
+      "evidence": "I doesn‘t work all that well it holds a echo in the mic when trying to hookup to TV  sounds good in and out  not a good product",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_connection_hardware_risk"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_042",
+      "review_index": 42,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "unknown",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Should buy!",
+      "satisfied_points": "便携体验好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Very fun! Have used at home, brought camping, etc. very portable and a great thing to have.",
+      "open_tags": [
+        "tag_family_party_hit",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_043",
+      "review_index": 43,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Karaoke machine",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Love this little machine.Great sound for the size.Love the microphones charge right in machine",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_044",
+      "review_index": 44,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "unknown",
+      "purchase_reason": "unknown",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Our new Kareoke",
+      "satisfied_points": "正向整体体验",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "We love it and have so much fun with it",
+      "open_tags": [
+        "tag_family_party_hit"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_theme_reliability_connection_hardware_risk_45",
+      "review_index": 45,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "联网点歌或开机使用",
+      "user_task": "稳定连接并持续播放",
       "purchase_reason": "unknown",
       "user_expectation": "顺畅、完整、稳定",
       "expectation_source": "review_text",
-      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "actual_experience": "少数 1 星评论直接指向连接不稳定、触屏差、Wi-Fi 无法保持、屏幕 DOA 等硬故障或稳定性问题。",
       "satisfied_points": "unknown",
-      "unsatisfied_points": "UI/找歌/说明不足",
-      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
-      "evidence": "no clear instructions",
+      "unsatisfied_points": "连接/屏幕/硬件稳定性失败",
+      "consequence": "虽然样本占比不高，但会直接造成退货、低星和信任损伤，应进入 P1 质量复盘。",
+      "evidence": "keeps resetting over and over",
       "open_tags": [
-        "tag_ui_song_selection_friction",
-        "tag_instruction_gap"
+        "tag_connection_hardware_risk"
       ],
       "confidence": "high"
     },
     {
-      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_21",
-      "review_index": 21,
-      "dimension": "不满意点",
+      "feedback_unit_id": "fu_auto_046",
+      "review_index": 46,
+      "dimension": "满意点",
       "audience": "unknown",
-      "scenario": "开机找歌和订阅激活",
-      "user_task": "找歌/看歌词/激活订阅",
-      "purchase_reason": "unknown",
-      "user_expectation": "顺畅、完整、稳定",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
       "expectation_source": "review_text",
-      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
-      "satisfied_points": "unknown",
-      "unsatisfied_points": "UI/找歌/说明不足",
-      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
-      "evidence": "missing songs",
+      "actual_experience": "Would Not Recommend",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "The user interface and operating system are very very slow.Microphone quality is good as long as you are not too close to the speaker. If you are too close, your voice will cut in and out.My system did not come with an o",
       "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit",
         "tag_ui_song_selection_friction",
         "tag_instruction_gap"
       ],
-      "confidence": "high"
+      "confidence": "low"
     },
     {
-      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_23",
-      "review_index": 23,
-      "dimension": "不满意点",
-      "audience": "unknown",
-      "scenario": "开机找歌和订阅激活",
-      "user_task": "找歌/看歌词/激活订阅",
-      "purchase_reason": "unknown",
-      "user_expectation": "顺畅、完整、稳定",
+      "feedback_unit_id": "fu_auto_047",
+      "review_index": 47,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
       "expectation_source": "review_text",
-      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
-      "satisfied_points": "unknown",
-      "unsatisfied_points": "UI/找歌/说明不足",
-      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
-      "evidence": "YouTube Web",
+      "actual_experience": "Value for the money",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "I have very little expectations on small karaoke machines, but Ikarao proved me wrong! Great sound, user friendly, convenient to carry around every where. Not to mention, it comes with 2 powerful microphones!! Fun for al",
       "open_tags": [
-        "tag_ui_song_selection_friction",
-        "tag_instruction_gap"
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit",
+        "tag_portable_all_in_one"
       ],
-      "confidence": "high"
+      "confidence": "low"
     },
     {
-      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_29",
-      "review_index": 29,
-      "dimension": "不满意点",
+      "feedback_unit_id": "fu_auto_048",
+      "review_index": 48,
+      "dimension": "满意点",
       "audience": "unknown",
-      "scenario": "开机找歌和订阅激活",
-      "user_task": "找歌/看歌词/激活订阅",
-      "purchase_reason": "unknown",
-      "user_expectation": "顺畅、完整、稳定",
+      "scenario": "unknown",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
       "expectation_source": "review_text",
-      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
-      "satisfied_points": "unknown",
-      "unsatisfied_points": "UI/找歌/说明不足",
-      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
-      "evidence": "user interface is very hard to navigate",
+      "actual_experience": "Karaoke and more at its best!!",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "This Karoke machine works amazing!!!!!!, the sound wuality is fantastic, i used it this past week just as boombox to listen to music from spotify. Works amazing with karaoke also, truly awesome!!!",
       "open_tags": [
-        "tag_ui_song_selection_friction",
-        "tag_instruction_gap"
+        "tag_sound_powerful_for_size"
       ],
-      "confidence": "high"
+      "confidence": "low"
     },
     {
-      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_31",
-      "review_index": 31,
-      "dimension": "不满意点",
-      "audience": "unknown",
-      "scenario": "开机找歌和订阅激活",
-      "user_task": "找歌/看歌词/激活订阅",
-      "purchase_reason": "unknown",
-      "user_expectation": "顺畅、完整、稳定",
+      "feedback_unit_id": "fu_auto_049",
+      "review_index": 49,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
       "expectation_source": "review_text",
-      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
-      "satisfied_points": "unknown",
-      "unsatisfied_points": "UI/找歌/说明不足",
-      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
-      "evidence": "instructions just show illustrations",
+      "actual_experience": "Great Machine Don’t pass it up!!!!",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "It is fantastic. We use it for anything potable. We had the whole campground having fun. We have sold 5 of them so far. Everyone that sees our set up ask where to get it and I send the link. We karaoke a lot and this is ",
       "open_tags": [
-        "tag_ui_song_selection_friction",
-        "tag_instruction_gap"
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit",
+        "tag_ui_song_selection_friction"
       ],
-      "confidence": "high"
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_050",
+      "review_index": 50,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "So far it’s great",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Nicely designed and great as portable speaker",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_051",
+      "review_index": 51,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "unknown",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "FAVORITE ALL TIME AMAZON FIND,!",
+      "satisfied_points": "正向整体体验",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "OMG…. This is such a fantastic gift for a friend who loves to sing or yourself.  I keep finding more things that are over the top with this product. The added apps you get for a few months really are fabulous too. My all",
+      "open_tags": [
+        "tag_family_party_hit",
+        "tag_ui_song_selection_friction"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_052",
+      "review_index": 52,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Great Karaoke Machine",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Really great quality and everyone couldn’t believe the sound and clarity and easiness",
+      "open_tags": [
+        "tag_sound_powerful_for_size"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_053",
+      "review_index": 53,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "I’m happy and loving it..",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "This is the best everrrr, very good sound quality of both machine and mics. Bluetooth connectivity is good too! The tablet was a little bit slow but I guess we are just used to how fast Iphones are. It feels like a decen",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_ui_song_selection_friction"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_054",
+      "review_index": 54,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "unknown",
+      "purchase_reason": "unknown",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "need to be on line",
+      "satisfied_points": "正向整体体验",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Bought this as a gift for my wife she LOVES it",
+      "open_tags": [
+        "tag_family_party_hit"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_055",
+      "review_index": 55,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Great sound",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Easy to use",
+      "open_tags": [
+        "tag_sound_powerful_for_size"
+      ],
+      "confidence": "low"
     },
     {
       "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_56",
@@ -2107,145 +3924,46 @@
       "confidence": "high"
     },
     {
-      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_70",
-      "review_index": 70,
-      "dimension": "不满意点",
+      "feedback_unit_id": "fu_auto_057",
+      "review_index": 57,
+      "dimension": "满意点",
       "audience": "unknown",
-      "scenario": "开机找歌和订阅激活",
-      "user_task": "找歌/看歌词/激活订阅",
-      "purchase_reason": "unknown",
-      "user_expectation": "顺畅、完整、稳定",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
       "expectation_source": "review_text",
-      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
-      "satisfied_points": "unknown",
-      "unsatisfied_points": "UI/找歌/说明不足",
-      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
-      "evidence": "Minimal instructions",
+      "actual_experience": "Hard to read",
+      "satisfied_points": "便携体验好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Words kinda hard for me to read( small) so I feel I‘m standing too close to machine. Great mics has a little echo maybe because I‘m having to stand so close.",
       "open_tags": [
-        "tag_ui_song_selection_friction",
-        "tag_instruction_gap"
+        "tag_portable_all_in_one",
+        "tag_ui_song_selection_friction"
       ],
-      "confidence": "high"
+      "confidence": "low"
     },
     {
-      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_3",
-      "review_index": 3,
-      "dimension": "不满意点",
+      "feedback_unit_id": "fu_auto_058",
+      "review_index": 58,
+      "dimension": "满意点",
       "audience": "unknown",
-      "scenario": "便携使用和聚会",
-      "user_task": "连续使用并给设备充电",
-      "purchase_reason": "完整便携套装",
-      "user_expectation": "顺畅、完整、稳定",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "unknown",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
       "expectation_source": "review_text",
-      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
-      "satisfied_points": "unknown",
-      "unsatisfied_points": "充电器/麦克风充电/续航落差",
-      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
-      "evidence": "battery does not last all day",
+      "actual_experience": "Great sound and quality. Multifunctional",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Great sound and lots of fun for my adult Karoke party.  I wanted something I could use for years to come that was of good quality and sound. This was it!",
       "open_tags": [
-        "tag_charging_adapter_gap"
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit"
       ],
-      "confidence": "high"
-    },
-    {
-      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_7",
-      "review_index": 7,
-      "dimension": "不满意点",
-      "audience": "unknown",
-      "scenario": "便携使用和聚会",
-      "user_task": "连续使用并给设备充电",
-      "purchase_reason": "完整便携套装",
-      "user_expectation": "顺畅、完整、稳定",
-      "expectation_source": "review_text",
-      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
-      "satisfied_points": "unknown",
-      "unsatisfied_points": "充电器/麦克风充电/续航落差",
-      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
-      "evidence": "one of the microphones will not charge",
-      "open_tags": [
-        "tag_charging_adapter_gap"
-      ],
-      "confidence": "high"
-    },
-    {
-      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_32",
-      "review_index": 32,
-      "dimension": "不满意点",
-      "audience": "unknown",
-      "scenario": "便携使用和聚会",
-      "user_task": "连续使用并给设备充电",
-      "purchase_reason": "完整便携套装",
-      "user_expectation": "顺畅、完整、稳定",
-      "expectation_source": "review_text",
-      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
-      "satisfied_points": "unknown",
-      "unsatisfied_points": "充电器/麦克风充电/续航落差",
-      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
-      "evidence": "not just a cable",
-      "open_tags": [
-        "tag_charging_adapter_gap"
-      ],
-      "confidence": "high"
-    },
-    {
-      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_73",
-      "review_index": 73,
-      "dimension": "不满意点",
-      "audience": "unknown",
-      "scenario": "便携使用和聚会",
-      "user_task": "连续使用并给设备充电",
-      "purchase_reason": "完整便携套装",
-      "user_expectation": "顺畅、完整、稳定",
-      "expectation_source": "review_text",
-      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
-      "satisfied_points": "unknown",
-      "unsatisfied_points": "充电器/麦克风充电/续航落差",
-      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
-      "evidence": "not just a cable",
-      "open_tags": [
-        "tag_charging_adapter_gap"
-      ],
-      "confidence": "high"
-    },
-    {
-      "feedback_unit_id": "fu_theme_reliability_connection_hardware_risk_18",
-      "review_index": 18,
-      "dimension": "不满意点",
-      "audience": "unknown",
-      "scenario": "联网点歌或开机使用",
-      "user_task": "稳定连接并持续播放",
-      "purchase_reason": "unknown",
-      "user_expectation": "顺畅、完整、稳定",
-      "expectation_source": "review_text",
-      "actual_experience": "少数 1 星评论直接指向连接不稳定、触屏差、Wi-Fi 无法保持、屏幕 DOA 等硬故障或稳定性问题。",
-      "satisfied_points": "unknown",
-      "unsatisfied_points": "连接/屏幕/硬件稳定性失败",
-      "consequence": "虽然样本占比不高，但会直接造成退货、低星和信任损伤，应进入 P1 质量复盘。",
-      "evidence": "Super glitchy with connection issues",
-      "open_tags": [
-        "tag_connection_hardware_risk"
-      ],
-      "confidence": "high"
-    },
-    {
-      "feedback_unit_id": "fu_theme_reliability_connection_hardware_risk_45",
-      "review_index": 45,
-      "dimension": "不满意点",
-      "audience": "unknown",
-      "scenario": "联网点歌或开机使用",
-      "user_task": "稳定连接并持续播放",
-      "purchase_reason": "unknown",
-      "user_expectation": "顺畅、完整、稳定",
-      "expectation_source": "review_text",
-      "actual_experience": "少数 1 星评论直接指向连接不稳定、触屏差、Wi-Fi 无法保持、屏幕 DOA 等硬故障或稳定性问题。",
-      "satisfied_points": "unknown",
-      "unsatisfied_points": "连接/屏幕/硬件稳定性失败",
-      "consequence": "虽然样本占比不高，但会直接造成退货、低星和信任损伤，应进入 P1 质量复盘。",
-      "evidence": "keeps resetting over and over",
-      "open_tags": [
-        "tag_connection_hardware_risk"
-      ],
-      "confidence": "high"
+      "confidence": "low"
     },
     {
       "feedback_unit_id": "fu_theme_reliability_connection_hardware_risk_59",
@@ -2268,6 +3986,88 @@
       "confidence": "high"
     },
     {
+      "feedback_unit_id": "fu_auto_060",
+      "review_index": 60,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "unknown",
+      "user_expectation": "设备应稳定、易用、配件和说明完整",
+      "expectation_source": "review_text",
+      "actual_experience": "Music good but microphone not good",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "其他负向体验",
+      "consequence": "需要进入产品、说明书或客服风险复盘。",
+      "evidence": "The microphone not good so light look like a kid microphone",
+      "open_tags": [
+        "tag_negative_other_issue"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_061",
+      "review_index": 61,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Definitely recommend!",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Love it! The sound is amazing and love the portability.",
+      "open_tags": [
+        "tag_sound_powerful_for_size"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_062",
+      "review_index": 62,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "unknown",
+      "user_expectation": "设备应稳定、易用、配件和说明完整",
+      "expectation_source": "review_text",
+      "actual_experience": "No charger",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "充电/电池/适配器问题",
+      "consequence": "需要进入产品、说明书或客服风险复盘。",
+      "evidence": "Concept is nice but it does  it come with a charger and the supposed to be compatible charger does not work with it so there is no way to charge the product.",
+      "open_tags": [
+        "tag_charging_adapter_gap",
+        "tag_connection_hardware_risk"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_063",
+      "review_index": 63,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "unknown",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "The screen is not sensitive. Everything takes at least 3 seconds to load",
+      "satisfied_points": "正向整体体验",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "The screen is not sensitive. Very hard to scroll or type. Lots of delays when searching/loading music. Karafun is also hard to use. Not many music choices.Seller contacted me and they have a really good attitude and trul",
+      "open_tags": [
+        "tag_family_party_hit",
+        "tag_ui_song_selection_friction"
+      ],
+      "confidence": "low"
+    },
+    {
       "feedback_unit_id": "fu_theme_reliability_connection_hardware_risk_64",
       "review_index": 64,
       "dimension": "不满意点",
@@ -2286,6 +4086,259 @@
         "tag_connection_hardware_risk"
       ],
       "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_065",
+      "review_index": 65,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Fun and compact with great sound",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "We are having a blast this summer with our new karaoke machine. It works great for music at the pool or karaoke parties with the neighbors",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_066",
+      "review_index": 66,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "hand carry.",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Very handy size, good sound system, comfortable to sing.",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_067",
+      "review_index": 67,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "unknown",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "The sound is clearly the best abceey",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Quality is awesome, songs and sounds are beautiful!",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_068",
+      "review_index": 68,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "unknown",
+      "purchase_reason": "unknown",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Best gift!",
+      "satisfied_points": "正向整体体验",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "My 17 year old daughter loves this machine. She said it was the best gift we’ve given her so far!",
+      "open_tags": [
+        "tag_family_party_hit"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_069",
+      "review_index": 69,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Great Sound! Family fun!",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Great sound👍🏼 different microphone/voice settings, which makes it fun for kids! Can link to Spotify app if you have one. Use it to be the announcer at family game night and just added another dimension to the fun:)",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit",
+        "tag_ui_song_selection_friction"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_theme_ui_app_screen_instruction_friction_70",
+      "review_index": 70,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "开机找歌和订阅激活",
+      "user_task": "找歌/看歌词/激活订阅",
+      "purchase_reason": "unknown",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "UI/找歌/说明不足",
+      "consequence": "该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。",
+      "evidence": "Minimal instructions",
+      "open_tags": [
+        "tag_ui_song_selection_friction",
+        "tag_instruction_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_071",
+      "review_index": 71,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "unknown",
+      "purchase_reason": "音质/音量",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "A must have fur the singer in your home",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Kids love it!!!! Sound is impressive!!!!",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_auto_072",
+      "review_index": 72,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "unknown",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Ikaroo was a good quality",
+      "satisfied_points": "正向整体体验",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Well this kareoke is good",
+      "open_tags": [
+        "tag_positive_general_praise"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_theme_charging_adapter_mic_battery_gap_73",
+      "review_index": 73,
+      "dimension": "不满意点",
+      "audience": "unknown",
+      "scenario": "便携使用和聚会",
+      "user_task": "连续使用并给设备充电",
+      "purchase_reason": "完整便携套装",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。",
+      "satisfied_points": "unknown",
+      "unsatisfied_points": "充电器/麦克风充电/续航落差",
+      "consequence": "该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。",
+      "evidence": "not just a cable",
+      "open_tags": [
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_074",
+      "review_index": 74,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "unknown",
+      "user_task": "unknown",
+      "purchase_reason": "unknown",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Works Great!",
+      "satisfied_points": "正向整体体验",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "Why did you pick this product vs others?:This was a great value for the price!",
+      "open_tags": [
+        "tag_positive_general_praise"
+      ],
+      "confidence": "low"
+    },
+    {
+      "feedback_unit_id": "fu_theme_sound_portable_all_in_one_75",
+      "review_index": 75,
+      "dimension": "满意点",
+      "audience": "unknown",
+      "scenario": "家庭/户外便携娱乐",
+      "user_task": "唱歌或播放音乐",
+      "purchase_reason": "便携一体化和音质",
+      "user_expectation": "顺畅、完整、稳定",
+      "expectation_source": "review_text",
+      "actual_experience": "用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。",
+      "satisfied_points": "小体积但声音有力量/便携一体化",
+      "unsatisfied_points": "unknown",
+      "consequence": "这是最应该在 Listing、图片、视频和广告中被放大的主卖点。",
+      "evidence": "sound is amazing",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_portable_all_in_one"
+      ],
+      "confidence": "high"
+    },
+    {
+      "feedback_unit_id": "fu_auto_076",
+      "review_index": 76,
+      "dimension": "满意点",
+      "audience": "家庭成员/朋友/孩子",
+      "scenario": "家庭/朋友/礼物/聚会场景",
+      "user_task": "唱歌、找歌、连接或播放音乐",
+      "purchase_reason": "便携一体化",
+      "user_expectation": "获得好声音、便携、易用的娱乐体验",
+      "expectation_source": "review_text",
+      "actual_experience": "Small but mighty",
+      "satisfied_points": "声音/音量表现好",
+      "unsatisfied_points": "unknown",
+      "consequence": "可作为 Listing、图片和视频卖点证据。",
+      "evidence": "We’ve had karaoke over the years and I wanted to update to this kind to utilize YouTube for karaoke songs. I was skeptical at first about the sound quality but this exceeded my expectations. The sound and product quality",
+      "open_tags": [
+        "tag_sound_powerful_for_size",
+        "tag_family_party_hit",
+        "tag_portable_all_in_one",
+        "tag_ui_song_selection_friction",
+        "tag_charging_adapter_gap"
+      ],
+      "confidence": "low"
     }
   ],
   "open_tags": [
@@ -2390,6 +4443,37 @@
       ],
       "theme_ids": [
         "theme_reliability_connection_hardware_risk"
+      ]
+    },
+    {
+      "tag_id": "tag_positive_general_praise",
+      "tag_name": "简短正向整体评价",
+      "dimension": "满意点",
+      "theme_ids": [
+        "theme_sound_portable_all_in_one"
+      ],
+      "count": 5,
+      "sample_size": 76,
+      "percentage": 6.6,
+      "representative_evidence": [
+        "Absolutely love it",
+        "love it!",
+        "Todo perfecto"
+      ]
+    },
+    {
+      "tag_id": "tag_negative_other_issue",
+      "tag_name": "其他低频负向体验",
+      "dimension": "不满意点",
+      "theme_ids": [
+        "theme_reliability_connection_hardware_risk"
+      ],
+      "count": 2,
+      "sample_size": 76,
+      "percentage": 2.6,
+      "representative_evidence": [
+        "The email chain Customer service from China was terrible.",
+        "The microphone not good so light look like a kid microphone"
       ]
     }
   ]

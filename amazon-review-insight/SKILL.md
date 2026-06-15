@@ -18,9 +18,10 @@ skill_version: v0.2.0
 5. 不接外部 LLM provider。
 6. 不做多 ASIN、竞品对比、CSV 或 PDF 导出。
 7. 输出中文自包含 `.html` 报告。
-8. 同时输出 Review 编码层 `.xlsx`，用于人工复核和二次分析。
+8. 同时输出全量 Review 编码层 `.xlsx`，用于人工复核和二次分析。
 9. 主报告页只展示短证据；VOC 主题详情页展示完整 Review 原文、完整中文翻译和黄色高亮。
 10. 不得写入、缓存、打印或渲染 Sorftime key。
+11. 用户要求分析真实 ASIN 时，禁止使用 `samples/` 下的样例 JSON 代替 Sorftime MCP 实时返回。
 
 ## 渐进式披露
 
@@ -45,7 +46,7 @@ skill_version: v0.2.0
 7. 关键结论必须覆盖八类洞察，并为每类洞察生成 `distribution[]`，穷举该维度下的主要、次要、新兴和长尾类型。
 8. 运行确定性脚本计算 Review 健康度、占比、检查点和契约校验。
 9. 使用 `assets/report/` 中经 Product Design 确认的样式资产渲染中文 HTML。
-10. 导出 Review 编码层 `.xlsx`，包含 `normalized_reviews`、`feedback_units`、`open_tags`、`key_insight_distribution` 等 sheet。
+10. 导出 Review 编码层 `.xlsx`，包含 `normalized_reviews`、`feedback_units`、`open_tags`、`key_insight_distribution` 等 sheet；其中 `normalized_reviews.length` 必须等于 `metadata.review_sample_size`。
 11. 交付前运行契约检查、密钥扫描和可用测试。
 
 ## 核心口径
@@ -55,9 +56,11 @@ skill_version: v0.2.0
 3. Review 样本数等于 `product_reviews` 实际返回条数。
 4. 所有 VOC 主题、关键结论和业务动作的百分比分母必须使用 Review 样本数。
 5. 关键结论分布的 `review_count/percentage` 分母必须使用 Review 样本数；类型之间允许重叠，因为同一 Review 可表达多个类型。
-6. 评论没有表达的信息必须写 `unknown`。
-7. 非 `unknown` 字段必须有 Review 原文 evidence。
-8. 不得根据标题、价格、品牌、类目、Listing 文案或星级单独推断 Review 未表达的信息。
+6. `normalized_reviews` 必须覆盖 Sorftime MCP 返回的全部 Review 样本；不得只放 VOC 详情页中的代表性 Review。
+7. 每条 `normalized_reviews` 至少要有一条对应 `feedback_units` 编码记录。
+8. 评论没有表达的信息必须写 `unknown`。
+9. 非 `unknown` 字段必须有 Review 原文 evidence。
+10. 不得根据标题、价格、品牌、类目、Listing 文案或星级单独推断 Review 未表达的信息。
 
 ## 报告结构
 

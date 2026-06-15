@@ -5,7 +5,7 @@ import ExcelJS from "exceljs";
 import { describe, expect, it } from "vitest";
 import analysis from "../fixtures/golden_analysis_single_asin.json" with { type: "json" };
 import { checkExcelFile } from "../../scripts/agent_contract_check.js";
-import { exportReviewCodingExcelFile } from "../../scripts/export_review_coding_excel.js";
+import { buildReviewCodingWorkbook, exportReviewCodingExcelFile } from "../../scripts/export_review_coding_excel.js";
 
 describe("review coding Excel exporter", () => {
   it("exports required sheets and key insight distribution rows", async () => {
@@ -26,5 +26,11 @@ describe("review coding Excel exporter", () => {
     } finally {
       await rm(dir, { recursive: true, force: true });
     }
+  });
+
+  it("rejects partial normalized review coverage", () => {
+    const copy = structuredClone(analysis as any);
+    copy.normalized_reviews = copy.normalized_reviews.slice(0, 2);
+    expect(() => buildReviewCodingWorkbook(copy)).toThrow("normalized_reviews must cover the full Review sample: expected 3, got 2.");
   });
 });

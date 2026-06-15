@@ -9,6 +9,7 @@ data_contract_version: v0.2.0
 3. `review_sample_size` = `product_reviews` 实际返回条数。
 4. VOC 主题、关键结论、关键结论分布、业务动作的百分比分母必须使用 `review_sample_size`。
 5. ASIN 总评论数量只能作为产品规模背景。
+6. `normalized_reviews.length` 必须等于 `review_sample_size`。Review 编码层 Excel 是全量样本复核文件，不是 VOC 详情页证据片段集合。
 
 ## NormalizedReview
 
@@ -27,6 +28,7 @@ data_contract_version: v0.2.0
 ## 字段规则
 
 - 原始 Sorftime 字段必须保留到 `raw`。
+- 每条 `normalized_reviews` 必须保留 `raw.review_index`，用于和 `feedback_units.review_index` 对齐。
 - 日期无法解析时写 `unknown`。
 - 星级无法解析时写 `unknown`。
 - 重复 Review 默认按 `评论日期 + 评星 + 标题 + 评论` 完全一致判断。
@@ -34,6 +36,8 @@ data_contract_version: v0.2.0
 ## FeedbackUnit
 
 `feedback_units[]` 是 Review 编码层的最小分析单位。同一条 Review 如果同时表达多个独立反馈逻辑，必须拆成多条 feedback unit。
+
+全量规则：每条 `normalized_reviews` 至少要有一条对应 `feedback_units`。如果一条评论只有很短的正向或负向表达，也要保留一条基础编码记录，并可将 `confidence` 标为 `low`。
 
 关键字段：
 

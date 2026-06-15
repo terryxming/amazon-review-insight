@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import ExcelJS from "exceljs";
-import { AnalysisReport, NormalizedReview } from "./core.js";
+import { AnalysisReport } from "./core.js";
 
 type Row = Record<string, unknown>;
 
@@ -105,6 +105,7 @@ export async function exportReviewCodingExcelFile(inputPath: string, outputPath:
 }
 
 export function buildReviewCodingWorkbook(analysis: AnalysisReport): ExcelJS.Workbook {
+  assertFullReviewCodingLayer(analysis);
   const workbook = new ExcelJS.Workbook();
   workbook.creator = "amazon-review-insight";
   workbook.created = new Date(analysis.metadata.generated_at);
@@ -154,8 +155,7 @@ function metadataRows(analysis: AnalysisReport): Row[] {
 }
 
 function normalizedReviewRows(analysis: AnalysisReport): Row[] {
-  const reviews = analysis.normalized_reviews?.length ? analysis.normalized_reviews : deriveReviewsFromThemeDetails(analysis);
-  return reviews.map((review, index) => normalizeRow({
+  return analysis.normalized_reviews!.map((review, index) => normalizeRow({
     review_index: typeof review.raw?.review_index === "number" ? review.raw.review_index : index + 1,
     asin: review.asin,
     variant: review.variant,
@@ -165,25 +165,6 @@ function normalizedReviewRows(analysis: AnalysisReport): Row[] {
     text: review.text,
     raw_json: review.raw
   }));
-}
-
-function deriveReviewsFromThemeDetails(analysis: AnalysisReport): NormalizedReview[] {
-  const byIndex = new Map<number, NormalizedReview>();
-  for (const theme of analysis.voc_themes) {
-    for (const detail of theme.detail_reviews ?? []) {
-      if (byIndex.has(detail.review_index)) continue;
-      byIndex.set(detail.review_index, {
-        asin: analysis.metadata.asin,
-        variant: "unknown",
-        review_date: detail.review_date,
-        rating: detail.rating,
-        title: detail.title,
-        text: detail.text,
-        raw: {}
-      });
-    }
-  }
-  return [...byIndex.entries()].sort(([a], [b]) => a - b).map(([, review]) => review);
 }
 
 function keyInsightDistributionRows(analysis: AnalysisReport): Row[] {
@@ -200,6 +181,16 @@ function keyInsightDistributionRows(analysis: AnalysisReport): Row[] {
       theme_ids: row.theme_ids
     }))
   );
+}
+
+function assertFullReviewCodingLayer(analysis: AnalysisReport): void {
+  const expected = analysis.metadata.review_sample_size;
+  const actual = analysis.normalized_reviews?.length ?? 0;
+  if (actual !== expected) {
+    throw new Error(`normalized_reviews must cover the full Review sample: expected ${expected}, got ${actual}.`);
+  }
+  if (!analysis.feedback_units?.length) throw new Error("feedback_units is required for Review coding Excel export.");
+  if (!analysis.open_tags?.length) throw new Error("open_tags is required for Review coding Excel export.");
 }
 
 function vocThemeRows(analysis: AnalysisReport): Row[] {

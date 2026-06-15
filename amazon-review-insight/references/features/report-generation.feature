@@ -28,6 +28,8 @@ Feature: 单 ASIN Review 分析报告
 
   Scenario: Review 编码层 Excel 可复核
     Given agent 已生成 normalized_reviews、feedback_units、open_tags 和关键结论 distribution
+    And normalized_reviews 覆盖 Sorftime MCP 返回的全部 Review 样本
+    And 每条 normalized_reviews 至少有一条 feedback_units 编码记录
     When 系统导出 Review 编码层 Excel
     Then Excel 包含 metadata、normalized_reviews、feedback_units、open_tags、key_insight_distribution、voc_themes、business_actions、checkpoints
     And key_insight_distribution sheet 展示每个关键结论类型的提及数量、占比、角色、判断依据和 evidence

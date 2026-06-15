@@ -11,6 +11,7 @@
 - [x] Auxiliary CLI scripts cover render, Excel export, contract check, secret scan, cache clear and live smoke preflight.
 - [x] Sample report uses real Sorftime data summary for `B0DHPN1DMJ`.
 - [x] Sample Review coding Excel is generated for `B0DHPN1DMJ`.
+- [x] Sample Review coding Excel contains all 76 normalized Review rows.
 - [x] Unit and integration tests pass.
 - [x] Typecheck passes.
 - [x] Contract check passes for HTML and Excel.
@@ -22,4 +23,3 @@
 - [ ] Create Git tag.
 - [ ] Create GitHub Release.
 - [ ] Reinstall from release package and rerun smoke test.
-
