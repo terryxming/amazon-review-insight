@@ -64,6 +64,7 @@ export function checkAnalysis(analysis: AnalysisReport): ContractCheckResult {
     if (!theme.theme_name) errors.push(`VOC 主题 ${theme.theme_id} 缺少 theme_name`);
     if (!theme.theme_evidence?.length) errors.push(`VOC 主题 ${theme.theme_id} 缺少 theme_evidence`);
     if (!theme.detail_reviews?.length) errors.push(`VOC 主题 ${theme.theme_id} 缺少详情页证据列表`);
+    if (!theme.root_cause_hypothesis) errors.push(`VOC 主题 ${theme.theme_id} 缺少 root_cause_hypothesis。`);
     checkPercentage(`VOC 主题 ${theme.theme_id}`, theme.count, theme.sample_size, theme.percentage, errors);
     for (const review of theme.detail_reviews ?? []) {
       checkDetailReview(`主题 ${theme.theme_id}`, review, errors);
@@ -91,11 +92,62 @@ export function checkHtml(html: string): ContractCheckResult {
   if (!html.includes("<mark>")) errors.push("HTML 缺少黄色高亮 mark。");
   if (!html.includes("insight-distribution")) errors.push("HTML 关键结论缺少类型分布表。");
   if (!html.includes("viewpoint-distribution")) errors.push("HTML VOC 主题地图缺少观点分布表。");
-  if (!html.includes("voc-viewpoint-detail-")) errors.push("HTML 缺少 VOC 观点详情页 anchor。");
-  if (!html.includes('data-open-mode="new-tab"')) errors.push("HTML VOC 观点链接必须标记为新标签页打开。");
-  if (!html.includes('target="_blank"')) errors.push("HTML VOC 观点链接必须使用 target=\"_blank\"。");
-  if (!html.includes('rel="noopener"')) errors.push("HTML VOC 观点链接必须使用 rel=\"noopener\"。");
-  if (!html.includes("sticky-theme-card")) errors.push("HTML 缺少观点详情页 sticky VOC 主题卡片。");
+  if (!html.includes('href="#scope">1. 数据范围与口径</a>') || !html.includes('href="#health">2. Review 健康度</a>')) {
+    errors.push("HTML 左侧一级导航必须带序号。");
+  }
+  if (!html.includes("toc-key-insights") || !html.includes('href="#key-insight-audience">3.1 人群</a>') || !html.includes('class="toc-group" open')) {
+    errors.push("HTML 左侧导航必须在关键结论下展示带序号、默认展开、可折叠的二级导航。");
+  }
+  if (!html.includes("toc-voc-themes") || !html.includes('href="#voc-theme-') || !html.includes('>4.1 ')) {
+    errors.push("HTML 左侧导航必须在 VOC 主题地图下展示带序号、默认展开、可折叠的主题二级导航。");
+  }
+  if (html.includes('<h3 class="section-subtitle">八类横向洞察</h3>') || html.includes('<h3 class="section-subtitle">主题与观点分布</h3>')) {
+    errors.push("关键结论和 VOC 主题地图的二级标题应位于左侧导航，不应渲染为正文副标题。");
+  }
+  if (html.includes("section-kicker")) errors.push("主报告一级章节标题下方不得渲染说明文字。");
+  if (!html.includes("section-title-with-help") || !html.includes("help-badge") || !html.includes("❓")) {
+    errors.push("关键结论和 VOC 主题地图标题必须带问号角标 tooltip。");
+  }
+  if (!html.includes("提及：") || !html.includes("置信度：") || !html.includes("主题类型：") || !html.includes("严重度：") || !html.includes("运营优先级：")) {
+    errors.push("摘要 chip 必须使用中文标签解释统计元信息。");
+  }
+  if (!html.includes("运营动作：")) errors.push("VOC 主题必须展示面向运营的下一步动作。");
+  if (!html.includes("优先级表示动作顺序") || !html.includes("P0 是立即处理")) {
+    errors.push("VOC 主题地图 tooltip 必须解释运营优先级的含义，避免裸 P0/P1/P2。");
+  }
+  if (/<span class="badge">优先级：P[0-2]<\/span>/.test(html)) {
+    errors.push("VOC 主题优先级不得裸展示 P0/P1/P2，必须展示运营动作语义。");
+  }
+  if (html.includes("@media (max-width")) errors.push("HTML 报告不应继续包含移动端媒体查询。");
+  if (!html.includes("report-block insight-block") || !html.includes("report-block theme-card theme-card-clickable")) {
+    errors.push("HTML 关键结论和 VOC 主题地图必须使用一行一个的默认展开折叠块。");
+  }
+  if (html.includes("insight-grid")) errors.push("HTML 关键结论不得继续使用一行多块的 insight-grid 布局。");
+  if (html.includes("<th>角色</th>") || html.includes("data-viewpoint-role")) errors.push("HTML 主报告和观点筛选不得展示角色列或角色 badge。");
+  if (!html.includes("action-group-list") || !html.includes("report-block action-group") || !html.includes("action-card-list")) {
+    errors.push("HTML 机会矩阵与业务动作必须按方向拆分为折叠块和动作卡片。");
+  }
+  if (!html.includes("theme-detail") || !html.includes("data-theme-detail")) errors.push("HTML 缺少 VOC 主题详情页。");
+  if (html.includes("voc-viewpoint-detail-")) errors.push("HTML 仍包含旧版独立观点详情页 anchor；观点应在主题详情页内筛选。");
+  if (!html.includes('data-open-mode="new-tab"')) errors.push("HTML VOC 主题卡片必须标记为新标签页打开。");
+  if (!html.includes('target="_blank"')) errors.push("HTML VOC 主题卡片链接必须使用 target=\"_blank\"。");
+  if (!html.includes('rel="noopener"')) errors.push("HTML VOC 主题卡片链接必须使用 rel=\"noopener\"。");
+  if (!html.includes("theme-card-clickable") || !html.includes("data-card-target=\"#theme-detail-")) errors.push("HTML VOC 主题卡片必须整体可点击并在新标签页打开主题详情。");
+  if (!html.includes("sticky-theme-card")) errors.push("HTML 缺少主题详情页 sticky VOC 主题卡片。");
+  if (!html.includes('class="card sticky-theme-card theme-filter-panel"')) {
+    errors.push("HTML 主题详情页必须将 sticky VOC 主题卡片与观点筛选入口合并为同一个卡片。");
+  }
+  if (!html.includes("归因假设：")) errors.push("HTML 主题详情页 sticky 主题区必须展示归因假设。");
+  if (html.includes('class="theme-context-line subtle"')) errors.push("HTML 主题详情页核心问题、归因假设、业务含义必须使用一致正文颜色，不得将某一行降级为 subtle。");
+  if (!html.includes("theme-detail-mode") || !html.includes("theme-detail-active")) {
+    errors.push("HTML 主题详情页必须具备独立路由模式，避免新标签页仍可滚动看到其他章节或其他主题。");
+  }
+  if (!html.includes(".theme-detail { display: none;") || !html.includes(".theme-detail-mode .main > section { display: none;")) {
+    errors.push("HTML 主题详情页必须默认隐藏详情 section，并在详情模式下隐藏非当前章节。");
+  }
+  if (!html.includes("theme-filter-controls") || !html.includes('data-theme-filter="all"')) errors.push("HTML 主题详情页缺少观点筛选控件和全部主题评论入口。");
+  if (!html.includes("data-theme-review") || !html.includes("data-viewpoints=")) errors.push("HTML 主题详情页评论缺少观点筛选数据。");
+  if (html.includes('class="section-title">主题详情：')) errors.push("HTML 主题详情页不应在 sticky 主题卡片下方重复渲染主题详情标题。");
   if (html.includes("SORFTIME_MCP_KEY")) errors.push("HTML 泄露 SORFTIME_MCP_KEY 字符串。");
   return { ok: errors.length === 0, errors, warnings: [] };
 }
@@ -156,6 +208,9 @@ function checkThemeViewpoints(theme: AnalysisReport["voc_themes"][number], error
 function checkDetailReview(label: string, review: AnalysisReport["voc_themes"][number]["detail_reviews"][number], errors: string[]): void {
   if (!review.text) errors.push(`${label} 的详情 Review 缺少完整原文`);
   if (!review.translation) errors.push(`${label} 的详情 Review 缺少完整中文翻译`);
+  if (/核心原文证据可概括为|用户主要反馈/.test(review.translation)) {
+    errors.push(`${label} 的详情 Review 中文翻译疑似摘要模板，必须提供完整中文译文。`);
+  }
   for (const term of review.highlight_terms ?? []) {
     if (term && !review.text.toLowerCase().includes(term.toLowerCase())) {
       errors.push(`${label} 高亮原文无法定位：${term}`);

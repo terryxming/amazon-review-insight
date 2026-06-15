@@ -6,16 +6,17 @@
     { "id": "sorftime_fetch", "name": "Sorftime MCP 抓取", "fail": ["Sorftime MCP 连接失败", "所有 Review 样本数为 0"], "warn": ["Review 样本数低于 20"] },
     { "id": "data_quality", "name": "数据质量", "fail": ["review text 存在率低于 60%", "rating 存在率低于 60%"], "warn": ["review date 存在率低于 70%", "重复 Review 占比达到 5%"] },
     { "id": "review_coding", "name": "Review 编码检查", "fail": ["缺少 normalized_reviews", "normalized_reviews 数量不等于 Review 样本数", "Review 缺少 feedback_units 编码记录", "缺少 feedback_units", "缺少 open_tags", "非 unknown 字段缺少 evidence", "evidence 在原 Review text 中找不到"] },
-    { "id": "voc_theme", "name": "VOC 主题检查", "fail": ["theme 缺少 evidence", "percentage 与 count/sample_size 不一致", "只展示 Top N"] },
+    { "id": "voc_theme", "name": "VOC 主题检查", "fail": ["theme 缺少 evidence", "percentage 与 count/sample_size 不一致", "只展示 Top N", "主题优先级无法解释运营下一步动作"] },
     { "id": "voc_viewpoint_distribution", "name": "VOC 主题观点分布检查", "fail": ["theme 缺少 viewpoints", "viewpoint 缺少提及数量或占比", "viewpoint percentage 与 review_count/sample_size 不一致", "viewpoint 缺少 reason 或 evidence"] },
-    { "id": "voc_viewpoint_detail_reviews", "name": "VOC 观点详情评论检查", "fail": ["viewpoint 缺少 detail_reviews", "detail_reviews 数量不等于 viewpoint review_count", "detail review 缺少完整原文或完整中文翻译"] },
+    { "id": "voc_theme_detail_filter_reviews", "name": "VOC 主题详情筛选评论检查", "fail": ["主题详情页缺少全量 detail_reviews", "viewpoint 缺少 detail_reviews", "detail_reviews 数量不等于 viewpoint review_count", "detail review 缺少完整原文或完整中文翻译", "主题详情页缺少观点筛选入口"] },
     { "id": "voc_viewpoint_highlights", "name": "VOC 观点高亮检查", "fail": ["原文高亮词无法定位", "译文高亮词无法定位"] },
-    { "id": "voc_viewpoint_sticky_card", "name": "VOC 观点 sticky 主题卡检查", "fail": ["观点详情页缺少 sticky VOC 主题卡片", "sticky 卡片移动端遮挡正文"] },
+    { "id": "voc_theme_sticky_card", "name": "VOC 主题详情 sticky 卡检查", "fail": ["主题详情页缺少 sticky VOC 主题卡片", "sticky 卡片在桌面端遮挡正文", "sticky 卡片未与观点筛选入口合并为同一张卡片", "sticky 卡片缺少核心问题、归因假设、业务含义或运营动作", "sticky 卡片下方重复渲染同一主题摘要"] },
+    { "id": "voc_theme_detail_route", "name": "VOC 主题详情独立路由检查", "fail": ["新标签主题详情页仍可滚动看到主报告其它章节", "新标签主题详情页仍可滚动看到其它 VOC 主题详情", "详情路由未隐藏目录"] },
     { "id": "key_insight_distribution", "name": "关键结论分布检查", "fail": ["八类关键结论缺少 distribution", "distribution 缺少提及数量或占比", "distribution 非 unknown 类型缺少 evidence"] },
     { "id": "business_actions", "name": "业务动作检查", "fail": ["动作没有绑定 theme_id", "动作没有 evidence", "动作无法执行"] },
-    { "id": "html_report", "name": "HTML 报告检查", "fail": ["核心章节缺失", "关键结论未覆盖八类洞察", "关键结论缺少类型分布表", "VOC 主题详情页缺少证据列表"] },
+    { "id": "html_report", "name": "HTML 报告检查", "fail": ["核心章节缺失", "关键结论未覆盖八类洞察", "左侧一级或二级导航缺少序号", "带二级导航的一级导航不支持默认展开后的折叠", "左侧导航缺少关键结论或 VOC 主题地图二级导航", "关键结论或 VOC 主题地图二级标题被错误渲染到正文", "一级章节标题下方仍展示说明文字", "关键结论或 VOC 主题地图标题缺少问号 tooltip", "VOC 主题地图 tooltip 未解释运营优先级含义", "摘要 chip 缺少中文标签", "VOC 主题裸展示 P0/P1/P2 而没有动作语义", "VOC 主题缺少运营动作", "关键结论缺少类型分布表", "关键结论或 VOC 主题地图仍使用一行多个块", "关键结论、VOC 主题或业务动作块不支持默认展开后的折叠", "HTML 分布表仍展示角色列或角色徽标", "VOC 主题详情页缺少证据列表", "机会矩阵与业务动作仍混在单个横向大表中", "HTML 仍包含移动端媒体查询"] },
     { "id": "excel_export", "name": "Excel 编码层检查", "fail": ["缺少必需 sheet", "必需 sheet 缺少表头", "Excel 中发现 Sorftime key 或 token"] },
-    { "id": "product_design_qa", "name": "Product Design 视觉 QA", "fail": ["未使用 report assets", "移动端文字重叠", "高亮不可见"] },
+    { "id": "product_design_qa", "name": "Product Design 视觉 QA", "fail": ["未使用 report assets", "桌面端文字重叠", "数据范围、Review 健康度或业务动作出现生硬换行", "卡片或表格文本溢出容器", "高亮不可见"] },
     { "id": "secret_scan", "name": "密钥扫描", "fail": ["报告或缓存中发现 Sorftime key"] }
   ]
 }
