@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.cache/
+.cache/asin-review-insight/
+outputs/
+*.log
+coverage/

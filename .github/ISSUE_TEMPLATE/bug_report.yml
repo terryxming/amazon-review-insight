@@ -1,0 +1,20 @@
+name: Bug report
+description: Report a bug in amazon-review-insight
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Skill version
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and checkpoint result
+

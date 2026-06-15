@@ -1,0 +1,26 @@
+Feature: 单 ASIN Review 分析报告
+
+  Scenario: 用户输入单个 Amazon US ASIN 并生成中文 HTML 报告
+    Given 用户提供一个合法 Amazon US ASIN
+    And Sorftime MCP 返回 product_detail 和 product_reviews
+    When agent 完成 Review 编码、VOC 主题归因和业务动作生成
+    Then 系统生成中文自包含 HTML 报告
+    And 报告展示 Review 样本数
+    And 报告展示 ASIN 总评论数量
+    And 关键结论覆盖人群、场景、用户任务、购买理由、用户期望、实际体验、满意点、不满意点
+    And 报告展示 VOC 主题地图
+    And VOC 主题地图中的主题卡片可以跳转到 VOC 主题详情页
+    And VOC 主题详情页展示该主题相关完整 Review 原文、完整中文翻译和黄色高亮
+    And 报告展示机会矩阵与业务动作清单
+
+  Scenario: VOC 主题详情页高亮证据
+    Given 报告中存在一个 VOC 主题卡片
+    And 该主题包含 theme_evidence
+    When 用户点击主题卡片
+    Then 系统跳转到同一个 HTML 内的主题详情页
+    And 详情页展示该主题相关的完整 Review 原文
+    And 详情页展示该主题相关的完整中文翻译
+    And 完整 Review 原文中的关键词、词组或短句使用黄色背景高亮
+    And 完整中文翻译中对应词、词组或短句使用黄色背景高亮
+    And 详情页提供返回主报告页的入口
+

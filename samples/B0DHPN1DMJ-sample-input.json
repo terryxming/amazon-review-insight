@@ -1,0 +1,24 @@
+{
+  "sample_version": "v0.1.0",
+  "asin": "B0DHPN1DMJ",
+  "site": "Amazon US",
+  "source": "Sorftime MCP",
+  "generated_at": "2026-06-15T00:00:00+08:00",
+  "product_detail_summary": {
+    "title": "Ikarao Portable Karaoke Machine for Adults, Built-in Lyrics Display and Screen, 2 Self-Charging Wireless Microphones, Karaoke App, 140W Speaker, Connects to TV for Home Party Birthday Outdoor Camping",
+    "brand": "Ikarao",
+    "price": "299.99",
+    "rating": 4.5,
+    "asin_total_review_count": 711,
+    "category": "KARAOKE MACHINE"
+  },
+  "product_reviews_summary": {
+    "review_type": "Both",
+    "reviews_returned": 76,
+    "review_date_range": {
+      "earliest": "2025-06-16",
+      "latest": "2026-05-10"
+    }
+  },
+  "note": "This release sample is generated from real Sorftime MCP data for B0DHPN1DMJ. Full raw MCP responses are intentionally not committed; the sample analysis JSON contains the review evidence used by the sample report."
+}

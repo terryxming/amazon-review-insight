@@ -1,0 +1,29 @@
+{
+  "source": "Product Design confirmed report brief",
+  "colors": {
+    "page": "#f6f7f9",
+    "surface": "#ffffff",
+    "surfaceMuted": "#f1f4f8",
+    "text": "#1d2733",
+    "muted": "#667085",
+    "border": "#d8dee8",
+    "accent": "#2563eb",
+    "positive": "#14845b",
+    "negative": "#c24132",
+    "warning": "#b7791f",
+    "highlight": "#fff3a3"
+  },
+  "radius": {
+    "card": "8px",
+    "control": "6px"
+  },
+  "font": {
+    "family": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, \"Microsoft YaHei\", sans-serif",
+    "baseSize": "14px"
+  },
+  "layout": {
+    "maxWidth": "1180px",
+    "tocWidth": "248px"
+  }
+}
+

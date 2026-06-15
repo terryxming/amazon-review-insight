@@ -1,0 +1,24 @@
+{
+  "name": "amazon-review-insight",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "amazon-review-insight": "amazon-review-insight/scripts/cli.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "render": "tsx amazon-review-insight/scripts/render_report.ts",
+    "contract:check": "tsx amazon-review-insight/scripts/agent_contract_check.ts",
+    "secret:scan": "tsx amazon-review-insight/scripts/secret_scan.ts",
+    "cache:clear": "tsx amazon-review-insight/scripts/clear_cache.ts",
+    "live:smoke": "tsx amazon-review-insight/scripts/live_smoke.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0",
+    "vitest": "^4.1.8"
+  }
+}

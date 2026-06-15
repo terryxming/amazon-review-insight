@@ -1,0 +1,11 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[{\"评论产品的属性\":\"Size=Shell S3;Color=Black\",\"评论日期\":\"20250131\",\"评星\":5,\"标题\":\"Great family karaoke\",\"评论\":\"This Karaoke machine is durable, wireless, portable, compact, has good sound and a color video screen. My grandchildren, nieces and nephews had a blast on Thanksgiving and were singing for hours.\"},{\"评论产品的属性\":\"Size=Shell S3;Color=Black\",\"评论日期\":\"20250201\",\"评星\":4,\"标题\":\"Worth the price\",\"评论\":\"For the size and features, it is totally worth the price. The bluetooth connection worked well and the built-in screen made lyrics easy to follow.\"},{\"评论产品的属性\":\"Size=Shell S3;Color=Black\",\"评论日期\":\"20250202\",\"评星\":3,\"标题\":\"Good but battery could be better\",\"评论\":\"The sound is good and kids loved it, but the battery did not last through the whole party.\"}]"
+      }
+    ]
+  }
+}
+

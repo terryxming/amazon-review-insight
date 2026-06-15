@@ -1,0 +1,21 @@
+# Release Checklist
+
+- [x] `SKILL.md` frontmatter contains only `name` and `description`.
+- [x] `SKILL.md` body contains `skill_version: v0.1.0`.
+- [x] SDD specs exist under `references/specs/`.
+- [x] BDD features exist under `references/features/`.
+- [x] checkpoints exist under `checkpoints/`.
+- [x] tests exist under `tests/`.
+- [x] eval tasks and rubric exist under `evals/`.
+- [x] Product Design report assets exist under `assets/report/`.
+- [x] Auxiliary CLI scripts cover render, contract check, secret scan, cache clear and live smoke preflight.
+- [x] Sample report uses real Sorftime data for `B0DHPN1DMJ`.
+- [x] Unit and integration tests pass.
+- [x] Contract check passes.
+- [x] Secret scan passes.
+- [x] npm audit reports no vulnerabilities.
+- [ ] Create release zip.
+- [ ] Generate `SHA256SUMS.txt` for release assets.
+- [ ] Create Git tag.
+- [ ] Create GitHub Release.
+- [ ] Reinstall from release package and rerun smoke test.

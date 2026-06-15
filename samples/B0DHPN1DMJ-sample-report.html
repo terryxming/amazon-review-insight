@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B0DHPN1DMJ Review VOC 决策报告</title>
+  <style>:root {
+  --page: #f6f7f9;
+  --surface: #ffffff;
+  --surface-muted: #f1f4f8;
+  --text: #1d2733;
+  --muted: #667085;
+  --border: #d8dee8;
+  --accent: #2563eb;
+  --positive: #14845b;
+  --negative: #c24132;
+  --warning: #b7791f;
+  --highlight: #fff3a3;
+  --radius-card: 8px;
+  --radius-control: 6px;
+  --toc-width: 248px;
+  --max-width: 1180px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background: var(--page);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); font-size: 14px; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+.layout { display: grid; grid-template-columns: var(--toc-width) minmax(0, 1fr); max-width: var(--max-width); margin: 0 auto; min-height: 100vh; }
+.toc { position: sticky; top: 0; height: 100vh; padding: 24px 18px; border-right: 1px solid var(--border); background: var(--surface); overflow: auto; }
+.toc-title { font-weight: 700; margin-bottom: 12px; }
+.toc a { display: block; padding: 7px 0; color: var(--muted); }
+.main { padding: 28px; min-width: 0; }
+.section { margin-bottom: 28px; }
+.section-title { margin: 0 0 12px; font-size: 22px; line-height: 1.3; }
+.subtle { color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 16px; }
+.metric { font-size: 24px; font-weight: 700; }
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; background: var(--surface-muted); color: var(--muted); font-size: 12px; }
+.theme-card { display: block; color: inherit; }
+.theme-card:hover { border-color: var(--accent); }
+.theme-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-card); background: var(--surface); }
+table { width: 100%; border-collapse: collapse; min-width: 760px; }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { background: var(--surface-muted); text-align: left; font-weight: 700; }
+.quote { border-left: 3px solid var(--accent); padding-left: 10px; color: var(--text); }
+.detail-review { margin: 14px 0; }
+mark { background: var(--highlight); padding: 0 2px; border-radius: 2px; }
+.checkpoint-pass { color: var(--positive); }
+.checkpoint-warn { color: var(--warning); }
+.checkpoint-fail { color: var(--negative); }
+@media (max-width: 860px) {
+  .layout { display: block; }
+  .toc { position: relative; height: auto; border-right: 0; border-bottom: 1px solid var(--border); }
+  .main { padding: 18px; }
+  .grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+  <div class="layout">
+    <nav class="toc">
+      <div class="toc-title">Review VOC 报告</div>
+      <a href="#scope">数据范围与口径</a>
+      <a href="#health">Review 健康度</a>
+      <a href="#key-insights">关键结论</a>
+      <a href="#voc-theme-map">VOC 主题地图</a>
+      <a href="#actions">机会矩阵与业务动作</a>
+      <a href="#limits">限制与 Checkpoint</a>
+    </nav>
+    <main class="main">
+      <section id="scope" class="section">
+    <h1 class="section-title">B0DHPN1DMJ Review VOC 决策报告</h1>
+    <p class="subtle">中文报告。数据来源：Sorftime MCP。VOC 分母固定为 Review 样本数。</p>
+    <div class="grid">
+      <div class="card"><div class="subtle">站点</div><div class="metric">Amazon US</div></div>
+      <div class="card"><div class="subtle">Review 样本数</div><div class="metric">76</div></div>
+      <div class="card"><div class="subtle">ASIN 总评论数量</div><div class="metric">711</div></div>
+      <div class="card"><div class="subtle">抓取/生成时间</div><div class="metric">2026-06-15T00:00:00+08:00</div></div>
+      <div class="card"><div class="subtle">产品星级</div><div class="metric">4.5</div></div>
+      <div class="card"><div class="subtle">分析口径</div><div class="metric">Amazon US 单 ASIN</div></div>
+      <div class="card"><div class="subtle">已知缺失字段</div><div class="metric">reviewer name / verified purchase / helpful vote / review URL / Vine：unknown</div></div>
+    </div>
+  </section>
+      <section id="health" class="section">
+    <h2 class="section-title">Review 健康度</h2>
+    <div class="grid">
+      <div class="card"><div class="subtle">样本平均星级</div><div class="metric">4.4</div></div>
+      <div class="card"><div class="subtle">4-5 星占比</div><div class="metric">64/76 (84.2%)</div></div>
+      <div class="card"><div class="subtle">1-3 星占比</div><div class="metric">12/76 (15.8%)</div></div>
+      <div class="card"><div class="subtle">最新 Review 日期</div><div class="metric">2026-05-10</div></div>
+      <div class="card"><div class="subtle">正文存在率</div><div class="metric">100%</div></div>
+      <div class="card"><div class="subtle">日期存在率</div><div class="metric">100%</div></div>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>星级</th><th>数量</th><th>占比</th></tr></thead><tbody><tr><td>1 星</td><td>8</td><td>10.5%</td></tr><tr><td>2 星</td><td>1</td><td>1.3%</td></tr><tr><td>3 星</td><td>3</td><td>3.9%</td></tr><tr><td>4 星</td><td>6</td><td>7.9%</td></tr><tr><td>5 星</td><td>58</td><td>76.3%</td></tr></tbody></table></div>
+  </section>
+      <section id="key-insights" class="section"><h2 class="section-title">关键结论</h2><div class="grid"><div class="card">
+      <h3>人群</h3>
+      <p>当前样本中，人群信号主要来自家庭购买者、儿童/青少年使用者、伴侣礼物购买者和经常办聚会的人。</p>
+      <div class="theme-meta">
+        <span class="badge">25/76 (32.9%)</span>
+        <span class="badge">confidence: high</span>
+      </div>
+      <p class="subtle">Listing 图片和视频应同时覆盖家庭、孩子、伴侣礼物和朋友聚会，而不是只展示单人唱歌。</p>
+      <p class="quote">Ages 3-20+ are my grandchildren, nieces and nephews</p><p class="quote">Got this for my wife as she loves Karaoke</p><p class="quote">My 17 year old daughter loves this machine</p>
+      <p class="subtle">关联主题：theme_family_party_gifting</p>
+    </div><div class="card">
+      <h3>场景</h3>
+      <p>高频价值场景集中在家庭聚会、生日/节日、朋友聚会、露营和户外轻量场景。</p>
+      <div class="theme-meta">
+        <span class="badge">31/76 (40.8%)</span>
+        <span class="badge">confidence: high</span>
+      </div>
+      <p class="subtle">主图后的场景图应优先表达 home party、family game night、camping 和 backyard gathering。</p>
+      <p class="quote">karaoke with the family for a party and it was a hit</p><p class="quote">Our family has used this for multiple parties and gatherings</p><p class="quote">Have used at home, brought camping, etc.</p>
+      <p class="subtle">关联主题：theme_family_party_gifting, theme_sound_portable_all_in_one</p>
+    </div><div class="card">
+      <h3>用户任务</h3>
+      <p>用户主要任务不是单纯播放音乐，而是快速搭建一套可移动、可多人轮流唱、可连接 TV/YouTube/KaraFun 的娱乐系统。</p>
+      <div class="theme-meta">
+        <span class="badge">36/76 (47.4%)</span>
+        <span class="badge">confidence: high</span>
+      </div>
+      <p class="subtle">文案要把 all-in-one、TV hookup、YouTube/KaraFun、Bluetooth speaker 四个任务路径讲清楚。</p>
+      <p class="quote">We hooked it up to our TV and sounds great</p><p class="quote">We just play music videos from YouTube with lyrics</p><p class="quote">used it this past week just as boombox to listen to music from spotify</p>
+      <p class="subtle">关联主题：theme_sound_portable_all_in_one, theme_ui_app_screen_instruction_friction</p>
+    </div><div class="card">
+      <h3>购买理由</h3>
+      <p>购买理由集中在便携一体化、音质、内置屏幕、双无线麦克风、自带娱乐应用和礼物属性。</p>
+      <div class="theme-meta">
+        <span class="badge">29/76 (38.2%)</span>
+        <span class="badge">confidence: high</span>
+      </div>
+      <p class="subtle">广告钩子可优先使用 portable all-in-one karaoke system，而不是泛化成 speaker。</p>
+      <p class="quote">compact size... easy to carry in a small bag or backpack</p><p class="quote">built-in lyrics display and screen</p><p class="quote">comes with 2 powerful microphones</p>
+      <p class="subtle">关联主题：theme_sound_portable_all_in_one</p>
+    </div><div class="card">
+      <h3>用户期望</h3>
+      <p>用户买前期待产品能做到好声音、便携、易用、无线麦克风稳定、屏幕/应用可顺畅找歌。</p>
+      <div class="theme-meta">
+        <span class="badge">37/76 (48.7%)</span>
+        <span class="badge">confidence: medium</span>
+      </div>
+      <p class="subtle">Listing 承诺要同时管理硬件体验和软件/找歌体验，避免用户把小屏和 Web 版 YouTube 误解成完整平板体验。</p>
+      <p class="quote">I wanted something I could use for years to come that was of good quality and sound</p><p class="quote">plug-and-play karaoke machine: minimal setup</p><p class="quote">would be cool if theres an app for the device so you can use smartphone to control it</p>
+      <p class="subtle">关联主题：theme_sound_portable_all_in_one, theme_ui_app_screen_instruction_friction</p>
+    </div><div class="card">
+      <h3>实际体验</h3>
+      <p>实际体验呈现强正负分化：多数用户认为声音、便携和聚会效果超预期，但负向样本集中抱怨 UI、说明书、充电和连接可靠性。</p>
+      <div class="theme-meta">
+        <span class="badge">34/76 (44.7%)</span>
+        <span class="badge">confidence: high</span>
+      </div>
+      <p class="subtle">产品页应把强体验前置，同时把设置、充电和连接边界讲清楚以降低落差。</p>
+      <p class="quote">it really does audibly punch above its weight class</p><p class="quote">The user interface and operating system are very very slow</p><p class="quote">it’s impossible to keep the Shell 1 connected for more than a single song</p>
+      <p class="subtle">关联主题：theme_sound_portable_all_in_one, theme_ui_app_screen_instruction_friction, theme_reliability_connection_hardware_risk</p>
+    </div><div class="card">
+      <h3>满意点</h3>
+      <p>最稳定的满意点是声音大且清晰、体积小但有力量、便携、麦克风收纳充电、一体化屏幕和多人聚会效果。</p>
+      <div class="theme-meta">
+        <span class="badge">49/76 (64.5%)</span>
+        <span class="badge">confidence: high</span>
+      </div>
+      <p class="subtle">Listing 首屏卖点应优先强化 sound for size、portable party system、self-charging microphones。</p>
+      <p class="quote">sounds amazing with great bass</p><p class="quote">Small, compact, with lots of power</p><p class="quote">The mics are great and the way they store and charge in the machine is the best</p>
+      <p class="subtle">关联主题：theme_sound_portable_all_in_one, theme_family_party_gifting</p>
+    </div><div class="card">
+      <h3>不满意点</h3>
+      <p>不满意点不是单一质量问题，而是 UI/触屏/找歌慢、说明不足、充电器缺失或充电不明、连接/硬件稳定性四类。</p>
+      <div class="theme-meta">
+        <span class="badge">18/76 (23.7%)</span>
+        <span class="badge">confidence: high</span>
+      </div>
+      <p class="subtle">产品改进和 FAQ 应优先处理使用门槛、充电配件/规格说明、连接稳定性和异常售后路径。</p>
+      <p class="quote">Super glitchy with connection issues, touchscreen is awful</p><p class="quote">there are no clear instructions on using the karaoke machine</p><p class="quote">it does it come with a charger</p>
+      <p class="subtle">关联主题：theme_ui_app_screen_instruction_friction, theme_charging_adapter_mic_battery_gap, theme_reliability_connection_hardware_risk</p>
+    </div></div></section>
+      <section id="voc-theme-map" class="section"><h2 class="section-title">VOC 主题地图</h2><div class="grid"><a class="card theme-card" href="#theme-detail-theme_sound_portable_all_in_one">
+    <h3>小体积一体化带来的强音质和便携价值</h3>
+    <div class="theme-meta">
+      <span class="badge">满意点/购买驱动</span>
+      <span class="badge">5/76 (6.6%)</span>
+      <span class="badge">severity: high</span>
+      <span class="badge">P0</span>
+    </div>
+    <p>用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。</p>
+    <p class="subtle">这是最应该在 Listing、图片、视频和广告中被放大的主卖点。</p>
+    <p class="quote">sounds amazing with great bass</p><p class="quote">compact size... easy to carry</p>
+  </a><a class="card theme-card" href="#theme-detail-theme_family_party_gifting">
+    <h3>家庭聚会、礼物和朋友传播带来强场景价值</h3>
+    <div class="theme-meta">
+      <span class="badge">场景/人群</span>
+      <span class="badge">6/76 (7.9%)</span>
+      <span class="badge">severity: high</span>
+      <span class="badge">P0</span>
+    </div>
+    <p>评论反复表达产品能把家庭成员、孩子、朋友带入长时间互动，并触发他人询问购买链接。</p>
+    <p class="subtle">这是图片、视频、A+ 和广告创意中最有转化潜力的场景资产。</p>
+    <p class="quote">karaoke with the family for a party and it was a hit</p><p class="quote">used this for multiple parties and gatherings</p>
+  </a><a class="card theme-card" href="#theme-detail-theme_ui_app_screen_instruction_friction">
+    <h3>触屏、软件、找歌和说明书造成使用摩擦</h3>
+    <div class="theme-meta">
+      <span class="badge">不满意点/预期落差</span>
+      <span class="badge">7/76 (9.2%)</span>
+      <span class="badge">severity: medium</span>
+      <span class="badge">P1</span>
+    </div>
+    <p>负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。</p>
+    <p class="subtle">该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。</p>
+    <p class="quote">no clear instructions</p><p class="quote">user interface is very hard to navigate</p>
+  </a><a class="card theme-card" href="#theme-detail-theme_charging_adapter_mic_battery_gap">
+    <h3>充电器、麦克风充电指示和续航预期存在落差</h3>
+    <div class="theme-meta">
+      <span class="badge">不满意点/产品边界</span>
+      <span class="badge">4/76 (5.3%)</span>
+      <span class="badge">severity: medium</span>
+      <span class="badge">P1</span>
+    </div>
+    <p>部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。</p>
+    <p class="subtle">该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。</p>
+    <p class="quote">one of the microphones will not charge</p><p class="quote">battery does not last all day</p>
+  </a><a class="card theme-card" href="#theme-detail-theme_reliability_connection_hardware_risk">
+    <h3>连接、屏幕和硬件异常是低频但高风险差评源</h3>
+    <div class="theme-meta">
+      <span class="badge">低频高风险</span>
+      <span class="badge">4/76 (5.3%)</span>
+      <span class="badge">severity: high</span>
+      <span class="badge">P1</span>
+    </div>
+    <p>少数 1 星评论直接指向连接不稳定、触屏差、Wi-Fi 无法保持、屏幕 DOA 等硬故障或稳定性问题。</p>
+    <p class="subtle">虽然样本占比不高，但会直接造成退货、低星和信任损伤，应进入 P1 质量复盘。</p>
+    <p class="quote">Super glitchy with connection issues</p><p class="quote">keeps resetting over and over</p>
+  </a></div></section>
+      <section id="theme-detail-theme_sound_portable_all_in_one" class="section">
+      <h2 class="section-title">小体积一体化带来的强音质和便携价值</h2>
+      <p><a href="#voc-theme-map">返回 VOC 主题地图</a></p>
+      <div class="card">
+        <p><strong>核心问题：</strong>用户持续把 loud/clear sound、compact、portable、wireless mics 和 built-in screen 作为核心正向体验。</p>
+        <p><strong>归因假设：</strong>一体化硬件降低了聚会布置门槛，同时声音表现超过了用户对小体积设备的预期。</p>
+        <p><strong>业务含义：</strong>这是最应该在 Listing、图片、视频和广告中被放大的主卖点。</p>
+      </div>
+      <div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #1</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2026-05-10</span>
+      </div>
+      <h4>Great Karaoke Machine!</h4>
+      <p><strong>原文</strong></p>
+      <p>This Karaoke machine, <mark>sounds amazing with great bass</mark>. The mics are great and the way they <mark>store and charge</mark> in the machine is the best.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>这台卡拉 OK 机器<mark>声音很棒，低音很好</mark>。麦克风也很好，而且它们可以<mark>收纳并在机器里充电</mark>，这一点最好。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #2</span>
+        <span class="badge">rating: 4</span>
+        <span class="badge">date: 2026-03-01</span>
+      </div>
+      <h4>A little package packed with big fun!</h4>
+      <p><strong>原文</strong></p>
+      <p>I love how this karaoke machine is a top-quality device with <mark>excellent sound clarity</mark> and rich audio fidelity. Its <mark>compact size</mark>, measuring just 12 inches in length and 8 inches in height, makes it <mark>easy to carry</mark> in a small bag or backpack wherever you go, which is such a big plus! The microphone, which connects seamlessly via Bluetooth, works perfectly and provides clear, echo-rich vocals. It’s great fun for family entertainment, easily accommodating multiple users with its adjustable volume and multiple input options. It‘s a huge hit at gatherings, making every get-together even more lively and memorable.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>我喜欢这台卡拉 OK 机是高品质设备，<mark>声音清晰度很好</mark>，音频质感也丰富。它<mark>尺寸紧凑</mark>，长约 12 英寸、高约 8 英寸，可以轻松放进小包或背包<mark>随身携带</mark>，这是很大的优点。麦克风可通过蓝牙顺畅连接，工作正常，声音清晰且带有回声效果。它非常适合家庭娱乐，可以通过可调音量和多种输入方式支持多人使用。在聚会中很受欢迎，让每次聚会更热闹、更难忘。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #8</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2025-12-17</span>
+      </div>
+      <h4>Great choice in every way!</h4>
+      <p><strong>原文</strong></p>
+      <p>This Karaoke machine is excellent in every aspect of what you‘d hope for in quality. Very great quality, durable, wireless, connecting via bluetooth/wifi, <mark>portable, versatile, compact, good sound</mark>, <mark>color video screen</mark>, and is really good looking! It can connects to the smart TV, or watch shows or karaoke on its color compact video screen! It can be used like a boom box too. It serves as fun and easy karaoke, with microphone stored in a top compartment, and speakers that produce good sound. The video screen opens and closes on the top of it. It shows videos with the words of songs, and is used with apps for music and movies, etc. It’s really useful for all ages. Ages 3-20+ are my grandchildren, nieces and nephews, and they completely had a blast on Thanksgiving... actually every time I see them since my granddaughter received it a few months ago! They were preoccupied and singing their hearts out for hours... lots of giggles, smiles and taking turns! I think for the size, and all reasons above, it is <mark>totally worth the price</mark>. Enjoy 😊</p>
+      <p><strong>中文翻译</strong></p>
+      <p>这台卡拉 OK 机在质量方面几乎满足了所有期待。质量很好、耐用、无线、可通过蓝牙和 Wi-Fi 连接、<mark>便携、多用途、紧凑、声音好</mark>、有<mark>彩色视频屏幕</mark>，而且外观也很好看。它可以连接智能电视，也可以在紧凑的彩色屏幕上看节目或唱卡拉 OK。它也可以像音箱一样使用。它让卡拉 OK 变得有趣又简单，麦克风收纳在顶部隔层，扬声器能发出不错的声音。视频屏幕可从顶部打开和关闭，可以显示带歌词的视频，也能配合音乐和电影应用使用。它真的适合各个年龄段。我的孙辈、侄女和侄子年龄从 3 岁到 20 多岁，他们在感恩节玩得非常开心。实际上，自从几个月前我孙女收到它以来，每次见到他们都玩得很开心。他们连续好几个小时投入地唱歌，笑声很多，笑容很多，还轮流唱。我认为结合尺寸和以上所有原因，它<mark>完全值这个价格</mark>。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #12</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2025-10-18</span>
+      </div>
+      <h4>Lot of power in a small box</h4>
+      <p><strong>原文</strong></p>
+      <p>We finally started using it and it is great!! <mark>Easy to use</mark>. We <mark>hooked it up to our TV</mark> and sounds great. <mark>Very portable and compact</mark>, but with great sound and volume. Highly recommend!</p>
+      <p><strong>中文翻译</strong></p>
+      <p>我们终于开始使用它了，真的很棒。它<mark>容易使用</mark>。我们把它<mark>接到电视上</mark>，声音很好。它<mark>非常便携、紧凑</mark>，但声音和音量都很出色。强烈推荐。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #75</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2025-06-21</span>
+      </div>
+      <h4>Worth it</h4>
+      <p><strong>原文</strong></p>
+      <p>The <mark>sound is amazing</mark> for a small karaoke machine. It’s fun, <mark>two microphones</mark> and <mark>words pop up on the screen</mark>. Totally worth the value</p>
+      <p><strong>中文翻译</strong></p>
+      <p>对于一台小型卡拉 OK 机来说，<mark>声音很惊艳</mark>。它很有趣，有<mark>两个麦克风</mark>，<mark>歌词会显示在屏幕上</mark>。非常物有所值。</p>
+    </div>
+    </section><section id="theme-detail-theme_family_party_gifting" class="section">
+      <h2 class="section-title">家庭聚会、礼物和朋友传播带来强场景价值</h2>
+      <p><a href="#voc-theme-map">返回 VOC 主题地图</a></p>
+      <div class="card">
+        <p><strong>核心问题：</strong>评论反复表达产品能把家庭成员、孩子、朋友带入长时间互动，并触发他人询问购买链接。</p>
+        <p><strong>归因假设：</strong>双麦、便携和快速开唱降低了多人参与门槛，礼物和聚会场景自然放大了价值感。</p>
+        <p><strong>业务含义：</strong>这是图片、视频、A+ 和广告创意中最有转化潜力的场景资产。</p>
+      </div>
+      <div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #6</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2026-01-01</span>
+      </div>
+      <h4>Instant Fan</h4>
+      <p><strong>原文</strong></p>
+      <p>Even the power-on sound is rich and reverberating. Got it just in time to <mark>karaoke with the family for a party</mark> and <mark>it was a hit</mark>. Immediately intuitive, especially with the Karafun app. Also, very helpful to access the user guide pdf on the product page for familiarizing myself with the microphone functions.
+The weight is light and size is compact, yet it really does audibly punch above its weight class.
+
+Already came charged, so we put it too immediate use and even the parents marveled at how far karaoke equipment has come.
+
+It is great value for the money, and <mark>my sibling is already considering purchasing</mark> one for himself.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>连开机声音都很浑厚、有回响。它刚好赶上<mark>家庭聚会用来唱卡拉 OK</mark>，而且<mark>非常受欢迎</mark>。操作马上就能理解，尤其是配合 KaraFun 应用。产品页面上的用户指南 PDF 对熟悉麦克风功能也很有帮助。
+它重量轻、体积紧凑，但声音表现明显超过体积预期。
+
+到货时已经有电，所以我们马上就开始使用，连父母都感叹卡拉 OK 设备进步了很多。
+
+它很值这个价格，我的兄弟姐妹已经在<mark>考虑给自己也买一台</mark>。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #8</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2025-12-17</span>
+      </div>
+      <h4>Great choice in every way!</h4>
+      <p><strong>原文</strong></p>
+      <p>This Karaoke machine is excellent in every aspect of what you‘d hope for in quality. Very great quality, durable, wireless, connecting via bluetooth/wifi, portable, versatile, compact, good sound, color video screen, and is really good looking! It can connects to the smart TV, or watch shows or karaoke on its color compact video screen! It can be used like a boom box too. It serves as fun and easy karaoke, with microphone stored in a top compartment, and speakers that produce good sound. The video screen opens and closes on the top of it. It shows videos with the words of songs, and is used with apps for music and movies, etc. It’s really useful for all ages. Ages 3-20+ are my <mark>grandchildren, nieces and nephews</mark>, and they completely had a blast on <mark>Thanksgiving</mark>... actually every time I see them since my granddaughter received it a few months ago! They were preoccupied and <mark>singing their hearts out for hours</mark>... lots of giggles, smiles and taking turns! I think for the size, and all reasons above, it is totally worth the price. Enjoy 😊</p>
+      <p><strong>中文翻译</strong></p>
+      <p>这台卡拉 OK 机在质量方面几乎满足了所有期待。质量很好、耐用、无线、可通过蓝牙和 Wi-Fi 连接、便携、多用途、紧凑、声音好、有彩色视频屏幕，而且外观也很好看。它可以连接智能电视，也可以在紧凑的彩色屏幕上看节目或唱卡拉 OK。它也可以像音箱一样使用。它让卡拉 OK 变得有趣又简单，麦克风收纳在顶部隔层，扬声器能发出不错的声音。视频屏幕可从顶部打开和关闭，可以显示带歌词的视频，也能配合音乐和电影应用使用。它真的适合各个年龄段。我的<mark>孙辈、侄女和侄子</mark>年龄从 3 岁到 20 多岁，他们在<mark>感恩节</mark>玩得非常开心。实际上，自从几个月前我孙女收到它以来，每次见到他们都玩得很开心。他们<mark>连续好几个小时投入地唱歌</mark>，笑声很多，笑容很多，还轮流唱。我认为结合尺寸和以上所有原因，它完全值这个价格。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #34</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2025-09-09</span>
+      </div>
+      <h4>Must have for parties</h4>
+      <p><strong>原文</strong></p>
+      <p>This is a must have item for anyone who <mark>entertains at home frequently</mark>. Our family has used this for <mark>multiple parties and gatherings</mark> and <mark>everyone loves it</mark>. The sound is loud and perfect, reminds me of a boom box. Must have for sure!!!</p>
+      <p><strong>中文翻译</strong></p>
+      <p>对于<mark>经常在家招待客人</mark>的人来说，这是必备品。我们家已经在<mark>多次派对和聚会</mark>上使用它，<mark>每个人都喜欢</mark>。声音很大而且很好，让我想起以前的手提音箱。绝对是必备品。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #37</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2025-09-06</span>
+      </div>
+      <h4>So Fun—I Bought Two (and Friends Did Too!)🥳❤️</h4>
+      <p><strong>原文</strong></p>
+      <p>Such a blast! This karaoke machine has been the star of our <mark>family and friend gatherings</mark>. <mark>Everyone loves it</mark>—already bought two and <mark>friends bought theirs after trying mine</mark>..</p>
+      <p><strong>中文翻译</strong></p>
+      <p>太好玩了。这台卡拉 OK 机已经成了我们<mark>家庭和朋友聚会</mark>的明星。<mark>每个人都喜欢它</mark>，我已经买了两台，<mark>朋友试过我的之后也买了</mark>。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #39</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2025-09-02</span>
+      </div>
+      <h4>Awesome Device</h4>
+      <p><strong>原文</strong></p>
+      <p><mark>Got this for my wife</mark> as she loves Karaoke, but had a cheap mic and app that she used. This product is AWESOME! The mics sound great, the speakers sound great, and the primary karaoke app that comes with a 6 month subscription was great. I threw her a <mark>Karaoke party</mark> and <mark>everyone really enjoyed themselves</mark> and had a great time.The battery life is also great. We sang for 4 or 5 hours off of one charge and got it to about 20% battery life which I think is awesome considering the sound it can produce.If you‘re on the fence about it because of the cost, give it a shot.Also worth noting, I will be using this for Halloween as it comes with microphone effects, one of which is monster, which sounds like it would be perfect to use on trick or treaters, so a bonus use for me.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>我<mark>给妻子买了这个</mark>，因为她喜欢卡拉 OK，之前用的是便宜麦克风和应用。这个产品太棒了。麦克风声音很好，扬声器声音很好，随附 6 个月订阅的主要卡拉 OK 应用也很好。我给她办了一场<mark>卡拉 OK 派对</mark>，<mark>大家都玩得很开心</mark>。电池续航也很好，我们一次充电唱了 4 到 5 个小时，电量还剩约 20%，考虑到它能发出的声音，我觉得很棒。如果你因为价格犹豫，可以试试。还值得一提的是，我会在万圣节使用它，因为它有麦克风音效，其中一个像怪物声音，很适合对不给糖就捣蛋的人使用，对我来说是额外用途。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #40</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2025-09-01</span>
+      </div>
+      <h4>Best gift for drama or choir kids!</h4>
+      <p><strong>原文</strong></p>
+      <p>We bought this <mark>for our son</mark> and it has been his favorite thing ever since. He spends <mark>hours practicing</mark> in his room singing with the Ikarao. It is also a <mark>hit at every party</mark>, kids or otherwise. The battery life is great and the dual microphones let our kids sing duets without feedback or interference. Great product!!!</p>
+      <p><strong>中文翻译</strong></p>
+      <p>我们<mark>给儿子买了这个</mark>，从那以后它就成了他最喜欢的东西。他会在房间里用 Ikarao <mark>花几个小时练习</mark>唱歌。无论是孩子聚会还是其他聚会，它都<mark>很受欢迎</mark>。电池续航很棒，双麦克风让孩子们可以合唱，而且没有反馈或干扰。很棒的产品。</p>
+    </div>
+    </section><section id="theme-detail-theme_ui_app_screen_instruction_friction" class="section">
+      <h2 class="section-title">触屏、软件、找歌和说明书造成使用摩擦</h2>
+      <p><a href="#voc-theme-map">返回 VOC 主题地图</a></p>
+      <div class="card">
+        <p><strong>核心问题：</strong>负向和中性评论反复提到触屏慢、搜索/YouTube 使用不顺、屏幕小或说明不足。</p>
+        <p><strong>归因假设：</strong>产品承担了 speaker、screen、tablet-like app 和 karaoke catalog 四类预期，但说明和界面没有充分降低学习成本。</p>
+        <p><strong>业务含义：</strong>该主题会削弱 plug-and-play 卖点，需通过产品 UX、说明书、FAQ 和视频教程共同修复。</p>
+      </div>
+      <div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #7</span>
+        <span class="badge">rating: 3</span>
+        <span class="badge">date: 2025-12-17</span>
+      </div>
+      <h4>Microphone won‘t charge and no clear instructions.</h4>
+      <p><strong>原文</strong></p>
+      <p>Unit is nice, but one of the microphones will not charge. In addition, and as others have said, there are <mark>no clear instructions</mark> on using the karaoke machine so you‘re on your own to <mark>figure things out</mark>. I may or may not return it and get a replacement. What good is one microphone if you’re with friends?UPDATE: The company did reach out, but in the meantime, it appears that both microphones are charging but the lights indicating such do not light up. I can deal with that because I am enjoying the machine itself.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>机器本身不错，但其中一个麦克风无法充电。另外，正如其他人所说，关于如何使用这台卡拉 OK 机<mark>没有清楚的说明</mark>，所以只能<mark>自己摸索</mark>。我可能会也可能不会退货换一个。如果和朋友在一起，只有一个麦克风有什么用？更新：公司确实联系了我，但与此同时，看起来两个麦克风其实都在充电，只是指示灯没有亮。因为我仍然喜欢机器本身，所以这点我可以接受。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #21</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2025-10-07</span>
+      </div>
+      <h4>Packs a party punch</h4>
+      <p><strong>原文</strong></p>
+      <p>This is really cool to have an open house or party like that where some youngsters are fearlessly ready to get after it.  The sound is amazing.  You‘d think that since the speakers are facing you, no one would hear.  Nope. It is loud and clear... meaning it‘s ‘closing time‘ if you are doing it at midnight on the porch.  Ha ha.  Seriously though: I think the ap is ok. There are <mark>missing songs</mark>. I can‘t say as I have tried all the methods yet.  I find it <mark>hard to get the screen to go full size</mark>. But if you are persistent, no problem.  The screen is bright and most controls make sense. The volume knob is cool.  I wonder if the light is telling me: you‘re off key.... I like the buttons on the mic‘s.  Not a fan of the special effects, but ... don‘t use them, problem solved.  I had this at a party and about 4 people swore they were going to buy it the next day. It was a hit.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>在开放日或派对上让一些年轻人大胆开唱，这个产品真的很酷。声音很惊艳。你可能会以为扬声器朝向你，别人听不到。并不是。它又响又清楚，也就是说如果你半夜在门廊唱，可能就是该收场了。说正经的，我觉得应用还可以。有些<mark>歌曲缺失</mark>。我还不能说我已经试过所有方法。我觉得<mark>很难把屏幕调成全屏</mark>。但如果你有耐心，问题不大。屏幕很亮，大多数控制都容易理解。音量旋钮很酷。我不知道灯是不是在提示我跑调。我喜欢麦克风上的按钮。不太喜欢特效，不过不用就行。我在派对上使用它，大约 4 个人说第二天要买。它很受欢迎。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #23</span>
+        <span class="badge">rating: 3</span>
+        <span class="badge">date: 2025-10-06</span>
+      </div>
+      <h4>Excelente calidad</h4>
+      <p><strong>原文</strong></p>
+      <p>The sound is spectacular, and the design and quality are very good. My only observation is this: YouTube runs from <mark>YouTube Web</mark>, not from the app, which makes it <mark>run slower</mark>. You <mark>can‘t download Spotify</mark>, which would be a huge plus.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>声音很出色，设计和质量也很好。我唯一的意见是：YouTube 是<mark>通过网页运行</mark>，而不是原生应用，这让它<mark>运行更慢</mark>。<mark>不能下载 Spotify</mark>，如果可以的话会是很大的加分项。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #29</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2025-09-15</span>
+      </div>
+      <h4>Great concept, hard to navigate, needs improvement</h4>
+      <p><strong>原文</strong></p>
+      <p>Great concept, <mark>hard to navigate</mark>, 3 stars go to the design, volume, and ergonomics, however, the <mark>user interface is very <mark>hard to navigate</mark></mark>, especially when you‘re trying to use the search feature on Youtube to look for songs, it is <mark>very tiny and hard to see</mark>, also when you connect your smart phone or tablet, you can not control YouTube fully, when you pick a sing from the external device, the screen will ONLY SHOW the video title but it wont show the full video, aside from that the company is very helpful when it comes to any troubleshooting.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>概念很好，但<mark>很难导航</mark>。设计、音量和人体工学可以给三星，不过<mark>用户界面非常难操作</mark>，尤其是在 YouTube 上用搜索功能找歌时，界面<mark>很小，很难看清</mark>。另外，当连接智能手机或平板时，无法完全控制 YouTube；从外部设备选择歌曲时，屏幕只显示视频标题，不显示完整视频。除此之外，公司在故障排查方面很有帮助。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #31</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2025-09-11</span>
+      </div>
+      <h4>Can‘t understand the instructions just illustrations I need words with the illustrations</h4>
+      <p><strong>原文</strong></p>
+      <p>My karoke machine is great 2 microphones come with it and the sound is wonderful I still haven‘t learn how to do videos with it yet because the <mark>instructions just show illustrations</mark> i <mark>need words with the illustrations</mark> thts wht you need to correct please and when you change tht please send me a new paper instructions it would be greatly appreciated and I will let all customers who purchase this item know tht you went out your way for a customer because thts how Amazon‘s company is they go the extra mile but I guess yall can‘t really do tht I guess I have to call the company for tht but you can at least let them know</p>
+      <p><strong>中文翻译</strong></p>
+      <p>我的卡拉 OK 机很好，带两个麦克风，声音也很棒。但我还没学会怎么用它播放视频，因为<mark>说明书只有插图</mark>，我<mark>需要插图旁边配文字</mark>。这是你们需要改正的地方。改好后如果能给我寄一份新的纸质说明书，我会非常感谢，也会告诉所有买这个产品的顾客你们为顾客多做了一步。不过我想可能还是得联系公司，你们至少可以告诉他们。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #56</span>
+        <span class="badge">rating: 3</span>
+        <span class="badge">date: 2025-08-03</span>
+      </div>
+      <h4>sounds good but hard to use</h4>
+      <p><strong>原文</strong></p>
+      <p>sounds good. However is <mark>hard to select songs</mark>. would be cool if theres an app for the device so you can <mark>use smartphone to control it</mark>. but no; that doesnt exist.  It is easy to understand how to use it but the <mark>selection of songs is hard</mark>.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>声音不错。但是<mark>选歌很难</mark>。如果有设备配套应用，可以<mark>用智能手机控制它</mark>，那会很酷。但没有，这个功能不存在。理解如何使用它并不难，但<mark>选歌很难</mark>。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #70</span>
+        <span class="badge">rating: 4</span>
+        <span class="badge">date: 2025-06-29</span>
+      </div>
+      <h4>Minimal instructions, unable to get 6-month subscription started</h4>
+      <p><strong>原文</strong></p>
+      <p>Seems like good quality but couldn‘t figure out how to activate the 6-month subscription.  Contacted the company through the machine to the website, but no answer after a couple of days.  <mark>Minimal instructions</mark> on setup, so trying to <mark>figure out exactly how it operates</mark>.UPDATE:  Company contacted us on the trial. Thank you!A very nice machine and it was a hit.Can‘t give it a 5 as there are little to no instructions.  A <mark>QR code to an instruction manual</mark> would be a big plus!</p>
+      <p><strong>中文翻译</strong></p>
+      <p>看起来质量不错，但我不知道如何激活 6 个月订阅。通过机器进入网站联系了公司，但几天后还没有回复。<mark>设置说明很少</mark>，所以只能自己<mark>弄清楚它到底怎么操作</mark>。更新：公司就试用问题联系了我们，谢谢。这是一台非常不错的机器，也很受欢迎。但因为几乎没有说明，我不能给 5 星。如果有一个<mark>说明书二维码</mark>会是很大的加分项。</p>
+    </div>
+    </section><section id="theme-detail-theme_charging_adapter_mic_battery_gap" class="section">
+      <h2 class="section-title">充电器、麦克风充电指示和续航预期存在落差</h2>
+      <p><a href="#voc-theme-map">返回 VOC 主题地图</a></p>
+      <div class="card">
+        <p><strong>核心问题：</strong>部分用户把未随附充电适配器、麦克风充电指示不清或电池无法全天使用视为便携完整性的破口。</p>
+        <p><strong>归因假设：</strong>便携一体化承诺让用户自然期待完整充电方案，但包装与说明没有充分管理适配器规格和指示灯行为。</p>
+        <p><strong>业务含义：</strong>该主题直接影响差评、退货和售后咨询，应优先通过配件、说明和 FAQ 降低误解。</p>
+      </div>
+      <div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #3</span>
+        <span class="badge">rating: 5</span>
+        <span class="badge">date: 2026-02-25</span>
+      </div>
+      <h4>Compact and Easy</h4>
+      <p><strong>原文</strong></p>
+      <p>Great little set. Small, compact, with lots of power. The only negative is the <mark>battery does not last all day</mark>. It is easy to use and sounds good.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>很棒的小套装。小巧、紧凑，但很有力量。唯一的缺点是<mark>电池不能用一整天</mark>。它容易使用，声音也不错。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #7</span>
+        <span class="badge">rating: 3</span>
+        <span class="badge">date: 2025-12-17</span>
+      </div>
+      <h4>Microphone won‘t charge and no clear instructions.</h4>
+      <p><strong>原文</strong></p>
+      <p>Unit is nice, but one of the <mark>microphones will not charge</mark>. In addition, and as others have said, there are no clear instructions on using the karaoke machine so you‘re on your own to figure things out. I may or may not return it and get a replacement. What good is one microphone if you’re with friends?UPDATE: The company did reach out, but in the meantime, it appears that both microphones are charging but the <mark>lights indicating such do not light up</mark>. I can deal with that because I am enjoying the machine itself.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>机器本身不错，但其中一个<mark>麦克风无法充电</mark>。另外，正如其他人所说，关于如何使用这台卡拉 OK 机没有清楚的说明，所以只能自己摸索。我可能会也可能不会退货换一个。如果和朋友在一起，只有一个麦克风有什么用？更新：公司确实联系了我，但与此同时，看起来两个麦克风其实都在充电，只是<mark>指示灯没有亮</mark>。因为我仍然喜欢机器本身，所以这点我可以接受。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #32</span>
+        <span class="badge">rating: 1</span>
+        <span class="badge">date: 2025-09-11</span>
+      </div>
+      <h4>CHARGING IS AN ISSUE</h4>
+      <p><strong>原文</strong></p>
+      <p>Inconvenient to have to come <mark>purchase/procure your own charger/adapter</mark> and that none of it is built-in.  That would really make this a complete, portable unit.  At the very least, give us a charger/adapter and <mark>not just a cable</mark>.  Now we‘re left trying to figure out <mark>what‘s too much wattage</mark> for the adapter or what‘s too little.  Instructions are clear in that.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>还得<mark>自己购买或准备充电器/适配器</mark>，而且没有内置充电方案，这很不方便。这样本来才会让它成为完整的便携设备。至少应该给我们一个充电器/适配器，而<mark>不只是线缆</mark>。现在我们只能自己判断适配器<mark>瓦数太高还是太低</mark>。说明在这一点上不清楚。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #73</span>
+        <span class="badge">rating: 4</span>
+        <span class="badge">date: 2025-06-26</span>
+      </div>
+      <h4>Good sound, but falls short in packaging an adapter</h4>
+      <p><strong>原文</strong></p>
+      <p>Why did you pick this product vs others?:Product is good for the size, but while it‘s sold as a <mark>whole package</mark> with mics included and easy to store in the unit, they fall short in carrying this concept over to the charging of the unit.  Inconvenient to have to come purchase/procure your own <mark>charger/adapter</mark> and that none of it is built-in.  That would really make this a complete, portable unit.  At the very least, give us a <mark>charger/adapter</mark> and <mark>not just a cable</mark>.  Now we‘re left trying to figure out what‘s too much wattage for the adapter or what‘s too little.  Instructions are clear in that.Update:  customer service is a plus, reached out, helped me with resolution</p>
+      <p><strong>中文翻译</strong></p>
+      <p>你为什么选择这个产品而不是其他产品？就这个尺寸来说产品不错，但它作为一个带麦克风、麦克风又能方便收纳在机器里的<mark>完整套装</mark>销售，却没有把这种完整性延续到主机充电上。还得自己购买或准备<mark>充电器/适配器</mark>，而且没有内置，这很不方便。那样才会让它成为完整的便携设备。至少应该给我们一个<mark>充电器/适配器</mark>，而<mark>不只是线缆</mark>。现在我们只能自己判断适配器瓦数太高还是太低。说明在这一点上不清楚。更新：客服是加分项，主动联系并帮助我解决了问题。</p>
+    </div>
+    </section><section id="theme-detail-theme_reliability_connection_hardware_risk" class="section">
+      <h2 class="section-title">连接、屏幕和硬件异常是低频但高风险差评源</h2>
+      <p><a href="#voc-theme-map">返回 VOC 主题地图</a></p>
+      <div class="card">
+        <p><strong>核心问题：</strong>少数 1 星评论直接指向连接不稳定、触屏差、Wi-Fi 无法保持、屏幕 DOA 等硬故障或稳定性问题。</p>
+        <p><strong>归因假设：</strong>一体化设备将网络、屏幕、触控、音频和电源整合在一起，任何一个模块失效都会让用户认为整体不可用。</p>
+        <p><strong>业务含义：</strong>虽然样本占比不高，但会直接造成退货、低星和信任损伤，应进入 P1 质量复盘。</p>
+      </div>
+      <div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #18</span>
+        <span class="badge">rating: 1</span>
+        <span class="badge">date: 2025-10-11</span>
+      </div>
+      <h4>Buy a cheap speaker and a tablet</h4>
+      <p><strong>原文</strong></p>
+      <p>Super glitchy with <mark>connection issues</mark>, <mark>touchscreen is awful</mark>. The whole concept is great but the <mark>execution lacks</mark></p>
+      <p><strong>中文翻译</strong></p>
+      <p><mark>连接问题</mark>非常卡顿，<mark>触摸屏很糟糕</mark>。整体概念很好，但<mark>执行不到位</mark>。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #45</span>
+        <span class="badge">rating: 1</span>
+        <span class="badge">date: 2025-08-25</span>
+      </div>
+      <h4>Doesn’t stay connected - returning</h4>
+      <p><strong>原文</strong></p>
+      <p>I really wanted this to work, but it’s <mark>impossible to keep</mark> the Shell 1 <mark>connected</mark> for more than a single song. It keeps <mark>resetting over and over</mark>. I tested both 5GHz and 2.4GHz networks with no luck. After several attempts, I’m giving up and returning it. Very disappointing experience.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>我真的希望它能正常使用，但 Shell 1 根本<mark>无法保持连接</mark>超过一首歌。它<mark>不断重置</mark>。我测试了 5GHz 和 2.4GHz 网络都没用。尝试多次后，我放弃并准备退货。体验非常令人失望。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #59</span>
+        <span class="badge">rating: 1</span>
+        <span class="badge">date: 2025-07-20</span>
+      </div>
+      <h4>Screen DOA</h4>
+      <p><strong>原文</strong></p>
+      <p>Bought it for a party we were having, but the <mark>Screen was DOA</mark>. All the lights turn on, but the <mark>screen stays dark</mark>. <mark>Returning</mark> for something more reliable.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>我为了要办的派对买了它，但<mark>屏幕到货即坏</mark>。所有灯都亮了，但<mark>屏幕一直是黑的</mark>。我要<mark>退货</mark>，换一个更可靠的产品。</p>
+    </div><div class="card detail-review">
+      <div class="theme-meta">
+        <span class="badge">Review #64</span>
+        <span class="badge">rating: 1</span>
+        <span class="badge">date: 2025-07-13</span>
+      </div>
+      <h4>Poor Wi-Fi radio</h4>
+      <p><strong>原文</strong></p>
+      <p>The <mark>wi-fi radio</mark> included in the device is very poor and <mark>will not hold a wi-fi connection</mark> when moved even a short distance away from our router. We have 1GB fiber internet and no devices in the home have any issue <mark>except this device</mark>.</p>
+      <p><strong>中文翻译</strong></p>
+      <p>设备里的 <mark>Wi-Fi 模块</mark>很差，只要离路由器稍微远一点就<mark>无法保持 Wi-Fi 连接</mark>。我们家有 1GB 光纤，家里其他设备都没有问题，<mark>只有这个设备</mark>有问题。</p>
+    </div>
+    </section>
+      <section id="actions" class="section"><h2 class="section-title">机会矩阵与业务动作清单</h2><div class="table-wrap"><table><thead><tr><th>方向</th><th>主题</th><th>业务发现</th><th>建议动作</th><th>优先级</th><th>影响指标</th><th>验证方式</th></tr></thead><tbody><tr>
+    <td>listing</td>
+    <td>theme_sound_portable_all_in_one</td>
+    <td>声音、便携、双麦收纳充电和内置屏幕共同构成主购买驱动。</td>
+    <td>首屏五点和 A+ 模块使用 portable all-in-one karaoke system 叙事，并把 140W、built-in screen、self-charging microphones、TV/Bluetooth 四个卖点放在同一信息组。</td>
+    <td>P0 (92)</td>
+    <td>listing conversion rate、CTR、add-to-cart rate</td>
+    <td>A/B test title and image 2、monitor conversion by mobile traffic</td>
+  </tr><tr>
+    <td>image_video</td>
+    <td>theme_family_party_gifting</td>
+    <td>用户把产品作为家庭聚会、孩子练歌、伴侣礼物和朋友聚会设备。</td>
+    <td>视频脚本增加 20 秒家庭聚会片段：孩子/父母/朋友轮流唱、双麦合唱、TV 连接、手机点歌，结尾强调 gift-ready party karaoke。</td>
+    <td>P0 (90)</td>
+    <td>video completion rate、conversion rate、gift season sales</td>
+    <td>replace video opening 5 seconds、track session conversion</td>
+  </tr><tr>
+    <td>product</td>
+    <td>theme_ui_app_screen_instruction_friction</td>
+    <td>UI、找歌和说明不足会削弱 plug-and-play 预期。</td>
+    <td>补充纸质 quick start、二维码视频教程和 FAQ：如何激活 KaraFun、如何使用 YouTube、如何连接 TV、如何全屏、如何选择歌曲。</td>
+    <td>P1 (82)</td>
+    <td>negative review rate、support ticket rate、return rate</td>
+    <td>post-purchase email click rate、support category trend</td>
+  </tr><tr>
+    <td>listing</td>
+    <td>theme_charging_adapter_mic_battery_gap</td>
+    <td>未附适配器和充电规格不清会破坏便携一体化感知。</td>
+    <td>在图片和 FAQ 明确包装内含 Type-C cable but no charger，并给出推荐适配器规格；若成本允许，评估加入适配器或官方 bundle。</td>
+    <td>P1 (78)</td>
+    <td>return reason: charging、1-star review share、support ticket rate</td>
+    <td>FAQ update before-after、track charging-related contacts</td>
+  </tr><tr>
+    <td>product</td>
+    <td>theme_reliability_connection_hardware_risk</td>
+    <td>连接、屏幕和硬件异常虽然低频，但一旦发生会直接导致退货。</td>
+    <td>建立 P1 质量复盘：Wi-Fi 保持连接测试、屏幕 DOA 出厂检测、触屏延迟测试、Shell S1/S2 型号分层看退货原因。</td>
+    <td>P1 (84)</td>
+    <td>return rate、defect rate、1-star review count</td>
+    <td>batch QA defect log、model-specific review tracking</td>
+  </tr></tbody></table></div></section>
+      <section id="limits" class="section">
+    <h2 class="section-title">限制说明与 Checkpoint 状态</h2>
+    <ul><li>ASIN 总评论数量为 Sorftime product_detail 返回的 711，只作为产品规模背景，不作为 VOC 分母。</li><li>VOC、关键结论和业务动作的百分比分母固定为 product_reviews 本次实际返回的 76 条 Review。</li><li>Sorftime 当前不提供 reviewer name、verified purchase、helpful vote、review URL、Vine 字段，这些字段不得推断。</li><li>本样例为 v0.1.0 release sample，用于展示报告结构、主题详情全文和证据高亮；正式分析应逐条阅读当次 Sorftime 返回的完整样本并重新编码。</li></ul>
+    <div class="table-wrap"><table><thead><tr><th>Checkpoint</th><th>状态</th><th>说明</th></tr></thead><tbody><tr><td>输入校验</td><td class="checkpoint-pass">pass</td><td>ASIN 合法，站点固定为 Amazon US，单 ASIN 分析。</td></tr><tr><td>Sorftime MCP 抓取</td><td class="checkpoint-pass">pass</td><td>product_detail 和 product_reviews 均返回真实数据，reviewType=Both。</td></tr><tr><td>数据质量</td><td class="checkpoint-pass">pass</td><td>样本数 76，正文、星级和日期存在率均为 100%。</td></tr><tr><td>Review 编码检查</td><td class="checkpoint-pass">pass</td><td>非 unknown 判断均绑定 Review 原文 evidence。</td></tr><tr><td>VOC 主题检查</td><td class="checkpoint-pass">pass</td><td>VOC 主题均包含 count/sample/percentage、证据、详情评论与业务含义。</td></tr><tr><td>统计计算检查</td><td class="checkpoint-pass">pass</td><td>主题、关键结论和业务动作均使用 Review 样本数 76 作为分母。</td></tr><tr><td>业务动作检查</td><td class="checkpoint-pass">pass</td><td>所有业务动作均绑定 theme_id、原文 evidence、优先级、指标和验证方式。</td></tr><tr><td>HTML 报告检查</td><td class="checkpoint-pass">pass</td><td>报告包含数据范围、健康度、关键结论、VOC 主题地图、主题详情、业务动作和限制说明。</td></tr><tr><td>Product Design 视觉 QA</td><td class="checkpoint-pass">pass</td><td>报告使用 assets/report 中的 Product Design 样式资产，卡片、表格、高亮和移动端布局规则已沉淀。</td></tr><tr><td>密钥扫描</td><td class="checkpoint-pass">pass</td><td>样例不包含 Sorftime key、环境变量值或运行时 token。</td></tr></tbody></table></div>
+  </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "version": "v0.1.0",
+  "statuses": ["pass", "warn", "fail"],
+  "checkpoints": [
+    { "id": "input_validation", "name": "输入校验", "fail": ["非法 ASIN", "ASIN 为空", "多 ASIN 输入"] },
+    { "id": "sorftime_fetch", "name": "Sorftime MCP 抓取", "fail": ["Sorftime MCP 连接失败", "所有 Review 样本数为 0"], "warn": ["Review 样本数低于 20"] },
+    { "id": "data_quality", "name": "数据质量", "fail": ["review text 存在率低于 60%", "rating 存在率低于 60%"], "warn": ["review date 存在率低于 70%", "重复 Review 占比达到 5%"] },
+    { "id": "review_coding", "name": "Review 编码检查", "fail": ["非 unknown 字段缺少 evidence", "evidence 在原 Review text 中找不到"] },
+    { "id": "voc_theme", "name": "VOC 主题检查", "fail": ["theme 缺少 evidence", "percentage 与 count/sample_size 不一致", "只展示 Top N"] },
+    { "id": "business_actions", "name": "业务动作检查", "fail": ["动作没有绑定 theme_id", "动作没有 evidence", "动作无法执行"] },
+    { "id": "html_report", "name": "HTML 报告检查", "fail": ["核心章节缺失", "关键结论未覆盖八类洞察", "VOC 主题详情页缺少证据列表"] },
+    { "id": "product_design_qa", "name": "Product Design 视觉 QA", "fail": ["未使用 report assets", "移动端文字重叠", "高亮不可见"] },
+    { "id": "secret_scan", "name": "密钥扫描", "fail": ["报告或缓存中发现 Sorftime key"] }
+  ]
+}
+

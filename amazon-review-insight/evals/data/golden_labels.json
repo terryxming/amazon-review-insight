@@ -1,0 +1,15 @@
+{
+  "eval_dataset_version": "v0.1.0",
+  "notes": "Public golden labels use synthetic review-shaped data. Real Sorftime responses are not committed.",
+  "required_key_insight_dimensions": [
+    "人群",
+    "场景",
+    "用户任务",
+    "购买理由",
+    "用户期望",
+    "实际体验",
+    "满意点",
+    "不满意点"
+  ]
+}
+

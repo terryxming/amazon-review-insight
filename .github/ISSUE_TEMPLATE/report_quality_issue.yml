@@ -1,0 +1,21 @@
+name: Report quality issue
+description: Report evidence, insight, translation, or action quality issues
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Skill version
+  - type: input
+    id: asin_count
+    attributes:
+      label: ASIN count
+  - type: textarea
+    id: issue
+    attributes:
+      label: Quality issue
+      description: Do not include private keys. Desensitize review text if needed.
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected correction
+

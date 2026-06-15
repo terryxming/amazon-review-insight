@@ -1,0 +1,17 @@
+name: Sorftime field change
+description: Report a Sorftime MCP response field or contract change
+body:
+  - type: input
+    id: tool
+    attributes:
+      label: Sorftime tool name
+      placeholder: product_reviews or product_detail
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed response shape
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+

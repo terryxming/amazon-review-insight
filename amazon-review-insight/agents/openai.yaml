@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon Review Insight"
+  short_description: "Amazon review VOC reports in Chinese."
+  default_prompt: "Analyze an Amazon US ASIN with Sorftime MCP and generate a Chinese HTML VOC report."
