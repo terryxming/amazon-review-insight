@@ -3,6 +3,7 @@ import reviewsFixture from "../fixtures/sorftime_single_asin_reviews.json" with 
 import detailFixture from "../fixtures/sorftime_product_detail.json" with { type: "json" };
 import {
   computeReviewHealth,
+  highlightEvidenceSentences,
   isValidAsin,
   parseProductDetail,
   parseSorftimeReviews
@@ -36,5 +37,20 @@ describe("core parsing and metrics", () => {
     expect(health.positive_percentage).toBe(66.7);
     expect(health.negative_percentage).toBe(33.3);
   });
-});
 
+  it("highlights complete evidence sentences with semantic classes", () => {
+    const html = highlightEvidenceSentences(
+      "The microphones worked well. The battery did not last through the whole party.",
+      [{
+        original: "The battery did not last through the whole party.",
+        translation: "电池没有支撑完整个聚会。",
+        evidence_type: "negative",
+        target: "theme_battery_party"
+      }],
+      "original"
+    );
+    expect(html).toContain('<mark class="evidence-highlight evidence-negative"');
+    expect(html).toContain("The battery did not last through the whole party.");
+    expect(html).not.toContain("<mark><mark");
+  });
+});

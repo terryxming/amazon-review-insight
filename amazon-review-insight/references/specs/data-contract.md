@@ -1,6 +1,6 @@
 # Data Contract
 
-data_contract_version: v0.3.0
+data_contract_version: v0.3.1
 
 ## 核心口径
 
@@ -65,7 +65,7 @@ data_contract_version: v0.3.0
 - `本行开放标签`：开放标签中文名称。
 - `开放标签ID`：开放标签稳定 ID。
 - `关联主题ID`：该 feedback unit 归入的 VOC 主题 ID。
-- `证据原文`：能在原 Review text 中定位的原文短句。
+- `证据原文`：能在原 Review text 中定位的完整证据句或最小完整判断句。
 - `结果/影响`：该反馈造成的使用、购买、推荐、退货或售后影响。
 - `置信度`：编码置信度。
 
@@ -116,14 +116,32 @@ data_contract_version: v0.3.0
 - `evidence`：代表性原文证据。
 - `business_meaning`：该观点对产品、Listing、图片视频或售后的业务含义。
 - `confidence`：观点归因置信度。
-- `detail_reviews`：该观点相关的全量 Review 原文、完整中文翻译和高亮词。
+- `detail_reviews`：该观点相关的全量 Review 原文、完整中文翻译和句子级证据高亮数据。
+
+`detail_reviews[]` 字段：
+
+- `review_index`：Review 序号。
+- `rating`：星级。
+- `review_date`：评论日期。
+- `title`：Review 标题。
+- `text`：完整 Review 原文。
+- `translation`：完整中文翻译，不得使用摘要模板。
+- `evidence_sentences`：句子级证据数组。
+
+`evidence_sentences[]` 字段：
+
+- `original`：能在 `text` 中定位的完整证据句。
+- `translation`：能在 `translation` 中定位的对应完整中文证据句。
+- `evidence_type`：证据类型，取值为 `positive`、`negative`、`opportunity`、`context`。
+- `target`：可选，证据支撑的主题、观点或关键结论 ID。
 
 规则：
 
 1. `percentage = review_count / sample_size`。
 2. `detail_reviews.length` 默认必须等于 `review_count`。
-3. `highlight_terms` 必须能在 `detail_reviews[].text` 中定位。
-4. `translation_highlight_terms` 必须能在 `detail_reviews[].translation` 中定位。
-5. 同一 Review 可以命中同一主题下多个 viewpoint，因此观点占比允许合计超过 100%。
+3. `evidence_sentences[].original` 必须能在 `detail_reviews[].text` 中定位。
+4. `evidence_sentences[].translation` 必须能在 `detail_reviews[].translation` 中定位。
+5. `detail_reviews[]` 不得继续保留 `highlight_terms` 或 `translation_highlight_terms`。
+6. 同一 Review 可以命中同一主题下多个 viewpoint，因此观点占比允许合计超过 100%。
 
 说明：同一条 Review 可以同时表达多个类型，所以同一维度下的 `distribution[].percentage` 不要求加总为 100%。

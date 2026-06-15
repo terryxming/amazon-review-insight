@@ -46,6 +46,12 @@ describe("review coding Excel exporter", () => {
       expect(String(firstDataRow[12])).not.toBe("");
       const viewpointHeaders = (workbook.getWorksheet("VOC主题观点")?.getRow(1).values as unknown[]).filter(Boolean);
       expect(viewpointHeaders.slice(0, 5)).toEqual(["主题ID", "主题名称", "观点ID", "观点名称", "观点极性"]);
+      const reviewDetailHeaders = (workbook.getWorksheet("VOC观点评论明细")?.getRow(1).values as unknown[]).filter(Boolean);
+      expect(reviewDetailHeaders).toContain("原文证据句");
+      expect(reviewDetailHeaders).toContain("译文证据句");
+      expect(reviewDetailHeaders).toContain("证据类型");
+      expect(reviewDetailHeaders).not.toContain("原文高亮词");
+      expect(reviewDetailHeaders).not.toContain("译文高亮词");
     } finally {
       await rm(dir, { recursive: true, force: true });
     }

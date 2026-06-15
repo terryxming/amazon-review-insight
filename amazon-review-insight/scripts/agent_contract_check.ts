@@ -89,7 +89,13 @@ export function checkHtml(html: string): ContractCheckResult {
   for (const id of requiredIds) {
     if (!html.includes(`id="${id}"`)) errors.push(`HTML 缺少章节：${id}`);
   }
-  if (!html.includes("<mark>")) errors.push("HTML 缺少黄色高亮 mark。");
+  if (!html.includes("evidence-highlight")) errors.push("HTML 缺少句子级证据高亮。");
+  if (!html.includes("evidence-positive") || !html.includes("evidence-negative") || !html.includes("evidence-opportunity") || !html.includes("evidence-context")) {
+    errors.push("HTML 缺少证据高亮的语义颜色样式。");
+  }
+  if (/<mark>\s*<\/mark>/.test(html) || html.includes("<mark><mark") || html.includes("</mark></mark>")) {
+    errors.push("HTML 证据高亮不得出现空 mark 或嵌套 mark。");
+  }
   if (!html.includes("insight-distribution")) errors.push("HTML 关键结论缺少类型分布表。");
   if (!html.includes("viewpoint-distribution")) errors.push("HTML VOC 主题地图缺少观点分布表。");
   if (!html.includes('href="#scope">1. 数据范围与口径</a>') || !html.includes('href="#health">2. Review 健康度</a>')) {
@@ -122,8 +128,33 @@ export function checkHtml(html: string): ContractCheckResult {
   if (!html.includes("report-block insight-block") || !html.includes("report-block theme-card theme-card-clickable")) {
     errors.push("HTML 关键结论和 VOC 主题地图必须使用一行一个的默认展开折叠块。");
   }
+  if (!html.includes("insight-card-clickable") || !html.includes("data-card-target=\"#insight-detail-")) {
+    errors.push("HTML 关键结论卡片必须整体可点击并在新标签页打开关键结论详情。");
+  }
+  if (!html.includes("insight-detail") || !html.includes("data-insight-detail")) errors.push("HTML 缺少关键结论详情页。");
+  if (!html.includes("insight-detail-mode") || !html.includes("data-insight-filter=\"all\"") || !html.includes("data-insight-review")) {
+    errors.push("HTML 关键结论详情页必须具备独立路由、类型筛选和详情评论。");
+  }
   if (html.includes("insight-grid")) errors.push("HTML 关键结论不得继续使用一行多块的 insight-grid 布局。");
   if (html.includes("<th>角色</th>") || html.includes("data-viewpoint-role")) errors.push("HTML 主报告和观点筛选不得展示角色列或角色 badge。");
+  if (!html.includes("theme-group-list") || !html.includes("正向主题") || !html.includes("负向主题") || !html.includes("未满足的机会点")) {
+    errors.push("HTML VOC 主题地图必须按正向、负向、未满足的机会点三组展示。");
+  }
+  if (!html.includes("theme-group-block") || !html.includes("主题数：")) {
+    errors.push("HTML VOC 主题地图三组必须以可折叠分组块展示并显示主题数。");
+  }
+  if (!html.includes("representative-review-list") || !html.includes("representative-review-original") || !html.includes("representative-review-translation")) {
+    errors.push("HTML 主报告关键结论和 VOC 主题必须展示完整代表性 Review 原文和中文译文。");
+  }
+  if (html.includes("highlight_terms") || html.includes("translation_highlight_terms") || html.includes("原文高亮词") || html.includes("译文高亮词")) {
+    errors.push("HTML 不得继续保留关键词高亮字段或旧表头。");
+  }
+  if (html.includes("evidence-pair-original") || html.includes("evidence-pair-translation")) {
+    errors.push("HTML 不应继续使用短 evidence 作为主报告代表性原文。");
+  }
+  if (!html.includes("完整原文") || !html.includes("完整中文译文")) {
+    errors.push("HTML 主报告代表性 Review 必须明确标注完整原文和完整中文译文。");
+  }
   if (!html.includes("action-group-list") || !html.includes("report-block action-group") || !html.includes("action-card-list")) {
     errors.push("HTML 机会矩阵与业务动作必须按方向拆分为折叠块和动作卡片。");
   }
@@ -139,11 +170,11 @@ export function checkHtml(html: string): ContractCheckResult {
   }
   if (!html.includes("归因假设：")) errors.push("HTML 主题详情页 sticky 主题区必须展示归因假设。");
   if (html.includes('class="theme-context-line subtle"')) errors.push("HTML 主题详情页核心问题、归因假设、业务含义必须使用一致正文颜色，不得将某一行降级为 subtle。");
-  if (!html.includes("theme-detail-mode") || !html.includes("theme-detail-active")) {
+  if (!html.includes("detail-route-mode") || !html.includes("theme-detail-mode") || !html.includes("theme-detail-active")) {
     errors.push("HTML 主题详情页必须具备独立路由模式，避免新标签页仍可滚动看到其他章节或其他主题。");
   }
-  if (!html.includes(".theme-detail { display: none;") || !html.includes(".theme-detail-mode .main > section { display: none;")) {
-    errors.push("HTML 主题详情页必须默认隐藏详情 section，并在详情模式下隐藏非当前章节。");
+  if (!html.includes(".theme-detail, .insight-detail { display: none;") || !html.includes(".detail-route-mode .main > section")) {
+    errors.push("HTML 主题/关键结论详情页必须默认隐藏详情 section，并在详情模式下隐藏非当前章节。");
   }
   if (!html.includes("theme-filter-controls") || !html.includes('data-theme-filter="all"')) errors.push("HTML 主题详情页缺少观点筛选控件和全部主题评论入口。");
   if (!html.includes("data-theme-review") || !html.includes("data-viewpoints=")) errors.push("HTML 主题详情页评论缺少观点筛选数据。");
@@ -211,14 +242,25 @@ function checkDetailReview(label: string, review: AnalysisReport["voc_themes"][n
   if (/核心原文证据可概括为|用户主要反馈/.test(review.translation)) {
     errors.push(`${label} 的详情 Review 中文翻译疑似摘要模板，必须提供完整中文译文。`);
   }
-  for (const term of review.highlight_terms ?? []) {
-    if (term && !review.text.toLowerCase().includes(term.toLowerCase())) {
-      errors.push(`${label} 高亮原文无法定位：${term}`);
-    }
+  const legacyReview = review as unknown as { highlight_terms?: unknown; translation_highlight_terms?: unknown };
+  if (legacyReview.highlight_terms !== undefined || legacyReview.translation_highlight_terms !== undefined) {
+    errors.push(`${label} 不得继续保留 highlight_terms 或 translation_highlight_terms。`);
   }
-  for (const term of review.translation_highlight_terms ?? []) {
-    if (term && !review.translation.includes(term)) {
-      errors.push(`${label} 高亮译文无法定位：${term}`);
+  const validEvidenceTypes = new Set(["positive", "negative", "opportunity", "context"]);
+  if (!review.evidence_sentences?.length) {
+    errors.push(`${label} 缺少句子级 evidence_sentences。`);
+    return;
+  }
+  for (const [index, sentence] of review.evidence_sentences.entries()) {
+    const sentenceLabel = `${label} / 证据句 #${index + 1}`;
+    if (!sentence.original) errors.push(`${sentenceLabel} 缺少 original。`);
+    if (!sentence.translation) errors.push(`${sentenceLabel} 缺少 translation。`);
+    if (!validEvidenceTypes.has(sentence.evidence_type)) errors.push(`${sentenceLabel} evidence_type 非法：${sentence.evidence_type}`);
+    if (sentence.original && !review.text.toLowerCase().includes(sentence.original.toLowerCase())) {
+      errors.push(`${sentenceLabel} 原文句无法在完整 Review text 中定位。`);
+    }
+    if (sentence.translation && !review.translation.includes(sentence.translation)) {
+      errors.push(`${sentenceLabel} 译文句无法在完整中文译文中定位。`);
     }
   }
 }
@@ -242,7 +284,7 @@ const REQUIRED_EXCEL_SHEETS: Record<string, string[]> = {
   关键结论分布: ["维度", "类型", "提及评论数", "样本数", "占比", "角色", "判断依据", "证据原文", "关联主题ID"],
   VOC主题: ["主题ID", "主题名称", "主题类型", "优先级", "提及评论数", "占比", "核心问题"],
   VOC主题观点: ["主题ID", "主题名称", "观点ID", "观点名称", "观点极性", "提及评论数", "样本数", "占比", "角色", "判断依据", "业务含义", "开放标签ID", "关联Review序号", "代表证据", "置信度"],
-  VOC观点评论明细: ["主题ID", "主题名称", "观点ID", "观点名称", "Review序号", "ASIN", "评论日期", "星级", "title", "text", "中文翻译", "原文高亮词", "译文高亮词"],
+  VOC观点评论明细: ["主题ID", "主题名称", "观点ID", "观点名称", "Review序号", "ASIN", "评论日期", "星级", "title", "text", "中文翻译", "原文证据句", "译文证据句", "证据类型"],
   业务动作: ["动作ID", "主题ID", "动作方向", "优先级", "优先级分数", "业务发现", "建议动作"],
   检查点: ["检查点ID", "检查点名称", "状态", "说明"]
 };
@@ -260,6 +302,9 @@ export async function checkExcelFile(excelPath: string, analysis?: AnalysisRepor
     const actual = new Set((sheet.getRow(1).values as unknown[]).map((value) => String(value ?? "")));
     for (const header of headers) {
       if (!actual.has(header)) errors.push(`Excel sheet ${sheetName} 缺少列：${header}`);
+    }
+    for (const legacyHeader of ["原文高亮词", "译文高亮词"]) {
+      if (actual.has(legacyHeader)) errors.push(`Excel sheet ${sheetName} 不得继续保留旧列：${legacyHeader}`);
     }
   }
   if (analysis) {

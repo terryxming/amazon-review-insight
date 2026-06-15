@@ -24,4 +24,12 @@ describe("agent contract check", () => {
     expect(result.ok).toBe(false);
     expect(result.errors).toContain("VOC 主题 theme_family_party 缺少 viewpoints");
   });
+
+  it("rejects legacy keyword highlight fields", () => {
+    const copy = structuredClone(analysis as any);
+    copy.voc_themes[0].detail_reviews[0].highlight_terms = ["party"];
+    const result = checkAnalysis(copy);
+    expect(result.ok).toBe(false);
+    expect(result.errors.some((error) => error.includes("不得继续保留 highlight_terms"))).toBe(true);
+  });
 });

@@ -18,7 +18,9 @@ describe("report renderer", () => {
     expect(html).toContain('href="#key-insight-dissatisfaction">3.8 不满意点</a>');
     expect(html).toContain('href="#voc-theme-map">4. VOC 主题地图</a>');
     expect(html).toContain("toc-sublist toc-voc-themes");
-    expect(html).toContain('href="#voc-theme-theme_family_party">4.1');
+    expect(html).toContain('href="#voc-theme-group-positive">4.1 正向主题</a>');
+    expect(html).toContain('href="#voc-theme-group-negative">4.2 负向主题</a>');
+    expect(html).toContain('href="#voc-theme-group-unmet">4.3 未满足的机会点</a>');
     expect(html).toContain('href="#actions">5. 机会矩阵与业务动作</a>');
     expect(html).toContain('href="#limits">6. 限制与 Checkpoint</a>');
     expect(html).not.toContain('<h3 class="section-subtitle">八类横向洞察</h3>');
@@ -30,6 +32,7 @@ describe("report renderer", () => {
     expect(html).toContain("❓");
     expect(html).toContain("关键结论回答八个横向问题");
     expect(html).toContain("VOC 主题地图回答哪些跨评论问题或机会需要被业务处理");
+    expect(html).toContain("按正向、负向、未满足的机会点三组穷举全部主题");
     expect(html).toContain("运营优先级表示动作顺序");
     expect(html).toContain("P0 是立即处理");
     expect(html).toContain("提及：");
@@ -45,9 +48,24 @@ describe("report renderer", () => {
     expect(html).not.toContain('<span class="badge">优先级：P1</span>');
     expect(html).not.toContain("@media (max-width");
     expect(html).toContain("report-block insight-block");
+    expect(html).toContain("insight-card-clickable");
     expect(html).toContain('id="key-insight-audience"');
+    expect(html).toContain('data-card-target="#insight-detail-');
+    expect(html).toContain('href="#insight-detail-');
+    expect(html).toContain("insight-detail-mode");
+    expect(html).toContain("data-insight-detail");
+    expect(html).toContain("data-insight-filter=\"all\"");
+    expect(html).toContain("data-insight-review");
+    expect(html).toContain("data-insight-types=");
+    expect(html).toContain("类型筛选与评论");
     expect(html).toContain("report-block theme-card theme-card-clickable");
     expect(html).toContain('id="voc-theme-theme_family_party"');
+    expect(html).toContain("theme-group-list");
+    expect(html).toContain("theme-group-block");
+    expect(html).toContain("正向主题");
+    expect(html).toContain("负向主题");
+    expect(html).toContain("未满足的机会点");
+    expect(html).toContain("主题数：");
     expect(html).toContain("report-block action-group");
     expect(html).toContain("action-card-list");
     expect(html).toContain("theme-detail-theme_family_party");
@@ -69,9 +87,10 @@ describe("report renderer", () => {
     expect(html).toContain("运营动作：");
     expect(html).not.toContain('class="theme-context-line subtle"');
     expect(html).toContain("theme-detail-mode");
+    expect(html).toContain("detail-route-mode");
     expect(html).toContain("theme-detail-active");
-    expect(html).toContain(".theme-detail { display: none;");
-    expect(html).toContain(".theme-detail-mode .main > section { display: none;");
+    expect(html).toContain(".theme-detail, .insight-detail { display: none;");
+    expect(html).toContain(".detail-route-mode .main > section");
     expect(html).toContain("theme-filter-controls");
     expect(html).toContain('data-theme-filter="all"');
     expect(html).toContain('data-theme-filter="vp_family_children_party"');
@@ -79,8 +98,39 @@ describe("report renderer", () => {
     expect(html).toContain("data-viewpoints=");
     expect(html).not.toContain("voc-viewpoint-detail-");
     expect(html).not.toContain('class="section-title">主题详情：');
-    expect(html).toContain("<mark>");
+    expect(html).toContain("representative-review-list");
+    expect(html).toContain("representative-review-original");
+    expect(html).toContain("representative-review-translation");
+    expect(html).toContain("完整原文");
+    expect(html).toContain("完整中文译文");
+    expect(html).toContain("This Karaoke machine is durable, wireless, portable, compact");
+    expect(html).not.toContain("evidence-pair-original");
+    expect(html).not.toContain("evidence-pair-translation");
+    expect(html).toContain("evidence-highlight");
+    expect(html).toContain("evidence-positive");
+    expect(html).toContain("evidence-negative");
+    expect(html).toContain("data-evidence-type=\"正向证据\"");
+    expect(html).not.toContain("highlight_terms");
+    expect(html).not.toContain("translation_highlight_terms");
     const result = checkHtml(html);
     expect(result.errors).toEqual([]);
+  });
+
+  it("highlights only evidence sentences that support the current key insight", async () => {
+    const copy = structuredClone(analysis as any);
+    copy.voc_themes[0].detail_reviews[0].evidence_sentences.unshift({
+      original: "This Karaoke machine is durable, wireless, portable, compact, has good sound and a color video screen.",
+      translation: "这台卡拉 OK 机器耐用、无线、便携、紧凑，声音好，还有彩色视频屏幕。",
+      evidence_type: "positive",
+      target: "theme_family_party"
+    });
+    const html = await renderReport(copy);
+    const start = html.indexOf('id="key-insight-scenario"');
+    const end = html.indexOf('id="key-insight-user-task"', start);
+    const scenarioHtml = html.slice(start, end);
+    expect(scenarioHtml).toContain('data-evidence-type="背景证据"');
+    expect(scenarioHtml).toContain("My grandchildren, nieces and nephews had a blast on Thanksgiving and were singing for hours.");
+    expect(scenarioHtml).not.toContain('data-evidence-target="theme_family_party"&gt;This Karaoke machine is durable');
+    expect(scenarioHtml).not.toContain('data-evidence-type="正向证据" data-evidence-target="theme_family_party"');
   });
 });

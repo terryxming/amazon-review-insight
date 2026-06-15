@@ -1,6 +1,6 @@
 # Analysis Rules
 
-analysis_rules_version: v0.3.0
+analysis_rules_version: v0.3.1
 
 ## Review 编码
 
@@ -50,6 +50,8 @@ analysis_rules_version: v0.3.0
 - `expectation_gap`
 - `audience_fit`
 - `low_frequency_high_risk`
+- `value_support_trust`
+- `trust_support`
 
 进入前台规则：
 
@@ -60,6 +62,14 @@ analysis_rules_version: v0.3.0
 不得只输出 Top N，不得丢弃符合前台规则的主题。
 
 VOC 主题的作用：把多个开放标签归因为一个可以被产品、Listing 或图片/视频动作处理的业务问题或机会。它不是简单词频表，也不等于关键结论。主题必须解释核心问题、可能原因、业务含义和优先级。
+
+前台 VOC 主题地图必须按三个主分组穷举全部主题：
+
+1. `正向主题`：`positive_purchase_driver`、`audience_fit`、`value_support_trust`、`trust_support`，或观点极性明显以正向为主的主题。
+2. `负向主题`：已经造成低星、故障、可靠性、强烈不满或高严重度风险的主题，典型包括 `low_frequency_high_risk`。
+3. `未满足的机会点`：用户有明确预期但体验、说明、配件、场景或边界还未被充分满足的主题，典型包括 `expectation_gap`、`product_pain_point`、`scenario_problem`。
+
+每个前台主题必须且只能归入一个主分组；三组主题数量之和必须等于 `voc_themes.length`。不得因为分组而只展示 Top N，也不得把同一主题在多个分组中重复展示。如果一个主题同时包含明显正负信号，优先拆分为两个业务含义清晰的主题；无法拆分时按主导业务动作归类，并在主题说明中保留混合证据。
 
 主题优先级是运营动作顺序，不是严重度本身：
 

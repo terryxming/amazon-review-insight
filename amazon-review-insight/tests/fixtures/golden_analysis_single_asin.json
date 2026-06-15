@@ -356,15 +356,13 @@
               "title": "Great family karaoke",
               "text": "This Karaoke machine is durable, wireless, portable, compact, has good sound and a color video screen. My grandchildren, nieces and nephews had a blast on Thanksgiving and were singing for hours.",
               "translation": "这台卡拉 OK 机器耐用、无线、便携、紧凑，声音好，还有彩色视频屏幕。我的孙辈、侄女和侄子在感恩节玩得很开心，唱了好几个小时。",
-              "highlight_terms": [
-                "grandchildren, nieces and nephews",
-                "Thanksgiving",
-                "singing for hours"
-              ],
-              "translation_highlight_terms": [
-                "孙辈、侄女和侄子",
-                "感恩节",
-                "唱了好几个小时"
+              "evidence_sentences": [
+                {
+                  "original": "My grandchildren, nieces and nephews had a blast on Thanksgiving and were singing for hours.",
+                  "translation": "我的孙辈、侄女和侄子在感恩节玩得很开心，唱了好几个小时。",
+                  "evidence_type": "positive",
+                  "target": "vp_family_children_party"
+                }
               ]
             }
           ]
@@ -378,15 +376,13 @@
           "title": "Great family karaoke",
           "text": "This Karaoke machine is durable, wireless, portable, compact, has good sound and a color video screen. My grandchildren, nieces and nephews had a blast on Thanksgiving and were singing for hours.",
           "translation": "这台卡拉 OK 机器耐用、无线、便携、紧凑，声音好，还有彩色视频屏幕。我的孙辈、侄女和侄子在感恩节玩得很开心，唱了好几个小时。",
-          "highlight_terms": [
-            "grandchildren, nieces and nephews",
-            "Thanksgiving",
-            "singing for hours"
-          ],
-          "translation_highlight_terms": [
-            "孙辈、侄女和侄子",
-            "感恩节",
-            "唱了好几个小时"
+          "evidence_sentences": [
+            {
+              "original": "My grandchildren, nieces and nephews had a blast on Thanksgiving and were singing for hours.",
+              "translation": "我的孙辈、侄女和侄子在感恩节玩得很开心，唱了好几个小时。",
+              "evidence_type": "positive",
+              "target": "theme_family_party"
+            }
           ]
         }
       ]
@@ -440,11 +436,13 @@
               "title": "Good but battery could be better",
               "text": "The sound is good and kids loved it, but the battery did not last through the whole party.",
               "translation": "声音很好，孩子们也喜欢，但电池没有支撑完整个聚会。",
-              "highlight_terms": [
-                "battery did not last through the whole party"
-              ],
-              "translation_highlight_terms": [
-                "电池没有支撑完整个聚会"
+              "evidence_sentences": [
+                {
+                  "original": "The sound is good and kids loved it, but the battery did not last through the whole party.",
+                  "translation": "声音很好，孩子们也喜欢，但电池没有支撑完整个聚会。",
+                  "evidence_type": "negative",
+                  "target": "vp_battery_not_full_party"
+                }
               ]
             }
           ]
@@ -458,11 +456,13 @@
           "title": "Good but battery could be better",
           "text": "The sound is good and kids loved it, but the battery did not last through the whole party.",
           "translation": "声音很好，孩子们也喜欢，但电池没有支撑完整个聚会。",
-          "highlight_terms": [
-            "battery did not last through the whole party"
-          ],
-          "translation_highlight_terms": [
-            "电池没有支撑完整个聚会"
+          "evidence_sentences": [
+            {
+              "original": "The sound is good and kids loved it, but the battery did not last through the whole party.",
+              "translation": "声音很好，孩子们也喜欢，但电池没有支撑完整个聚会。",
+              "evidence_type": "negative",
+              "target": "theme_battery_party"
+            }
           ]
         }
       ]

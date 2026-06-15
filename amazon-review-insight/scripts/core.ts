@@ -77,6 +77,15 @@ export interface KeyInsight {
   distribution?: KeyInsightDistributionItem[];
 }
 
+export type EvidenceType = "positive" | "negative" | "opportunity" | "context";
+
+export interface EvidenceSentence {
+  original: string;
+  translation: string;
+  evidence_type: EvidenceType;
+  target?: string;
+}
+
 export interface ThemeDetailReview {
   review_index: number;
   rating: number | Unknown;
@@ -84,8 +93,7 @@ export interface ThemeDetailReview {
   title: string;
   text: string;
   translation: string;
-  highlight_terms: string[];
-  translation_highlight_terms: string[];
+  evidence_sentences: EvidenceSentence[];
 }
 
 export interface ThemeViewpoint {
@@ -331,14 +339,55 @@ export function escapeHtml(value: unknown): string {
     .replace(/'/g, "&#39;");
 }
 
-export function highlightTerms(text: string, terms: string[]): string {
-  let escaped = escapeHtml(text);
-  const uniqueTerms = Array.from(new Set(terms.filter(Boolean))).sort((a, b) => b.length - a.length);
-  for (const term of uniqueTerms) {
-    const escapedTerm = escapeRegExp(escapeHtml(term));
-    escaped = escaped.replace(new RegExp(escapedTerm, "gi"), (match) => `<mark>${match}</mark>`);
+export function highlightEvidenceSentences(text: string, evidenceSentences: EvidenceSentence[] = [], side: "original" | "translation"): string {
+  const source = String(text ?? "");
+  const ranges: Array<{ start: number; end: number; evidenceType: EvidenceType; target?: string }> = [];
+  const candidates = evidenceSentences
+    .map((item) => ({
+      sentence: side === "original" ? item.original : item.translation,
+      evidenceType: item.evidence_type,
+      target: item.target
+    }))
+    .filter((item) => item.sentence.trim())
+    .sort((a, b) => b.sentence.length - a.sentence.length);
+
+  for (const candidate of candidates) {
+    const pattern = new RegExp(escapeRegExp(candidate.sentence.trim()), "gi");
+    for (const match of source.matchAll(pattern)) {
+      const start = match.index ?? -1;
+      const end = start + match[0].length;
+      if (start < 0 || end <= start) continue;
+      if (ranges.some((range) => start < range.end && end > range.start)) continue;
+      ranges.push({ start, end, evidenceType: candidate.evidenceType, target: candidate.target });
+    }
   }
-  return escaped;
+
+  if (!ranges.length) return escapeHtml(source);
+  ranges.sort((a, b) => a.start - b.start);
+  let html = "";
+  let cursor = 0;
+  for (const range of ranges) {
+    html += escapeHtml(source.slice(cursor, range.start));
+    const targetAttr = range.target ? ` data-evidence-target="${escapeHtml(range.target)}"` : "";
+    html += `<mark class="evidence-highlight evidence-${evidenceTypeClass(range.evidenceType)}" data-evidence-type="${escapeHtml(evidenceTypeLabel(range.evidenceType))}"${targetAttr}>${escapeHtml(source.slice(range.start, range.end))}</mark>`;
+    cursor = range.end;
+  }
+  html += escapeHtml(source.slice(cursor));
+  return html;
+}
+
+export function evidenceTypeLabel(type: EvidenceType): string {
+  const labels: Record<EvidenceType, string> = {
+    positive: "正向证据",
+    negative: "负向证据",
+    opportunity: "机会证据",
+    context: "背景证据"
+  };
+  return labels[type] ?? "证据";
+}
+
+function evidenceTypeClass(type: EvidenceType): string {
+  return ["positive", "negative", "opportunity", "context"].includes(type) ? type : "context";
 }
 
 function escapeRegExp(value: string): string {

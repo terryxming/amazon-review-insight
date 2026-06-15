@@ -115,8 +115,10 @@ const SHEET_COLUMNS: Record<string, { header: string; key: string; width: number
     { header: "title", key: "title", width: 30 },
     { header: "text", key: "text", width: 80 },
     { header: "中文翻译", key: "translation", width: 80 },
-    { header: "原文高亮词", key: "highlight_terms", width: 36 },
-    { header: "译文高亮词", key: "translation_highlight_terms", width: 36 }
+    { header: "原文证据句", key: "evidence_original_sentences", width: 72 },
+    { header: "译文证据句", key: "evidence_translation_sentences", width: 72 },
+    { header: "证据类型", key: "evidence_types", width: 20 },
+    { header: "证据对象", key: "evidence_targets", width: 32 }
   ],
   业务动作: [
     { header: "动作ID", key: "action_id", width: 30 },
@@ -350,8 +352,10 @@ function vocViewpointReviewRows(analysis: AnalysisReport): Row[] {
         title: review.title,
         text: review.text,
         translation: review.translation,
-        highlight_terms: review.highlight_terms,
-        translation_highlight_terms: review.translation_highlight_terms
+        evidence_original_sentences: review.evidence_sentences.map((item) => item.original),
+        evidence_translation_sentences: review.evidence_sentences.map((item) => item.translation),
+        evidence_types: review.evidence_sentences.map((item) => item.evidence_type),
+        evidence_targets: review.evidence_sentences.map((item) => item.target ?? "")
       }))
     )
   );

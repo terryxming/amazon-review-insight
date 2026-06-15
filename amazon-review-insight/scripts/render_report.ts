@@ -5,13 +5,38 @@ import {
   AnalysisReport,
   REQUIRED_KEY_INSIGHT_DIMENSIONS,
   escapeHtml,
-  highlightTerms,
+  highlightEvidenceSentences,
   computeReviewHealth,
+  EvidenceSentence,
+  EvidenceType,
   NormalizedReview
 } from "./core.js";
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const skillRoot = resolve(scriptDir, "..");
+
+type DetailReview = AnalysisReport["voc_themes"][number]["detail_reviews"][number];
+type KeyInsightItem = AnalysisReport["key_insights"][number];
+type KeyInsightDistribution = NonNullable<KeyInsightItem["distribution"]>[number];
+type ThemeItem = AnalysisReport["voc_themes"][number];
+
+interface InsightDetailReview extends DetailReview {
+  typeIds: string[];
+}
+
+interface ThemeGroup {
+  id: "positive" | "negative" | "unmet";
+  label: string;
+  description: string;
+  themes: ThemeItem[];
+}
+
+interface EvidenceRenderContext {
+  evidence: string[];
+  evidenceType: EvidenceType;
+  targets?: string[];
+  target?: string;
+}
 
 export async function renderReportFile(inputPath: string, outputPath: string): Promise<void> {
   const analysis = JSON.parse(await readFile(inputPath, "utf8")) as AnalysisReport;
@@ -38,6 +63,7 @@ export async function renderReport(analysis: AnalysisReport): Promise<string> {
       ${renderHealth(analysis, health)}
       ${renderKeyInsights(analysis)}
       ${renderThemeMap(analysis)}
+      ${renderInsightDetails(analysis)}
       ${renderThemeDetails(analysis)}
       ${renderActions(analysis)}
       ${renderLimits(analysis)}
@@ -52,8 +78,8 @@ function renderToc(analysis: AnalysisReport): string {
   const keyInsightLinks = REQUIRED_KEY_INSIGHT_DIMENSIONS
     .map((dimension, index) => `<a class="toc-sublink" href="#${keyInsightAnchor(dimension)}">3.${index + 1} ${escapeHtml(dimension)}</a>`)
     .join("");
-  const themeLinks = analysis.voc_themes
-    .map((theme, index) => `<a class="toc-sublink" href="#${themeCardAnchor(theme.theme_id)}">4.${index + 1} ${escapeHtml(theme.theme_name)}</a>`)
+  const themeLinks = groupThemes(analysis.voc_themes)
+    .map((group, index) => `<a class="toc-sublink" href="#${themeGroupAnchor(group.id)}">4.${index + 1} ${escapeHtml(group.label)}</a>`)
     .join("");
   return `<nav class="toc" aria-label="报告目录">
       <div class="toc-title">Review VOC 报告</div>
@@ -146,7 +172,9 @@ function renderKeyInsights(analysis: AnalysisReport): string {
     }
     const summary = item.summary ?? item.insight;
     const implication = item.business_implication ?? item.implication;
-    return `<details id="${keyInsightAnchor(item.dimension)}" class="report-block insight-block" open>
+    const detailTarget = `#insight-detail-${stableId(item.dimension)}`;
+    const detailReviews = buildInsightDetailReviews(analysis, item);
+    return `<details id="${keyInsightAnchor(item.dimension)}" class="report-block insight-block insight-card-clickable" open data-card-target="${escapeHtml(detailTarget)}" aria-label="打开关键结论详情：${escapeHtml(item.dimension)}">
       <summary class="block-summary">
         <div class="summary-main">
           <h3>${escapeHtml(item.dimension)}</h3>
@@ -160,8 +188,9 @@ function renderKeyInsights(analysis: AnalysisReport): string {
       <div class="block-body">
         ${renderInsightDistribution(item)}
         <p>${escapeHtml(implication)}</p>
-        ${item.evidence.slice(0, 3).map((e) => `<p class="quote">${escapeHtml(e)}</p>`).join("")}
+        ${renderRepresentativeReviews(detailReviews, keyInsightEvidenceContext(item))}
         <p class="subtle id-list">关联主题：${item.theme_ids.map(escapeHtml).join(", ") || "unknown"}</p>
+        <p class="card-open-hint"><a data-open-mode="new-tab" href="${escapeHtml(detailTarget)}" target="_blank" rel="noopener">打开结论详情</a></p>
       </div>
     </details>`;
   }).join("");
@@ -187,10 +216,33 @@ function renderInsightDistribution(item: AnalysisReport["key_insights"][number])
 }
 
 function renderThemeMap(analysis: AnalysisReport): string {
-  const blocks = analysis.voc_themes.map((theme) => {
-    const cardTarget = `#theme-detail-${theme.theme_id}`;
-    const openLabel = "打开主题详情";
-    return `<details id="${themeCardAnchor(theme.theme_id)}" class="report-block theme-card theme-card-clickable" open data-card-target="${escapeHtml(cardTarget)}" aria-label="${escapeHtml(openLabel)}：${escapeHtml(theme.theme_name)}">
+  const groupBlocks = groupThemes(analysis.voc_themes).map((group) => {
+    const cards = group.themes.map(renderThemeCard).join("");
+    return `<details id="${themeGroupAnchor(group.id)}" class="report-block theme-group-block" open>
+      <summary class="block-summary">
+        <div class="summary-main">
+          <h3>${escapeHtml(group.label)}</h3>
+          <p>${escapeHtml(group.description)}</p>
+        </div>
+        <div class="summary-badges">
+          <span class="badge">主题数：${group.themes.length}</span>
+        </div>
+      </summary>
+      <div class="block-body theme-group-body">
+        ${cards || `<p class="empty-state">当前样本暂无${escapeHtml(group.label)}。</p>`}
+      </div>
+    </details>`;
+  }).join("");
+  return `<section id="voc-theme-map" class="section">
+    ${sectionTitleWithHelp("VOC 主题地图", "VOC 主题地图回答哪些跨评论问题或机会需要被业务处理。v0.3.1 起按正向、负向、未满足的机会点三组穷举全部主题：正向用于放大，负向用于止损，未满足机会点用于澄清预期或补齐体验。运营优先级表示动作顺序，不等于严重度：P0 是立即处理，P1 是本轮迭代处理，P2 是排期优化。")}
+    <div class="block-list theme-group-list">${groupBlocks}</div>
+  </section>`;
+}
+
+function renderThemeCard(theme: ThemeItem): string {
+  const cardTarget = `#theme-detail-${theme.theme_id}`;
+  const openLabel = "打开主题详情";
+  return `<details id="${themeCardAnchor(theme.theme_id)}" class="report-block theme-card theme-card-clickable" open data-card-target="${escapeHtml(cardTarget)}" aria-label="${escapeHtml(openLabel)}：${escapeHtml(theme.theme_name)}">
       <summary class="block-summary">
         <div class="summary-main">
           <h3>${escapeHtml(theme.theme_name)}</h3>
@@ -209,15 +261,10 @@ function renderThemeMap(analysis: AnalysisReport): string {
         <p class="theme-context-line"><strong>业务含义：</strong>${escapeHtml(theme.business_meaning)}</p>
         <p class="theme-context-line"><strong>运营动作：</strong>${escapeHtml(themeOperationalAction(theme))}</p>
         ${renderThemeViewpointDistribution(theme)}
-        ${theme.theme_evidence.slice(0, 2).map((e) => `<p class="quote">${escapeHtml(e)}</p>`).join("")}
+        ${renderRepresentativeReviews(theme.detail_reviews, themeEvidenceContext(theme))}
         <p class="card-open-hint"><a data-open-mode="new-tab" href="${escapeHtml(cardTarget)}" target="_blank" rel="noopener">${escapeHtml(openLabel)}</a></p>
       </div>
     </details>`;
-  }).join("");
-  return `<section id="voc-theme-map" class="section">
-    ${sectionTitleWithHelp("VOC 主题地图", "VOC 主题地图回答哪些跨评论问题或机会需要被业务处理。运营优先级表示动作顺序，不等于严重度：P0 是立即处理，正向主题用于放大转化，负向主题用于止损；P1 是本轮迭代处理；P2 是排期优化或低成本补齐。每个主题下的观点是多标签提及率，同一条 Review 可同时支撑多个观点，因此观点占比合计可能超过 100%。")}
-    <div class="block-list theme-list">${blocks}</div>
-  </section>`;
 }
 
 function renderThemeViewpointDistribution(theme: AnalysisReport["voc_themes"][number]): string {
@@ -247,7 +294,8 @@ function renderThemeDetails(analysis: AnalysisReport): string {
       }
     }
     const reviews = theme.detail_reviews.map((review) => renderDetailReview(review, {
-      attributes: `data-theme-review data-viewpoints="${escapeHtml((reviewViewpoints.get(review.review_index) ?? []).join(" "))}"`
+      attributes: `data-theme-review data-viewpoints="${escapeHtml((reviewViewpoints.get(review.review_index) ?? []).join(" "))}"`,
+      evidenceContext: themeEvidenceContext(theme)
     })).join("");
     return `<section id="theme-detail-${escapeHtml(theme.theme_id)}" class="section theme-detail" data-theme-detail>
       ${renderThemeDetailHeader(theme)}
@@ -255,6 +303,73 @@ function renderThemeDetails(analysis: AnalysisReport): string {
     </section>`;
   }).join("");
   return sections;
+}
+
+function renderInsightDetails(analysis: AnalysisReport): string {
+  const sections = analysis.key_insights.map((item) => {
+    const detailReviews = buildInsightDetailReviews(analysis, item);
+    const reviews = detailReviews.map((review) => renderDetailReview(review, {
+      attributes: `data-insight-review data-insight-types="${escapeHtml(review.typeIds.join(" "))}"`,
+      evidenceContext: keyInsightEvidenceContext(item)
+    })).join("");
+    return `<section id="insight-detail-${stableId(item.dimension)}" class="section insight-detail" data-insight-detail>
+      ${renderInsightDetailHeader(item, detailReviews.length)}
+      ${reviews || `<div class="card detail-review"><p>当前分析数据未提供可追溯的完整 Review 译文。请重新生成分析以补齐该关键结论详情。</p></div>`}
+    </section>`;
+  }).join("");
+  return sections;
+}
+
+function renderInsightDetailHeader(item: KeyInsightItem, reviewCount: number): string {
+  const summary = item.summary ?? item.insight;
+  const implication = item.business_implication ?? item.implication;
+  return `<div class="card sticky-theme-card insight-filter-panel">
+    <div class="theme-detail-context">
+      <p class="detail-back-link"><a href="#key-insights">返回关键结论</a></p>
+      <div class="subtle">所属关键结论</div>
+      <h3>${escapeHtml(item.dimension)}</h3>
+      <div class="theme-meta">
+        <span class="badge">提及：${item.count}/${item.sample_size} (${item.percentage}%)</span>
+        <span class="badge">置信度：${escapeHtml(confidenceLabel(item.confidence))}</span>
+      </div>
+      <p class="theme-context-line"><strong>核心结论：</strong>${escapeHtml(summary)}</p>
+      <p class="theme-context-line"><strong>业务含义：</strong>${escapeHtml(implication)}</p>
+    </div>
+    <div class="theme-filter-area">
+      <h2 class="section-title">类型筛选与评论</h2>
+      <p class="subtle">默认展示支撑该关键结论的全部相关 Review。点击下方类型后，在当前标签页内筛选该类型相关的全量评论。</p>
+      ${renderInsightFilterControls(item, reviewCount)}
+      <div class="viewpoint-summary insight-filter-summary" data-insight-filter-summary>
+        <div class="theme-meta">
+          <span class="badge" data-insight-filter-count>${reviewCount} 条关键结论相关 Review</span>
+          <span class="badge">当前筛选：全部结论评论</span>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderInsightFilterControls(item: KeyInsightItem, reviewCount: number): string {
+  const buttons = (item.distribution ?? []).map((row, index) => {
+    const typeId = insightTypeId(item.dimension, row, index);
+    return `<button
+      type="button"
+      class="theme-filter-button"
+      data-insight-filter="${escapeHtml(typeId)}"
+      data-insight-type-name="${escapeHtml(row.label)}"
+      data-insight-type-count="${row.review_count}/${row.sample_size} (${row.percentage}%)"
+      data-insight-type-reason="${escapeHtml(row.reason)}">
+      <span>${escapeHtml(row.label)}</span>
+      <strong>${row.review_count}/${row.sample_size}</strong>
+    </button>`;
+  }).join("");
+  return `<div class="theme-filter-controls insight-filter-controls" role="group" aria-label="关键结论类型筛选">
+    <button type="button" class="theme-filter-button active" data-insight-filter="all">
+      <span>全部结论评论</span>
+      <strong>${reviewCount}/${item.sample_size}</strong>
+    </button>
+    ${buttons}
+  </div>`;
 }
 
 function renderThemeFilterControls(theme: AnalysisReport["voc_themes"][number]): string {
@@ -277,6 +392,317 @@ function renderThemeFilterControls(theme: AnalysisReport["voc_themes"][number]):
     </button>
     ${viewpointButtons}
   </div>`;
+}
+
+function groupThemes(themes: ThemeItem[]): ThemeGroup[] {
+  const groups: ThemeGroup[] = [
+    {
+      id: "positive",
+      label: "正向主题",
+      description: "用户已经认可、可以被运营放大的购买驱动、价值信任或人群适配主题。",
+      themes: []
+    },
+    {
+      id: "negative",
+      label: "负向主题",
+      description: "已经造成低星、故障、可靠性或强烈不满的主题，优先用于止损和闭环。",
+      themes: []
+    },
+    {
+      id: "unmet",
+      label: "未满足的机会点",
+      description: "用户有明确预期但体验、说明、配件、场景或边界还未被充分满足的可补齐机会。",
+      themes: []
+    }
+  ];
+  const byId = new Map(groups.map((group) => [group.id, group]));
+  for (const theme of themes) {
+    byId.get(themeGroupId(theme))?.themes.push(theme);
+  }
+  return groups;
+}
+
+function themeGroupId(theme: ThemeItem): ThemeGroup["id"] {
+  if (isPositiveOpportunity(theme.theme_category) || isTrustOpportunity(theme.theme_category)) return "positive";
+  if (theme.theme_category === "low_frequency_high_risk") return "negative";
+  if (theme.theme_category === "product_pain_point" || theme.theme_category === "scenario_problem" || theme.theme_category === "expectation_gap") return "unmet";
+  const polarities = new Set((theme.viewpoints ?? []).map((viewpoint) => viewpoint.viewpoint_polarity));
+  if (polarities.has("negative") && theme.severity === "high") return "negative";
+  if (polarities.has("positive") && !polarities.has("negative")) return "positive";
+  return "unmet";
+}
+
+function themeGroupAnchor(groupId: ThemeGroup["id"]): string {
+  return `voc-theme-group-${groupId}`;
+}
+
+function keyInsightEvidenceContext(item: KeyInsightItem): EvidenceRenderContext {
+  return {
+    evidence: unique([
+      ...item.evidence,
+      ...(item.distribution ?? []).flatMap((row) => row.evidence)
+    ]),
+    evidenceType: keyInsightEvidenceType(item.dimension),
+    target: `key-insight-${stableId(item.dimension)}`,
+    targets: [`key-insight-${stableId(item.dimension)}`]
+  };
+}
+
+function themeEvidenceContext(theme: ThemeItem): EvidenceRenderContext {
+  return {
+    evidence: theme.theme_evidence,
+    evidenceType: themeEvidenceType(theme),
+    target: theme.theme_id,
+    targets: [theme.theme_id]
+  };
+}
+
+function evidenceSentencesForContext(review: DetailReview, context: EvidenceRenderContext): EvidenceSentence[] {
+  const targetSet = new Set(context.targets ?? []);
+  const targetMatched = targetSet.size
+    ? (review.evidence_sentences ?? []).filter((sentence) => sentence.target && targetSet.has(sentence.target))
+    : [];
+  const derived = deriveEvidenceSentences(review, context);
+  const fallback = !targetMatched.length && !derived.length && !context.evidence.length
+    ? (review.evidence_sentences ?? [])
+    : [];
+  return uniqueEvidenceSentences([...targetMatched, ...derived, ...fallback]);
+}
+
+function deriveEvidenceSentences(review: DetailReview, context: EvidenceRenderContext): EvidenceSentence[] {
+  const needles = normalizedNeedles(context.evidence);
+  if (!needles.length) return [];
+  const originalSentences = splitSentences(review.text);
+  const translationSentences = splitSentences(review.translation);
+  const matchedIndexes: number[] = [];
+  for (const needle of needles) {
+    const index = bestSentenceIndexForNeedle(originalSentences, needle, needles, context.evidenceType);
+    if (index < 0) continue;
+    if (!matchedIndexes.includes(index)) matchedIndexes.push(index);
+  }
+  matchedIndexes.sort((a, b) => a - b);
+  return matchedIndexes.map((index) => {
+    const original = originalSentences[index];
+    return {
+      original,
+      translation: alignedTranslationSentence(review, original, index, originalSentences.length, translationSentences),
+      evidence_type: context.evidenceType,
+      target: context.target
+    };
+  });
+}
+
+function bestSentenceIndexForNeedle(sentences: string[], needle: string, allNeedles: string[], evidenceType: EvidenceType): number {
+  const candidates = sentences
+    .map((sentence, index) => ({ sentence, index }))
+    .filter((item) => item.sentence.toLowerCase().includes(needle));
+  if (!candidates.length) return -1;
+  const best = candidates
+    .map((item) => ({
+      ...item,
+      score: sentenceEvidenceScore(item.sentence, allNeedles)
+    }))
+    .sort((a, b) => b.score - a.score || a.sentence.length - b.sentence.length || a.index - b.index)[0];
+  if (evidenceType === "context" && isWeakContextNeedle(needle) && best.score <= 1 && !hasConcreteContextCue(best.sentence)) return -1;
+  return best.index;
+}
+
+function sentenceEvidenceScore(sentence: string, needles: string[]): number {
+  const text = sentence.toLowerCase();
+  return needles.reduce((score, needle) => score + (text.includes(needle) ? Math.max(1, Math.min(4, Math.round(needle.length / 8))) : 0), 0);
+}
+
+function isWeakContextNeedle(needle: string): boolean {
+  return ["portable", "sound", "audio", "good", "great"].includes(needle);
+}
+
+function hasConcreteContextCue(sentence: string): boolean {
+  return /\b(part(y|ies)|gathering|occasion|weekend|house|home|living room|venue|venues|outside|outdoors|outdoor|vacation|travel|trip|beach|tv|television|hdmi|screen|lyrics|family|kids|children|friends)\b/i.test(sentence);
+}
+
+function alignedTranslationSentence(
+  review: DetailReview,
+  original: string,
+  originalIndex: number,
+  originalCount: number,
+  translationSentences: string[]
+): string {
+  const existing = (review.evidence_sentences ?? []).find((sentence) => sentence.original === original && sentence.translation);
+  if (existing?.translation) return existing.translation;
+  if (!translationSentences.length) return review.translation;
+  if (translationSentences.length === 1 || originalCount <= 1) return translationSentences[0];
+  const semanticIndex = bestSemanticTranslationIndex(original, translationSentences);
+  if (semanticIndex >= 0) return translationSentences[semanticIndex];
+  const translationIndex = Math.max(0, Math.min(
+    translationSentences.length - 1,
+    Math.round((originalIndex / Math.max(1, originalCount - 1)) * (translationSentences.length - 1))
+  ));
+  return translationSentences[translationIndex];
+}
+
+function bestSemanticTranslationIndex(original: string, translationSentences: string[]): number {
+  const lower = original.toLowerCase();
+  const cues: string[] = [];
+  const add = (condition: boolean, values: string[]) => { if (condition) cues.push(...values); };
+  add(/\bparty|parties|gathering|occasion|fun\b/.test(lower), ["派对", "聚会", "场合", "有趣", "娱乐"]);
+  add(/\bportable|outside|outdoors|outdoor|vacation|travel|venues?|beach\b/.test(lower), ["便携", "户外", "度假", "旅行", "场馆", "沙滩"]);
+  add(/\btv|television|big screen|hdmi|screen|lyrics?\b/.test(lower), ["电视", "大屏", "HDMI", "屏幕", "歌词"]);
+  add(/\blag|stutter|delay|game mode|resolution\b/.test(lower), ["延迟", "卡顿", "游戏模式", "分辨率"]);
+  add(/\bsound|audio|bass|loud|volume|speaker|music|vocal\b/.test(lower), ["声音", "音质", "低音", "响亮", "音量", "音箱", "音乐", "人声"]);
+  add(/\bmicrophone|mic|wireless\b/.test(lower), ["麦克风", "无线"]);
+  add(/\bbattery|charge|charging|usb-c|cable\b/.test(lower), ["电池", "充电", "USB-C", "线"]);
+  add(/\byoutube|spotify|karafun|subscription|app|browser|android\b/.test(lower), ["YouTube", "Spotify", "KaraFun", "订阅", "应用", "浏览器", "Android"]);
+  add(/\btouch|button|backlit|responsive|interface\b/.test(lower), ["触屏", "按键", "背光", "响应", "界面"]);
+  add(/\bstrap|handle|wheel|wheels|carry|carrying\b/.test(lower), ["背带", "把手", "轮子", "携带"]);
+  const alphaTokens = Array.from(new Set((original.match(/[A-Za-z][A-Za-z0-9+-]{1,}/g) ?? []).filter((token) => token.length >= 2)));
+  cues.push(...alphaTokens);
+  const scored = translationSentences.map((sentence, index) => ({
+    index,
+    score: Array.from(new Set(cues)).reduce((score, cue) => score + (sentence.toLowerCase().includes(cue.toLowerCase()) ? 1 : 0), 0)
+  }));
+  const best = scored.sort((a, b) => b.score - a.score || a.index - b.index)[0];
+  return best && best.score > 0 ? best.index : -1;
+}
+
+function splitSentences(value: string): string[] {
+  const text = String(value ?? "").trim();
+  if (!text) return [];
+  return (text.match(/[^.!?。！？]+[.!?。！？]+|[^.!?。！？]+$/g) ?? [text])
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+}
+
+function normalizedNeedles(evidence: string[]): string[] {
+  return unique(evidence.map((item) => item.trim().toLowerCase()).filter(Boolean))
+    .sort((a, b) => b.length - a.length);
+}
+
+function uniqueEvidenceSentences(sentences: EvidenceSentence[]): EvidenceSentence[] {
+  const seen = new Set<string>();
+  const out: EvidenceSentence[] = [];
+  for (const sentence of sentences) {
+    if (!sentence.original?.trim() || !sentence.translation?.trim()) continue;
+    const key = [
+      sentence.original.trim().toLowerCase(),
+      sentence.translation.trim(),
+      sentence.evidence_type,
+      sentence.target ?? ""
+    ].join("||");
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(sentence);
+  }
+  return out;
+}
+
+function renderRepresentativeReviews(reviews: DetailReview[], context: EvidenceRenderContext, limit = 3): string {
+  const selected = selectRepresentativeReviews(reviews, context, limit);
+  if (!selected.length) return "";
+  const cards = selected.map((review, index) => {
+    const evidenceSentences = evidenceSentencesForContext(review, context);
+    return `<article class="representative-review-pair">
+    <div class="theme-meta">
+      <span class="badge">代表性 Review #${index + 1}</span>
+      <span class="badge">Review #${review.review_index}</span>
+      <span class="badge">rating: ${escapeHtml(review.rating)}</span>
+      <span class="badge">date: ${escapeHtml(review.review_date)}</span>
+    </div>
+    <h4>${escapeHtml(review.title)}</h4>
+    <p><strong>完整原文</strong></p>
+    <p class="quote representative-review-original">${highlightEvidenceSentences(review.text, evidenceSentences, "original")}</p>
+    <p><strong>完整中文译文</strong></p>
+    <p class="quote representative-review-translation">${highlightEvidenceSentences(review.translation, evidenceSentences, "translation")}</p>
+  </article>`;
+  }).join("");
+  return `<div class="representative-review-list" aria-label="3 条不同代表性原文">${cards}</div>`;
+}
+
+function selectRepresentativeReviews(reviews: DetailReview[], context: EvidenceRenderContext, limit: number): DetailReview[] {
+  const seen = new Set<string>();
+  const uniqueReviews = reviews.filter((review) => {
+    const key = detailReviewKey(review);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  const needles = normalizedNeedles(context.evidence);
+  const scored = uniqueReviews.map((review, index) => ({
+    review,
+    index,
+    score: representativeReviewScore(review, needles, context)
+  }));
+  return scored
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .slice(0, limit)
+    .map((item) => item.review);
+}
+
+function representativeReviewScore(review: DetailReview, needles: string[], context: EvidenceRenderContext): number {
+  const text = review.text.toLowerCase();
+  const evidenceScore = needles.reduce((score, needle) => score + (text.includes(needle) ? 4 : 0), 0);
+  const sentenceScore = evidenceSentencesForContext(review, context).reduce((score, sentence) => {
+    const original = sentence.original?.toLowerCase() ?? "";
+    return score + (original && text.includes(original) ? 2 : 0);
+  }, 0);
+  const translationScore = review.translation?.trim() ? 1 : 0;
+  return evidenceScore + sentenceScore + translationScore;
+}
+
+function buildInsightDetailReviews(analysis: AnalysisReport, item: KeyInsightItem): InsightDetailReview[] {
+  const themesById = new Map(analysis.voc_themes.map((theme) => [theme.theme_id, theme]));
+  const allThemeReviews = analysis.voc_themes.flatMap((theme) => theme.detail_reviews ?? []);
+  const reviewMap = new Map<string, { review: DetailReview; typeIds: Set<string> }>();
+
+  const addReview = (review: DetailReview, typeId?: string) => {
+    const key = detailReviewKey(review);
+    const entry = reviewMap.get(key) ?? { review, typeIds: new Set<string>() };
+    entry.review = {
+      ...entry.review,
+      evidence_sentences: uniqueEvidenceSentences([
+        ...(entry.review.evidence_sentences ?? []),
+        ...(review.evidence_sentences ?? [])
+      ])
+    };
+    if (typeId) entry.typeIds.add(typeId);
+    reviewMap.set(key, entry);
+  };
+
+  const reviewsForThemeIds = (themeIds: string[]): DetailReview[] => {
+    return themeIds.flatMap((themeId) => themesById.get(themeId)?.detail_reviews ?? []);
+  };
+
+  for (const review of reviewsForThemeIds(item.theme_ids)) addReview(review);
+  for (const review of reviewsMatchingEvidence(allThemeReviews, item.evidence)) addReview(review);
+
+  for (const [index, row] of (item.distribution ?? []).entries()) {
+    const typeId = insightTypeId(item.dimension, row, index);
+    const rowThemeReviews = reviewsForThemeIds(row.theme_ids?.length ? row.theme_ids : item.theme_ids);
+    const matched = reviewsMatchingEvidence(rowThemeReviews.length ? rowThemeReviews : allThemeReviews, row.evidence);
+    const candidates = matched.length ? matched : rowThemeReviews;
+    for (const review of candidates) addReview(review, typeId);
+  }
+
+  return [...reviewMap.values()].map((entry) => ({
+    ...entry.review,
+    typeIds: [...entry.typeIds]
+  }));
+}
+
+function reviewsMatchingEvidence(reviews: DetailReview[], evidence: string[]): DetailReview[] {
+  const needles = evidence.map((item) => item.trim().toLowerCase()).filter(Boolean);
+  if (!needles.length) return [];
+  return reviews.filter((review) => {
+    const text = review.text.toLowerCase();
+    return needles.some((needle) => text.includes(needle));
+  });
+}
+
+function detailReviewKey(review: DetailReview): string {
+  return [review.review_index, review.review_date, review.rating, review.title].join("||");
+}
+
+function insightTypeId(dimension: string, row: KeyInsightDistribution, index: number): string {
+  return `insight-type-${stableId(dimension)}-${stableId(row.label) || index}`;
 }
 
 function keyInsightAnchor(dimension: string): string {
@@ -305,8 +731,12 @@ function stableId(value: string): string {
 
 function renderDetailReview(
   review: AnalysisReport["voc_themes"][number]["detail_reviews"][number],
-  options: { attributes?: string } = {}
+  options: { attributes?: string; evidenceContext?: EvidenceRenderContext } = {}
 ): string {
+  const evidenceSentences = evidenceSentencesForContext(review, options.evidenceContext ?? {
+    evidence: [],
+    evidenceType: "context"
+  });
   return `<div class="card detail-review" ${options.attributes ?? ""}>
     <div class="theme-meta">
       <span class="badge">Review #${review.review_index}</span>
@@ -315,9 +745,9 @@ function renderDetailReview(
     </div>
     <h4>${escapeHtml(review.title)}</h4>
     <p><strong>原文</strong></p>
-    <p>${highlightTerms(review.text, review.highlight_terms)}</p>
+    <p>${highlightEvidenceSentences(review.text, evidenceSentences, "original")}</p>
     <p><strong>中文翻译</strong></p>
-    <p>${highlightTerms(review.translation, review.translation_highlight_terms)}</p>
+    <p>${highlightEvidenceSentences(review.translation, evidenceSentences, "translation")}</p>
   </div>`;
 }
 
@@ -407,15 +837,57 @@ function renderInteractionScript(): string {
     }
   }
 
-  function routeThemeDetail() {
+  function applyInsightFilter(button) {
+    const section = button.closest("[data-insight-detail]");
+    if (!(section instanceof HTMLElement)) return;
+    const filter = button.dataset.insightFilter || "all";
+    const reviews = Array.from(section.querySelectorAll("[data-insight-review]"));
+    let visibleCount = 0;
+    for (const review of reviews) {
+      if (!(review instanceof HTMLElement)) continue;
+      const types = (review.dataset.insightTypes || "").split(/\\s+/).filter(Boolean);
+      const visible = filter === "all" || types.includes(filter);
+      review.hidden = !visible;
+      if (visible) visibleCount += 1;
+    }
+    for (const item of section.querySelectorAll("[data-insight-filter]")) item.classList.toggle("active", item === button);
+    const summary = section.querySelector("[data-insight-filter-summary]");
+    if (summary instanceof HTMLElement) {
+      if (filter === "all") {
+        summary.innerHTML = '<div class="theme-meta">'
+          + badge(visibleCount + " 条关键结论相关 Review", " data-insight-filter-count")
+          + badge("当前筛选：全部结论评论")
+          + '</div>';
+      } else {
+        summary.innerHTML = '<div class="theme-meta">'
+          + badge(visibleCount + " 条类型相关 Review", " data-insight-filter-count")
+          + badge("当前类型：" + button.dataset.insightTypeName)
+          + badge(button.dataset.insightTypeCount)
+          + '</div><p><strong>判断依据：</strong>' + text(button.dataset.insightTypeReason)
+          + '</p>';
+      }
+    }
+  }
+
+  function routeDetail() {
     const hash = window.location.hash || "";
     const isThemeDetail = hash.startsWith("#theme-detail-");
+    const isInsightDetail = hash.startsWith("#insight-detail-");
+    const isDetail = isThemeDetail || isInsightDetail;
     document.body.classList.toggle("theme-detail-mode", isThemeDetail);
+    document.body.classList.toggle("insight-detail-mode", isInsightDetail);
+    document.body.classList.toggle("detail-route-mode", isDetail);
     for (const section of document.querySelectorAll("[data-theme-detail]")) {
       if (!(section instanceof HTMLElement)) continue;
       section.classList.toggle("theme-detail-active", isThemeDetail && "#" + section.id === hash);
+      section.classList.toggle("detail-route-active", isThemeDetail && "#" + section.id === hash);
     }
-    if (isThemeDetail) window.setTimeout(() => window.scrollTo(0, 0), 0);
+    for (const section of document.querySelectorAll("[data-insight-detail]")) {
+      if (!(section instanceof HTMLElement)) continue;
+      section.classList.toggle("insight-detail-active", isInsightDetail && "#" + section.id === hash);
+      section.classList.toggle("detail-route-active", isInsightDetail && "#" + section.id === hash);
+    }
+    if (isDetail) window.setTimeout(() => window.scrollTo(0, 0), 0);
   }
 
   document.addEventListener("click", (event) => {
@@ -431,6 +903,11 @@ function renderInteractionScript(): string {
     const filter = target.closest("[data-theme-filter]");
     if (filter instanceof HTMLElement) {
       applyThemeFilter(filter);
+      return;
+    }
+    const insightFilter = target.closest("[data-insight-filter]");
+    if (insightFilter instanceof HTMLElement) {
+      applyInsightFilter(insightFilter);
       return;
     }
     if (target.closest("a, button")) return;
@@ -450,8 +927,8 @@ function renderInteractionScript(): string {
     openNewTab(interactive.dataset.cardTarget);
   });
 
-  window.addEventListener("hashchange", routeThemeDetail);
-  routeThemeDetail();
+  window.addEventListener("hashchange", routeDetail);
+  routeDetail();
 })();
 </script>`;
 }
@@ -464,6 +941,21 @@ function polarityLabel(polarity: string): string {
     neutral: "中性"
   };
   return labels[polarity] ?? polarity;
+}
+
+function keyInsightEvidenceType(dimension: string): EvidenceType {
+  if (dimension === "满意点" || dimension === "购买理由") return "positive";
+  if (dimension === "不满意点") return "negative";
+  if (dimension === "用户期望") return "opportunity";
+  return "context";
+}
+
+function themeEvidenceType(theme: ThemeItem): EvidenceType {
+  const category = theme.theme_category;
+  if (isPositiveOpportunity(category) || isTrustOpportunity(category)) return "positive";
+  if (category === "low_frequency_high_risk") return "negative";
+  if (category === "expectation_gap" || category === "product_pain_point" || category === "scenario_problem") return "opportunity";
+  return "context";
 }
 
 function confidenceLabel(confidence: string): string {
