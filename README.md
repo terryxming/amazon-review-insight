@@ -40,6 +40,7 @@ npm run live:smoke -- B0DHPN1DMJ
 - VOC 百分比、关键结论百分比、业务动作百分比分母只能使用 Review 样本数。
 - 关键结论必须同时给一句话总结和类型分布表；类型之间允许重叠。
 - Review 编码层必须覆盖全部 Review 样本，`normalized_reviews` 行数应等于 Review 样本数。
+- Excel sheet 名和字段名使用中文；`原始评论` 与 `Review编码层` 的前五列固定为 `ASIN`、`评论日期`、`星级`、`title`、`text`。
 
 ## 样例报告
 

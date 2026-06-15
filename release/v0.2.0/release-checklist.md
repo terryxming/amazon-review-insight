@@ -12,6 +12,7 @@
 - [x] Sample report uses real Sorftime data summary for `B0DHPN1DMJ`.
 - [x] Sample Review coding Excel is generated for `B0DHPN1DMJ`.
 - [x] Sample Review coding Excel contains all 76 normalized Review rows.
+- [x] Sample Review coding Excel uses Chinese sheet names and Chinese visible headers.
 - [x] Unit and integration tests pass.
 - [x] Typecheck passes.
 - [x] Contract check passes for HTML and Excel.

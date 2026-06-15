@@ -7,94 +7,99 @@ import { AnalysisReport } from "./core.js";
 type Row = Record<string, unknown>;
 
 const SHEET_COLUMNS: Record<string, { header: string; key: string; width: number }[]> = {
-  metadata: [
-    { header: "key", key: "key", width: 28 },
-    { header: "value", key: "value", width: 72 }
+  元数据: [
+    { header: "字段", key: "field", width: 28 },
+    { header: "值", key: "value", width: 72 }
   ],
-  normalized_reviews: [
-    { header: "review_index", key: "review_index", width: 14 },
-    { header: "asin", key: "asin", width: 14 },
-    { header: "variant", key: "variant", width: 24 },
-    { header: "review_date", key: "review_date", width: 14 },
-    { header: "rating", key: "rating", width: 10 },
+  原始评论: [
+    { header: "ASIN", key: "asin", width: 14 },
+    { header: "评论日期", key: "review_date", width: 14 },
+    { header: "星级", key: "rating", width: 10 },
     { header: "title", key: "title", width: 30 },
     { header: "text", key: "text", width: 80 },
-    { header: "raw_json", key: "raw_json", width: 48 }
+    { header: "评论序号", key: "review_index", width: 12 },
+    { header: "变体", key: "variant", width: 24 },
+    { header: "原始数据JSON", key: "raw_json", width: 48 }
   ],
-  feedback_units: [
-    { header: "feedback_unit_id", key: "feedback_unit_id", width: 24 },
-    { header: "review_index", key: "review_index", width: 14 },
-    { header: "dimension", key: "dimension", width: 16 },
-    { header: "audience", key: "audience", width: 24 },
-    { header: "scenario", key: "scenario", width: 24 },
-    { header: "user_task", key: "user_task", width: 24 },
-    { header: "purchase_reason", key: "purchase_reason", width: 24 },
-    { header: "user_expectation", key: "user_expectation", width: 28 },
-    { header: "expectation_source", key: "expectation_source", width: 22 },
-    { header: "actual_experience", key: "actual_experience", width: 28 },
-    { header: "satisfied_points", key: "satisfied_points", width: 28 },
-    { header: "unsatisfied_points", key: "unsatisfied_points", width: 28 },
-    { header: "consequence", key: "consequence", width: 24 },
-    { header: "evidence", key: "evidence", width: 64 },
-    { header: "open_tags", key: "open_tags", width: 36 },
-    { header: "confidence", key: "confidence", width: 12 }
+  Review编码层: [
+    { header: "ASIN", key: "asin", width: 14 },
+    { header: "评论日期", key: "review_date", width: 14 },
+    { header: "星级", key: "rating", width: 10 },
+    { header: "title", key: "title", width: 30 },
+    { header: "text", key: "text", width: 80 },
+    { header: "评论序号", key: "review_index", width: 12 },
+    { header: "编码单元ID", key: "feedback_unit_id", width: 24 },
+    { header: "编码维度", key: "dimension", width: 16 },
+    { header: "人群", key: "audience", width: 24 },
+    { header: "场景", key: "scenario", width: 24 },
+    { header: "用户任务", key: "user_task", width: 24 },
+    { header: "购买理由", key: "purchase_reason", width: 24 },
+    { header: "用户期望", key: "user_expectation", width: 28 },
+    { header: "期望来源", key: "expectation_source", width: 22 },
+    { header: "实际体验", key: "actual_experience", width: 28 },
+    { header: "满意点", key: "satisfied_points", width: 28 },
+    { header: "不满意点", key: "unsatisfied_points", width: 28 },
+    { header: "结果/影响", key: "consequence", width: 28 },
+    { header: "证据原文", key: "evidence", width: 64 },
+    { header: "开放标签", key: "open_tags", width: 36 },
+    { header: "置信度", key: "confidence", width: 12 }
   ],
-  open_tags: [
-    { header: "tag_id", key: "tag_id", width: 28 },
-    { header: "tag_name", key: "tag_name", width: 30 },
-    { header: "dimension", key: "dimension", width: 16 },
-    { header: "count", key: "count", width: 10 },
-    { header: "sample_size", key: "sample_size", width: 12 },
-    { header: "percentage", key: "percentage", width: 12 },
-    { header: "representative_evidence", key: "representative_evidence", width: 64 },
-    { header: "theme_ids", key: "theme_ids", width: 36 }
+  开放标签: [
+    { header: "标签ID", key: "tag_id", width: 28 },
+    { header: "标签名称", key: "tag_name", width: 30 },
+    { header: "维度", key: "dimension", width: 16 },
+    { header: "提及评论数", key: "count", width: 12 },
+    { header: "样本数", key: "sample_size", width: 12 },
+    { header: "占比", key: "percentage", width: 12 },
+    { header: "代表证据", key: "representative_evidence", width: 64 },
+    { header: "关联主题ID", key: "theme_ids", width: 36 }
   ],
-  key_insight_distribution: [
-    { header: "dimension", key: "dimension", width: 16 },
-    { header: "label", key: "label", width: 30 },
-    { header: "review_count", key: "review_count", width: 12 },
-    { header: "sample_size", key: "sample_size", width: 12 },
-    { header: "percentage", key: "percentage", width: 12 },
-    { header: "role", key: "role", width: 12 },
-    { header: "reason", key: "reason", width: 54 },
-    { header: "evidence", key: "evidence", width: 64 },
-    { header: "theme_ids", key: "theme_ids", width: 36 }
+  关键结论分布: [
+    { header: "维度", key: "dimension", width: 16 },
+    { header: "类型", key: "label", width: 30 },
+    { header: "提及评论数", key: "review_count", width: 12 },
+    { header: "样本数", key: "sample_size", width: 12 },
+    { header: "占比", key: "percentage", width: 12 },
+    { header: "角色", key: "role", width: 12 },
+    { header: "判断依据", key: "reason", width: 54 },
+    { header: "证据原文", key: "evidence", width: 64 },
+    { header: "关联主题ID", key: "theme_ids", width: 36 }
   ],
-  voc_themes: [
-    { header: "theme_id", key: "theme_id", width: 32 },
-    { header: "theme_name", key: "theme_name", width: 34 },
-    { header: "theme_category", key: "theme_category", width: 24 },
-    { header: "priority", key: "priority", width: 10 },
-    { header: "count", key: "count", width: 10 },
-    { header: "sample_size", key: "sample_size", width: 12 },
-    { header: "percentage", key: "percentage", width: 12 },
-    { header: "core_issue", key: "core_issue", width: 54 },
-    { header: "root_cause_hypothesis", key: "root_cause_hypothesis", width: 54 },
-    { header: "severity", key: "severity", width: 12 },
-    { header: "business_meaning", key: "business_meaning", width: 54 },
-    { header: "related_action_areas", key: "related_action_areas", width: 30 },
-    { header: "theme_evidence", key: "theme_evidence", width: 64 },
-    { header: "confidence", key: "confidence", width: 12 }
+  VOC主题: [
+    { header: "主题ID", key: "theme_id", width: 32 },
+    { header: "主题名称", key: "theme_name", width: 34 },
+    { header: "主题类型", key: "theme_category", width: 24 },
+    { header: "优先级", key: "priority", width: 10 },
+    { header: "提及评论数", key: "count", width: 12 },
+    { header: "样本数", key: "sample_size", width: 12 },
+    { header: "占比", key: "percentage", width: 12 },
+    { header: "核心问题", key: "core_issue", width: 54 },
+    { header: "归因假设", key: "root_cause_hypothesis", width: 54 },
+    { header: "严重度", key: "severity", width: 12 },
+    { header: "业务含义", key: "business_meaning", width: 54 },
+    { header: "相关动作方向", key: "related_action_areas", width: 30 },
+    { header: "主题证据", key: "theme_evidence", width: 64 },
+    { header: "置信度", key: "confidence", width: 12 }
   ],
-  business_actions: [
-    { header: "action_id", key: "action_id", width: 30 },
-    { header: "theme_id", key: "theme_id", width: 32 },
-    { header: "action_area", key: "action_area", width: 16 },
-    { header: "priority", key: "priority", width: 10 },
-    { header: "priority_score", key: "priority_score", width: 14 },
-    { header: "business_finding", key: "business_finding", width: 48 },
-    { header: "recommendation", key: "recommendation", width: 64 },
-    { header: "priority_reason", key: "priority_reason", width: 48 },
-    { header: "impact_metrics", key: "impact_metrics", width: 36 },
-    { header: "validation_method", key: "validation_method", width: 36 },
-    { header: "evidence", key: "evidence", width: 64 },
-    { header: "confidence", key: "confidence", width: 12 }
+  业务动作: [
+    { header: "动作ID", key: "action_id", width: 30 },
+    { header: "主题ID", key: "theme_id", width: 32 },
+    { header: "动作方向", key: "action_area", width: 16 },
+    { header: "优先级", key: "priority", width: 10 },
+    { header: "优先级分数", key: "priority_score", width: 14 },
+    { header: "业务发现", key: "business_finding", width: 48 },
+    { header: "建议动作", key: "recommendation", width: 64 },
+    { header: "优先级理由", key: "priority_reason", width: 48 },
+    { header: "影响指标", key: "impact_metrics", width: 36 },
+    { header: "验证方式", key: "validation_method", width: 36 },
+    { header: "证据原文", key: "evidence", width: 64 },
+    { header: "置信度", key: "confidence", width: 12 }
   ],
-  checkpoints: [
-    { header: "id", key: "id", width: 26 },
-    { header: "name", key: "name", width: 24 },
-    { header: "status", key: "status", width: 12 },
-    { header: "message", key: "message", width: 64 }
+  检查点: [
+    { header: "检查点ID", key: "id", width: 26 },
+    { header: "检查点名称", key: "name", width: 24 },
+    { header: "状态", key: "status", width: 12 },
+    { header: "说明", key: "message", width: 64 }
   ]
 };
 
@@ -110,14 +115,14 @@ export function buildReviewCodingWorkbook(analysis: AnalysisReport): ExcelJS.Wor
   workbook.creator = "amazon-review-insight";
   workbook.created = new Date(analysis.metadata.generated_at);
   workbook.modified = new Date();
-  addSheet(workbook, "metadata", metadataRows(analysis));
-  addSheet(workbook, "normalized_reviews", normalizedReviewRows(analysis));
-  addSheet(workbook, "feedback_units", (analysis.feedback_units ?? []).map(normalizeRow));
-  addSheet(workbook, "open_tags", (analysis.open_tags ?? []).map(normalizeRow));
-  addSheet(workbook, "key_insight_distribution", keyInsightDistributionRows(analysis));
-  addSheet(workbook, "voc_themes", vocThemeRows(analysis));
-  addSheet(workbook, "business_actions", businessActionRows(analysis));
-  addSheet(workbook, "checkpoints", analysis.checkpoints.map(normalizeRow));
+  addSheet(workbook, "元数据", metadataRows(analysis));
+  addSheet(workbook, "原始评论", normalizedReviewRows(analysis));
+  addSheet(workbook, "Review编码层", reviewCodingRows(analysis));
+  addSheet(workbook, "开放标签", (analysis.open_tags ?? []).map(normalizeRow));
+  addSheet(workbook, "关键结论分布", keyInsightDistributionRows(analysis));
+  addSheet(workbook, "VOC主题", vocThemeRows(analysis));
+  addSheet(workbook, "业务动作", businessActionRows(analysis));
+  addSheet(workbook, "检查点", analysis.checkpoints.map(normalizeRow));
   return workbook;
 }
 
@@ -143,14 +148,14 @@ function addSheet(workbook: ExcelJS.Workbook, name: keyof typeof SHEET_COLUMNS, 
 
 function metadataRows(analysis: AnalysisReport): Row[] {
   return [
-    { key: "asin", value: analysis.metadata.asin },
-    { key: "site", value: analysis.metadata.site },
-    { key: "data_source", value: analysis.metadata.data_source },
-    { key: "generated_at", value: analysis.metadata.generated_at },
-    { key: "review_sample_size", value: analysis.metadata.review_sample_size },
-    { key: "asin_total_review_count", value: analysis.metadata.asin_total_review_count },
-    { key: "product_rating", value: analysis.metadata.product_rating ?? "unknown" },
-    { key: "workbook_contract", value: "review_coding_excel_v0.2.0" }
+    { field: "ASIN", value: analysis.metadata.asin },
+    { field: "站点", value: analysis.metadata.site },
+    { field: "数据来源", value: analysis.metadata.data_source },
+    { field: "生成时间", value: analysis.metadata.generated_at },
+    { field: "Review 样本数", value: analysis.metadata.review_sample_size },
+    { field: "ASIN 总评论数量", value: analysis.metadata.asin_total_review_count },
+    { field: "产品星级", value: analysis.metadata.product_rating ?? "unknown" },
+    { field: "工作簿契约", value: "review_coding_excel_v0.2.0_zh" }
   ];
 }
 
@@ -165,6 +170,39 @@ function normalizedReviewRows(analysis: AnalysisReport): Row[] {
     text: review.text,
     raw_json: review.raw
   }));
+}
+
+function reviewCodingRows(analysis: AnalysisReport): Row[] {
+  const byReviewIndex = new Map<number, NonNullable<AnalysisReport["normalized_reviews"]>[number]>();
+  for (const [index, review] of analysis.normalized_reviews!.entries()) {
+    byReviewIndex.set(typeof review.raw?.review_index === "number" ? review.raw.review_index : index + 1, review);
+  }
+  return (analysis.feedback_units ?? []).map((unit) => {
+    const review = byReviewIndex.get(unit.review_index);
+    return normalizeRow({
+      asin: review?.asin ?? analysis.metadata.asin,
+      review_date: review?.review_date ?? "unknown",
+      rating: review?.rating ?? "unknown",
+      title: review?.title ?? "",
+      text: review?.text ?? "",
+      review_index: unit.review_index,
+      feedback_unit_id: unit.feedback_unit_id,
+      dimension: unit.dimension,
+      audience: unit.audience,
+      scenario: unit.scenario,
+      user_task: unit.user_task,
+      purchase_reason: unit.purchase_reason,
+      user_expectation: unit.user_expectation,
+      expectation_source: unit.expectation_source,
+      actual_experience: unit.actual_experience,
+      satisfied_points: unit.satisfied_points,
+      unsatisfied_points: unit.unsatisfied_points,
+      consequence: unit.consequence,
+      evidence: unit.evidence,
+      open_tags: unit.open_tags,
+      confidence: unit.confidence
+    });
+  });
 }
 
 function keyInsightDistributionRows(analysis: AnalysisReport): Row[] {

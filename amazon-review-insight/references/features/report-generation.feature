@@ -31,7 +31,9 @@ Feature: 单 ASIN Review 分析报告
     And normalized_reviews 覆盖 Sorftime MCP 返回的全部 Review 样本
     And 每条 normalized_reviews 至少有一条 feedback_units 编码记录
     When 系统导出 Review 编码层 Excel
-    Then Excel 包含 metadata、normalized_reviews、feedback_units、open_tags、key_insight_distribution、voc_themes、business_actions、checkpoints
-    And key_insight_distribution sheet 展示每个关键结论类型的提及数量、占比、角色、判断依据和 evidence
-    And feedback_units sheet 展示每个反馈单元对应的原文 evidence 和开放标签
+    Then Excel 包含 元数据、原始评论、Review编码层、开放标签、关键结论分布、VOC主题、业务动作、检查点
+    And 原始评论 sheet 前五列为 ASIN、评论日期、星级、title、text
+    And Review编码层 sheet 前五列为 ASIN、评论日期、星级、title、text
+    And 关键结论分布 sheet 展示每个关键结论类型的提及数量、占比、角色、判断依据和 evidence
+    And Review编码层 sheet 展示每个反馈单元对应的原文 evidence 和开放标签
     And Excel 中不得包含 Sorftime key、运行时 token 或环境变量值

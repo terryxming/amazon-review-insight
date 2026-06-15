@@ -21,8 +21,10 @@ describe("review coding Excel exporter", () => {
 
       const workbook = new ExcelJS.Workbook();
       await workbook.xlsx.readFile(excelPath);
-      expect(workbook.getWorksheet("feedback_units")?.rowCount).toBeGreaterThan(1);
-      expect(workbook.getWorksheet("key_insight_distribution")?.rowCount).toBeGreaterThan(8);
+      expect(workbook.getWorksheet("Review编码层")?.rowCount).toBeGreaterThan(1);
+      expect(workbook.getWorksheet("关键结论分布")?.rowCount).toBeGreaterThan(8);
+      const headers = (workbook.getWorksheet("Review编码层")?.getRow(1).values as unknown[]).filter(Boolean);
+      expect(headers.slice(0, 5)).toEqual(["ASIN", "评论日期", "星级", "title", "text"]);
     } finally {
       await rm(dir, { recursive: true, force: true });
     }

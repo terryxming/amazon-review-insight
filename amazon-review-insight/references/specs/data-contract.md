@@ -10,6 +10,7 @@ data_contract_version: v0.2.0
 4. VOC 主题、关键结论、关键结论分布、业务动作的百分比分母必须使用 `review_sample_size`。
 5. ASIN 总评论数量只能作为产品规模背景。
 6. `normalized_reviews.length` 必须等于 `review_sample_size`。Review 编码层 Excel 是全量样本复核文件，不是 VOC 详情页证据片段集合。
+7. Excel 对外可见 sheet 名和字段名必须使用中文；`原始评论` 与 `Review编码层` 前五列固定为 `ASIN`、`评论日期`、`星级`、`title`、`text`。
 
 ## NormalizedReview
 

@@ -10,5 +10,6 @@ v0.2.0 changes the analysis contract.
 4. `npm run contract:check` accepts an optional third argument for the Review coding Excel path.
 5. New CLI command: `npm run export:excel -- <analysis.json> <review-coding.xlsx>`.
 6. Report HTML now renders key insight distribution tables; mobile QA should verify table scrolling inside cards.
+7. Excel workbook sheet names and visible column headers are Chinese. The first five columns of `原始评论` and `Review编码层` are `ASIN`, `评论日期`, `星级`, `title`, `text`.
 
 Existing v0.1.0 HTML reports remain readable, but v0.2.0 contract checks will fail old analysis JSON until the new fields are added.

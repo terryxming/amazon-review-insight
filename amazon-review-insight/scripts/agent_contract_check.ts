@@ -135,14 +135,14 @@ function checkPercentage(label: string, count: number, sampleSize: number, pct: 
 }
 
 const REQUIRED_EXCEL_SHEETS: Record<string, string[]> = {
-  metadata: ["key", "value"],
-  normalized_reviews: ["review_index", "asin", "variant", "review_date", "rating", "title", "text"],
-  feedback_units: ["feedback_unit_id", "review_index", "dimension", "evidence", "open_tags", "confidence"],
-  open_tags: ["tag_id", "tag_name", "dimension", "count", "percentage", "theme_ids"],
-  key_insight_distribution: ["dimension", "label", "review_count", "sample_size", "percentage", "role", "reason", "evidence", "theme_ids"],
-  voc_themes: ["theme_id", "theme_name", "theme_category", "priority", "count", "percentage", "core_issue"],
-  business_actions: ["action_id", "theme_id", "action_area", "priority", "priority_score", "business_finding", "recommendation"],
-  checkpoints: ["id", "name", "status", "message"]
+  元数据: ["字段", "值"],
+  原始评论: ["ASIN", "评论日期", "星级", "title", "text", "评论序号"],
+  Review编码层: ["ASIN", "评论日期", "星级", "title", "text", "评论序号", "编码单元ID", "编码维度", "证据原文", "开放标签", "置信度"],
+  开放标签: ["标签ID", "标签名称", "维度", "提及评论数", "占比", "关联主题ID"],
+  关键结论分布: ["维度", "类型", "提及评论数", "样本数", "占比", "角色", "判断依据", "证据原文", "关联主题ID"],
+  VOC主题: ["主题ID", "主题名称", "主题类型", "优先级", "提及评论数", "占比", "核心问题"],
+  业务动作: ["动作ID", "主题ID", "动作方向", "优先级", "优先级分数", "业务发现", "建议动作"],
+  检查点: ["检查点ID", "检查点名称", "状态", "说明"]
 };
 
 export async function checkExcelFile(excelPath: string, analysis?: AnalysisReport): Promise<ContractCheckResult> {
@@ -161,9 +161,9 @@ export async function checkExcelFile(excelPath: string, analysis?: AnalysisRepor
     }
   }
   if (analysis) {
-    checkExcelRowCount(workbook, "normalized_reviews", analysis.metadata.review_sample_size, errors);
-    checkExcelRowCount(workbook, "feedback_units", analysis.feedback_units?.length ?? 0, errors);
-    checkExcelRowCount(workbook, "open_tags", analysis.open_tags?.length ?? 0, errors);
+    checkExcelRowCount(workbook, "原始评论", analysis.metadata.review_sample_size, errors);
+    checkExcelRowCount(workbook, "Review编码层", analysis.feedback_units?.length ?? 0, errors);
+    checkExcelRowCount(workbook, "开放标签", analysis.open_tags?.length ?? 0, errors);
   }
   return { ok: errors.length === 0, errors, warnings: [] };
 }
