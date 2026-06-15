@@ -12,4 +12,7 @@
 6. `原始评论` 和 `Review编码层` sheet 前五列必须为 `ASIN`、`评论日期`、`星级`、`title`、`text`。
 7. `原始评论` sheet 行数等于 Review 样本数。
 8. 每条 Review 至少有一条 `Review编码层` 编码记录。
-9. HTML 与 Excel 均不包含 Sorftime key、运行时 token 或环境变量值。
+9. `Review编码层` 必须前置展示 `原Review序号`、`反馈点序号`、`本行反馈点`、`本行反馈极性`、`本行开放标签`、`关联主题ID` 和 `证据原文`。
+10. 整条 Review 汇总字段必须后置并加 `整条Review-` 前缀。
+11. Excel 编码层包含 `VOC主题观点` 和 `VOC观点评论明细` sheet。
+12. HTML 与 Excel 均不包含 Sorftime key、运行时 token 或环境变量值。

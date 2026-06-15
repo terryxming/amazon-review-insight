@@ -23,8 +23,29 @@ describe("review coding Excel exporter", () => {
       await workbook.xlsx.readFile(excelPath);
       expect(workbook.getWorksheet("Review编码层")?.rowCount).toBeGreaterThan(1);
       expect(workbook.getWorksheet("关键结论分布")?.rowCount).toBeGreaterThan(8);
+      expect(workbook.getWorksheet("VOC主题观点")?.rowCount).toBeGreaterThan(1);
+      expect(workbook.getWorksheet("VOC观点评论明细")?.rowCount).toBeGreaterThan(1);
       const headers = (workbook.getWorksheet("Review编码层")?.getRow(1).values as unknown[]).filter(Boolean);
       expect(headers.slice(0, 5)).toEqual(["ASIN", "评论日期", "星级", "title", "text"]);
+      expect(headers.slice(5, 16)).toEqual([
+        "原Review序号",
+        "反馈点序号",
+        "编码单元ID",
+        "本行编码维度",
+        "本行反馈极性",
+        "本行反馈点",
+        "本行开放标签",
+        "开放标签ID",
+        "关联主题ID",
+        "证据原文",
+        "结果/影响"
+      ]);
+      const firstDataRow = workbook.getWorksheet("Review编码层")?.getRow(2).values as unknown[];
+      expect(firstDataRow[7]).toBe(1);
+      expect(String(firstDataRow[11])).not.toBe("");
+      expect(String(firstDataRow[12])).not.toBe("");
+      const viewpointHeaders = (workbook.getWorksheet("VOC主题观点")?.getRow(1).values as unknown[]).filter(Boolean);
+      expect(viewpointHeaders.slice(0, 5)).toEqual(["主题ID", "主题名称", "观点ID", "观点名称", "观点极性"]);
     } finally {
       await rm(dir, { recursive: true, force: true });
     }

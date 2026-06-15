@@ -66,19 +66,9 @@ export function checkAnalysis(analysis: AnalysisReport): ContractCheckResult {
     if (!theme.detail_reviews?.length) errors.push(`VOC 主题 ${theme.theme_id} 缺少详情页证据列表`);
     checkPercentage(`VOC 主题 ${theme.theme_id}`, theme.count, theme.sample_size, theme.percentage, errors);
     for (const review of theme.detail_reviews ?? []) {
-      if (!review.text) errors.push(`主题 ${theme.theme_id} 的详情 Review 缺少完整原文`);
-      if (!review.translation) errors.push(`主题 ${theme.theme_id} 的详情 Review 缺少完整中文翻译`);
-      for (const term of review.highlight_terms ?? []) {
-        if (term && !review.text.toLowerCase().includes(term.toLowerCase())) {
-          errors.push(`主题 ${theme.theme_id} 高亮原文无法定位：${term}`);
-        }
-      }
-      for (const term of review.translation_highlight_terms ?? []) {
-        if (term && !review.translation.includes(term)) {
-          errors.push(`主题 ${theme.theme_id} 高亮译文无法定位：${term}`);
-        }
-      }
+      checkDetailReview(`主题 ${theme.theme_id}`, review, errors);
     }
+    checkThemeViewpoints(theme, errors);
   }
 
   for (const action of analysis.business_actions) {
@@ -100,6 +90,12 @@ export function checkHtml(html: string): ContractCheckResult {
   }
   if (!html.includes("<mark>")) errors.push("HTML 缺少黄色高亮 mark。");
   if (!html.includes("insight-distribution")) errors.push("HTML 关键结论缺少类型分布表。");
+  if (!html.includes("viewpoint-distribution")) errors.push("HTML VOC 主题地图缺少观点分布表。");
+  if (!html.includes("voc-viewpoint-detail-")) errors.push("HTML 缺少 VOC 观点详情页 anchor。");
+  if (!html.includes('data-open-mode="new-tab"')) errors.push("HTML VOC 观点链接必须标记为新标签页打开。");
+  if (!html.includes('target="_blank"')) errors.push("HTML VOC 观点链接必须使用 target=\"_blank\"。");
+  if (!html.includes('rel="noopener"')) errors.push("HTML VOC 观点链接必须使用 rel=\"noopener\"。");
+  if (!html.includes("sticky-theme-card")) errors.push("HTML 缺少观点详情页 sticky VOC 主题卡片。");
   if (html.includes("SORFTIME_MCP_KEY")) errors.push("HTML 泄露 SORFTIME_MCP_KEY 字符串。");
   return { ok: errors.length === 0, errors, warnings: [] };
 }
@@ -123,6 +119,55 @@ function checkKeyInsightDistribution(item: AnalysisReport["key_insights"][number
   }
 }
 
+function checkThemeViewpoints(theme: AnalysisReport["voc_themes"][number], errors: string[]): void {
+  if (!theme.viewpoints?.length) {
+    errors.push(`VOC 主题 ${theme.theme_id} 缺少 viewpoints`);
+    return;
+  }
+  const validRoles = new Set(["primary", "secondary", "emerging", "long_tail", "risk_signal", "unknown"]);
+  const validPolarities = new Set(["positive", "negative", "mixed", "neutral"]);
+  for (const viewpoint of theme.viewpoints) {
+    const label = `VOC 主题 ${theme.theme_id} / 观点 ${viewpoint.viewpoint_id || viewpoint.viewpoint_name || "unknown"}`;
+    if (!viewpoint.viewpoint_id) errors.push(`${label} 缺少 viewpoint_id`);
+    if (!viewpoint.viewpoint_name) errors.push(`${label} 缺少 viewpoint_name`);
+    if (!validPolarities.has(viewpoint.viewpoint_polarity)) errors.push(`${label} viewpoint_polarity 非法：${viewpoint.viewpoint_polarity}`);
+    if (!validRoles.has(viewpoint.role)) errors.push(`${label} role 非法：${viewpoint.role}`);
+    if (!viewpoint.reason) errors.push(`${label} 缺少 reason`);
+    if (!viewpoint.business_meaning) errors.push(`${label} 缺少 business_meaning`);
+    if (!Array.isArray(viewpoint.tag_ids)) errors.push(`${label} tag_ids 不是数组`);
+    if (!viewpoint.review_indexes?.length) errors.push(`${label} 缺少 review_indexes`);
+    if (!viewpoint.evidence?.length && viewpoint.role !== "unknown") errors.push(`${label} 缺少 evidence`);
+    checkPercentage(label, viewpoint.review_count, viewpoint.sample_size, viewpoint.percentage, errors);
+    if (!viewpoint.detail_reviews?.length) {
+      errors.push(`${label} 缺少 detail_reviews`);
+    } else if (viewpoint.detail_reviews.length !== viewpoint.review_count) {
+      errors.push(`${label} detail_reviews 行数应为 ${viewpoint.review_count}，实际为 ${viewpoint.detail_reviews.length}`);
+    }
+    const detailIndexes = new Set((viewpoint.detail_reviews ?? []).map((review) => review.review_index));
+    for (const index of viewpoint.review_indexes ?? []) {
+      if (!detailIndexes.has(index)) errors.push(`${label} review_indexes 包含未出现在 detail_reviews 的 Review #${index}`);
+    }
+    for (const review of viewpoint.detail_reviews ?? []) {
+      checkDetailReview(label, review, errors);
+    }
+  }
+}
+
+function checkDetailReview(label: string, review: AnalysisReport["voc_themes"][number]["detail_reviews"][number], errors: string[]): void {
+  if (!review.text) errors.push(`${label} 的详情 Review 缺少完整原文`);
+  if (!review.translation) errors.push(`${label} 的详情 Review 缺少完整中文翻译`);
+  for (const term of review.highlight_terms ?? []) {
+    if (term && !review.text.toLowerCase().includes(term.toLowerCase())) {
+      errors.push(`${label} 高亮原文无法定位：${term}`);
+    }
+  }
+  for (const term of review.translation_highlight_terms ?? []) {
+    if (term && !review.translation.includes(term)) {
+      errors.push(`${label} 高亮译文无法定位：${term}`);
+    }
+  }
+}
+
 function checkPercentage(label: string, count: number, sampleSize: number, pct: number, errors: string[]): void {
   if (sampleSize <= 0) {
     errors.push(`${label} sample_size 必须大于 0`);
@@ -137,10 +182,12 @@ function checkPercentage(label: string, count: number, sampleSize: number, pct: 
 const REQUIRED_EXCEL_SHEETS: Record<string, string[]> = {
   元数据: ["字段", "值"],
   原始评论: ["ASIN", "评论日期", "星级", "title", "text", "评论序号"],
-  Review编码层: ["ASIN", "评论日期", "星级", "title", "text", "评论序号", "编码单元ID", "编码维度", "证据原文", "开放标签", "置信度"],
+  Review编码层: ["ASIN", "评论日期", "星级", "title", "text", "原Review序号", "反馈点序号", "编码单元ID", "本行编码维度", "本行反馈极性", "本行反馈点", "本行开放标签", "开放标签ID", "关联主题ID", "证据原文", "置信度"],
   开放标签: ["标签ID", "标签名称", "维度", "提及评论数", "占比", "关联主题ID"],
   关键结论分布: ["维度", "类型", "提及评论数", "样本数", "占比", "角色", "判断依据", "证据原文", "关联主题ID"],
   VOC主题: ["主题ID", "主题名称", "主题类型", "优先级", "提及评论数", "占比", "核心问题"],
+  VOC主题观点: ["主题ID", "主题名称", "观点ID", "观点名称", "观点极性", "提及评论数", "样本数", "占比", "角色", "判断依据", "业务含义", "开放标签ID", "关联Review序号", "代表证据", "置信度"],
+  VOC观点评论明细: ["主题ID", "主题名称", "观点ID", "观点名称", "Review序号", "ASIN", "评论日期", "星级", "title", "text", "中文翻译", "原文高亮词", "译文高亮词"],
   业务动作: ["动作ID", "主题ID", "动作方向", "优先级", "优先级分数", "业务发现", "建议动作"],
   检查点: ["检查点ID", "检查点名称", "状态", "说明"]
 };
@@ -164,6 +211,8 @@ export async function checkExcelFile(excelPath: string, analysis?: AnalysisRepor
     checkExcelRowCount(workbook, "原始评论", analysis.metadata.review_sample_size, errors);
     checkExcelRowCount(workbook, "Review编码层", analysis.feedback_units?.length ?? 0, errors);
     checkExcelRowCount(workbook, "开放标签", analysis.open_tags?.length ?? 0, errors);
+    checkExcelRowCount(workbook, "VOC主题观点", analysis.voc_themes.flatMap((theme) => theme.viewpoints ?? []).length, errors);
+    checkExcelRowCount(workbook, "VOC观点评论明细", analysis.voc_themes.flatMap((theme) => (theme.viewpoints ?? []).flatMap((viewpoint) => viewpoint.detail_reviews)).length, errors);
   }
   return { ok: errors.length === 0, errors, warnings: [] };
 }

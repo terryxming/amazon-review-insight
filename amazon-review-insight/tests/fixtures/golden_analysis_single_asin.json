@@ -326,6 +326,50 @@
         "singing for hours"
       ],
       "confidence": "medium",
+      "viewpoints": [
+        {
+          "viewpoint_id": "vp_family_children_party",
+          "viewpoint_name": "儿童亲友在家庭聚会中持续参与",
+          "viewpoint_polarity": "positive",
+          "review_count": 1,
+          "sample_size": 3,
+          "percentage": 33.3,
+          "role": "primary",
+          "reason": "评论明确提到孙辈、侄女侄子在感恩节玩得开心并持续唱歌。",
+          "tag_ids": [
+            "tag_family_children_party"
+          ],
+          "review_indexes": [
+            1
+          ],
+          "evidence": [
+            "had a blast on Thanksgiving",
+            "singing for hours"
+          ],
+          "business_meaning": "适合强化家庭聚会、多年龄参与和儿童持续娱乐的图片视频表达。",
+          "confidence": "medium",
+          "detail_reviews": [
+            {
+              "review_index": 1,
+              "rating": 5,
+              "review_date": "2025-01-31",
+              "title": "Great family karaoke",
+              "text": "This Karaoke machine is durable, wireless, portable, compact, has good sound and a color video screen. My grandchildren, nieces and nephews had a blast on Thanksgiving and were singing for hours.",
+              "translation": "这台卡拉 OK 机器耐用、无线、便携、紧凑，声音好，还有彩色视频屏幕。我的孙辈、侄女和侄子在感恩节玩得很开心，唱了好几个小时。",
+              "highlight_terms": [
+                "grandchildren, nieces and nephews",
+                "Thanksgiving",
+                "singing for hours"
+              ],
+              "translation_highlight_terms": [
+                "孙辈、侄女和侄子",
+                "感恩节",
+                "唱了好几个小时"
+              ]
+            }
+          ]
+        }
+      ],
       "detail_reviews": [
         {
           "review_index": 1,
@@ -367,6 +411,45 @@
         "battery did not last through the whole party"
       ],
       "confidence": "medium",
+      "viewpoints": [
+        {
+          "viewpoint_id": "vp_battery_not_full_party",
+          "viewpoint_name": "电池无法支撑完整聚会",
+          "viewpoint_polarity": "negative",
+          "review_count": 1,
+          "sample_size": 3,
+          "percentage": 33.3,
+          "role": "risk_signal",
+          "reason": "评论明确表示电池没有撑完整场聚会，直接影响聚会连续使用。",
+          "tag_ids": [
+            "tag_battery_party"
+          ],
+          "review_indexes": [
+            3
+          ],
+          "evidence": [
+            "battery did not last through the whole party"
+          ],
+          "business_meaning": "需要在页面续航口径、QA 和产品续航验证中优先处理。",
+          "confidence": "medium",
+          "detail_reviews": [
+            {
+              "review_index": 3,
+              "rating": 3,
+              "review_date": "2025-02-02",
+              "title": "Good but battery could be better",
+              "text": "The sound is good and kids loved it, but the battery did not last through the whole party.",
+              "translation": "声音很好，孩子们也喜欢，但电池没有支撑完整个聚会。",
+              "highlight_terms": [
+                "battery did not last through the whole party"
+              ],
+              "translation_highlight_terms": [
+                "电池没有支撑完整个聚会"
+              ]
+            }
+          ]
+        }
+      ],
       "detail_reviews": [
         {
           "review_index": 3,

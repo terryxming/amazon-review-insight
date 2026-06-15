@@ -1,6 +1,6 @@
 {
   "name": "amazon-review-insight",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "bin": {
@@ -27,8 +27,5 @@
     "tsx": "^4.20.0",
     "typescript": "^5.8.0",
     "vitest": "^4.1.8"
-  },
-  "dependencies": {
-    "exceljs": "^4.4.0"
   }
 }

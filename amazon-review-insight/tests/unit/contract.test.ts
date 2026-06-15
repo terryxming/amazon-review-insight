@@ -16,4 +16,12 @@ describe("agent contract check", () => {
     expect(result.ok).toBe(false);
     expect(result.errors).toContain("normalized_reviews 必须覆盖全部 Review 样本：期望 3 条，实际 2 条。");
   });
+
+  it("rejects VOC themes without viewpoint drilldown", () => {
+    const copy = structuredClone(analysis as any);
+    delete copy.voc_themes[0].viewpoints;
+    const result = checkAnalysis(copy);
+    expect(result.ok).toBe(false);
+    expect(result.errors).toContain("VOC 主题 theme_family_party 缺少 viewpoints");
+  });
 });

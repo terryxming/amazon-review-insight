@@ -27,22 +27,27 @@ const SHEET_COLUMNS: Record<string, { header: string; key: string; width: number
     { header: "星级", key: "rating", width: 10 },
     { header: "title", key: "title", width: 30 },
     { header: "text", key: "text", width: 80 },
-    { header: "评论序号", key: "review_index", width: 12 },
+    { header: "原Review序号", key: "review_index", width: 12 },
+    { header: "反馈点序号", key: "feedback_sequence", width: 12 },
     { header: "编码单元ID", key: "feedback_unit_id", width: 24 },
-    { header: "编码维度", key: "dimension", width: 16 },
-    { header: "人群", key: "audience", width: 24 },
-    { header: "场景", key: "scenario", width: 24 },
-    { header: "用户任务", key: "user_task", width: 24 },
-    { header: "购买理由", key: "purchase_reason", width: 24 },
-    { header: "用户期望", key: "user_expectation", width: 28 },
-    { header: "期望来源", key: "expectation_source", width: 22 },
-    { header: "实际体验", key: "actual_experience", width: 28 },
-    { header: "满意点", key: "satisfied_points", width: 28 },
-    { header: "不满意点", key: "unsatisfied_points", width: 28 },
-    { header: "结果/影响", key: "consequence", width: 28 },
+    { header: "本行编码维度", key: "dimension", width: 16 },
+    { header: "本行反馈极性", key: "feedback_polarity", width: 14 },
+    { header: "本行反馈点", key: "feedback_point", width: 34 },
+    { header: "本行开放标签", key: "open_tag_names", width: 36 },
+    { header: "开放标签ID", key: "open_tag_ids", width: 36 },
+    { header: "关联主题ID", key: "theme_ids", width: 36 },
     { header: "证据原文", key: "evidence", width: 64 },
-    { header: "开放标签", key: "open_tags", width: 36 },
-    { header: "置信度", key: "confidence", width: 12 }
+    { header: "结果/影响", key: "consequence", width: 28 },
+    { header: "置信度", key: "confidence", width: 12 },
+    { header: "整条Review-人群", key: "audience", width: 24 },
+    { header: "整条Review-场景", key: "scenario", width: 24 },
+    { header: "整条Review-用户任务", key: "user_task", width: 24 },
+    { header: "整条Review-购买理由", key: "purchase_reason", width: 24 },
+    { header: "整条Review-用户期望", key: "user_expectation", width: 28 },
+    { header: "整条Review-期望来源", key: "expectation_source", width: 22 },
+    { header: "整条Review-实际体验", key: "actual_experience", width: 28 },
+    { header: "整条Review-满意点汇总", key: "satisfied_points", width: 34 },
+    { header: "整条Review-不满意点汇总", key: "unsatisfied_points", width: 34 }
   ],
   开放标签: [
     { header: "标签ID", key: "tag_id", width: 28 },
@@ -80,6 +85,38 @@ const SHEET_COLUMNS: Record<string, { header: string; key: string; width: number
     { header: "相关动作方向", key: "related_action_areas", width: 30 },
     { header: "主题证据", key: "theme_evidence", width: 64 },
     { header: "置信度", key: "confidence", width: 12 }
+  ],
+  VOC主题观点: [
+    { header: "主题ID", key: "theme_id", width: 32 },
+    { header: "主题名称", key: "theme_name", width: 34 },
+    { header: "观点ID", key: "viewpoint_id", width: 32 },
+    { header: "观点名称", key: "viewpoint_name", width: 34 },
+    { header: "观点极性", key: "viewpoint_polarity", width: 14 },
+    { header: "提及评论数", key: "review_count", width: 12 },
+    { header: "样本数", key: "sample_size", width: 12 },
+    { header: "占比", key: "percentage", width: 12 },
+    { header: "角色", key: "role", width: 12 },
+    { header: "判断依据", key: "reason", width: 54 },
+    { header: "业务含义", key: "business_meaning", width: 54 },
+    { header: "开放标签ID", key: "tag_ids", width: 36 },
+    { header: "关联Review序号", key: "review_indexes", width: 36 },
+    { header: "代表证据", key: "evidence", width: 64 },
+    { header: "置信度", key: "confidence", width: 12 }
+  ],
+  VOC观点评论明细: [
+    { header: "主题ID", key: "theme_id", width: 32 },
+    { header: "主题名称", key: "theme_name", width: 34 },
+    { header: "观点ID", key: "viewpoint_id", width: 32 },
+    { header: "观点名称", key: "viewpoint_name", width: 34 },
+    { header: "Review序号", key: "review_index", width: 12 },
+    { header: "ASIN", key: "asin", width: 14 },
+    { header: "评论日期", key: "review_date", width: 14 },
+    { header: "星级", key: "rating", width: 10 },
+    { header: "title", key: "title", width: 30 },
+    { header: "text", key: "text", width: 80 },
+    { header: "中文翻译", key: "translation", width: 80 },
+    { header: "原文高亮词", key: "highlight_terms", width: 36 },
+    { header: "译文高亮词", key: "translation_highlight_terms", width: 36 }
   ],
   业务动作: [
     { header: "动作ID", key: "action_id", width: 30 },
@@ -121,6 +158,8 @@ export function buildReviewCodingWorkbook(analysis: AnalysisReport): ExcelJS.Wor
   addSheet(workbook, "开放标签", (analysis.open_tags ?? []).map(normalizeRow));
   addSheet(workbook, "关键结论分布", keyInsightDistributionRows(analysis));
   addSheet(workbook, "VOC主题", vocThemeRows(analysis));
+  addSheet(workbook, "VOC主题观点", vocThemeViewpointRows(analysis));
+  addSheet(workbook, "VOC观点评论明细", vocViewpointReviewRows(analysis));
   addSheet(workbook, "业务动作", businessActionRows(analysis));
   addSheet(workbook, "检查点", analysis.checkpoints.map(normalizeRow));
   return workbook;
@@ -155,7 +194,7 @@ function metadataRows(analysis: AnalysisReport): Row[] {
     { field: "Review 样本数", value: analysis.metadata.review_sample_size },
     { field: "ASIN 总评论数量", value: analysis.metadata.asin_total_review_count },
     { field: "产品星级", value: analysis.metadata.product_rating ?? "unknown" },
-    { field: "工作簿契约", value: "review_coding_excel_v0.2.0_zh" }
+    { field: "工作簿契约", value: "review_coding_excel_v0.2.1_readable_zh" }
   ];
 }
 
@@ -177,8 +216,15 @@ function reviewCodingRows(analysis: AnalysisReport): Row[] {
   for (const [index, review] of analysis.normalized_reviews!.entries()) {
     byReviewIndex.set(typeof review.raw?.review_index === "number" ? review.raw.review_index : index + 1, review);
   }
+  const tagNameById = new Map((analysis.open_tags ?? []).map((tag) => [tag.tag_id, tag.tag_name]));
+  const themeIdsByTagId = new Map((analysis.open_tags ?? []).map((tag) => [tag.tag_id, tag.theme_ids]));
+  const sequenceByReviewIndex = new Map<number, number>();
   return (analysis.feedback_units ?? []).map((unit) => {
     const review = byReviewIndex.get(unit.review_index);
+    const feedbackSequence = (sequenceByReviewIndex.get(unit.review_index) ?? 0) + 1;
+    sequenceByReviewIndex.set(unit.review_index, feedbackSequence);
+    const openTagNames = unit.open_tags.map((tagId) => tagNameById.get(tagId) ?? tagId);
+    const themeIds = Array.from(new Set(unit.open_tags.flatMap((tagId) => themeIdsByTagId.get(tagId) ?? [])));
     return normalizeRow({
       asin: review?.asin ?? analysis.metadata.asin,
       review_date: review?.review_date ?? "unknown",
@@ -186,8 +232,17 @@ function reviewCodingRows(analysis: AnalysisReport): Row[] {
       title: review?.title ?? "",
       text: review?.text ?? "",
       review_index: unit.review_index,
+      feedback_sequence: feedbackSequence,
       feedback_unit_id: unit.feedback_unit_id,
       dimension: unit.dimension,
+      feedback_polarity: feedbackPolarity(unit),
+      feedback_point: openTagNames.join("；") || unit.dimension,
+      open_tag_names: openTagNames,
+      open_tag_ids: unit.open_tags,
+      theme_ids: themeIds,
+      evidence: unit.evidence,
+      consequence: unit.consequence,
+      confidence: unit.confidence,
       audience: unit.audience,
       scenario: unit.scenario,
       user_task: unit.user_task,
@@ -196,13 +251,21 @@ function reviewCodingRows(analysis: AnalysisReport): Row[] {
       expectation_source: unit.expectation_source,
       actual_experience: unit.actual_experience,
       satisfied_points: unit.satisfied_points,
-      unsatisfied_points: unit.unsatisfied_points,
-      consequence: unit.consequence,
-      evidence: unit.evidence,
-      open_tags: unit.open_tags,
-      confidence: unit.confidence
+      unsatisfied_points: unit.unsatisfied_points
     });
   });
+}
+
+function feedbackPolarity(unit: NonNullable<AnalysisReport["feedback_units"]>[number]): string {
+  if (unit.dimension === "满意点") return "正向";
+  if (unit.dimension === "不满意点") return "负向/风险";
+  if (["人群", "场景", "用户任务", "购买理由", "用户期望"].includes(unit.dimension)) return "中性/洞察";
+  const hasSatisfied = unit.satisfied_points !== "unknown";
+  const hasUnsatisfied = unit.unsatisfied_points !== "unknown";
+  if (hasSatisfied && hasUnsatisfied) return "混合";
+  if (hasSatisfied) return "正向";
+  if (hasUnsatisfied) return "负向/风险";
+  return "中性/洞察";
 }
 
 function keyInsightDistributionRows(analysis: AnalysisReport): Row[] {
@@ -248,6 +311,50 @@ function vocThemeRows(analysis: AnalysisReport): Row[] {
     theme_evidence: theme.theme_evidence,
     confidence: theme.confidence
   }));
+}
+
+function vocThemeViewpointRows(analysis: AnalysisReport): Row[] {
+  return analysis.voc_themes.flatMap((theme) =>
+    (theme.viewpoints ?? []).map((viewpoint) => normalizeRow({
+      theme_id: theme.theme_id,
+      theme_name: theme.theme_name,
+      viewpoint_id: viewpoint.viewpoint_id,
+      viewpoint_name: viewpoint.viewpoint_name,
+      viewpoint_polarity: viewpoint.viewpoint_polarity,
+      review_count: viewpoint.review_count,
+      sample_size: viewpoint.sample_size,
+      percentage: viewpoint.percentage,
+      role: viewpoint.role,
+      reason: viewpoint.reason,
+      business_meaning: viewpoint.business_meaning,
+      tag_ids: viewpoint.tag_ids,
+      review_indexes: viewpoint.review_indexes,
+      evidence: viewpoint.evidence,
+      confidence: viewpoint.confidence
+    }))
+  );
+}
+
+function vocViewpointReviewRows(analysis: AnalysisReport): Row[] {
+  return analysis.voc_themes.flatMap((theme) =>
+    (theme.viewpoints ?? []).flatMap((viewpoint) =>
+      viewpoint.detail_reviews.map((review) => normalizeRow({
+        theme_id: theme.theme_id,
+        theme_name: theme.theme_name,
+        viewpoint_id: viewpoint.viewpoint_id,
+        viewpoint_name: viewpoint.viewpoint_name,
+        review_index: review.review_index,
+        asin: analysis.metadata.asin,
+        review_date: review.review_date,
+        rating: review.rating,
+        title: review.title,
+        text: review.text,
+        translation: review.translation,
+        highlight_terms: review.highlight_terms,
+        translation_highlight_terms: review.translation_highlight_terms
+      }))
+    )
+  );
 }
 
 function businessActionRows(analysis: AnalysisReport): Row[] {

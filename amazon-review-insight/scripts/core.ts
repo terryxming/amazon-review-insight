@@ -88,6 +88,23 @@ export interface ThemeDetailReview {
   translation_highlight_terms: string[];
 }
 
+export interface ThemeViewpoint {
+  viewpoint_id: string;
+  viewpoint_name: string;
+  viewpoint_polarity: "positive" | "negative" | "mixed" | "neutral";
+  review_count: number;
+  sample_size: number;
+  percentage: number;
+  role: "primary" | "secondary" | "emerging" | "long_tail" | "risk_signal" | "unknown";
+  reason: string;
+  tag_ids: string[];
+  review_indexes: number[];
+  evidence: string[];
+  business_meaning: string;
+  confidence: "high" | "medium" | "low";
+  detail_reviews: ThemeDetailReview[];
+}
+
 export interface VocTheme {
   theme_id: string;
   theme_name: string;
@@ -104,6 +121,7 @@ export interface VocTheme {
   theme_evidence: string[];
   confidence: "high" | "medium" | "low";
   detail_reviews: ThemeDetailReview[];
+  viewpoints?: ThemeViewpoint[];
 }
 
 export interface BusinessAction {

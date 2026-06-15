@@ -1,6 +1,6 @@
 # Analysis Rules
 
-analysis_rules_version: v0.2.0
+analysis_rules_version: v0.3.0
 
 ## Review 编码
 
@@ -66,6 +66,28 @@ VOC 主题的作用：把多个开放标签归因为一个可以被产品、List
 - 开放标签：`tag_ui_song_selection_friction`、`tag_instruction_gap`
 - VOC 主题：`theme_ui_app_screen_instruction_friction`
 - 业务含义：用户即使认可声音，也可能因为找歌、触屏和说明不清而降低满意度或留下差评。
+
+## VOC 主题观点
+
+每个前台 VOC 主题必须继续拆出 `viewpoints[]`。观点是主题内部可统计、可点击、可追溯的具体用户声音。
+
+推荐流程：
+
+1. 从 `feedback_units[]` 读取原子反馈。
+2. 用 `open_tags[]` 聚合同义表达。
+3. 将开放标签归入 VOC 主题。
+4. 在同一主题内，把业务含义接近的开放标签归并成 viewpoint。
+5. 为每个 viewpoint 记录去重 `review_indexes`。
+6. 为每个 viewpoint 输出全量 `detail_reviews[]`。
+
+观点命名规则：
+
+1. 必须业务可读，例如 `HDMI 仅视频导致家庭影院连接预期落差`。
+2. 不得写 `体验问题`、`产品好`、`不满意` 这类泛词。
+3. 正向和负向观点分开。
+4. 每个观点必须有提及数量、占比、角色、极性、判断依据、业务含义和 evidence。
+
+同一条 Review 可以命中同一主题下多个 viewpoint，因此主题内观点百分比允许合计超过 100%。
 
 ## 关键结论分布
 

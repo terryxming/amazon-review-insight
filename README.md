@@ -39,8 +39,11 @@ npm run live:smoke -- B0DHPN1DMJ
 - Review 样本数 = `product_reviews` 实际返回条数。
 - VOC 百分比、关键结论百分比、业务动作百分比分母只能使用 Review 样本数。
 - 关键结论必须同时给一句话总结和类型分布表；类型之间允许重叠。
+- VOC 主题地图必须展示主题内观点分布；点击观点会在新标签页打开观点详情页，查看该观点相关全量 Review 原文和中文翻译。
 - Review 编码层必须覆盖全部 Review 样本，`normalized_reviews` 行数应等于 Review 样本数。
 - Excel sheet 名和字段名使用中文；`原始评论` 与 `Review编码层` 的前五列固定为 `ASIN`、`评论日期`、`星级`、`title`、`text`。
+- `Review编码层` 一行代表一个 feedback unit，前置展示 `原Review序号`、`反馈点序号`、`本行反馈点`、`本行反馈极性`、`本行开放标签`、`证据原文`；整条 Review 的汇总字段后置并加 `整条Review-` 前缀。
+- Excel 额外包含 `VOC主题观点` 和 `VOC观点评论明细`，用于复核主题内观点分布和观点级全量评论。
 
 ## 样例报告
 
