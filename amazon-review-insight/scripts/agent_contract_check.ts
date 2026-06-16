@@ -21,6 +21,7 @@ export function checkAnalysis(analysis: AnalysisReport): ContractCheckResult {
   if (!analysis.normalized_reviews?.length) errors.push("分析结果缺少 normalized_reviews，无法交付 Review 编码层 Excel。");
   if (!analysis.feedback_units?.length) errors.push("分析结果缺少 feedback_units，无法交付 Review 编码层 Excel。");
   if (!analysis.open_tags?.length) errors.push("分析结果缺少 open_tags，无法交付 Review 编码层 Excel。");
+  checkProductMetadata(analysis, errors);
   if (analysis.normalized_reviews?.length && analysis.normalized_reviews.length !== sampleSize) {
     errors.push(`normalized_reviews 必须覆盖全部 Review 样本：期望 ${sampleSize} 条，实际 ${analysis.normalized_reviews.length} 条。`);
   }
@@ -83,9 +84,39 @@ export function checkAnalysis(analysis: AnalysisReport): ContractCheckResult {
   return { ok: errors.length === 0, errors, warnings };
 }
 
+function checkProductMetadata(analysis: AnalysisReport, errors: string[]): void {
+  const product = analysis.product_metadata;
+  if (!product) {
+    errors.push("分析结果缺少 product_metadata，无法渲染 ASIN 元数据模块。");
+    return;
+  }
+  const required: Array<keyof NonNullable<AnalysisReport["product_metadata"]>> = [
+    "asin",
+    "brand",
+    "title",
+    "main_image",
+    "price",
+    "rating",
+    "asin_total_review_count",
+    "category",
+    "root_category",
+    "leaf_category",
+    "launch_date"
+  ];
+  for (const field of required) {
+    const value = product[field];
+    if (value === undefined || value === null || String(value).trim() === "") {
+      errors.push(`product_metadata 缺少字段：${field}`);
+    }
+  }
+  if (product.asin && product.asin !== analysis.metadata.asin) {
+    errors.push(`product_metadata.asin 必须与 metadata.asin 一致：${product.asin} != ${analysis.metadata.asin}`);
+  }
+}
+
 export function checkHtml(html: string): ContractCheckResult {
   const errors: string[] = [];
-  const requiredIds = ["scope", "health", "key-insights", "voc-theme-map", "actions", "limits"];
+  const requiredIds = ["scope", "asin-metadata", "health", "key-insights", "voc-theme-map", "actions", "limits"];
   for (const id of requiredIds) {
     if (!html.includes(`id="${id}"`)) errors.push(`HTML 缺少章节：${id}`);
   }
@@ -98,14 +129,44 @@ export function checkHtml(html: string): ContractCheckResult {
   }
   if (!html.includes("insight-distribution")) errors.push("HTML 关键结论缺少类型分布表。");
   if (!html.includes("viewpoint-distribution")) errors.push("HTML VOC 主题地图缺少观点分布表。");
-  if (!html.includes('href="#scope">1. 数据范围与口径</a>') || !html.includes('href="#health">2. Review 健康度</a>')) {
+  if (!html.includes("report-header") || !html.includes("report-title") || !html.includes("Review VOC 决策报告</h1>")) {
+    errors.push("HTML 必须将 ASIN Review VOC 决策报告渲染为独立报告标题。");
+  }
+  if (!html.includes('href="#scope">1. 数据范围与口径</a>') || !html.includes('href="#asin-metadata">2. ASIN 元数据</a>') || !html.includes('href="#health">3. Review 健康度</a>')) {
     errors.push("HTML 左侧一级导航必须带序号。");
   }
-  if (!html.includes("toc-key-insights") || !html.includes('href="#key-insight-audience">3.1 人群</a>') || !html.includes('class="toc-group" open')) {
+  if (!html.includes("toc-key-insights") || !html.includes('href="#key-insight-audience">4.1 人群</a>') || !html.includes('class="toc-group" open')) {
     errors.push("HTML 左侧导航必须在关键结论下展示带序号、默认展开、可折叠的二级导航。");
   }
-  if (!html.includes("toc-voc-themes") || !html.includes('href="#voc-theme-') || !html.includes('>4.1 ')) {
+  if (!html.includes("toc-voc-themes") || !html.includes('href="#voc-theme-') || !html.includes('>5.1 ')) {
     errors.push("HTML 左侧导航必须在 VOC 主题地图下展示带序号、默认展开、可折叠的主题二级导航。");
+  }
+  const scopeSection = sectionHtml(html, "scope");
+  if (!scopeSection.includes('<h2 class="section-title">数据范围与口径</h2>')) {
+    errors.push("数据范围与口径模块必须使用“数据范围与口径”作为正文章节标题。");
+  }
+  if (scopeSection.includes("Review VOC 决策报告")) {
+    errors.push("数据范围与口径模块不得把 ASIN Review VOC 决策报告当作章节标题；报告标题必须独立渲染。");
+  }
+  if (!scopeSection.includes("站点") || !scopeSection.includes("ASIN") || !scopeSection.includes("数据来源") || !scopeSection.includes("抓取时间") || !scopeSection.includes("已知缺失字段")) {
+    errors.push("数据范围与口径只应展示站点、ASIN、数据来源、抓取时间和已知缺失字段。");
+  }
+  if (scopeSection.includes("Review 样本数") || scopeSection.includes("ASIN 总评论数量") || scopeSection.includes("产品星级") || scopeSection.includes("分析口径")) {
+    errors.push("数据范围与口径不得继续展示 Review 样本数、ASIN 总评论数量、产品星级或分析口径。");
+  }
+  const asinMetadataSection = sectionHtml(html, "asin-metadata");
+  for (const label of ["ASIN 元数据", "品牌", "标题", "价格", "星级", "ASIN 总评论数", "分类", "所属大类", "所属细分类目", "上架时间", "product-image"]) {
+    if (!asinMetadataSection.includes(label)) errors.push(`ASIN 元数据模块缺少字段或元素：${label}`);
+  }
+  const healthSection = sectionHtml(html, "health");
+  for (const label of ["样本平均星级", "4-5 星占比", "1-3 星占比", "样本评论最早日期", "样本评论最新日期", "样本各星级分布"]) {
+    if (!healthSection.includes(label)) errors.push(`Review 健康度缺少字段：${label}`);
+  }
+  if (healthSection.includes("正文存在率") || healthSection.includes("日期存在率")) {
+    errors.push("Review 健康度不得继续展示正文存在率或日期存在率。");
+  }
+  if (healthSection.includes("<h3>星级分布</h3>")) {
+    errors.push("Review 健康度星级分布标题必须改为“样本各星级分布”。");
   }
   if (html.includes('<h3 class="section-subtitle">八类横向洞察</h3>') || html.includes('<h3 class="section-subtitle">主题与观点分布</h3>')) {
     errors.push("关键结论和 VOC 主题地图的二级标题应位于左侧导航，不应渲染为正文副标题。");
@@ -125,6 +186,12 @@ export function checkHtml(html: string): ContractCheckResult {
     errors.push("VOC 主题优先级不得裸展示 P0/P1/P2，必须展示运营动作语义。");
   }
   if (html.includes("@media (max-width")) errors.push("HTML 报告不应继续包含移动端媒体查询。");
+  if (!html.includes("--max-width: 1440px") || !html.includes("--min-width: 1200px")) {
+    errors.push("HTML 报告必须使用 1440px 主报告最大宽度，并保留 1200px 桌面端最小阅读宽度。");
+  }
+  if (!html.includes("--detail-max-width: 1120px")) {
+    errors.push("HTML 详情页必须使用 1120px 桌面端阅读宽度。");
+  }
   if (!html.includes("report-block insight-block") || !html.includes("report-block theme-card theme-card-clickable")) {
     errors.push("HTML 关键结论和 VOC 主题地图必须使用一行一个的默认展开折叠块。");
   }
@@ -263,6 +330,15 @@ function checkDetailReview(label: string, review: AnalysisReport["voc_themes"][n
       errors.push(`${sentenceLabel} 译文句无法在完整中文译文中定位。`);
     }
   }
+}
+
+function sectionHtml(html: string, id: string): string {
+  const idIndex = html.indexOf(`id="${id}"`);
+  if (idIndex === -1) return "";
+  const sectionStart = html.lastIndexOf("<section", idIndex);
+  const sectionEnd = html.indexOf("</section>", idIndex);
+  if (sectionStart === -1 || sectionEnd === -1) return html.slice(idIndex);
+  return html.slice(sectionStart, sectionEnd + "</section>".length);
 }
 
 function checkPercentage(label: string, count: number, sampleSize: number, pct: number, errors: string[]): void {

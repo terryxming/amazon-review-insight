@@ -3,6 +3,7 @@ import reviewsFixture from "../fixtures/sorftime_single_asin_reviews.json" with 
 import detailFixture from "../fixtures/sorftime_product_detail.json" with { type: "json" };
 import {
   computeReviewHealth,
+  deliveryFileName,
   highlightEvidenceSentences,
   isValidAsin,
   parseProductDetail,
@@ -27,6 +28,12 @@ describe("core parsing and metrics", () => {
     const detail = parseProductDetail(detailFixture, "B0DHPN1DMJ");
     expect(detail.asin_total_review_count).toBe(708);
     expect(detail.rating).toBe(4.5);
+    expect(detail.brand).toBe("Ikarao");
+    expect(detail.main_image).toBe("https://example.com/image.jpg");
+    expect(detail.category).toBe("KARAOKE MACHINE");
+    expect(detail.root_category).toBe("Musical Instruments（排名:999）");
+    expect(detail.leaf_category).toBe("Portable Systems（排名:12）");
+    expect(detail.launch_date).toBe("2024-01-01");
   });
 
   it("computes health metrics with Review sample size as denominator", () => {
@@ -36,6 +43,16 @@ describe("core parsing and metrics", () => {
     expect(health.asin_total_review_count).toBe(708);
     expect(health.positive_percentage).toBe(66.7);
     expect(health.negative_percentage).toBe(33.3);
+    expect(health.earliest_review_date).toBe("2025-01-31");
+    expect(health.latest_review_date).toBe("2025-02-02");
+  });
+
+  it("generates delivery filenames with date and ASIN prefix", () => {
+    const date = new Date(2026, 5, 16);
+    expect(deliveryFileName("B0CR1R7FKP", "review-insight-report", "html", date))
+      .toBe("20260616-B0CR1R7FKP-review-insight-report.html");
+    expect(deliveryFileName("b0cr1r7fkp", "review coding", ".xlsx", date))
+      .toBe("20260616-B0CR1R7FKP-review-coding.xlsx");
   });
 
   it("highlights complete evidence sentences with semantic classes", () => {

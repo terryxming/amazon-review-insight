@@ -1,6 +1,6 @@
 # Data Contract
 
-data_contract_version: v0.3.1
+data_contract_version: v0.3.2
 
 ## 核心口径
 
@@ -13,6 +13,28 @@ data_contract_version: v0.3.1
 7. Excel 对外可见 sheet 名和字段名必须使用中文；`原始评论` 与 `Review编码层` 前五列固定为 `ASIN`、`评论日期`、`星级`、`title`、`text`。
 8. `Review编码层` 是 feedback unit 级别表，一行只解释一个反馈点。整条 Review 汇总字段必须后置并加 `整条Review-` 前缀，避免和本行反馈点混淆。
 9. 每个前台 `voc_themes[]` 必须包含 `viewpoints[]`，用于展示该主题内部具体观点的提及数量、占比和全量评论证据。
+
+## ProductMetadata
+
+`product_metadata` 来自 Sorftime `product_detail`，用于报告顶部 ASIN 元数据模块。它只能使用 Sorftime 明确返回的字段；缺失时写 `unknown`，不得根据 Listing 文案或 Review 内容推断。
+
+字段：
+
+- `asin`：产品 ASIN，对应 `产品ASIN码`。
+- `parent_asin`：父级 ASIN，对应 `父级ASIN码`，可选。
+- `brand`：品牌，对应 `品牌`。
+- `title`：标题，对应 `标题`。
+- `main_image`：主图 URL，对应 `主图`。
+- `price`：价格，对应 `价格`。
+- `rating`：产品星级，对应 `星级`。
+- `asin_total_review_count`：ASIN 总评论数量，对应 `评论数`。
+- `category`：分类，对应 `分类`。
+- `browse_node_id`：所属 node id，对应 `所属nodeid`。
+- `root_category`：所属大类及排名，对应 `所属大类`。
+- `leaf_category`：所属细分类目及排名，对应 `所属细分类目`。
+- `launch_date`：上架时间，对应 `上架时间`。
+
+报告只展示用户指定的 ASIN 元数据字段：ASIN、品牌、标题、主图、价格、星级、ASIN 总评论数、分类、所属大类、所属细分类目、上架时间。
 
 ## NormalizedReview
 

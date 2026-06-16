@@ -59,7 +59,9 @@ export async function renderReport(analysis: AnalysisReport): Promise<string> {
   <div class="layout">
     ${renderToc(analysis)}
     <main class="main">
+      ${renderReportHeader(analysis)}
       ${renderScope(analysis)}
+      ${renderProductMetadata(analysis)}
       ${renderHealth(analysis, health)}
       ${renderKeyInsights(analysis)}
       ${renderThemeMap(analysis)}
@@ -74,33 +76,40 @@ export async function renderReport(analysis: AnalysisReport): Promise<string> {
 </html>`;
 }
 
+function renderReportHeader(analysis: AnalysisReport): string {
+  return `<header class="report-header">
+    <h1 class="report-title">${escapeHtml(analysis.metadata.asin)} Review VOC 决策报告</h1>
+  </header>`;
+}
+
 function renderToc(analysis: AnalysisReport): string {
   const keyInsightLinks = REQUIRED_KEY_INSIGHT_DIMENSIONS
-    .map((dimension, index) => `<a class="toc-sublink" href="#${keyInsightAnchor(dimension)}">3.${index + 1} ${escapeHtml(dimension)}</a>`)
+    .map((dimension, index) => `<a class="toc-sublink" href="#${keyInsightAnchor(dimension)}">4.${index + 1} ${escapeHtml(dimension)}</a>`)
     .join("");
   const themeLinks = groupThemes(analysis.voc_themes)
-    .map((group, index) => `<a class="toc-sublink" href="#${themeGroupAnchor(group.id)}">4.${index + 1} ${escapeHtml(group.label)}</a>`)
+    .map((group, index) => `<a class="toc-sublink" href="#${themeGroupAnchor(group.id)}">5.${index + 1} ${escapeHtml(group.label)}</a>`)
     .join("");
   return `<nav class="toc" aria-label="报告目录">
       <div class="toc-title">Review VOC 报告</div>
       <a class="toc-link" href="#scope">1. 数据范围与口径</a>
-      <a class="toc-link" href="#health">2. Review 健康度</a>
+      <a class="toc-link" href="#asin-metadata">2. ASIN 元数据</a>
+      <a class="toc-link" href="#health">3. Review 健康度</a>
       <details class="toc-group" open>
         <summary class="toc-summary">
-          <a class="toc-link toc-primary-link" href="#key-insights">3. 关键结论</a>
+          <a class="toc-link toc-primary-link" href="#key-insights">4. 关键结论</a>
           <span class="toc-toggle" aria-hidden="true"></span>
         </summary>
         <div class="toc-sublist toc-key-insights" aria-label="关键结论二级导航">${keyInsightLinks}</div>
       </details>
       <details class="toc-group" open>
         <summary class="toc-summary">
-          <a class="toc-link toc-primary-link" href="#voc-theme-map">4. VOC 主题地图</a>
+          <a class="toc-link toc-primary-link" href="#voc-theme-map">5. VOC 主题地图</a>
           <span class="toc-toggle" aria-hidden="true"></span>
         </summary>
         <div class="toc-sublist toc-voc-themes" aria-label="VOC 主题地图二级导航">${themeLinks}</div>
       </details>
-      <a class="toc-link" href="#actions">5. 机会矩阵与业务动作</a>
-      <a class="toc-link" href="#limits">6. 限制与 Checkpoint</a>
+      <a class="toc-link" href="#actions">6. 机会矩阵与业务动作</a>
+      <a class="toc-link" href="#limits">7. 限制与 Checkpoint</a>
     </nav>`;
 }
 
@@ -108,15 +117,12 @@ function renderScope(analysis: AnalysisReport): string {
   const m = analysis.metadata;
   const missingFields = "reviewer name / verified purchase / helpful vote / review URL / Vine";
   return `<section id="scope" class="section">
-    <h1 class="section-title">${escapeHtml(m.asin)} Review VOC 决策报告</h1>
+    <h2 class="section-title">数据范围与口径</h2>
     <div class="metric-grid scope-metrics">
       ${metricCard("站点", m.site)}
+      ${metricCard("ASIN", m.asin)}
       ${metricCard("数据来源", m.data_source)}
-      ${metricCard("Review 样本数", m.review_sample_size)}
-      ${metricCard("ASIN 总评论数量", m.asin_total_review_count)}
-      ${metricCard("抓取/生成时间", formatDateTime(m.generated_at))}
-      ${metricCard("产品星级", m.product_rating ?? "unknown")}
-      ${metricCard("分析口径", "Amazon US 单 ASIN")}
+      ${metricCard("抓取时间", formatDateTime(m.fetched_at ?? m.generated_at))}
     </div>
     <div class="card scope-note">
       <strong>已知缺失字段：</strong>${escapeHtml(missingFields)} 均按 unknown 处理，不参与推断。
@@ -124,7 +130,36 @@ function renderScope(analysis: AnalysisReport): string {
   </section>`;
 }
 
+function renderProductMetadata(analysis: AnalysisReport): string {
+  const product = productMetadata(analysis);
+  const image = product.main_image
+    ? `<img class="product-image" src="${escapeHtml(product.main_image)}" alt="${escapeHtml(product.title || product.asin)} 主图" loading="lazy">`
+    : `<div class="product-image product-image-placeholder">unknown</div>`;
+  return `<section id="asin-metadata" class="section asin-metadata-section">
+    <h2 class="section-title">ASIN 元数据</h2>
+    <div class="card product-metadata-card">
+      <div class="product-image-wrap">${image}</div>
+      <div class="product-metadata-content">
+        <div class="metadata-label product-title-label">标题</div>
+        <h3>${escapeHtml(product.title || "unknown")}</h3>
+        <div class="metadata-grid">
+          ${metadataItem("ASIN", product.asin)}
+          ${metadataItem("品牌", product.brand)}
+          ${metadataItem("价格", product.price)}
+          ${metadataItem("星级", product.rating)}
+          ${metadataItem("ASIN 总评论数", product.asin_total_review_count)}
+          ${metadataItem("分类", product.category)}
+          ${metadataItem("所属大类", product.root_category)}
+          ${metadataItem("所属细分类目", product.leaf_category)}
+          ${metadataItem("上架时间", product.launch_date)}
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
 function renderHealth(analysis: AnalysisReport, health: NonNullable<AnalysisReport["health"]>): string {
+  const dateRange = reviewDateRange(analysis, health);
   const maxStarCount = Math.max(...Object.values(health.star_distribution), 1);
   const starRows = [5, 4, 3, 2, 1]
     .map((star) => {
@@ -144,12 +179,11 @@ function renderHealth(analysis: AnalysisReport, health: NonNullable<AnalysisRepo
       ${metricCard("样本平均星级", health.average_sample_rating)}
       ${metricCard("4-5 星占比", `${health.positive_count}/${health.review_sample_size} (${health.positive_percentage}%)`)}
       ${metricCard("1-3 星占比", `${health.negative_count}/${health.review_sample_size} (${health.negative_percentage}%)`)}
-      ${metricCard("最新 Review 日期", health.latest_review_date)}
-      ${metricCard("正文存在率", `${health.text_presence_percentage}%`)}
-      ${metricCard("日期存在率", `${health.date_presence_percentage}%`)}
+      ${metricCard("样本评论最早日期", dateRange.earliest)}
+      ${metricCard("样本评论最新日期", dateRange.latest)}
     </div>
     <div class="card health-distribution">
-      <h3>星级分布</h3>
+      <h3>样本各星级分布</h3>
       <div class="star-list">${starRows}</div>
     </div>
   </section>`;
@@ -1129,6 +1163,40 @@ function renderLimits(analysis: AnalysisReport): string {
     <ul>${analysis.limitations.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
     <div class="table-wrap"><table><thead><tr><th>Checkpoint</th><th>状态</th><th>说明</th></tr></thead><tbody>${checkpoints}</tbody></table></div>
   </section>`;
+}
+
+function productMetadata(analysis: AnalysisReport): NonNullable<AnalysisReport["product_metadata"]> {
+  const m = analysis.metadata;
+  const product = analysis.product_metadata ?? { asin: m.asin };
+  return {
+    ...product,
+    asin: product.asin || m.asin,
+    rating: product.rating ?? m.product_rating,
+    asin_total_review_count: product.asin_total_review_count ?? m.asin_total_review_count
+  };
+}
+
+function metadataItem(label: string, value: unknown): string {
+  return `<div class="metadata-item">
+    <div class="metadata-label">${escapeHtml(label)}</div>
+    <div class="metadata-value">${escapeHtml(displayValue(value))}</div>
+  </div>`;
+}
+
+function displayValue(value: unknown): string {
+  const text = String(value ?? "").trim();
+  return text || "unknown";
+}
+
+function reviewDateRange(analysis: AnalysisReport, health: NonNullable<AnalysisReport["health"]>): { earliest: string; latest: string } {
+  const dates = (analysis.normalized_reviews ?? [])
+    .map((review) => review.review_date)
+    .filter((date): date is string => typeof date === "string" && date !== "unknown")
+    .sort();
+  return {
+    earliest: health.earliest_review_date && health.earliest_review_date !== "unknown" ? health.earliest_review_date : (dates[0] ?? "unknown"),
+    latest: health.latest_review_date && health.latest_review_date !== "unknown" ? health.latest_review_date : (dates[dates.length - 1] ?? "unknown")
+  };
 }
 
 function formatDateTime(value: unknown): string {

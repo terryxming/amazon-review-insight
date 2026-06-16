@@ -22,8 +22,9 @@
     "baseSize": "14px"
   },
   "layout": {
-    "maxWidth": "1180px",
-    "tocWidth": "248px"
+    "maxWidth": "1440px",
+    "detailMaxWidth": "1120px",
+    "minWidth": "1200px",
+    "tocWidth": "clamp(248px, 19vw, 280px)"
   }
 }
-

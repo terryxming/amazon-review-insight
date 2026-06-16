@@ -5,8 +5,13 @@ Feature: 单 ASIN Review 分析报告
     And Sorftime MCP 返回 product_detail 和 product_reviews
     When agent 完成 Review 编码、VOC 主题归因和业务动作生成
     Then 系统生成中文自包含 HTML 报告
-    And 报告展示 Review 样本数
-    And 报告展示 ASIN 总评论数量
+    And 交付文件按 YYYYMMDD-ASIN-suffix 命名
+    And 报告总标题独立显示为 ASIN Review VOC 决策报告
+    And 数据范围与口径模块的正文标题显示为“数据范围与口径”
+    And 数据范围与口径只展示站点、ASIN、数据来源、抓取时间和已知缺失字段
+    And 报告在 Review 健康度前展示 ASIN 元数据
+    And ASIN 元数据展示 ASIN、品牌、标题、主图、价格、星级、ASIN 总评论数、分类、所属大类、所属细分类目和上架时间
+    And Review 健康度只展示样本平均星级、4-5 星占比、1-3 星占比、样本评论最早日期、样本评论最新日期和样本各星级分布
     And 关键结论覆盖人群、场景、用户任务、购买理由、用户期望、实际体验、满意点、不满意点
     And 每个关键结论展示类型分布、提及数量、占比和判断依据
     And 关键结论中的卡片任意位置可以在新标签页打开该关键结论详情页
@@ -122,8 +127,8 @@ Feature: 单 ASIN Review 分析报告
     Given 报告已生成关键结论和 VOC 主题地图
     When 用户阅读主报告页
     Then 左侧一级导航全部带序号
-    And 左侧导航在“3. 关键结论”下展示带序号的八类洞察二级导航
-    And 左侧导航在“4. VOC 主题地图”下展示带序号的正向主题、负向主题、未满足的机会点二级导航
+    And 左侧导航在“4. 关键结论”下展示带序号的八类洞察二级导航
+    And 左侧导航在“5. VOC 主题地图”下展示带序号的正向主题、负向主题、未满足的机会点二级导航
     And 带有二级导航的一级导航默认展开并支持折叠和展开
     And 正文中不应额外渲染“八类横向洞察”或“主题与观点分布”副标题
     And 每个一级章节标题下方不展示说明文字
@@ -167,8 +172,15 @@ Feature: 单 ASIN Review 分析报告
   Scenario: 主报告顶部和电脑端布局优化
     Given 用户在电脑端桌面宽度阅读报告
     When 页面按桌面布局展示
-    Then 数据范围与口径使用紧凑指标卡和缺失字段说明
-    And Review 健康度使用紧凑指标卡和星级分布条展示
+    Then 主报告最大宽度为 1440px
+    And 主报告在 1200px 到 1440px 的电脑端窗口内自然收缩
+    And 报告总标题独立于左侧目录的一级章节标题
+    And 第 1 章正文标题为“数据范围与口径”，不能显示为 ASIN Review VOC 决策报告
+    And 左侧目录在电脑端宽度下自适应，不能挤压正文
+    And 详情页隐藏左侧目录后使用更适合完整 Review 阅读的桌面宽度
+    And 数据范围与口径使用紧凑指标卡和缺失字段说明，且不展示样本规模或产品星级
+    And ASIN 元数据使用主图加结构化字段展示，长标题可自然换行
+    And Review 健康度使用紧凑指标卡和样本各星级分布条展示
     And 长文本、主题 ID、按钮和标签在桌面宽度下自然换行
     And 表格列不得窄到形成竖排式阅读
     And 长表格可通过横向滚动或块状布局保持可读
@@ -182,6 +194,16 @@ Feature: 单 ASIN Review 分析报告
     And 不再使用的正文说明段和移动端媒体查询必须被删除或改写
     And 如允许使用外部 CDN，契约必须从禁止 CDN 更新为允许白名单展示型 CDN
     And HTML、Excel 和输出目录不得包含 Sorftime key、运行时 token 或环境变量值
+
+  Scenario: 已发布版本冻结并通过新版本承载后续修改
+    Given v0.3.1 已经打 tag 并推送到 GitHub
+    And 当前需要继续修改 skill 行为、样式、契约、测试或文档
+    When agent 开始本轮迭代
+    Then 不得修改、移动、强推或覆盖 v0.3.1 已发布 tag
+    And 必须先进入高于最新已发布版本的新开发版本
+    And v0.3.2 已发布后状态为 released
+    And SKILL、package、package-lock、CHANGELOG、checkpoint、BDD、contract 和 tests 必须同步发布版本线
+    And 发布 v0.3.2 后，v0.3.2 必须进入冻结状态
 
   Scenario: Review 编码层 Excel 可复核
     Given agent 已生成 normalized_reviews、feedback_units、open_tags 和关键结论 distribution

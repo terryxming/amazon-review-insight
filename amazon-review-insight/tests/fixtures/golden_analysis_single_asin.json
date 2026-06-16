@@ -3,10 +3,24 @@
     "asin": "B0DHPN1DMJ",
     "site": "Amazon US",
     "data_source": "Sorftime MCP",
+    "fetched_at": "2026-06-15T00:00:00.000Z",
     "generated_at": "2026-06-15T00:00:00.000Z",
     "review_sample_size": 3,
     "asin_total_review_count": 708,
     "product_rating": 4.5
+  },
+  "product_metadata": {
+    "asin": "B0DHPN1DMJ",
+    "brand": "Ikarao",
+    "title": "Ikarao Karaoke Machine",
+    "main_image": "https://example.com/image.jpg",
+    "price": "299.99",
+    "rating": 4.5,
+    "asin_total_review_count": 708,
+    "category": "KARAOKE MACHINE",
+    "root_category": "Musical Instruments（排名:999）",
+    "leaf_category": "Portable Systems（排名:12）",
+    "launch_date": "2024-01-01"
   },
   "health": {
     "asin_total_review_count": 708,
@@ -23,6 +37,8 @@
     "positive_percentage": 66.7,
     "negative_count": 1,
     "negative_percentage": 33.3,
+    "earliest_review_date": "2025-01-31",
+    "latest_review_date": "2025-02-02",
     "text_presence_percentage": 100,
     "date_presence_percentage": 100
   },

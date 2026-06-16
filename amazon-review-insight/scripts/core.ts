@@ -12,13 +12,36 @@ export interface NormalizedReview {
 
 export interface ProductDetail {
   asin: string;
+  parent_asin?: string;
   title?: string;
+  main_image?: string;
   rating?: number;
   asin_total_review_count?: number;
   brand?: string;
   price?: string;
+  category?: string;
+  browse_node_id?: string;
+  root_category?: string;
+  leaf_category?: string;
+  launch_date?: string;
   raw_text: string;
   raw_fields: Record<string, string>;
+}
+
+export interface ProductMetadata {
+  asin: string;
+  parent_asin?: string;
+  brand?: string;
+  title?: string;
+  main_image?: string;
+  price?: string;
+  rating?: number;
+  asin_total_review_count?: number;
+  category?: string;
+  browse_node_id?: string;
+  root_category?: string;
+  leaf_category?: string;
+  launch_date?: string;
 }
 
 export interface FeedbackUnit {
@@ -160,10 +183,12 @@ export interface AnalysisReport {
     site: "Amazon US";
     data_source: "Sorftime MCP";
     generated_at: string;
+    fetched_at?: string;
     review_sample_size: number;
     asin_total_review_count: number;
     product_rating?: number;
   };
+  product_metadata?: ProductMetadata;
   health?: ReturnType<typeof computeReviewHealth>;
   normalized_reviews?: NormalizedReview[];
   feedback_units?: FeedbackUnit[];
@@ -230,11 +255,18 @@ export function parseProductDetail(input: unknown, fallbackAsin: string): Produc
   }
   return {
     asin: fields["产品ASIN码"] || fallbackAsin,
+    parent_asin: fields["父级ASIN码"],
     title: fields["标题"],
+    main_image: fields["主图"],
     rating: parseNumber(fields["星级"]),
     asin_total_review_count: parseInteger(fields["评论数"]),
     brand: fields["品牌"],
     price: fields["价格"],
+    category: fields["分类"],
+    browse_node_id: fields["所属nodeid"],
+    root_category: fields["所属大类"],
+    leaf_category: fields["所属细分类目"],
+    launch_date: fields["上架时间"],
     raw_text: rawText,
     raw_fields: fields
   };
@@ -291,10 +323,12 @@ export function computeReviewHealth(reviews: NormalizedReview[], asinTotalReview
   let textPresent = 0;
   let datePresent = 0;
   let latestReviewDate = "unknown";
+  let earliestReviewDate = "unknown";
   for (const review of reviews) {
     if (review.text.trim()) textPresent += 1;
     if (review.review_date !== "unknown") {
       datePresent += 1;
+      if (earliestReviewDate === "unknown" || review.review_date < earliestReviewDate) earliestReviewDate = review.review_date;
       if (latestReviewDate === "unknown" || review.review_date > latestReviewDate) latestReviewDate = review.review_date;
     }
     if (review.rating !== "unknown") {
@@ -315,6 +349,7 @@ export function computeReviewHealth(reviews: NormalizedReview[], asinTotalReview
     positive_percentage: percentage(positive, sampleSize),
     negative_count: negative,
     negative_percentage: percentage(negative, sampleSize),
+    earliest_review_date: earliestReviewDate,
     latest_review_date: latestReviewDate,
     text_presence_percentage: percentage(textPresent, sampleSize),
     date_presence_percentage: percentage(datePresent, sampleSize)
@@ -328,6 +363,23 @@ export function percentage(count: number, sampleSize: number): number {
 
 export function round1(value: number): number {
   return Math.round(value * 10) / 10;
+}
+
+export function deliveryFileName(asin: string, suffix: string, extension: string, date: Date = new Date()): string {
+  const safeAsin = asin.trim().toUpperCase();
+  if (!isValidAsin(safeAsin)) throw new Error(`Invalid ASIN for delivery filename: ${asin}`);
+  const safeSuffix = suffix.trim().replace(/^\.+|\.+$/g, "").replace(/[^A-Za-z0-9_-]+/g, "-");
+  const safeExtension = extension.trim().replace(/^\./, "");
+  if (!safeSuffix) throw new Error("Delivery filename suffix is required.");
+  if (!safeExtension) throw new Error("Delivery filename extension is required.");
+  return `${formatDeliveryDate(date)}-${safeAsin}-${safeSuffix}.${safeExtension}`;
+}
+
+export function formatDeliveryDate(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}${month}${day}`;
 }
 
 export function escapeHtml(value: unknown): string {

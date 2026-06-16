@@ -39,12 +39,12 @@ Product Design brief: light, professional, evidence-first, action-oriented analy
 
 ## Density
 
-Cards use 8px radius, compact spacing, scan-friendly tables, and no hero or decorative background. Data scope and Review health use compact desktop metric grids; star distribution uses horizontal bars instead of a wide table. Mobile-specific layouts are out of scope.
+Cards use 8px radius, compact spacing, scan-friendly tables, and no hero or decorative background. The main report uses a 1440px desktop max width, a desktop minimum width of 1200px, and a left table of contents that scales between 248px and 280px. Detail routes use a 1120px max width because they remove the left navigation and focus on full Review reading. Data scope and Review health use compact desktop metric grids; star distribution uses horizontal bars instead of a wide table. Mobile-specific layouts are out of scope.
 
 Key insight distribution tables use compact rows and small inline bars. The HTML report does not display role columns or role badges in key insight or VOC viewpoint distribution tables; role stays in the analysis JSON and Excel coding layer only.
 
 VOC theme map groups use nested single-column blocks: one group block per theme bucket, then one theme block per VOC theme. VOC viewpoint distribution tables use the same compact table language as key insights, with an additional polarity badge. Key insight type filters and theme detail filter controls use compact buttons inside the combined sticky panel so detail pages remain analytical rather than dashboard-like.
 
-Key insight cards and VOC theme cards show complete representative Review evidence, not keywords or short evidence snippets. VOC theme cards display "运营优先级" with an action label, never bare P0/P1/P2. Each theme card and detail header includes an "运营动作" line that tells operators whether to amplify a selling point, clarify expectations, close risk, or schedule low-cost fixes.
+Key insight cards and VOC theme cards show complete representative Review evidence, not keywords or short evidence snippets. Sentence highlights use semantic evidence colors instead of keyword-only yellow marking. VOC theme cards display "运营优先级" with an action label, never bare P0/P1/P2. Each theme card and detail header includes an "运营动作" line that tells operators whether to amplify a selling point, clarify expectations, close risk, or schedule low-cost fixes.
 
 Business actions are never rendered as one horizontal mega-table. Split them by direction, then render compact action cards with priority, related theme, finding, suggested action, impact metric, and verification method.
